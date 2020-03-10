@@ -1,0 +1,7 @@
+body, a {
+  color: map-get($grays, "600");
+}
+a:hover {
+  text-decoration: none;
+  color: $main;
+}

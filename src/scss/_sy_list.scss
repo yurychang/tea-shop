@@ -1,0 +1,20 @@
+.sy_list {
+  list-style-type: none;
+  .list-item {
+    list-style-type: none;
+    border-left: 1px solid;
+  }
+  .list-item:hover {
+    color: $main;
+  }
+}
+
+.sy_list-virticle {
+  writing-mode: vertical-rl;
+  .list-item {
+    padding-top: map-get($spacers, 3);
+    margin-left: map-get($spacers, 2);
+    border-top: 1px solid;
+    border-left: none;
+  }
+}
