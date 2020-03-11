@@ -21,6 +21,7 @@ const FixRight = styled.div`
 const FadeInDiv = styled.div`
   animation: 1.5s ${fadeInAnimate};
 `
+const listNames = ['尋茶', '文化走訪', '茗家精選', '茶風味輪', '台灣茶分布圖']
 
 export default function MainBarContent({ isOpen, onClick }) {
   return (
@@ -36,41 +37,17 @@ export default function MainBarContent({ isOpen, onClick }) {
         <div className="flex-grow-1">
           <nav className="mx-auto mt-7">
             <ul className="sy_list sy_list-virticle mx-auto fs-lg">
-              <li className="ml-6">
-                <WrapFadeInRight>
-                  <Link to="/" onClick={onClick} className="list-item">
-                    尋茶
-                  </Link>
-                </WrapFadeInRight>
-              </li>
-              <li className="ml-6">
-                <WrapFadeInRight delay=".1">
-                  <Link to="/events" onClick={onClick} className="list-item">
-                    文化走訪
-                  </Link>
-                </WrapFadeInRight>
-              </li>
-              <li className="ml-6">
-                <WrapFadeInRight delay=".2">
-                  <Link to="/" onClick={onClick} className="list-item">
-                    茗家精選
-                  </Link>
-                </WrapFadeInRight>
-              </li>
-              <li className="ml-6">
-                <WrapFadeInRight delay=".3">
-                  <Link to="/" onClick={onClick} className="list-item">
-                    茶風味輪
-                  </Link>
-                </WrapFadeInRight>
-              </li>
-              <li>
-                <WrapFadeInRight delay=".4">
-                  <Link to="/" onClick={onClick} className="list-item">
-                    台灣茶分布圖
-                  </Link>
-                </WrapFadeInRight>
-              </li>
+              {listNames.map((listName, i) => {
+                return (
+                  <li className={i === 0 ? '' : 'mr-6'}>
+                    <WrapFadeInRight delay={`.${i}`}>
+                      <Link to="/" onClick={onClick} className="list-item">
+                        {listName}
+                      </Link>
+                    </WrapFadeInRight>
+                  </li>
+                )
+              })}
             </ul>
           </nav>
         </div>

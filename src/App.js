@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import MainBar from './components/MainBar'
-import './scss/index.scss'
+import './styles/index.scss'
 import EventsList from './pages/Events'
 
 function App() {
