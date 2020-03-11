@@ -1,12 +1,25 @@
 .virticle-rl {
   writing-mode: vertical-rl;
 }
+
 .outline-0 {
   outline: none;
+  
   &:focus {
     outline: none;
   }
 }
+
+.opacity {
+  opacity: 0;
+}
+
+@each $size-name, $font-size in $font-sizes {
+  .fs-#{$size-name} {
+    font-size: #{$font-size} !important;
+  }
+}
+
 @each $key, $val in $grid-breakpoints {
   .border-top-#{$key}-0 {
     @media(min-width: $val) {

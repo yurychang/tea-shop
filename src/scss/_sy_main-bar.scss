@@ -13,7 +13,7 @@ $view-height: 100vh;
   height: $view-height;
   top: 0;
   right: 0;
-  z-index: 100;
+  z-index: $zindex-modal;
   box-shadow: -1px 0 3px 0 rgba(0, 0, 0, 0.18);
   overflow: hidden;
   background-color: #fff;
@@ -21,20 +21,20 @@ $view-height: 100vh;
   .main-bar-nav {
     display: flex;
     flex: 0 0 $bar-width;
+    background-color: #fff;
+    z-index: $zindex-modal + 2;
 
     .main-bar-brand {
       position: absolute;
       top: calc(50% - 60px);
-      z-index: 1000;
+      z-index: $zindex-modal + 3;
     }
   }
 
   .main-bar-content {
-    display: flex;
-    flex-direction: column;
     flex: 1 0;
     height: $view-height;
-    z-index: 100;
+    z-index: $zindex-modal + 1;
   }
 }
 
@@ -53,7 +53,7 @@ $view-height: 100vh;
     min-height: $bar-width;
     height: auto;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18);
-    
+
     .main-bar-nav {
       height: auto;
       width: auto;

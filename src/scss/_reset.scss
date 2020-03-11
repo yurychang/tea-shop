@@ -1,5 +1,10 @@
-body, a {
-  color: map-get($grays, "600");
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  color: map-get($grays, '600');
+}
+a {
+  color: map-get($grays, '600');
 }
 a:hover {
   text-decoration: none;

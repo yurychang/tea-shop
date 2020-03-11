@@ -1,24 +1,28 @@
-import React from 'react';
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import MainBar from './components/MainBar';
+import MainBar from './components/MainBar'
 import './scss/index.scss'
+import EventsList from './pages/Events'
 
 function App() {
   return (
     <div className="App">
-      <MainBar />
-      <div className="sy_main-content">
-        <Router>
+      <Router>
+        <MainBar />
+        <div className="sy_main-content">
           <Switch>
+            <Route path="/events">
+              <EventsList />
+            </Route>
             <Route path="/">
               <Home />
             </Route>
           </Switch>
-        </Router>
-      </div>
+        </div>
+      </Router>
     </div>
   );
 }
 
-export default App;
+export default App
