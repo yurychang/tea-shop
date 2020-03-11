@@ -1,28 +1,25 @@
-import React from 'react';
-import { Nav } from 'react-bootstrap';
+import React, { useState } from 'react'
+
+import MainBarNav from './MainBarNav'
+import MainBarContent from './MainBarContent'
 
 export default function MainBar() {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
-      <div className="sy_main-bar">
-        <h1 className="main-bar-brand">
-          <a href="#">logo</a>
-        </h1>
-        <Nav className="flex-grow-1 flex-lg-column">
-          <Nav.Item>
-            <Nav.Link className="mt-2">cart</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link className="mt-2 mt-lg-0">cart</Nav.Link>
-          </Nav.Item>
-          <Nav.Item className="flex-grow-1">
-            {/* <Nav.Link>member</Nav.Link> */}
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link className="mt-2">contact</Nav.Link>
-          </Nav.Item>
-        </Nav>
+      <div className={`sy_main-bar ${isOpen ? 'active' : ''}`}>
+        <MainBarNav isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+        {isOpen ? (
+          <MainBarContent
+            onClick={() => {
+              console.log('onclick')
+              setIsOpen(!isOpen)
+            }}
+          />
+        ) : (
+          ''
+        )}
       </div>
     </>
-  );
+  )
 }

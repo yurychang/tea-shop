@@ -1,10 +1,10 @@
 import React from 'react'
-import MainBar from '../components/MainBar'
+import Banner from '../components/Banner'
 
 export default function Home() {
   return (
     <>
-      <MainBar />
+      <Banner />
     </>
   )
 }
