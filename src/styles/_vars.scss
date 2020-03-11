@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -93,6 +94,35 @@ $theme-colors: map-merge(
   ),
   $theme-colors
 );
+=======
+$orange: #df641c;
+$main: $orange;
+$theme-colors: (
+  'main': $main,
+);
+$spacer: 1rem;
+$spacers: (
+  6: (
+    $spacer * 5,
+  ),
+  7: (
+    $spacer * 7,
+  ),
+);
+<<<<<<<< HEAD:src/scss/_variables.scss
+$font-size-base: 1rem;
+$font-size-xl: $font-size-base * 1.25;
+$font-size-lg: $font-size-base * 1.125;
+$font-size-sm: $font-size-base * 0.875;
+$font-size-xs: $font-size-base * 0.75;
+$font-sizes: (
+  'xl': $font-size-xl,
+  'lg': $font-size-lg,
+  'base': $font-size-base,
+  'sm': $font-size-sm,
+  'xs': $font-size-xs,
+========
+>>>>>>> peter
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval:      8% !default;
@@ -684,6 +714,7 @@ $form-validation-states: map-merge(
     ),
   ),
   $form-validation-states
+<<<<<<< HEAD
 );
 
 // Z-index master list
@@ -1146,3 +1177,7 @@ $positions: static, relative, absolute, fixed, sticky !default;
 
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
+=======
+>>>>>>>> peter:src/styles/_vars.scss
+);
+>>>>>>> peter
