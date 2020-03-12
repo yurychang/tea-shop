@@ -1,0 +1,24 @@
+$dot-size: 12px;
+$line-width: 2px;
+$dl-bg-color: lighten($main, 15%);
+
+.sy_dotline {
+  position: relative;
+
+  .line {
+    position: absolute;
+    top: $dot-size / 2 - 1;
+    height: $line-width;
+    width: 100%;
+    background-color: $dl-bg-color;
+  }
+  .dot-group {
+    display: flex;
+  }
+  .dot {
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+    background-color: $dl-bg-color;
+  }
+}
