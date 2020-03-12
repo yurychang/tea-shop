@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import MainBar from './components/MainBar'
 import './styles/index.scss'
-import EventsList from './pages/Events'
+import Events from './pages/Events'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <div className="sy_main-content">
           <Switch>
             <Route path="/events">
-              <EventsList />
+              <Events />
             </Route>
             <Route path="/">
               <Home />

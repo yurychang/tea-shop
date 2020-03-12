@@ -21,7 +21,13 @@ const FixRight = styled.div`
 const FadeInDiv = styled.div`
   animation: 1.5s ${fadeInAnimate};
 `
-const listNames = ['尋茶', '文化走訪', '茗家精選', '茶風味輪', '台灣茶分布圖']
+const listNames = [
+  { name: '尋茶', path: '/' },
+  { name: '文化走訪', path: '/events' },
+  { name: '茗家精選', path: '/' },
+  { name: '茶風味輪', path: '/' },
+  { name: '台灣茶分布圖', path: '/' },
+]
 
 export default function MainBarContent({ isOpen, onClick }) {
   return (
@@ -34,23 +40,28 @@ export default function MainBarContent({ isOpen, onClick }) {
             </Link>
           </FadeInDiv>
         </h1>
-        <div className="flex-grow-1">
-          <nav className="mx-auto mt-7">
-            <ul className="sy_list sy_list-virticle mx-auto fs-lg">
-              {listNames.map((listName, i) => {
-                return (
-                  <li className={i === 0 ? '' : 'mr-6'}>
-                    <WrapFadeInRight delay={`.${i}`}>
-                      <Link to="/" onClick={onClick} className="list-item">
-                        {listName}
-                      </Link>
-                    </WrapFadeInRight>
-                  </li>
-                )
-              })}
-            </ul>
-          </nav>
-        </div>
+        <nav className="mx-auto mt-7">
+          <ul className="sy_list sy_list-vertical mx-auto fs-lg">
+            {listNames.map((item, i) => {
+              return (
+                <li
+                  key={i}
+                  className={i === 0 ? 'list-item' : 'list-item mr-6'}
+                >
+                  <WrapFadeInRight delay={`.${i}`}>
+                    <Link
+                      to={item.path}
+                      onClick={onClick}
+                      className="list-link"
+                    >
+                      {item.name}
+                    </Link>
+                  </WrapFadeInRight>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
         <FixBottom className="pb-4">
           <FixRight>
             <WrapFadeInRight>0977-737-579</WrapFadeInRight>

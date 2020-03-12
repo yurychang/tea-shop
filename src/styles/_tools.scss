@@ -1,10 +1,16 @@
-.virticle-rl {
+$vertical-letter-spacing: 0.2em;
+@mixin vertical-rl {
   writing-mode: vertical-rl;
+  letter-spacing: $vertical-letter-spacing;
+}
+.vertical-rl {
+  writing-mode: vertical-rl;
+  letter-spacing: $vertical-letter-spacing;
 }
 
 .outline-0 {
   outline: none;
-  
+
   &:focus {
     outline: none;
   }
@@ -14,31 +20,54 @@
   opacity: 0;
 }
 
-@each $size-name, $font-size in $font-sizes {
-  .fs-#{$size-name} {
-    font-size: #{$font-size} !important;
-  }
+.object-cover {
+  object-fit: cover;
+}
+
+@mixin circle {
+  border-radius: 50%;
 }
 
 @each $key, $val in $grid-breakpoints {
-  .border-top-#{$key}-0 {
-    @media(min-width: $val) {
-      border-top: none !important; 
+  // font size
+  @each $size-name, $font-size in $font-sizes {
+    .fs-#{$size-name} {
+      font-size: #{$font-size} !important;
+    }
+    @media (min-width: $val) {
+      .fs-#{$key}-#{$size-name} {
+        font-size: #{$font-size} !important;
+      }
     }
   }
-  .border-bottom-#{$key}-0 {
-    @media(min-width: $val) {
+
+  @media (min-width: $val) {
+    // toggle border
+    .border-#{$key}-0 {
+      border: none;
+    }
+    .border-top-#{$key}-0 {
+      border-top: none !important;
+    }
+    .border-bottom-#{$key}-0 {
       border-bottom: none !important;
     }
-  }
-  .border-left-#{$key}-0 {
-    @media(min-width: $val) {
+    .border-left-#{$key}-0 {
       border-left: none !important;
     }
-  }
-  .border-right-#{$key}-0 {
-    @media(min-width: $val) {
+    .border-right-#{$key}-0 {
       border-right: none !important;
+    }
+  }
+
+  @each $name, $color in $text-grays {
+    .text-#{$name} {
+      color: #{$color};
+    }
+    @media (min-width: $val) {
+      .text-#{key}-$name {
+        color: #{$color};
+      }
     }
   }
 }
