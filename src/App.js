@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import MainBar from './components/MainBar'
 import './styles/index.scss'
 import EventsList from './pages/Events'
+import VendorIndex from './pages/VendorIndex'
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
             <Route path="/events">
               <EventsList />
             </Route>
+            <Route path="/vendorindex/:id?">
+              <VendorIndex />
+            </Route>
             <Route path="/">
               <Home />
             </Route>
@@ -22,7 +26,7 @@ function App() {
         </div>
       </Router>
     </div>
-  );
+  )
 }
 
 export default App
