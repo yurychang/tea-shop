@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import MainBar from './components/MainBar'
 import './scss/index.scss'
 import EventsList from './pages/Events'
-import Vendorindex from './pages/VendorIndex'
+import VendorIndex from './pages/VendorIndex'
 
 function App() {
   return (
@@ -16,11 +16,11 @@ function App() {
             <Route path="/events">
               <EventsList />
             </Route>
+            <Route path="/vendorindex/:id?">
+              <VendorIndex />
+            </Route>
             <Route path="/">
               <Home />
-            </Route>
-            <Route path="/vendorindex/:id?">
-              <Vendorindex />
             </Route>
           </Switch>
         </div>
