@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import EventsStack from '../components/EventsStack'
-import EventsFilter from '../components/EventsFilter'
+import EventsStack from '../components/event/EventsStack'
+import EventsFilter from '../components/event/EventsFilter'
 
 export default function EventsList() {
   return (

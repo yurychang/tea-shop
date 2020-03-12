@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import MainBar from './components/MainBar'
+import Index from './pages/Index'
+import MainBar from './components/index/MainBar'
 import './styles/index.scss'
 import VendorIndex from './pages/VendorIndex'
 import Events from './pages/Events'
@@ -20,7 +20,7 @@ function App() {
               <VendorIndex />
             </Route>
             <Route path="/">
-              <Home />
+              <Index />
             </Route>
           </Switch>
         </div>

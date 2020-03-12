@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
 import { fadeIn } from 'react-animations'
-import WrapFadeInRight from './WrapFadeInRight'
-import logoH from '../images/logo-h.svg'
+import DelayFInR from 'utils/DelayFInR'
+import logoH from 'images/logo-h.svg'
 
 const fadeInAnimate = keyframes`${fadeIn}`
 const FixBottom = styled.footer`
@@ -48,7 +48,7 @@ export default function MainBarContent({ isOpen, onClick }) {
                   key={i}
                   className={i === 0 ? 'list-item' : 'list-item mr-6'}
                 >
-                  <WrapFadeInRight delay={`.${i}`}>
+                  <DelayFInR delay={`.${i}`}>
                     <Link
                       to={item.path}
                       onClick={onClick}
@@ -56,7 +56,7 @@ export default function MainBarContent({ isOpen, onClick }) {
                     >
                       {item.name}
                     </Link>
-                  </WrapFadeInRight>
+                  </DelayFInR>
                 </li>
               )
             })}
@@ -64,7 +64,7 @@ export default function MainBarContent({ isOpen, onClick }) {
         </nav>
         <FixBottom className="pb-4">
           <FixRight>
-            <WrapFadeInRight>0977-737-579</WrapFadeInRight>
+            <DelayFInR>0977-737-579</DelayFInR>
           </FixRight>
           <div>
             <FadeInDiv className="fs-xs">

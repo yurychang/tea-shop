@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -40,8 +39,7 @@ $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
 $red:     #dc3545 !default;
-// $orange:  #fd7e14 !default;
-$orange:  #DF641C !default;
+$orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
@@ -63,7 +61,7 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800,
+    "gray-dark":  $gray-800
   ),
   $colors
 );
@@ -76,7 +74,6 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
-$main:          $orange;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -89,40 +86,10 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark,
-    "main":       $main
+    "dark":       $dark
   ),
   $theme-colors
 );
-=======
-$orange: #df641c;
-$main: $orange;
-$theme-colors: (
-  'main': $main,
-);
-$spacer: 1rem;
-$spacers: (
-  6: (
-    $spacer * 5,
-  ),
-  7: (
-    $spacer * 7,
-  ),
-);
-<<<<<<<< HEAD:src/scss/_variables.scss
-$font-size-base: 1rem;
-$font-size-xl: $font-size-base * 1.25;
-$font-size-lg: $font-size-base * 1.125;
-$font-size-sm: $font-size-base * 0.875;
-$font-size-xs: $font-size-base * 0.75;
-$font-sizes: (
-  'xl': $font-size-xl,
-  'lg': $font-size-lg,
-  'base': $font-size-base,
-  'sm': $font-size-sm,
-  'xs': $font-size-xs,
-========
->>>>>>> peter
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval:      8% !default;
@@ -177,9 +144,7 @@ $spacers: map-merge(
     2: ($spacer * .5),
     3: $spacer,
     4: ($spacer * 1.5),
-    5: ($spacer * 3),
-    6: ($spacer * 5),
-    7: ($spacer * 7)
+    5: ($spacer * 3)
   ),
   $spacers
 );
@@ -319,7 +284,7 @@ $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg:                $font-size-base * 1.125 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
 
 $font-weight-lighter:         lighter !default;
@@ -714,7 +679,6 @@ $form-validation-states: map-merge(
     ),
   ),
   $form-validation-states
-<<<<<<< HEAD
 );
 
 // Z-index master list
@@ -1177,7 +1141,3 @@ $positions: static, relative, absolute, fixed, sticky !default;
 
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
-=======
->>>>>>>> peter:src/styles/_vars.scss
-);
->>>>>>> peter
