@@ -3,6 +3,14 @@ $main: $orange;
 $theme-colors: (
   'main': $main,
 );
+
+$whiteyellow: #ECDDB8;
+$main2: $whiteyellow;
+$theme-colors: (
+  'whiteyellow': $whiteyellow,
+);
+
+
 $spacer: 1rem;
 $spacers: (
   6: (

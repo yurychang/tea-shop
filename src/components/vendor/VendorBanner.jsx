@@ -1,12 +1,12 @@
 import React from 'react'
+import ls_banner from '../../images/ls_banner.jpg'
 
 
 function VendorBanner() {
   return (
     <>
-
-      <div className="ls_banner">
-        <img src="../../images/ls_banner.jpg" alt="" />
+    <div className="ls_banner">
+        <img src={ls_banner} alt="" />
       </div>
     </>
   )
