@@ -28,7 +28,7 @@
       li a {
         display: inline-block;
         height: 60px;
-        padding: 0 50px;
+        padding: 0 62px;
         line-height: 60px;
         text-align: center;
       }
@@ -54,10 +54,20 @@
   }
 
   .vendorWrapper{
-    margin: 0 90px 0 30px;
+    margin: 0 20px 0 100px;
 
   }
 
   .vhup{
     height: 500px;
+  }
+
+  .singleProduct{
+    width: 250px;
+    height: 450px;
+
+  }
+
+  .navColor{
+    background-color: $main2;
   }
