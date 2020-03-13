@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { Nav, Navbar } from 'react-bootstrap'
-import logo from '../images/logo.svg'
-import logoH from '../images/logo-h.svg'
+import logo from 'images/logo.svg'
+import logoH from 'images/logo-h.svg'
 // import WithLink from './WithLink'
 
 export default function MainBarNav({ isOpen, onClick }) {

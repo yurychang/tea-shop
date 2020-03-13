@@ -7,15 +7,10 @@ const FadeInRightDiv = styled.div`
   animation: 1s ${fadeRightAnimate};
 `
 
-export default function WrapFadeInRight({
-  className,
-  delay = 0,
-  children,
-  ...others
-}) {
+export default function DelayFInR({ delay = 0, children }) {
   return (
     <FadeInRightDiv
-      className={`opacity ${className}`}
+      className="opacity"
       onAnimationEnd={function(e) {
         e.target.style.opacity = '100'
       }}

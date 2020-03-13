@@ -1,0 +1,46 @@
+.sy_list {
+  list-style-type: none;
+
+  .list-item {
+    margin-bottom: map-get($spacers, 2);
+    list-style-type: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .list-link {
+    padding-left: map-get($spacers, 3);
+    border-width: 1px;
+    border-left-style: solid;
+    
+    &:hover {
+      color: $gray-900;
+    }
+  }
+
+  &.border-crude {
+    .list-link {
+      border-width: 2px;
+    }
+  }
+}
+
+.sy_list-vertical {
+  @include vertical-rl;
+  .list-item {
+    margin-left: map-get($spacers, 3);
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+  .list-link {
+    padding-top: map-get($spacers, 4);
+    padding-left: 0;
+    border-top-style: solid;
+    border-left: none;
+  }
+}
