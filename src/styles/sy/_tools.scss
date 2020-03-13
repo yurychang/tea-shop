@@ -1,9 +1,8 @@
-$vertical-letter-spacing: 0.2em;
-@mixin vertical-rl {
-  writing-mode: vertical-rl;
-  letter-spacing: $vertical-letter-spacing;
+@mixin circle {
+  border-radius: 50%;
 }
-.vertical-rl {
+
+@mixin vertical-rl {
   writing-mode: vertical-rl;
   letter-spacing: $vertical-letter-spacing;
 }
@@ -24,8 +23,8 @@ $vertical-letter-spacing: 0.2em;
   object-fit: cover;
 }
 
-@mixin circle {
-  border-radius: 50%;
+.hover-shadow:hover {
+  box-shadow: $box-shadow;
 }
 
 @each $key, $val in $grid-breakpoints {
@@ -68,6 +67,18 @@ $vertical-letter-spacing: 0.2em;
       .text-#{key}-$name {
         color: #{$color};
       }
+    }
+  }
+
+  // vertical
+  .vertical-rl {
+    writing-mode: vertical-rl;
+    letter-spacing: $vertical-letter-spacing;
+  }
+  @media (min-width: $val) {
+    .vertical-#{$key}-rl {
+      writing-mode: vertical-rl;
+      letter-spacing: $vertical-letter-spacing;
     }
   }
 }

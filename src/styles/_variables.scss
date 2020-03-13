@@ -42,6 +42,7 @@ $main2: $whiteyellow;
 
 $theme-colors: (
   'main': $main,
+  'mainlight': lighten($main, 15%),
   'whiteyellow': $whiteyellow,
 );
 
@@ -54,6 +55,8 @@ $spacers: (
     $spacer * 7,
   ),
 );
+
+$vertical-letter-spacing: 0.2em;
 
 $font-family-base: 'Noto Sans TC', sans-serif;
 
@@ -77,9 +80,11 @@ $font-sizes: (
   'xs': $font-size-xs,
 );
 
-$body-color:                $gray-700;
+$body-color:            $gray-700;
 
-$link-color:                              $gray-700;
-$link-decoration:                         none;
-$link-hover-color:                        darken($link-color, 15%);
-$link-hover-decoration:                   none;
+$link-color:            $gray-600;
+$link-decoration:       none;
+$link-hover-color:      darken($link-color, 15%);
+$link-hover-decoration: none;
+
+$box-shadow: 0 1px 3px rgba(0, 0, 0, .18);

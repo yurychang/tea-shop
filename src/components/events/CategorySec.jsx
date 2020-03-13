@@ -17,7 +17,7 @@ const Title = styled.h2`
     content: '';
     width: 17px;
     height: 17px;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     padding: 2px;
     border: 1px solid #df641cba;
     border-radius: 50%;
@@ -26,12 +26,9 @@ const Title = styled.h2`
   }
 `
 
-export default function CategorySec({ ...props }) {
+export default function CategorySec({ ...attrs }) {
   return (
-    <section
-      className="d-flex flex-wrap justify-content-center justify-content-sm-start"
-      {...props}
-    >
+    <section {...attrs}>
       <Title className="h4 mb-4">和菓森林</Title>
       <Row>
         {p(

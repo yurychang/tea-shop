@@ -1,13 +1,13 @@
-$dot-size: 12px;
+$dot-size: 14px;
 $line-width: 2px;
-$dl-bg-color: lighten($main, 15%);
+$dl-bg-color: lighten($main, 30%);
 
 .sy_dotline {
   position: relative;
-
+  overflow: hidden;
   .line {
-    position: absolute;
-    top: $dot-size / 2 - 1;
+    // position: absolute;
+    margin-bottom: -$dot-size / 2 - 1;
     height: $line-width;
     width: 100%;
     background-color: $dl-bg-color;
@@ -19,6 +19,7 @@ $dl-bg-color: lighten($main, 15%);
     width: $dot-size;
     height: $dot-size;
     border-radius: 50%;
+    border: 2px solid $white;
     background-color: $dl-bg-color;
   }
 }

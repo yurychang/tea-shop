@@ -1,0 +1,9 @@
+.link-btn {
+  border: none;
+  background-color: $white;
+  color: $link-color;
+  cursor: pointer;
+  &:hover {
+    color: $link-hover-color;
+  }
+}

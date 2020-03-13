@@ -1,0 +1,5 @@
+:root {
+  @each $name, $color in $text-grays {
+    --text-#{$name}: $color;
+  }
+}

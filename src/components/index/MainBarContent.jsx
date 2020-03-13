@@ -6,6 +6,7 @@ import DelayFInR from 'utils/DelayFInR'
 import logoH from 'images/logo-h.svg'
 
 const fadeInAnimate = keyframes`${fadeIn}`
+
 const FixBottom = styled.footer`
   position: absolute;
   bottom: 0;
@@ -13,14 +14,25 @@ const FixBottom = styled.footer`
   right: 0;
   text-align: center;
 `
+
 const FixRight = styled.div`
   position: absolute;
   top: 0;
   right: 0;
 `
+
 const FadeInDiv = styled.div`
   animation: 1.5s ${fadeInAnimate};
 `
+
+const BorderList = styled.ul.attrs( props => ({
+  className: 'sy_list'
+}))`
+  .list-link {
+    border-top: 1px solid;
+  }
+`
+
 const listNames = [
   { name: '尋茶', path: '/' },
   { name: '文化走訪', path: '/events' },
@@ -41,7 +53,7 @@ export default function MainBarContent({ isOpen, onClick }) {
           </FadeInDiv>
         </h1>
         <nav className="mx-auto mt-7">
-          <ul className="sy_list sy_list-vertical mx-auto fs-lg">
+          <BorderList className="sy_list sy_list-vertical border-always mx-auto fs-lg">
             {listNames.map((item, i) => {
               return (
                 <li
@@ -60,7 +72,7 @@ export default function MainBarContent({ isOpen, onClick }) {
                 </li>
               )
             })}
-          </ul>
+          </BorderList>
         </nav>
         <FixBottom className="pb-4">
           <FixRight>
