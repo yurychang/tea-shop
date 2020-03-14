@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-function VendorAbout() {
+function VendorAboutArea() {
     return (
         <>
         <div className="aboutArea col-8 mt-3">
@@ -22,4 +22,4 @@ function VendorAbout() {
     )
 }
 
-export default VendorAbout
+export default VendorAboutArea

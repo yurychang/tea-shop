@@ -64,10 +64,34 @@
 
   .singleProduct{
     width: 250px;
-    height: 450px;
+    height: 380px;
+
+    .card-body{
+      padding: 8px;
+    }
+
+    .producttop{
+      .btn-xs{
+        font-size:6px;
+        padding: 4px;
+
+      }
+    }
+
+    .product-pretext{
+      font-size: 12px;
+    }
+
+    .product-price{
+      color:$main;
+
+    }
+
 
   }
 
   .navColor{
     background-color: $main2;
   }
+
+

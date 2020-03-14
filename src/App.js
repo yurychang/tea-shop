@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Index from 'pages/Index'
 import MainBar from 'components/index/MainBar'
 import './styles/index.scss'
-import VendorIndex from 'pages/VendorIndex'
+import VendorRouter from './components/vendor/VendorRouter'
 import Events from 'pages/Events'
 import Event from 'pages/Event'
 
@@ -20,9 +20,7 @@ function App() {
             <Route path="/events">
               <Events />
             </Route>
-            <Route path="/vendorindex/:id?">
-              <VendorIndex />
-            </Route>
+            <VendorRouter />
             <Route path="/">
               <Index />
             </Route>
