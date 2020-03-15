@@ -94,4 +94,41 @@
     background-color: $main2;
   }
 
+  .singleevent{
+    height: 200px;
+    padding: 0;
+
+    h5{
+      color: $main;
+    }
+
+    .eventVendorInfo{
+      height: 200px;
+    }
+    .vendorEventContent{
+      height: 100px;
+
+    }
+  }
+
+  .discountArea3 img{
+    position: absolute;
+    top:30px;
+    left: 0;
+  }
+  .discountArea3-2 img{
+    position: absolute;
+    top:30px;
+    left: 99px;
+  }
+
+  .discountText3{
+    position: absolute;
+    color: $main2;
+    top: 36px;
+    left: 18px;
+    z-index: 20;
+
+  }
+
 
