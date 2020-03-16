@@ -44,6 +44,16 @@
       ul {
         list-style-type: none;
       }
+      .pj_card-price-amount{
+        margin-bottom:20px;
+        display: flex;
+        float:right;
+        
+      }
+      .pj_cart-btn{
+        display: flex;
+        float:right;
+      }
       .pj_card-comment {
         width: 960px;
         height: 100px;
@@ -136,20 +146,18 @@
                 <li>保存期限：2年</li>
                 <li>保存期限：2年</li>
               </ul>
-              <p class="card-text"></p>
-              <div style="padding-bottom:50px">
-                <div style="float: right">
-                  <p style="margin: 10px; font-size: 24px;">NT $320</p> 
-                </div>
-                <div style="float: right">
-                  <div class="d-flex">
+          
+              <div class="pj_card-price-amount" >
+                <div  class="amount d-flex" >
                    <p style="margin: 10px">數量</p> 
-                    <input type="number" style="margin: 10px;width: 50px;" />
-                  </div>
+                    <input type="number" style="margin: 10px;width: 60px;" />
+                </div>
+                <div  class="pj_price" >
+                  <p style="margin: 10px; font-size: 24px">NT $320</p> 
                 </div>
               </div>
 
-              <div style="float: right" class="d-flex pj_commodity-btn">
+              <div class="pj_cart-btn">
                 <button
                   type="button"
                   class="btn btn-outline-warning m-1 pj_cart-button"

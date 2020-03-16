@@ -16,6 +16,10 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="../../fontawesome-free-5.12.1-web/css/all.css"
+    />
     <style>
       .pj_border-bottom-product {
         border-bottom-style: solid;
@@ -24,22 +28,46 @@
         text-align: center;
         padding: 10px;
       }
-      .container-1 .icon {
-        position: absolute;
-        top: 50%;
-        margin-left: 17px;
-        margin-top: 17px;
+      .pj_box {
+        margin: 30px auto;
+        width: 300px;
+        height: 100px;
+      }
+      .pj_container-1 {
+        margin-bottom: 25px;
         z-index: 1;
         color: #4f5b66;
       }
-      .container-1 input#search:hover,
-      .container-1 input#search:focus,
-      .container-1 input#search:active {
-        outline: none;
-        background: #ffffff;
-      }
       ul {
         list-style-type: none;
+      }
+      .pj_cart-Flavor {
+        border: black solid 1px;
+        border-radius: 10px;
+        margin: 5px;
+        width: 100px;
+        height: 25px;
+        font-size: 14px;
+      }
+      .pj_cart-tea {
+        border: black solid 1px;
+        border-radius: 10px;
+        margin: 5px;
+        width: 100px;
+        height: 25px;
+        font-size: 12px;
+      }
+      .pj_cart-tea p {
+        text-align: center;
+      }
+      .pj_cart-Flavor p {
+        text-align: center;
+      }
+      .pj_card-footer {
+        display: flex;
+      }
+      .pj_card-footer img {
+        float: right;
       }
     </style>
   </head>
@@ -50,15 +78,21 @@
         <div class="row no-gutters">
           <div class="col-md-6">
             <h4>茶種</h4>
-            <div class="box">
-              <div class="container-1">
-                <span class="icon"><i class="fa fa-search"></i></span>
+            <div class="pj_box">
+              <div class="pj_container-1">
+                <i class="fa fa-search" aria-hidden="true"></i>
                 <input type="search" id="search" placeholder="Search..." />
               </div>
-            </div>
-
-            <div class="d-flex">
-              <p>price</p>
+              <div class="d-flex">
+                <p style="padding-right: 10px">price</p>
+                <input
+                  type="text"
+                  min="0"
+                  max="99999"
+                  value="NT$ 0~99999"
+                  style="width: 120px"
+                />
+              </div>
               <section class="range-slider">
                 <span class="rangeValues"></span>
                 <input value="500" min="0" max="999999" step="0" type="range" />
@@ -67,28 +101,28 @@
           </div>
 
           <div class="col-md-6 ">
-            <h4>茶種</h4>
             <div class="pj_container">
-              <ul>
-                <li>綠茶</li>
-                <li>紅茶</li>
-                <li>烏龍茶</li>
-                <li>東方美人茶</li>
-                <li>鐵觀音茶</li>
-                <li>普洱茶</li>
-                <li>金萱茶</li>
+              <h4>茶種</h4>
+              <ul class="d-flex">
+                <li class="pj_cart-tea"><p>綠茶</p></li>
+                <li class="pj_cart-tea"><p>紅茶</p></li>
+                <li class="pj_cart-tea"><p>烏龍茶</p></li>
+                <li class="pj_cart-tea"><p>東方美人茶</p></li>
+                <li class="pj_cart-tea"><p>鐵觀音茶</p></li>
+                <li class="pj_cart-tea"><p>普洱茶</p></li>
+                <li class="pj_cart-tea"><p>金萱茶</p></li>
               </ul>
             </div>
 
-            <h4>風味</h4>
-            <div class="d-flex">
-              <ul>
-                <li>風味</li>
-                <li>風味</li>
-                <li>風味</li>
-                <li>風味</li>
-                <li>風味</li>
-                <li>風味</li>
+            <div>
+              <h4>風味</h4>
+              <ul class="d-flex">
+                <li class="pj_cart-Flavor"><p>風味</p></li>
+                <li class="pj_cart-Flavor"><p>風味</p></li>
+                <li class="pj_cart-Flavor"><p>風味</p></li>
+                <li class="pj_cart-Flavor"><p>風味</p></li>
+                <li class="pj_cart-Flavor"><p>風味</p></li>
+                <li class="pj_cart-Flavor"><p>風味</p></li>
               </ul>
             </div>
           </div>
@@ -104,7 +138,7 @@
               風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ......
             </p>
           </div>
-          <div class="card-footer d-flex">
+          <div class="pj_card-footer">
             <div>NT $320</div>
             <img src="../../images/shopping_cart-24px.svg" alt="" />
           </div>
@@ -117,7 +151,7 @@
               風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ......
             </p>
           </div>
-          <div class="card-footer d-flex">
+          <div class="pj_card-footer">
             <div>NT $320</div>
             <img src="../../images/shopping_cart-24px.svg" alt="" />
           </div>
@@ -130,9 +164,15 @@
               風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ......
             </p>
           </div>
-          <div class="card-footer d-flex">
+          <div class="pj_pj_card-footer">
             <div>NT $320</div>
-            <img src="../../images/shopping_cart-24px.svg" alt="" />
+            <div>
+              <img
+                style="clear: right;"
+                src="../../images/shopping_cart-24px.svg"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>
