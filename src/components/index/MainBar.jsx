@@ -12,7 +12,6 @@ export default function MainBar() {
         {isOpen ? (
           <MainBarContent
             onClick={() => {
-              console.log('onclick')
               setIsOpen(!isOpen)
             }}
           />

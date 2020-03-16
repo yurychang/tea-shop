@@ -13,7 +13,7 @@ export default function MainBarNav({ isOpen, onClick }) {
           expand="lg"
         >
           <button
-            className={`main-bar-brand mb-0 border-0 bg-white outline-0 ${isOpen ? 'pt-4' : ''}`}
+            className={`main-bar-brand mb-0 border-0 bg-white outline-0 ${isOpen ? 'pt-lg-4' : ''}`}
             onClick={onClick}
           >
             <img
@@ -41,22 +41,22 @@ export default function MainBarNav({ isOpen, onClick }) {
               <Nav className="h-100 flex-lg-column text-center">
                 <Nav.Item className="d-lg-none border-bottom">
                   <Nav.Link as="p" className="mb-0">
-                    <Link to="/cart">尋茶</Link>
+                    <Link to="/cart" className="d-block">尋茶</Link>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="d-lg-none border-bottom">
                   <Nav.Link as="p" className="mb-0">
-                    <Link to="/cart">文化走訪</Link>
+                    <Link to="/cart" className="d-block">文化走訪</Link>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="d-lg-none border-bottom">
                   <Nav.Link as="p" className="mb-0">
-                    <Link to="/cart">茗家精選</Link>
+                    <Link to="/cart" className="d-block">茗家精選</Link>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="border-bottom border-bottom-lg-0">
                   <Nav.Link as="p" className="mb-0">
-                    <Link to="/cart">
+                    <Link to="/cart" className="d-block">
                       <i className="fas fa-shopping-cart" />
                       <span className="d-lg-none ml-2">會員中心</span>
                     </Link>
@@ -64,7 +64,7 @@ export default function MainBarNav({ isOpen, onClick }) {
                 </Nav.Item>
                 <Nav.Item className="border-bottom border-bottom-lg-0">
                   <Nav.Link as="p" className="mb-0">
-                    <Link to="/cart">
+                    <Link to="/cart" className="d-block">
                       <i className="fas fa-user" />
                       <span className="d-lg-none ml-2">購物車</span>
                     </Link>
@@ -73,7 +73,7 @@ export default function MainBarNav({ isOpen, onClick }) {
                 <Nav.Item className="flex-grow-1" />
                 <Nav.Item className="mb-lg-2 border-bottom border-bottom-lg-0">
                   <Nav.Link as="p" className="mb-0">
-                    <Link to="/cart">
+                    <Link to="/cart" className="d-block">
                       <i className="fas fa-phone" />
                       <span className="d-lg-none ml-2">聯絡我們</span>
                     </Link>
