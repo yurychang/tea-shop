@@ -14,7 +14,7 @@ export default function EventsList() {
           <Col lg="9">
             <MapHeader />
             {/* <MapImg /> */}
-            <MapInfo />
+            {/* <MapInfo /> */}
           </Col>
         </Row>
       </Container>
