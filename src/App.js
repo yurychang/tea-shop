@@ -20,7 +20,9 @@ function App() {
             <Route path="/events">
               <Events />
             </Route>
-            <VendorRouter />
+            <Route path="/vendor">
+              <VendorRouter />
+            </Route>
             <Route path="/">
               <Index />
             </Route>
