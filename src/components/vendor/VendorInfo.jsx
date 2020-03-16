@@ -1,6 +1,6 @@
 import React from 'react'
 import Figure from 'react-bootstrap/Figure'
-import vendorImg from '../../images/vendor-img.png'
+import vendorImg from '../../images/vendor/vendor-img.png'
 
 
 

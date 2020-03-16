@@ -1,5 +1,5 @@
 import React from 'react'
-import ls_banner from '../../images/ls_banner.jpg'
+import ls_banner from '../../images/vendor/ls_banner.jpg'
 
 
 function VendorBanner() {
