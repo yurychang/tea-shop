@@ -6,6 +6,7 @@ import './styles/index.scss'
 import VendorRouter from './components/vendor/VendorRouter'
 import Events from 'pages/Events'
 import Event from 'pages/Event'
+import Map from 'pages/Map'
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/events">
               <Events />
+            </Route>
+            <Route path="/Map">
+              <Map />
             </Route>
             <VendorRouter />
             <Route path="/">
