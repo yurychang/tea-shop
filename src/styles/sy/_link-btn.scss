@@ -6,4 +6,7 @@
   &:hover {
     color: $link-hover-color;
   }
+  &:focus {
+    outline: none;
+  }
 }

@@ -13,6 +13,11 @@
 
    }
 
+   li{
+    list-style: none;
+  }
+
+
    .vendorNav {
     width: 100%;
     box-shadow: 1px 0px 2px grey;
@@ -21,9 +26,6 @@
       max-width: 800px;
       margin: 0 auto;
 
-      li{
-        list-style: none;
-      }
 
       li a {
         display: inline-block;
@@ -130,5 +132,77 @@
     z-index: 20;
 
   }
+
+  .ls_back-order-body{
+    padding: 0px 30px 0px 0px ;
+
+    .ls_back-order-figure{
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+
+  .noShelves{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    left: 50px;
+    top: 50px;
+    /* box-shadow: rgb(180, 177, 177) 0.1em 0.1em 0.3em; */
+}
+
+.noShelvesText{
+    position: absolute;
+    color: white;
+    left: 89px;
+    top: 110px;
+    font-size: 24px;
+    text-shadow: rgb(95, 93, 93) 0.1em 0.1em 0.2em ;
+}
+
+.w180px{
+  width: 180px;
+}
+
+.timeOut{
+  color: gray;
+}
+
+.ls_bk-color{
+  background-color: $main2;
+}
+
+.ls_backend-nav{
+
+
+  &.active {
+    border-left-style: dashed;
+    border-width: 2px;
+    color: $main;
+  }
+
+}
+
+.ls_backend-order{
+
+
+  &.active {
+    background-color: $main2;
+  }
+
+}
+
+// @include media-breakpoint-up(md) {
+  // .ls_fron-nav{
+  //   position: fixed;
+//     bottom: 0px;
+
+//   }
+
+
+//  }
+
 
 
