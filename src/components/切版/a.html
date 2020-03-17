@@ -5,14 +5,15 @@
     <title>CSS Progress Bar</title>
 
     <style>
-      .progress-title {
+      .pg_progress-title {
         font-size: 17px;
         font-weight: 700;
 
         color: #000;
         margin: 0 0 20px;
       }
-      .progress {
+      .pg_progress {
+        width: 200px;
         height: 7px;
         background: #fff;
         background-color: #ffd9c5;
@@ -22,31 +23,35 @@
         margin-bottom: 40px;
         overflow: visible;
       }
-      .progress .progress-bar {
+      .pg_progress-bar {
+        width: 40%;
+        background: #f26419;
+      }
+      .pg_progress .pg_progress-bar {
         box-shadow: none;
         border-radius: 0;
         position: relative;
         animation: animate-positive 2s;
       }
-      .progress .progress-bar:before,
-      .progress .progress-bar:after {
+      .pg_progress .pg_progress-bar:before,
+      .pg_progress .pg_progress-bar:after {
         content: '';
         width: 20px;
         height: 20px;
         background: #fff;
-        outline: 1px solid #000;
+
         position: absolute;
         top: -7px;
-        left: -1px;
+        left: -2px;
       }
-      .progress .progress-bar:after {
+      .pg_progress .pg_progress-bar:after {
         left: auto;
         right: 0;
       }
-      .progress.orange .progress-bar:before,
-      .progress.orange .progress-bar:after {
+      .pg_progress.pg_orange .pg_progress-bar:before,
+      .pg_progress.pg_orange .pg_progress-bar:after {
         background-color: #f26419;
-        border: 4px solid #f26419;
+        border: 1px solid #000;
         border-radius: 50%;
       }
 
@@ -66,12 +71,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h3 class="progress-title">price - NT$ 0~99999</h3>
-          <div class="progress orange">
-            <div
-              class="progress-bar"
-              style="width:40%; background:#f26419;"
-            ></div>
+          <h3 class="pg_progress-title">price - NT$ 0~99999</h3>
+          <div class="pg_progress pg_orange">
+            <div class="pg_progress-bar"></div>
           </div>
         </div>
       </div>
