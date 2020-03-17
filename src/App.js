@@ -6,6 +6,8 @@ import './styles/index.scss'
 import VendorRouter from './components/vendor/VendorRouter'
 import Events from 'pages/Events'
 import Event from 'pages/Event'
+import Products from 'pages/Products'
+import Commodity from './pages/Commodity'
 
 function App() {
   return (
@@ -19,6 +21,12 @@ function App() {
             </Route>
             <Route path="/events">
               <Events />
+            </Route>
+            <Route path="/products">
+              <Products />
+            </Route>
+            <Route path="/commodity">
+              <Commodity />
             </Route>
             <VendorRouter />
             <Route path="/">

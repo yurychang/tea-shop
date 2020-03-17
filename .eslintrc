@@ -5,12 +5,14 @@
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "space-in-brackets": ["error", "always"]
+    // "space-in-brackets": ["error", "always"],
+    "object-curly-spacing": ["error", "always"]
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "moduleDirectory": ["node_modules", "src/"]
+        "moduleDirectory": ["node_modules", "src/"],
+        "paths": ["src/"]
       }
     }
   }
