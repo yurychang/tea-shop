@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import MapHeader from '../components/Map/MapHeader'
+import MapImg from '../components/Map/MapImg'
 import MapInfo from '../components/Map/MapInfo'
 
 export default function EventsList() {
@@ -13,8 +14,8 @@ export default function EventsList() {
           </Col>
           <Col lg="9">
             <MapHeader />
-            {/* <MapImg /> */}
-            {/* <MapInfo /> */}
+            <MapImg />
+            <MapInfo />
           </Col>
         </Row>
       </Container>
