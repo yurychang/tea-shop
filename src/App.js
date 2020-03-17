@@ -8,6 +8,7 @@ import Events from 'pages/Events'
 import Event from 'pages/Event'
 import Products from 'pages/Products'
 import Commodity from './pages/Commodity'
+import Product from './components/pj_event/Product'
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/commodity">
               <Commodity />
+            </Route>
+            <Route path="/product">
+              <Product />
             </Route>
             <VendorRouter />
             <Route path="/">

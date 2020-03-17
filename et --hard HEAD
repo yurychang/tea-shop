@@ -1,0 +1,412 @@
+[33mcommit b888a3f243b3b4ee467633bc7fbdcc0c2601baef[m[33m ([m[1;36mHEAD -> [m[1;32mpeng[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 43597f2 b3c9cf1
+Author: JEROME <58924145+pengjerome@users.noreply.github.com>
+Date:   Tue Mar 17 17:47:04 2020 +0800
+
+    Merge branch 'master' of https://github.com/peter01twn/tea-shop
+
+[33mcommit b3c9cf1113ac6207e7eca630089de377c2bcd66c[m
+Merge: 1fd98fb 91bb449
+Author: hoyichungg <60167086+hoyichungg@users.noreply.github.com>
+Date:   Tue Mar 17 17:34:28 2020 +0800
+
+    Merge pull request #15 from peter01twn/Luke
+    
+    login-singup
+
+[33mcommit 91bb4494310654296a6201e657b9ec027b8afd1b[m[33m ([m[1;31morigin/Luke[m[33m)[m
+Merge: cf6638b 1fd98fb
+Author: Luke <101416018@stud.sju.edu>
+Date:   Tue Mar 17 17:32:29 2020 +0800
+
+    newpush
+
+[33mcommit cf6638ba3dddb316a1c38fb4c85e436dd4f4b7d8[m
+Author: Luke <101416018@stud.sju.edu>
+Date:   Tue Mar 17 17:25:16 2020 +0800
+
+    login-singup
+
+[33mcommit 43597f2a094666371b9ea58e3b44e0255b074dfa[m
+Merge: 1fd98fb c422484
+Author: JEROME <58924145+pengjerome@users.noreply.github.com>
+Date:   Tue Mar 17 17:21:06 2020 +0800
+
+    Merge branch 'peng'
+
+[33mcommit c42248451947f266fedd4b8a1fd7e1d4bbbcd0ab[m
+Author: JEROME <58924145+pengjerome@users.noreply.github.com>
+Date:   Tue Mar 17 17:19:44 2020 +0800
+
+    切版商品頁面
+
+[33mcommit 926059cdfc66e1ace6d30cabd32172f77aa891fb[m[33m ([m[1;31morigin/peng[m[33m)[m
+Author: JEROME <58924145+pengjerome@users.noreply.github.com>
+Date:   Tue Mar 17 17:13:55 2020 +0800
+
+    商品切版
+
+[33mcommit 4076262ac4ab35efca5e203210b40e52dd26a281[m
+Author: JEROME <58924145+pengjerome@users.noreply.github.com>
+Date:   Tue Mar 17 16:54:32 2020 +0800
+
+    商品切版
+
+[33mcommit 1fd98fb6dcbf94df9ca956b0a5d106c771d2c697[m
+Merge: ef3810b 09d4980
+Author: a8532582 <58924081+a8532582@users.noreply.github.com>
+Date:   Tue Mar 17 16:05:14 2020 +0800
+
+    Merge pull request #14 from peter01twn/Liou
+    
+    addVendorBackendPage
+
+[33mcommit 09d4980256a86b56fbd8c45ce6ddae94a447fabc[m[33m ([m[1;31morigin/Liou[m[33m)[m
+Author: Liou <a8532582@gmail.com>
+Date:   Tue Mar 17 16:03:42 2020 +0800
+
+    addVendorBackendPage
+
+[33mcommit ef3810b1f4a0bd700f4b32d891308116cd555934[m[33m ([m[1;31morigin/peter[m[33m)[m
+Merge: 69b83cf ac6d4c4
+Author: peter <peter01twn@gmail.com>
+Date:   Mon Mar 16 21:19:40 2020 +0800
+
+    Merge branch 'peter'
+
+[33mcommit ac6d4c45b5c1b24d21c4a76cc5d2c5908b99607d[m
+Author: peter <peter01twn@gmail.com>
+Date:   Mon Mar 16 21:16:54 2020 +0800
+
+    Update event page
+
+[33mcommit 69b83cfbea4e20332d3f9c54b713843b79923b6a[m
+Merge: 79a816b 8b3d1fc
+Author: a8532582 <58924081+a8532582@users.noreply.github.com>
+Date:   Mon Mar 16 17:35:32 2020 +0800
+
+    Merge pull request #12 from peter01twn/Liou
+    
+    updateVendorRouter
+
+[33mcommit 8b3d1fc536efc55fb218cf53aa143b4f2df8ebfc[m
+Author: Liou <a8532582@gmail.com>
+Date:   Mon Mar 16 17:34:45 2020 +0800
+
+    updateVendorRouter
+
+[33mcommit 79a816b2f8b6032ce988d450f8878ae388ebffd6[m
+Merge: d859e2b 0a83576
+Author: hoyichungg <60167086+hoyichungg@users.noreply.github.com>
+Date:   Mon Mar 16 15:57:15 2020 +0800
+
+    Merge pull request #11 from peter01twn/Luke
+    
+    addMember
+
+[33mcommit 0a835766bd4206bf48df9de02bca771163dbd44b[m
+Author: Luke <101416018@stud.sju.edu>
+Date:   Mon Mar 16 15:54:47 2020 +0800
+
+    addMenber
+
+[33mcommit d859e2b57e7442ee5c056e20bdb717bd593b5a0e[m
+Merge: 559f953 e2fbbd4
+Author: trinitytaichi <trinitytaichi@icloud.com>
+Date:   Mon Mar 16 15:25:38 2020 +0800
+
+    Merge pull request #10 from peter01twn/John
+    
+    newFile
+
+[33mcommit e2fbbd4ac32113e02efbbf281bba0fb6e59ccb1c[m[33m ([m[1;31morigin/John[m[33m)[m
+Author: trinitytaichi <trinitytaichi@icloud.com>
+Date:   Mon Mar 16 15:23:27 2020 +0800
+
+    newFile
+
+[33mcommit 559f953e16faf336167a64ec3e30025d866885d6[m
+Merge: 164e3b1 9a2ce07
+Author: trinitytaichi <trinitytaichi@icloud.com>
+Date:   Mon Mar 16 15:03:33 2020 +0800
+
+    Merge pull request #9 from peter01twn/John
+    
+    newMsg
+
+[33mcommit 164e3b18f6f9601e72a6d31fc6cb55a33774a454[m
+Author: Randy <infintiegit@gmail.com>
+Date:   Mon Mar 16 14:57:44 2020 +0800
+
+    create Map
+
+[33mcommit 9a2ce07e682cddeb3cf4eea25e09ecd0a0857ae0[m
+Author: trinitytaichi <trinitytaichi@icloud.com>
+Date:   Mon Mar 16 14:55:48 2020 +0800
+
+    newMsg
+
+[33mcommit ffed588eb068d920dc22753d7347d913a5c27cb8[m
+Author: JEROME <58924145+pengjerome@users.noreply.github.com>
+Date:   Mon Mar 16 14:50:16 2020 +0800
+
+    cart切版
+
+[33mcommit d5be1eeb69753786a80f2578edc2c142371b29f1[m
+Merge: de4d9dc 3515cf0
+Author: JEROME <58924145+pengjerome@users.noreply.github.com>
+Date:   Mon Mar 16 14:48:42 2020 +0800
+
+    Merge branch 'master' of https://github.com/peter01twn/tea-shop
+
+[33mcommit 3515cf088d0d14b67480ccae41988e37cf75dc46[m
+Merge: 991c702 2087194
+Author: a8532582 <58924081+a8532582@users.noreply.github.com>
+Date:   Sun Mar 15 16:48:42 2020 +0800
+
+    Merge pull request #8 from peter01twn/Liou
+    
+    0315addVendorDiscount
+
+[33mcommit de4d9dc003a6bda40192a5e33d13ab16fcc065cf[m
+Author: JEROME <58924145+pengjerome@users.noreply.github.com>
+Date:   Sun Mar 15 16:48:00 2020 +0800
+
+    cart 切版
+
+[33mcommit 20871945d3ad048fdb13b494287f7ea24e7fd8b3[m
+Author: Liou <a8532582@gmail.com>
+Date:   Sun Mar 15 16:47:00 2020 +0800
+
+    0315addVendorDiscount
+
+[33mcommit 991c7029a3661358597703aef9f160b6f4cc195c[m
+Merge: 321fb6b 6e0191e
+Author: a8532582 <58924081+a8532582@users.noreply.github.com>
+Date:   Sat Mar 14 20:39:50 2020 +0800
+
+    Merge pull request #7 from peter01twn/Liou
+    
+    addVendorRouterUpdateVendorProduct
+
+[33mcommit 6e0191ea90aa5a327665af606c41dc0a424efbc3[m
+Author: Liou <a8532582@gmail.com>
+Date:   Sat Mar 14 20:37:46 2020 +0800
+
+    addVendorRouterUpdateVendorProduct
+
+[33mcommit 321fb6b689e35b5ca9550a56111be9970aa6b05f[m
+Author: peter <peter01twn@gmail.com>
+Date:   Fri Mar 13 16:16:09 2020 +0800
+
+    Add redux react-redux redux-thunk
+
+[33mcommit 91bd3b236c6ed132806a741c11a034613f334b7a[m
+Merge: 16a7803 db8c6dd
+Author: peter <peter01twn@gmail.com>
+Date:   Fri Mar 13 16:06:06 2020 +0800
+
+    Merge branch 'master' of https://github.com/peter01twn/tea-shop
+
+[33mcommit 16a7803e7657969d6c98511807492d1e12bd0762[m
+Author: peter <peter01twn@gmail.com>
+Date:   Fri Mar 13 16:04:07 2020 +0800
+
+    update events page
+
+[33mcommit db8c6dd08567502c2c073ad8ee5d1f40f619a653[m
+Merge: 328ff83 88df8ea
+Author: a8532582 <58924081+a8532582@users.noreply.github.com>
+Date:   Fri Mar 13 15:35:35 2020 +0800
+
+    Merge pull request #6 from peter01twn/Liou
+    
+    Liou
+
+[33mcommit 88df8ead89f3bcf0ee2e19ba161446547bf5dcbd[m
+Author: Liou <a8532582@gmail.com>
+Date:   Fri Mar 13 15:33:08 2020 +0800
+
+    0313add
+
+[33mcommit c174ad206380d63e47a4c4a1802f3a0e1b095269[m
+Merge: 9084456 328ff83
+Author: Liou <a8532582@gmail.com>
+Date:   Fri Mar 13 10:25:12 2020 +0800
+
+    Merge branch 'master' of https://github.com/peter01twn/tea-shop into Liou
+
+[33mcommit 90844568b32538f9764e819e370e8e283e4f5f6d[m
+Author: Liou <a8532582@gmail.com>
+Date:   Fri Mar 13 10:24:32 2020 +0800
+
+    addVendorProduct
+
+[33mcommit fdf294d685f40d2e80db163164c8ec9b93383fdf[m
+Author: peter <peter01twn@gmail.com>
+Date:   Thu Mar 12 23:16:22 2020 +0800
+
+    correct jsconfig
+    fix previous commit
+
+[33mcommit 328ff83af075c406ec7a8894de5c5c94cb9e4905[m
+Author: peter <peter01twn@gmail.com>
+Date:   Thu Mar 12 23:00:13 2020 +0800
+
+    Add config to import by absolute path
+    look issue to know more detail
+
+[33mcommit 586270f0343b9a440ad12cebbd2bce56348dbec7[m
+Merge: e78992e f9e74af
+Author: peter <peter01twn@gmail.com>
+Date:   Thu Mar 12 22:32:41 2020 +0800
+
+    Merge branch 'peter'
+
+[33mcommit f9e74afb553bfa1fed80a7ae8bb953c9e1d7649f[m
+Author: peter <peter01twn@gmail.com>
+Date:   Thu Mar 12 21:50:48 2020 +0800
+
+    daily (event pages)
+
+[33mcommit e78992e055edd7ec78cd5b115b4b1202697389e0[m
+Merge: d9d2b27 250d22b
+Author: a8532582 <58924081+a8532582@users.noreply.github.com>
+Date:   Thu Mar 12 16:21:04 2020 +0800
+
+    Merge pull request #3 from peter01twn/Liou
+    
+    by Liou
+
+[33mcommit 250d22bada49a5c4002f2bca3fe99f3fe8bb93ac[m
+Author: Liou <a8532582@gmail.com>
+Date:   Thu Mar 12 16:15:15 2020 +0800
+
+    addVendorInfo,Nav,About
+
+[33mcommit d9d2b2710987e6f655d956e26a740dd92097e083[m
+Merge: 5ccef18 7ed2185
+Author: a8532582 <58924081+a8532582@users.noreply.github.com>
+Date:   Thu Mar 12 14:02:47 2020 +0800
+
+    Merge pull request #2 from peter01twn/Liou
+    
+    by Liou
+
+[33mcommit 6deb9af5289cacf320569c76b904ea703b4b3de1[m
+Author: Liou <a8532582@gmail.com>
+Date:   Thu Mar 12 13:57:24 2020 +0800
+
+    0312-add
+
+[33mcommit 7ed21858a8e631d5b2e0bae74d5804402c840fdf[m
+Merge: 1ad528d 5ccef18
+Author: Liou <a8532582@gmail.com>
+Date:   Thu Mar 12 13:45:40 2020 +0800
+
+    0312-pull+merge
+
+[33mcommit 1ad528db9cfae1a159b2c34d7fed117a5bac8d18[m
+Author: Liou <a8532582@gmail.com>
+Date:   Thu Mar 12 13:35:09 2020 +0800
+
+    0312-updateBanner
+
+[33mcommit aaf36a2be96bcf2ebfd0b890d487d01074f11e6c[m
+Author: lioushuyu <a8532582@gmail.com>
+Date:   Thu Mar 12 10:19:33 2020 +0800
+
+    0312check-2
+
+[33mcommit 5ccef1860fd546d4c8c0fb55ab67d3588e534a65[m
+Author: peter <peter01twn@gmail.com>
+Date:   Wed Mar 11 23:34:17 2020 +0800
+
+    edit commit
+
+[33mcommit 871ed541f8399b196859c3da97c7c0af00b8524b[m
+Merge: 3cf9dc7 fe8d339
+Author: peter <peter01twn@gmail.com>
+Date:   Wed Mar 11 23:29:22 2020 +0800
+
+    Merge branch 'master' of https://github.com/peter01twn/tea-shop
+
+[33mcommit 3cf9dc73ff87cf7396d9abed249f739b09d31058[m
+Merge: 8c820b8 a677274
+Author: peter <peter01twn@gmail.com>
+Date:   Wed Mar 11 23:27:35 2020 +0800
+
+    Merge branch 'peter'
+
+[33mcommit fe8d3398022cb88377cb9638bc335c3d0963960a[m
+Merge: 8c820b8 93439ab
+Author: a8532582 <58924081+a8532582@users.noreply.github.com>
+Date:   Wed Mar 11 23:21:19 2020 +0800
+
+    Merge pull request #1 from peter01twn/Liou
+    
+    by Liou
+
+[33mcommit a677274257ef93212ab1c85dee17c8cbb4ebcf5d[m
+Author: peter <peter01twn@gmail.com>
+Date:   Wed Mar 11 23:07:12 2020 +0800
+
+    Rename scss folder to styles
+    update index.scss import
+
+[33mcommit 93439abb73a12698dd1c3ef38d08d96ea850573f[m
+Merge: fcf4ed3 8c820b8
+Author: Liou <a8532582@gmail.com>
+Date:   Wed Mar 11 23:03:11 2020 +0800
+
+    Merge branch 'master' of https://github.com/peter01twn/tea-shop into Liou
+
+[33mcommit 8c820b8622c6484b0cc3f7e442e9b1f5fe0c839a[m
+Author: peter <peter01twn@gmail.com>
+Date:   Wed Mar 11 16:45:26 2020 +0800
+
+    Rename scss to styles
+    update index.scss structure
+
+[33mcommit f040e8e2d7ebba17972483af256e29b39b7413b2[m
+Author: peter <peter01twn@gmail.com>
+Date:   Wed Mar 11 15:54:41 2020 +0800
+
+    Update MainBar
+    Add react-animate / styled-components
+
+[33mcommit fcf4ed3ff1b4ddca6a04e3fb868284ea3764c1d0[m
+Author: lioushuyu <a8532582@gmail.com>
+Date:   Wed Mar 11 11:00:26 2020 +0800
+
+    add VendorIndex
+
+[33mcommit 55d243f95d739c34a795e1c826087f7efa4c35e3[m
+Author: peter <peter01twn@gmail.com>
+Date:   Tue Mar 10 23:36:21 2020 +0800
+
+    update MainBar
+
+[33mcommit 2e0d7d1c42e7f3797f9a22a7a59a083da12657de[m
+Author: peter <peter01twn@gmail.com>
+Date:   Sun Mar 8 16:44:39 2020 +0800
+
+    create MainBar (preview)
+
+[33mcommit 756c0b0c99b9759cf5cfd1c24865e6044fd02fb1[m
+Author: peter <peter01twn@gmail.com>
+Date:   Wed Mar 4 16:32:22 2020 +0800
+
+    init
+
+[33mcommit 04e9a6fc1c34f953a232ae506d103a135bac582f[m
+Author: peter <peter01twn@gmail.com>
+Date:   Tue Mar 3 14:04:54 2020 +0800
+
+    init
+
+[33mcommit c909337c1e484bfb8296057bf609e42fd2288a4d[m
+Author: peter <peter01twn@gmail.com>
+Date:   Tue Mar 3 13:57:21 2020 +0800
+
+    Initialize project using Create React App
