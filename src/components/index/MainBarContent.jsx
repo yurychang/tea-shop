@@ -25,8 +25,8 @@ const FadeInDiv = styled.div`
   animation: 1.5s ${fadeInAnimate};
 `
 
-const BorderList = styled.ul.attrs(props => ({
-  className: 'sy_list',
+const BorderList = styled.ul.attrs( props => ({
+  className: 'sy_list'
 }))`
   .list-link {
     border-top: 1px solid;
@@ -34,7 +34,7 @@ const BorderList = styled.ul.attrs(props => ({
 `
 
 const listNames = [
-  { name: '尋茶', path: '/Commodity' },
+  { name: '尋茶', path: '/' },
   { name: '文化走訪', path: '/events' },
   { name: '茗家精選', path: '/' },
   { name: '茶風味輪', path: '/' },

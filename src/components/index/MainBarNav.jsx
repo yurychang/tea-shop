@@ -13,9 +13,7 @@ export default function MainBarNav({ isOpen, onClick }) {
           expand="lg"
         >
           <button
-            className={`main-bar-brand mb-0 border-0 bg-white outline-0 ${
-              isOpen ? 'pt-4' : ''
-            }`}
+            className={`main-bar-brand mb-0 border-0 bg-white outline-0 ${isOpen ? 'pt-4' : ''}`}
             onClick={onClick}
           >
             <img
@@ -43,7 +41,7 @@ export default function MainBarNav({ isOpen, onClick }) {
               <Nav className="h-100 flex-lg-column text-center">
                 <Nav.Item className="d-lg-none border-bottom">
                   <Nav.Link as="p" className="mb-0">
-                    <Link to="/Commodity">尋茶</Link>
+                    <Link to="/cart">尋茶</Link>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="d-lg-none border-bottom">
