@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { withRouter } from 'react-router'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Container, Row, Col } from 'react-bootstrap'
-import EventsInfo from 'components/event/EventsInfo'
+import { fetchEvents } from 'actions/events'
+import EventInfo from 'components/event/EventInfo'
 import Menu from 'components/event/Menu'
-import RegistRegion from 'components/event/RegistRegion'
+import RegistForm from 'components/event/RegistForm'
 
-export default function Event() {
+function Event({ event = {}, fetchEvents }) {
+  const { title, price, location } = event
+  useEffect(() => {
+    fetchEvents()
+  }, [])
   return (
     <>
       <Container fluid className="pt-4 pt-lg-6 pb-4 pb-lg-7">
@@ -16,11 +24,25 @@ export default function Event() {
             <Menu />
           </Col>
           <Col lg="7" xl="6">
-            <EventsInfo />
-            <RegistRegion />
+            <EventInfo {...event} />
+            <RegistForm title={title} price={price} location={location} />
           </Col>
         </Row>
       </Container>
     </>
   )
 }
+
+const mapStateToProps = ({ events }, { match }) => {
+  const { params } = match
+  const event = events.data.find(
+    event => event.id.toString() === params.id.toString()
+  )
+  return { event }
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ fetchEvents }, dispatch)
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Event))
