@@ -1,0 +1,30 @@
+*{
+    max-height: 1500px;
+}
+// MapHeader
+.ry_border-bottom{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color: #ec8a53;
+    padding: 10px;
+}
+.Header-content{
+    margin: 50px;
+}
+// MapImg
+.ry_img{
+    max-height: 800px;
+    max-width: 500px;
+}
+// MapInfo
+.teagarden-carousel{
+    margin: 30px;
+    max-width: 400px;
+}
+.teagarden-information{
+    margin-left: 30px;
+    max-width: 500px;
+    max-height: 400px;
+    text-align: center;
+  vertical-align: middle;
+}
