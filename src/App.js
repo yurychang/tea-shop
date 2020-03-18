@@ -11,6 +11,7 @@ import Singup from 'pages/Singup'
 import MemberBar from 'components/membercenter/MemberBar'
 import Commodity from './pages/Commodity'
 import Product from './components/pj_event/Product'
+import CartBox from './pages/CartBox'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
 
@@ -43,6 +44,9 @@ function App() {
                 </Route>
                 <Route path="/product">
                   <Product />
+                </Route>
+                <Route path="/cartBox">
+                  <CartBox />
                 </Route>
                 <Route path="/membercenter">
                   <MemberBar />

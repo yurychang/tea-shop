@@ -8,11 +8,13 @@
     .pj_card-img-bottom{
       width: 80px;
       height: 120px;
+      text-align: center;
     }
   .pj_border-top {
     border-top-style: solid;
     border-top-width: medium;
     border-color: #ec8a53;
+    float: right;
     
   }
   .pj_border-top-name{
