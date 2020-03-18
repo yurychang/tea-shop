@@ -15,7 +15,7 @@ function BackendOrder(props) {
         <hr />
         <div class="order-area">
           <div class="d-flex justify-content-end">
-            <button class="btn btn-primary mb-2 "><Link to="/dashboard/order/">回上頁</Link></button>
+            <Link className="btn btn-primary mb-2" to="/dashboard/order/">回上頁</Link>
           </div>
 
           <form class="col-6 mb-3" action="">
