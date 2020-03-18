@@ -12,7 +12,7 @@ function BackendMsg() {
             <h3>訊息管理</h3>
       <hr />
       <div class="d-flex justify-content-end">
-        <button  class="btn btn-primary mb-2 ">新增推播訊息</button>
+        <Link  class="btn btn-primary mb-2" to="/dashboard/msg/add">新增推播訊息</Link>
       </div>
 
       <div class="msgArea">

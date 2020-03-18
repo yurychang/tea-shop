@@ -13,6 +13,7 @@ import Commodity from './pages/Commodity'
 import Product from './components/pj_event/Product'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
+import VendorLogintest from 'pages/VendorLogintest'
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
                 <Route path="/events">
                   <Events />
                 </Route>
+                <Route path="/login/vendor">
+                <VendorLogintest />
+              </Route>
                 <Route path="/login">
                   <Login />
                 </Route>

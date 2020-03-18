@@ -173,7 +173,13 @@
   background-color: $main2;
 }
 
+
 .ls_backend-nav{
+  padding: 4px 8px;
+
+  ul{
+    padding: 0;
+  }
 
 
   &.active {
@@ -190,6 +196,24 @@
   &.active {
     background-color: $main2;
   }
+
+}
+
+.ls-login-header{
+  border: 1px solid #bdbdbd75;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  margin-top: 100px;
+
+  ul{
+    padding: 0px;
+
+  }
+
 
 }
 
