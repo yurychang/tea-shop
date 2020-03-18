@@ -4,7 +4,7 @@ import React from 'react'
 function MapImg() {
   return (
     <>
-      <img className="ry_img d-block" src="https://fakeimg.pl/400x800/" />
+      <img className="ry_img w-100" src="https://fakeimg.pl/400x800/" />
     </>
   )
 }

@@ -14,8 +14,10 @@ export default function EventsList() {
           </Col>
           <Col lg="9">
             <MapHeader />
-            <MapImg />
-            <MapInfo />
+            <div className="d-flex">
+              <MapImg />
+              <MapInfo />
+            </div>
           </Col>
         </Row>
       </Container>
