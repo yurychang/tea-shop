@@ -13,7 +13,6 @@ function VendorIndex() {
       <div className="vendorWrapper d-flex justify-content-around">
         <VendorInfo />
         <VendorProduct />
-
       </div>
     </>
   )
