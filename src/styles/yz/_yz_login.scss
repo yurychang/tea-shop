@@ -1,7 +1,6 @@
 .yz-header {
   border: 1px solid #bdbdbd75;
   border-radius: 10px;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 500px;
@@ -10,17 +9,18 @@
 }
 
 .login {
-  margin-bottom: 60px;
+  margin: 30px 0px;
   text-align: center;
 }
-.btn-login {
+.yz_btn-login {
   width: 310px;
   height: 75px;
   color: #ffffff;
   background-color: #df641c;
-  border-color: #df641c;
+  line-height: 75px;
   border-radius: 10px;
   margin-left: 25px;
+  box-shadow: $box-shadow;
 }
 .yz-froget {
   margin-top: 10px;
@@ -33,15 +33,15 @@
   height: 40px;
   color: #ffffff;
   background-color: #156ff5;
-  border-color: #156ff5;
   border-radius: 10px;
+  line-height: 40px;
 }
 .gmail {
   width: 100%;
   height: 40px;
   color: #ffffff;
+  line-height: 40px;
   background-color: #f13636;
-  border-color: #f13636;
   border-radius: 10px;
   margin-top: 10px;
 }
@@ -77,3 +77,4 @@
     height: 110px;
   }
 }
+
