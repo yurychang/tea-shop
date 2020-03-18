@@ -11,23 +11,41 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <MainBar />
-        <div className="sy_main-content">
-          <Switch>
-            <Route path="/events/:vendor/:id?">
-              <Event />
-            </Route>
-            <Route path="/events">
-              <Events />
-            </Route>
-            <Route path="/vendor">
-              <VendorRouter />
-            </Route>
-            <Route path="/">
-              <Index />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/dashboard">
+            <p>asdasd</p>
+            <Switch>
+              <Route path="/dashboard/events">
+                <p>dashboard/events</p>
+              </Route>
+              <Route path="/dashboard/vendor">
+                <p>dashboard/vendor</p>
+              </Route>
+              <Route path="/">
+                <p>dashboard</p>
+              </Route>
+            </Switch>
+          </Route>
+          <Route path="/">
+            <MainBar />
+            <div className="sy_main-content">
+              <Switch>
+                <Route path="/events/:vendor/:id?">
+                  <Event />
+                </Route>
+                <Route path="/events">
+                  <Events />
+                </Route>
+                <Route path="/vendor">
+                  <VendorRouter />
+                </Route>
+                <Route path="/">
+                  <Index />
+                </Route>
+              </Switch>
+            </div>
+          </Route>
+        </Switch>
       </Router>
     </div>
   )

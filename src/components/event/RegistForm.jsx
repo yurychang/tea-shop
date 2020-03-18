@@ -15,106 +15,127 @@ const SubmitBtn = styled.button.attrs(props => ({
     display: block;
   }
 `
+const formikConfig = {
+  initialValues: {
+    name: '',
+    phone: '',
+    email: '',
+    date: '',
+    time: '',
+    num: '',
+    note: '',
+  },
+  validationSchema: Yup.object({
+    name: Yup.string().required('Required'),
+    phone: Yup.number()
+      .typeError('not a phone number')
+      .required('required'),
+    email: Yup.string()
+      .email('Invalid email address')
+      .required('Required'),
+    date: Yup.date()
+      .required('Required')
+      .min(Date(), 'before'),
+    num: Yup.number()
+      .typeError('NaN')
+      .required('required')
+      .min(1, 'too small'),
+    time: Yup.string().required('required'),
+  }),
+  onSubmit: (values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2))
+      // setSubmitting(false)
+    }, 400)
+  },
+}
 
-export default function RegistForm() {
+export default function RegistForm({ title, price, location, onSubmit }) {
   return (
     <>
-      <Formik
-        initialValues={{
-          name: '',
-          phone: '',
-          email: '',
-          date: '',
-          time: '',
-          num: '',
-          note: '',
-        }}
-        validationSchema={Yup.object({
-          name: Yup.string().required('Required'),
-          phone: Yup.number()
-            .typeError('not a phone number')
-            .required('required'),
-          email: Yup.string()
-            .email('Invalid email address')
-            .required('Required'),
-          date: Yup.date()
-            .required('Required')
-            .min(Date(), 'before'),
-          num: Yup.number()
-            .typeError('NaN')
-            .required('required')
-            .min(1, 'too small'),
-          time: Yup.string().required('required'),
-        })}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
-        }}
-      >
-        <Form>
-          <BsForm.Group bsPrefix="sy_form-group">
-            <label htmlFor="name">聯絡人：</label>
-            <FormErr name="name"></FormErr>
-            <Field name="name" type="text" className="sy_form-control" />
-          </BsForm.Group>
-          <Row>
-            <Col md="4">
-              <BsForm.Group bsPrefix="sy_form-group">
-                <label htmlFor="phone">連絡電話：</label>
-                <FormErr name="phone"></FormErr>
-                <Field name="phone" type="text" className="sy_form-control" />
-              </BsForm.Group>
-            </Col>
-            <Col md="8">
-              <BsForm.Group bsPrefix="sy_form-group">
-                <label htmlFor="email">E-mail：</label>
-                <FormErr name="email" />
-                <Field name="email" type="email" className="sy_form-control" />
-              </BsForm.Group>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm="4">
-              <BsForm.Group bsPrefix="sy_form-group">
-                <label htmlFor="date">日期：</label>
-                <FormErr name="date" />
-                <Field type="date" name="date" className="sy_form-control" />
-              </BsForm.Group>
-            </Col>
-            <Col sm="4">
-              <BsForm.Group bsPrefix="sy_form-group">
-                <label htmlFor="time">時間：</label>
-                <FormErr name="time" />
-                <Field type="time" name="time" className="sy_form-control" />
-              </BsForm.Group>
-            </Col>
-            <Col sm="4">
-              <BsForm.Group bsPrefix="sy_form-group">
-                <label htmlFor="num">人數：</label>
-                <FormErr name="num" />
-                <Field name="num" type="number" className="sy_form-control" />
-              </BsForm.Group>
-            </Col>
-          </Row>
-          <BsForm.Group bsPrefix="sy_form-group" className="d-md-flex mt-md-3">
-            <label htmlFor="num">備註：</label>
-            <Field
-              as="textarea"
-              className="sy_form-control"
-              style={{ height: '100px' }}
-              name="note"
-            />
-            <SubmitBtn
-              type="submit"
-              className="ml-md-4 mt-2 py-1 px-3 bg-mainlight text-white fs-sm"
+      <div className="my-5 pl-lg-5 pt-7 border-lg-left border-secondary">
+        <div className="d-flex mb-3">
+          <span className="text-mainlight mr-2">預約</span>
+          <h2 className="fs-lg">{title}</h2>
+        </div>
+        <div className="mb-4">
+          <span className="mr-5">${price}/人</span>
+          <span>
+            <i className="fas fa-map-marker-alt fa-sm mr-1" />
+            {location}
+          </span>
+        </div>
+        <Formik {...formikConfig}>
+          <Form id="registForm">
+            <BsForm.Group bsPrefix="sy_form-group">
+              <label htmlFor="name">聯絡人：</label>
+              <FormErr name="name"></FormErr>
+              <Field name="name" type="text" className="sy_form-control" />
+            </BsForm.Group>
+            <Row>
+              <Col md="4">
+                <BsForm.Group bsPrefix="sy_form-group">
+                  <label htmlFor="phone">連絡電話：</label>
+                  <FormErr name="phone"></FormErr>
+                  <Field name="phone" type="text" className="sy_form-control" />
+                </BsForm.Group>
+              </Col>
+              <Col md="8">
+                <BsForm.Group bsPrefix="sy_form-group">
+                  <label htmlFor="email">E-mail：</label>
+                  <FormErr name="email" />
+                  <Field
+                    name="email"
+                    type="email"
+                    className="sy_form-control"
+                  />
+                </BsForm.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm="4">
+                <BsForm.Group bsPrefix="sy_form-group">
+                  <label htmlFor="date">日期：</label>
+                  <FormErr name="date" />
+                  <Field type="date" name="date" className="sy_form-control" />
+                </BsForm.Group>
+              </Col>
+              <Col sm="4">
+                <BsForm.Group bsPrefix="sy_form-group">
+                  <label htmlFor="time">時間：</label>
+                  <FormErr name="time" />
+                  <Field type="time" name="time" className="sy_form-control" />
+                </BsForm.Group>
+              </Col>
+              <Col sm="4">
+                <BsForm.Group bsPrefix="sy_form-group">
+                  <label htmlFor="num">人數：</label>
+                  <FormErr name="num" />
+                  <Field name="num" type="number" className="sy_form-control" />
+                </BsForm.Group>
+              </Col>
+            </Row>
+            <BsForm.Group
+              bsPrefix="sy_form-group"
+              className="d-md-flex mt-md-3"
             >
-              Submit
-            </SubmitBtn>
-          </BsForm.Group>
-        </Form>
-      </Formik>
+              <label htmlFor="num">備註：</label>
+              <Field
+                as="textarea"
+                className="sy_form-control"
+                style={{ height: '100px' }}
+                name="note"
+              />
+              <SubmitBtn
+                type="submit"
+                className="ml-md-4 mt-2 py-1 px-3 bg-mainlight text-white fs-sm"
+              >
+                Submit
+              </SubmitBtn>
+            </BsForm.Group>
+          </Form>
+        </Formik>
+      </div>
     </>
   )
 }
