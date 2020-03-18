@@ -1,9 +1,7 @@
 import React from 'react'
 import CommodityImg from '../components/pj_event/CommodityImg'
 import CommoditInformation from '../components/pj_event/CommoditInformation'
-import ProductReviews from '../components/pj_event/ProductReviews'
-
-function Commodity() {
+import ProductReviews from '../components/pj_event/ProductReviommodity() {
   return (
     <>
       <div className="container pj_container">
