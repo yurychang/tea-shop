@@ -8,7 +8,7 @@ import Events from 'pages/Events'
 import Event from 'pages/Event'
 import Login from 'pages/Login'
 import Singup from 'pages/Singup'
-import MemberBar from 'components/membercenter/MemberBar'
+import MemberRouter from 'router/MemberRouter'
 import Commodity from './pages/Commodity'
 import Product from './components/pj_event/Product'
 //這是網址
@@ -49,7 +49,7 @@ function App() {
                   <Product />
                 </Route>
                 <Route path="/membercenter">
-                  <MemberBar />
+                  <MemberRouter />
                 </Route>
                 <VendorRouter />
                 <Route path="/">
