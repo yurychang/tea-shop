@@ -12,7 +12,7 @@ const FadeInDiv = styled.div`
 `
 
 const listNames = [
-  { name: '尋茶', path: '/' },
+  { name: '尋茶', path: '/Commodity' },
   { name: '文化走訪', path: '/events' },
   { name: '茗家精選', path: '/' },
   { name: '茶風味輪', path: '/' },
