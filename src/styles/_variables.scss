@@ -43,7 +43,7 @@ $main2: $whiteyellow;
 $theme-colors: (
   'main': $main,
   'mainlight': lighten($main, 15%),
-  'whiteyellow': $whiteyellow,
+  'main2': $whiteyellow,
 );
 
 $spacer: 1rem;
@@ -89,3 +89,4 @@ $link-hover-decoration: none;
 
 $box-shadow: 0 0 4px rgba(0, 0, 0, .4);
 $btn-font-size-xs: $font-size-xs
+

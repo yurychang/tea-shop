@@ -8,6 +8,8 @@ import BackendEvents from '../components/backend/BackendEvents'
 import BackendData from '../components/backend/BackendData'
 import BackendDiscount from 'components/backend/BackendDiscount'
 import BackendOrderDetail from '../components/backend/BackendOrderDetail'
+import BackendAddProduct from '../components/backend/BackendAddProduct'
+import BackendAddMsg from '../components/backend/BackendAddMsg'
 
 
 function BackendRouter() {
@@ -27,8 +29,14 @@ function BackendRouter() {
                     <Route path='/dashboard/:id?/order/'>
                         <BackendOrder />
                     </Route>
+                    <Route path='/dashboard/:id?/product/add'>
+                        <BackendAddProduct />
+                    </Route>
                     <Route path='/dashboard/:id?/product/:productid?'>
                         <BackendProduct />
+                    </Route>
+                    <Route path='/dashboard/:id?/msg/add'>
+                        <BackendAddMsg />
                     </Route>
                     <Route path='/dashboard/:id?/msg/:msgid?'>
                         <BackendMsg />

@@ -1,6 +1,5 @@
 
 .ls_banner{
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     width: 100%;
     max-height: 350px;
     overflow: hidden;
@@ -174,7 +173,13 @@
   background-color: $main2;
 }
 
+
 .ls_backend-nav{
+  padding: 4px 8px;
+
+  ul{
+    padding: 0;
+  }
 
 
   &.active {
@@ -193,6 +198,48 @@
   }
 
 }
+
+.ls-login-header{
+  border: 1px solid #bdbdbd75;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  margin-top: 100px;
+
+  ul{
+    padding: 0px;
+
+  }
+
+
+}
+
+.ls_login-nav{
+
+  ul{
+    margin: 0px 20px;
+    padding: 0px;
+  }
+
+
+  &.active {
+    border-bottom-style: solid;
+    border-width: 4px;
+    color: $main;
+  }
+
+
+}
+
+.ls_login-btn{
+  box-shadow: $box-shadow;
+}
+
+
+
+
 
 // @include media-breakpoint-up(md) {
   // .ls_fron-nav{

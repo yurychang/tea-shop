@@ -11,8 +11,7 @@ function BackendEvents() {
             <div className="content col-10">
                 <h3>活動管理</h3>
                 <hr />
-
-                <ul className="nav mb-4">
+                <ul className="nav ">
                     <li className="nav-item">
                         <Link className="nav-link active" to="#">全部活動</Link>
                     </li>
@@ -23,12 +22,9 @@ function BackendEvents() {
                         <Link className="nav-link" to="#">已過期活動</Link>
                     </li>
                 </ul>
-
-                <div className="card-header d-flex justify-content-between mb-4">
-                    <div className="product-img">活動名稱</div>
-                    <div className="order-price"></div>
-                    <div className="order-status"></div>
-                </div>
+                <div className="d-flex justify-content-end  mb-2">
+                                <button  className="btn btn-primary ">新增活動</button>
+                            </div>
 
                 <div className="card mb-4">
                     <div className="card-header d-flex justify-content-between">
