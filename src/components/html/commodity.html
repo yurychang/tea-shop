@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>commodity</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../fontawesome-free-5.12.1-web/css/all.min.css">
+    <style>
+     .container{
+        max-width: 960px;
+        }
+        .pj_card-img{
+          width: 450px;
+          height: 450px;
+        }
+        .pj_card-img-bottom{
+          width: 80px;
+          height: 120px;
+        }
+      .pj_border-top {
+        border-top-style: solid;
+        border-top-width: medium;
+        border-color: #ec8a53;
+        
+      }
+      .pj_border-top-name{
+        float: right;
+      }
+      .pj_card-text{
+          padding: 50px  10px 20px 10px;
+      }
+      ul {
+        list-style-type: none;
+      }
+      .pj_card-price-amount{
+        margin-bottom:20px;
+        display: flex;
+        float:right;
+        
+      }
+      .pj_cart-btn{
+        display: flex;
+        float:right;
+      }
+      .pj_card-comment {
+        width: 960px;
+        height: 100px;
+        background-color: #fffbf8;
+      }
+      .pj_card-comment-in {
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px ;
+        /* text-align: center; */
+      }
+      .pj_card-comment-number {
+        font-size: 24px;
+      }
+      .pj_card-comment-star{
+          margin: 5px;
+      }
+   
+      .pj_card-comment-box {
+        width: 100px;
+        height: 25px;
+        background-color: rgb(255, 255, 255);
+        margin: 10px;
+        text-align: center;
+      }
+
+      .pj_card-comment-box-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: black;
+      }
+      .pj_card-comment-name {
+        padding-left: 20px;
+      }
+      .pj_card-comment-name-content {
+        border-bottom-style: solid;
+        border-top-width: 1px;
+        border-color: #ec8a53;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--------------------------- 商品頁面  ---------------------------------------------->
+    <div class="container">
+      <div class="card mb-4">
+        <div class="row no-gutters">
+          <div class="col-md-6">
+            <div class="pj_card-img">
+            <img src="../../images/01.jpg" class="card-img p-2 " alt="..." />
+          </div>
+            <div class="d-flex">
+              <img
+                src="../../images/01.jpg"
+                class="pj_card-img-bottom p-2 col-md-3"
+                alt="..."
+              />
+              <img
+                src="../../images/01.jpg"
+                class="pj_card-img-bottom p-2 col-md-3"
+                alt="..."
+              />
+              <img
+                src="../../images/01.jpg"
+                class="pj_card-img-bottom p-2 col-md-3"
+                alt="..."
+              />
+              <img
+                src="../../images/01.jpg"
+                class="pj_card-img-bottom p-2 col-md-3"
+                alt="..."
+              />
+            </div>
+          </div>
+       
+          <div class="col-md-6">
+            <div class="card-body">
+              <h2 class="card-title">阿里山清香烏龍茶 - 高山茶</h2>
+              <!-- <div class="section5-line"></div> -->
+              <div class="section5-text6">
+                <div class="pj_border-top"> <h5 
+                  class="pj_border-top-name">日月潭老茶廠</h5> 
+                </div>
+              </div>
+              <p class="pj_card-text">
+                紅玉為使用有機栽培的茶菁製作而成的有機紅茶。茶乾聞起來有股薄荷的清新涼氣，沖泡時茶香四溢，茶湯口感飽滿收斂性強，同時薄荷的清涼感在口腔內慢慢擴散開來，這就是讓喜愛紅茶的茶友為之著迷的獨特性。
+              </p>
+              <ul >
+                <li>容量：12包 / 50g</li>
+                <li>保存期限：2年</li>
+                <li>保存期限：2年</li>
+              </ul>
+          
+              <div class="pj_card-price-amount" >
+                <div  class="amount d-flex" >
+                   <p style="margin: 10px">數量</p> 
+                    <input type="number" style="margin: 10px;width: 60px;" />
+                </div>
+                <div  class="pj_price" >
+                  <p style="margin: 10px; font-size: 24px">NT $320</p> 
+                </div>
+              </div>
+
+              <div class="pj_cart-btn">
+                <button
+                  type="button"
+                  class="btn btn-outline-warning m-1 pj_cart-button"
+                >
+                  加入購物車
+                  <img src="../../images/favorite_border-24px.svg" alt="" />
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-warning m-1 pj_cart-button"
+                >
+                  直接購物車
+                  <img src="../../images/shopping_cart-24px.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--------------------------- 商品評論  ---------------------------------------------->
+    <div class="container">
+      <h2>商品評論</h2>
+      <div class="pj_card-comment">
+        <div class="d-flex pj_card-comment-in"> 
+          <div class="pj_card-comment-number">5/5</div>
+          <div class="pj_card-comment-star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <!-- <i class="fa fa-star-o" aria-hidden="true"></i> -->
+          </div>
+          <div class="pj_card-comment-box">全部</div>
+          <div class="pj_card-comment-box">5星</div>
+          <div class="pj_card-comment-box">4星</div>
+          <div class="pj_card-comment-box">3星</div>
+          <div class="pj_card-comment-box">2星</div>
+          <div class="pj_card-comment-box">1星</div>
+        </div>
+      </div>
+      <div style="margin-top: 30px;" class="d-flex">
+        <div class="pj_card-comment-box-circle"></div>
+        <div class="pj_card-comment-name">J****e</div>
+        <div class="pj_card-comment-star1">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <!-- <i class="fa fa-star-o" aria-hidden="true"></i> -->
+            </div>
+      </div>
+      <div class="pj_card-comment-name-content">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, libero,
+        architecto officiis deserunt consequuntur possimus ab ea asperiores
+        laudantium sed harum, aspernatur sequi molestiae repellendus distinctio
+        dolorum non perferendis nulla.
+      </div>
+      <div style="margin-top: 30px;" class="d-flex">
+        <div class="pj_card-comment-box-circle"></div>
+        <div class="pj_card-comment-name">J****e</div>
+      </div>
+      <div class="pj_card-comment-name-content">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, libero,
+        architecto officiis deserunt consequuntur possimus ab ea asperiores
+        laudantium sed harum, aspernatur sequi molestiae repellendus distinctio
+        dolorum non perferendis nulla.
+      </div>
+    </div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

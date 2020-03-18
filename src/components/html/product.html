@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Reqlired meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../../fontawesome-free-5.12.1-web/css/all.css"
+    />
+    <style>
+      .pj_border-bottom-product {
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-color: #ec8a53;
+        text-align: center;
+        padding: 10px;
+      }
+      .pj_box {
+        margin: 30px auto;
+        width: 300px;
+        height: 100px;
+      }
+      .pj_container-1 {
+        margin-bottom: 25px;
+        z-index: 1;
+        color: #4f5b66;
+      }
+      .pj_container-button {
+        /* width: 200px; */
+      }
+      .pj_cart-tea{
+        margin: 20px;
+      }
+      .pj_cart-Flavor {
+        border: black solid 1px;
+        border-radius: 10px;
+        margin: 5px;
+        width: 100px;
+        height: 25px;
+        font-size: 14px;
+      }
+
+      .pj_btn {
+        font: bold;
+      }
+      .pj_btn {
+        padding: 2px;
+        font-size: 14px;
+        background-color: brown;
+        
+      }
+
+      .pj_cart-Flavor p {
+        text-align: center;
+      }
+      .pj_card-footer {
+        display:flex;
+        justify-content: space-between;
+        padding: 5px 15px;
+      }
+      .pj_card-footer img {
+        float: right;
+      }
+
+      /* --------------- */
+      .main {
+        width: 50%;
+        margin: 50px auto;
+      }
+      .has-search .form-control {
+        padding-left: 2.375rem;
+      }
+
+      .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="pj_border-bottom-product">產品列表</h1>
+      <div class="mb-4">
+        <div class="row no-gutters">
+          <div class="col-md-6">
+            <h4>茶種</h4>
+            <div class="pj_box">
+              <div class="pj_container-1">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" placeholder="Search..." />
+              </div>
+              <div class="d-flex">
+                <p style="padding-right: 10px">price</p>
+                <input
+                  type="text"
+                  min="0"
+                  max="99999"
+                  value="NT$ 0~99999"
+                  style="height: 25px;"
+                />
+              </div>
+           <!-- ---------aaa -->
+            </div>
+          </div>
+
+          <div class="col-md-6 ">
+            <div class="pj_cart-tea">
+              <h4>茶種</h4>
+              <div class="pj_container-button"><button type="button" class="btn btn-primary pj_btn">綠茶</button>
+                <button type="button" class="btn btn-secondary pj_btn">紅茶</button>
+                <button type="button" class="btn btn-success pj_btn">烏龍茶</button>
+                <button type="button" class="btn btn-danger pj_btn">東方美人茶</button>
+                <button type="button" class="btn btn-warning pj_btn">鐵觀音茶</button>
+                <button type="button" class="btn btn-info pj_btn">普洱茶</button>
+                <button type="button" class="btn btn-dark pj_btn">金萱茶</button>
+              </div>
+            </div>
+
+            <div>
+              <h4>風味</h4>
+              <ul class="d-flex">
+                <div class="pj_container-button">
+                  <button type="button" class="btn btn-outline-primary pj_btn">
+                    風味
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary pj_btn"
+                  >
+                    風味
+                  </button>
+                  <button type="button" class="btn btn-outline-success pj_btn">
+                    風味
+                  </button>
+                  <button type="button" class="btn btn-outline-danger pj_btn">
+                    風味
+                  </button>
+                  <button type="button" class="btn btn-outline-warning pj_btn">
+                    風味
+                  </button>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- -------------產品圖 ---------------------->
+      <div class="card-deck">
+        <div class="card">
+          <img src="../../images/01.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">古典日月英式紅茶 - 風華五十年 280g</h5>
+            <p class="card-text">
+              風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ......
+            </p>
+          </div>
+          <div class="pj_card-footer">
+            <div>NT $320</div>
+            <img src="../../images/shopping_cart-24px.svg" alt="" />
+          </div>
+        </div>
+        <div class="card">
+          <img src="../../images/01.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">古典日月英式紅茶 - 風華五十年 280g</h5>
+            <p class="card-text">
+              風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ......
+            </p>
+          </div>
+          <div class="pj_card-footer">
+            <div>NT $320</div>
+            <img src="../../images/shopping_cart-24px.svg" alt="" />
+          </div>
+        </div>
+        <div class="card">
+          <img src="../../images/01.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">古典日月英式紅茶 - 風華五十年 280g</h5>
+            <p class="card-text">
+              風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ......
+            </p>
+          </div>
+          <div class="pj_card-footer">
+           
+            <div>NT $320</div>
+           <div style="float: right">
+              <img   src="../../images/shopping_cart-24px.svg" alt="" />
+            </div>
+         
+         
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -----------------aa -->
+
+    <div class="main">
+      <!-- Actual search box -->
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control" placeholder="Search" />
+      </div>
+
+    
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
-@import "./variables";
+@import './variables';
 
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 @import './sy/root';
 @import './sy/tools';
@@ -9,3 +9,9 @@
 @import './sy/sy_main-bar';
 @import './sy/sy_dotline';
 @import './sy/link-btn';
+@import './pj/pj';
+@import './pj/pj-product';
+@import './yz/yz_login';
+@import './yz/yz_singup';
+@import './sy/sy_form';
+@import './sy/sy_btn';

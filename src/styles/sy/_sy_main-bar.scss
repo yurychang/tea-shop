@@ -33,23 +33,21 @@ $view-height: 100vh;
 
   .main-bar-content {
     flex: 1 0;
-    height: $view-height;
     z-index: $zindex-modal + 1;
   }
 }
 
 .sy_main-bar.active {
-  width: 100vw;
+  width: 100%;
 }
 
 @include media-breakpoint-down(md) {
   .sy_main {
     display: block;
   }
-
   .sy_main-bar {
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     min-height: $bar-width;
     height: auto;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18);
