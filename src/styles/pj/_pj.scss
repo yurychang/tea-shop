@@ -1,0 +1,93 @@
+.container {
+  max-width: 960px;
+
+  $cardImg: 450px;
+  .pj_card-img {
+    width: $cardImg;
+    height: $cardImg;
+  }
+  .pj_card-img-bottom {
+    width: 80px;
+    height: 120px;
+  }
+  .pj_border-top {
+    border-top-style: solid;
+    border-top-width: medium;
+    border-color: #ec8a53;
+    .pj_border-top-name {
+      float: right;
+    }
+  }
+
+  .pj_card-text {
+    padding: 50px 10px 20px 10px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  .pj_card-price-amount {
+    margin-bottom: 20px;
+    display: flex;
+    float: right;
+    .pj_card-price-p {
+      margin: 10px;
+    }
+    .pj_card-price-input {
+      margin: 10px;
+      width: 60px;
+    }
+    .pj_card-price {
+      margin: 10px;
+      font-size: 24px;
+    }
+  }
+  .pj_cart-btn {
+    display: flex;
+    float: right;
+  }
+  //------------ 商品評論  -----------
+  .pj_card-comment {
+    width: 960px;
+    height: 100px;
+    background-color: #fffbf8;
+  }
+  .pj_card-comment-in {
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+
+    .pj_card-comment-number {
+      font-size: 24px;
+      .pj_card-comment-star {
+        margin: 5px;
+      }
+    }
+  }
+
+  .pj_card-comment-box {
+    width: 100px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    text-align: center;
+  }
+  .pj_card-comment-box-on {
+    margin-top: 30px;
+    .pj_card-comment-box-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: black;
+      .pj_card-comment-name {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .pj_card-comment-name-content {
+    border-bottom-style: solid;
+    border-top-width: 1px;
+    border-color: #ec8a53;
+    padding: 20px;
+  }
+}

@@ -9,40 +9,17 @@ import Event from 'pages/Event'
 import Login from 'pages/Login'
 import Singup from 'pages/Singup'
 import MemberBar from 'components/membercenter/MemberBar'
+import Commodity from './pages/Commodity'
+import Product from './components/pj_event/Product'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
 
 function App() {
   return (
-
     <div className="App">
       <Router>
-        <MainBar />
-        <div className="sy_main-content">
-          <Switch>
-            <Route path="/events/:vendor/:id?">
-              <Event />
-            </Route>
-            <Route path="/events">
-              <Events />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/singup">
-              <Singup />
-            </Route>
-            <Route path="/membercenter">
-              <MemberBar />
-            </Route>
-            <VendorRouter />
-            <Route path="/">
-              <Index />
-            </Route>
-          </Switch>
-        </div>
         <Switch>
-          <Route path='/dashboard'>
+          <Route path="/dashboard">
             <BackendRouter />
           </Route>
           <Route path="/">
@@ -55,9 +32,22 @@ function App() {
                 <Route path="/events">
                   <Events />
                 </Route>
-                <Route path="/vendor">
-                  <VendorRouter />
+                <Route path="/login">
+                  <Login />
                 </Route>
+                <Route path="/singup">
+                  <Singup />
+                </Route>
+                <Route path="/commodity">
+                  <Commodity />
+                </Route>
+                <Route path="/product">
+                  <Product />
+                </Route>
+                <Route path="/membercenter">
+                  <MemberBar />
+                </Route>
+                <VendorRouter />
                 <Route path="/">
                   <Index />
                 </Route>
