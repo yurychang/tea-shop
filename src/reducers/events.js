@@ -1,12 +1,13 @@
-import { TOGGLE_FILTER, FETCH_EVENTS } from 'actions/events'
+import { TOGGLE_FILTER, FETCH_EVENTS, } from 'actions/events'
 
 const defaultState = {
-  filterType: "",     // vendor or zone
-  filterId: "",
-  vendors: [{
+  filterType: null,     // vendor or zone
+  filterId: null,
+  filterName: null,
+  zones: [{
     zId: 0,
     zone: '北',
-    include: [{
+    companys: [{
       id: 0,
       name: '大溪老茶廠'
     }, {
@@ -20,7 +21,7 @@ const defaultState = {
   {
     zId: 1,
     zone: '中',
-    include: [{
+    companys: [{
       id: 3,
       name: '福源茶廠'
     }, {
@@ -34,7 +35,7 @@ const defaultState = {
   {
     zId: 2,
     zone: '南',
-    include: [{
+    companys: [{
       id: 6,
       name: '和菓森林'
     }, {
@@ -48,7 +49,7 @@ const defaultState = {
   {
     zId: 3,
     zone: '東',
-    include: [{
+    companys: [{
       id: 9,
       name: '林旺製茶廠'
     }, {
@@ -76,7 +77,8 @@ export default function events(state = defaultState, action) {
       return {
         ...state,
         filterType: action.filterType,
-        filterId: action.filterId
+        filterId: action.filterId,
+        filterName: action.filterName
       }
     case FETCH_EVENTS:
       return {
