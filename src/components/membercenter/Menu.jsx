@@ -4,20 +4,16 @@ import { NavLink } from 'react-router-dom'
 export default function Menu() {
   return (
     <div>
-      <div className="ls_backend-nav mr-4">
+      <div className="mr-4">
         <ul className="">
           <li className="list-item mt-3">
-            <NavLink
-              className="nav-link pb-2 ls_backend-nav"
-              activeClassName="active"
-              to="＃"
-            >
+            <NavLink className="nav-link pb-2" activeClassName="active" to="＃">
               我的帳戶
             </NavLink>
           </li>
           <li className="nav-item mt-3">
             <NavLink
-              className="nav-link pb-2 ls_backend-nav"
+              className="nav-link pb-2 "
               activeClassName="active"
               to="＃"
             >
@@ -26,7 +22,7 @@ export default function Menu() {
           </li>
           <li className="nav-item mt-3">
             <NavLink
-              className="nav-link pb-2 ls_backend-nav"
+              className="nav-link pb-2 "
               activeClassName="active"
               to="＃"
             >
@@ -34,17 +30,13 @@ export default function Menu() {
             </NavLink>
           </li>
           <li className="nav-item mt-3">
-            <NavLink
-              className="nav-link pb-2 ls_backend-nav"
-              activeClassName="active"
-              to="＃"
-            >
+            <NavLink className="nav-link pb-2" activeClassName="active" to="＃">
               購買清單
             </NavLink>
           </li>
           <li className="nav-item mt-3">
             <NavLink
-              className="nav-link pb-2 ls_backend-nav"
+              className="nav-link pb-2"
               activeClassName="active"
               to="＃＃"
             >
