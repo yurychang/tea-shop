@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactFileReader from 'react-file-reader'
+import React, { useState } from 'react'
+
 
 
 
@@ -7,9 +7,39 @@ function BackendData() {
 
     const welcomeText = "您好，歡迎光臨，希望我們提供的商品您會喜歡!"
 
-    handleFiles = files => {
-        console.log(files)
-      }
+    const [imgUrl, setImgUrl] = useState('')
+    const [imgUrl2, setImgUrl2] = useState('')
+
+
+
+    const handleUserImg = (e) => {
+        const content = e.target.result;
+        console.log('file content', content)
+        // You can set content in state and show it in render.
+        setImgUrl(content)
+    }
+
+    const handleChangeUserImg = (file) => {
+        const fileData = new FileReader();
+        fileData.onloadend = handleUserImg;
+        fileData.readAsDataURL(file);
+    }
+
+    const handleBannerImg = (e) => {
+        const content = e.target.result;
+        console.log('file content', content)
+        // You can set content in state and show it in render.
+        setImgUrl2(content)
+    }
+
+    const handleChangeBannerImg = (file) => {
+        const fileData = new FileReader();
+        fileData.onloadend = handleBannerImg;
+        fileData.readAsDataURL(file);
+    }
+
+
+
 
 
     return (
@@ -54,10 +84,11 @@ function BackendData() {
 
 
                         <div className="img-area col-5">
-                            <div className="figure">
-                                <img className="figure-img img-fluid rounded" src="https://via.placeholder.com/300" alt="" />
+                            <div className="figure ls_W300">
+                                <img className="figure-img img-fluid rounded" src={imgUrl} alt="" />
                             </div>
-                            <input type="file" name="vendorImg" />
+                            <input type="file" name="vendorImg" onChange={e =>
+                                handleChangeUserImg(e.target.files[0])} />
                         </div>
                     </div>
 
@@ -72,10 +103,11 @@ function BackendData() {
 
                     <div className="">
                         <label> 商店Banner</label>
-                        <div className="figure">
-                            <img className="figure-img img-fluid rounded" src="https://via.placeholder.com/800x350" alt="" />
+                        <div className="figure ls_W800">
+                            <img className="figure-img img-fluid rounded" src={imgUrl2} alt="" />
                         </div>
-                        <input type="file" name="vendorBanner" />
+                        <input type="file" name="vendorBanner" onChange={e =>
+                                handleChangeBannerImg(e.target.files[0])}/>
                     </div>
 
                     <button type="submit" className="btn btn-main col-3">更新</button>
