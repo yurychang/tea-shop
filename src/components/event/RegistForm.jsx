@@ -19,7 +19,7 @@ const SubmitBtn = styled.button.attrs(props => ({
   }
 `
 
-function RegistForm({ title, price, location, onSubmit }) {
+function RegistForm({ id, title, price, location, onSubmit }) {
   const formikConfig = {
     initialValues: {
       name: '',
@@ -48,6 +48,7 @@ function RegistForm({ title, price, location, onSubmit }) {
       time: Yup.string().required('required'),
     }),
     onSubmit: (values, { setSubmitting }) => {
+      values.eId = id
       onSubmit(values)
       setSubmitting(false)
     },

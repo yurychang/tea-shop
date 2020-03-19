@@ -19,7 +19,7 @@ const Title = styled.h2`
   }
 `
 
-function CardList({ events, title }) {
+function CardList({ events = [], title = '' }) {
   const mapEvents = data => {
     return data.map(event => {
       return (
