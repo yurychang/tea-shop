@@ -12,7 +12,7 @@ function BackendDiscount() {
           <h3>折扣管理</h3>
           <hr />
             <div className="d-flex justify-content-end">
-              <button onclick="window.location.assign('')" className="btn btn-primary mb-4 ">新增折扣</button>
+              <button  className="btn btn-primary mb-4 ">新增折扣</button>
             </div>
 
 

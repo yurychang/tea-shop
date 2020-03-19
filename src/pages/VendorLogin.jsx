@@ -1,5 +1,6 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, Redirect } from 'react-router-dom'
 import React, { useState } from 'react'
+import * as sha1 from 'sha1'
 
 
 
@@ -7,50 +8,89 @@ import React, { useState } from 'react'
 
 function VendorLogintest() {
 
-  const [loginMode, setLoginMode] = useState(false)
+  const [vendorAccount, setVendorAccount] = useState('')
+  const [vendorPassword, setVendorPassword] = useState('')
+  const [loginmode, setLoginmode] = useState(false)
+  const loginSuccess = (< Redirect to='/dashboard/data' />)
+  const vendorLoginArea = (<div className="container  yz-header">
+    <ul className="d-flex justify-content-between mb-2">
+      <li className="list-item mt-3"><NavLink className="nav-link pb-2 ls_login-nav" activeClassName="active" exact to="/login">會員登入</NavLink></li>
+      <li className="nav-item mt-3"><NavLink className="nav-link pb-2 ls_login-nav mr-5" activeClassName="active" exact to="/login/vendor">廠商登入</NavLink></li>
+    </ul>
+    <form>
+      <h1 className="login">廠商登入</h1>
+      <div className="form-group ">
+        <input
+          type="text"
+          className="form-control ls-login-form-control"
+          placeholder="請輸入帳號"
+          onChange={e => setVendorAccount(e.target.value)} />
+      </div>
+      <div className="form-group">
+        <input type="password" className="form-control ls-login-form-control" placeholder="請輸入密碼" onChange={e => setVendorPassword(sha1(e.target.value))} />
+      </div>
+      <div className="form-group form-check d-flex">
+        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
 
+        <label className="form-check-label">
+          記住帳號密碼
+    </label>
+      </div>
+
+      <div className=""><Link to="#">忘記密碼？</Link></div>
+
+      <div className="d-flex justify-content-around mb-3 mt-5">
+        <button type="submit" className="btn btn-main col-5 ls_login-btn" onClick={event => handleSubmit(event)}><i className="fas fa-sign-in-alt"> </i>登入 </button>
+        <Link className="btn btn-main2 col-5 ls_login-btn" to="/signup/vendor"><i class="fas fa-clipboard-list"></i> 註冊</Link>
+      </div>
+
+
+    </form>
+  </div>)
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const userData = { vendorAccount, vendorPassword }
+
+    sendRegisterDataToServer(userData, () => alert('登入成功'))
+
+
+    async function sendRegisterDataToServer(userData, callback) {
+      // 注意資料格式要設定，伺服器才知道是json格式
+      const request = new Request('http://127.0.0.1:3333/vendor/try-logindata', {
+        method: 'POST',
+        body: JSON.stringify(userData),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+
+      const response = await fetch(request)
+      console.log('response', response);
+      const data = await response.json()
+
+      if (data.success === true) {
+        console.log(data.message.text)
+        localStorage.setItem('venderId', JSON.stringify(data.vendorid))
+        setLoginmode(true)
+
+      } else {
+        console.log(data.message.text)
+
+      }
+    }
+
+
+  }
 
 
 
   return (
     <>
+        {loginmode? loginSuccess : vendorLoginArea }
 
 
-      <div className="container  yz-header">
-        <ul className="d-flex justify-content-between mb-2">
-          <li className="list-item mt-3"><NavLink className="nav-link pb-2 ls_login-nav" activeClassName="active" exact to="/login">會員登入</NavLink></li>
-          <li className="nav-item mt-3"><NavLink className="nav-link pb-2 ls_login-nav mr-5" activeClassName="active" exact to="/login/vendor">廠商登入</NavLink></li>
-        </ul>
-        <form>
-          <h1 className="login">廠商登入</h1>
-          <div className="form-group ">
-            <input
-              type="text"
-              className="form-control ls-login-form-control"
-              placeholder="請輸入帳號"
-            />
-          </div>
-          <div className="form-group">
-            <input type="password" className="form-control ls-login-form-control" placeholder="請輸入密碼" />
-          </div>
-          <div className="form-group form-check d-flex">
-            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-
-            <label className="form-check-label">
-              記住帳號密碼
-          </label>
-          </div>
-
-          <div className=""><Link to="#">忘記密碼？</Link></div>
-
-          <div className="d-flex justify-content-around mb-3 mt-5">
-            <button type="submit" className="btn btn-main col-5 ls_login-btn"><i className="fas fa-sign-in-alt"> </i>登入 </button>
-            <button type="submit" className="btn btn-main2  col-5 ls_login-btn"><i class="fas fa-clipboard-list"></i> 註冊</button>
-          </div>
-
-
-        </form>
-      </div>
 
     </>
   )
