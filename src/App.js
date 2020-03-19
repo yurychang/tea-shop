@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Index from 'pages/Index'
 import MainBar from 'components/index/MainBar'
 import './styles/index.scss'
@@ -12,6 +13,7 @@ import VendorSignup from 'pages/VendorSignup'
 import MemberRouter from 'router/MemberRouter'
 import Commodity from './pages/Commodity'
 import Product from './components/pj_event/Product'
+import Loading from 'utils/Loading'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
 import VendorLogin from 'pages/VendorLogin'
@@ -25,10 +27,11 @@ function App() {
             <BackendRouter />
           </Route>
           <Route path="/">
+            <Loading color="#4c4c4c" type="spin" />
             <MainBar />
             <div className="sy_main-content">
               <Switch>
-                <Route path="/events/:vendor/:id?">
+                <Route path="/events/:id">
                   <Event />
                 </Route>
                 <Route path="/events">
