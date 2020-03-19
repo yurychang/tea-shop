@@ -12,6 +12,8 @@ import MemberBar from 'components/membercenter/MemberBar'
 import Commodity from './pages/Commodity'
 import Product from './components/pj_event/Product'
 import CartBox from './pages/CartBox'
+import CartList from './pages/CartList'
+
 //這是網址
 import BackendRouter from 'router/BackendRouter'
 
@@ -47,6 +49,10 @@ function App() {
                 </Route>
                 <Route path="/cartBox">
                   <CartBox />
+                  CartList
+                </Route>
+                <Route path="/cartList">
+                  <CartList />
                 </Route>
                 <Route path="/membercenter">
                   <MemberBar />
