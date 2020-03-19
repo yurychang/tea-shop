@@ -6,7 +6,7 @@
   padding: 10px;
 }
 .pj_box {
-  margin: 30px auto;
+  margin: 50px auto;
   width: 300px;
   height: 100px;
 }
@@ -15,32 +15,26 @@
   z-index: 1;
   color: #4f5b66;
 }
-.pj_container-button {
-  /* width: 200px; */
-}
+
 .pj_cart-tea {
   margin: 20px;
+  .pj_container-button {
+    /* width: 200px; */
+  }
+  .pj_btn {
+    font: bold;
+    padding: 2px;
+    font-size: 14px;
+    margin: 3px;
+  }
 }
 .pj_cart-Flavor {
-  border: black solid 1px;
-  border-radius: 10px;
-  margin: 5px;
-  width: 100px;
-  height: 25px;
-  font-size: 14px;
-}
-
-.pj_btn {
   font: bold;
-}
-.pj_btn {
   padding: 2px;
   font-size: 14px;
+  margin: 3px;
 }
 
-.pj_cart-Flavor p {
-  text-align: center;
-}
 .pj_card-footer {
   display: flex;
   justify-content: space-between;
@@ -53,6 +47,25 @@
 .main {
   width: 50%;
   margin: 50px auto;
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.pj_icon {
+  font-size: 20px;
+  margin-left: 15px;
 }
 .has-search .form-control {
   padding-left: 2.375rem;

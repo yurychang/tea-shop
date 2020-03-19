@@ -38,11 +38,11 @@ function CommoditInformation({ ...attrs }) {
             className="btn btn-outline-warning m-1 pj_cart-button"
           >
             加入購物車
-            <img src="../../images/favorite_border-24px.svg" alt="" />
+            <img src="../../images/shopping_cart-24px.svg" alt="" />
           </button>
           <button type="button" className="btn btn-warning m-1 pj_cart-button">
-            直接購物車
-            <img src="../../images/shopping_cart-24px.svg" alt="" />
+            購買
+            <i class="fas fa-credit-card" style={{ marginLeft: '15px' }}></i>
           </button>
         </div>
       </div>
