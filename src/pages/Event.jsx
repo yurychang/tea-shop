@@ -37,7 +37,7 @@ function Event({ event = {}, companyEvents, fetchEvents, fetchCompanys }) {
   )
 }
 
-const mapStateToProps = ({ events, companys }, { match }) => {
+const mapStateToProps = ({ events }, { match }) => {
   const { params } = match
   let cId = ''
   let companyEvents = []

@@ -9,7 +9,7 @@ export default function EventCard({ title, location, cId, id }) {
         <Card.Img variant="top" src="https://fakeimg.pl/600x320/" />
         <Card.Body className="px-2">
           <Card.Title className="mb-2 pb-2 pb-md-0 border-bottom border-bottom-md-0 fs-md-lg">
-            <Link to={`/events/vendor/${id}`} className="link-btn">
+            <Link to={`/events/${id}`} className="link-btn">
               {title}
             </Link>
           </Card.Title>
