@@ -12,9 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         body {
-            /* background: lightblue;
-            background: -webkit-linear-gradient(to right, lightblue, #ef629f);
-            background: linear-gradient(to right, lightblue, #ef629f); */
+            background-color: white;
             min-height: 100vh;
         }
 
@@ -23,17 +21,21 @@
             text-align: left;
             border-bottom: 3px solid orange;
             padding-bottom: 10px;
-            }
+        }
 
-        table thead{
-        	border-bottom: 3px solid orange;
+        table thead {
+            border-bottom: 3px solid orange;
             padding-bottom: 20px;
         }
 
-        table tbody tr{
-        	border-color: blue;
+        table tbody tr {
+            border-color: none;
         }
 
+        .table td,
+        .table th {
+            border-top: none;
+        }
     </style>
 </head>
 
@@ -59,10 +61,10 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                    	<th scope="col" >
-                                    		<input type="checkbox" name="">
-                                    	</th>
-                                        <th scope="col" >
+                                        <th scope="col">
+                                            <input type="checkbox" name="">
+                                        </th>
+                                        <th scope="col">
                                             <div class="p-2 text-uppercase">選單</div>
                                         </th>
                                         <th scope="col" class="">
@@ -88,8 +90,7 @@
                                         </th>
                                     </tr>
                                 </thead>
-<!--                                     <hr style="border:0;background-color:#ff0000;height:1px;">
- -->                                <tbody>
+                                <tbody>
 
                                     <tr>
                                         <th><input type="checkbox"></th>
@@ -111,8 +112,8 @@
                                         <td class=" align-middle"><strong>$69.00</strong></td>
                                         <td class=" align-middle"><strong>3</strong></td>
                                         <td class=" align-middle"><strong>198.00</strong></td>
-                                        <td class=" align-middle"><a href="#" class="text-dark"><i
-                                                    class="fa fa-trash"></i></a></td>
+                                        <td class=" align-middle"><i class="fas fa-trash"></i></td>
+                                        <td class=" align-middle fas fa-trash"><i class="fas fa-trash"></i></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox"></th>
@@ -162,43 +163,47 @@
                                 </tbody>
                             </table>
 
-                        <div class="col-lg-6">
-                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">優惠代碼</div>
-                        <div class="p-4">
-                            <p class="font-italic mb-4">如有優惠代碼，請在以下輸入代碼：
-                            </p>
-                            <div class="input-group mb-4 border rounded-pill p-2">
-                                <input type="text" placeholder="請輸入代碼" aria-describedby="button-addon3"
-                                    class="form-control border-0">
-                                <div class="input-group-append border-0">
-                                    <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i
-                                            class="fa fa-gift mr-2"></i>兌換代碼</button>
+                            <div class="col-lg-6">
+                                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">優惠代碼</div>
+                                <div class="p-4">
+                                    <p class="font-italic mb-4">如有優惠代碼，請在以下輸入代碼：
+                                    </p>
+                                    <div class="input-group mb-4 border rounded-pill p-2">
+                                        <input type="text" placeholder="請輸入代碼" aria-describedby="button-addon3"
+                                            class="form-control border-0">
+                                        <div class="input-group-append border-0">
+                                            <button id="button-addon3" type="button"
+                                                class="btn btn-dark px-4 rounded-pill"><i
+                                                    class="fa fa-gift mr-2"></i>兌換代碼</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">給賣家的話</div>
+                                <div class="p-4">
+                                    <!-- <p class="font-italic mb-4">If you have some information for the seller you can leave them
+                                in the box below</p> -->
+                                    <textarea name="" cols="30" rows="2" class="form-control"></textarea>
                                 </div>
                             </div>
-                        </div>
-                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">給賣家的話</div>
-                        <div class="p-4">
-                            <!-- <p class="font-italic mb-4">If you have some information for the seller you can leave them
-                                in the box below</p> -->
-                            <textarea name="" cols="30" rows="2" class="form-control"></textarea>
-                        </div>
-                    </div>
                         </div>
 
                         <!-- End -->
                     </div>
                 </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous">
+                </script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                    crossorigin="anonymous">
+                </script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous">
+                </script>
 </body>
 
 </html>

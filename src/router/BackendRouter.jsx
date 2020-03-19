@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Switch, Route } from 'react-router-dom'
 import BackendNav from '../components/backend/BackendNav'
 import BackendOrder from '../components/backend/BackendOrder'
 import BackendProduct from '../components/backend/BackendProduct'
@@ -8,6 +8,8 @@ import BackendEvents from '../components/backend/BackendEvents'
 import BackendData from '../components/backend/BackendData'
 import BackendDiscount from 'components/backend/BackendDiscount'
 import BackendOrderDetail from '../components/backend/BackendOrderDetail'
+import BackendAddProduct from '../components/backend/BackendAddProduct'
+import BackendAddMsg from '../components/backend/BackendAddMsg'
 
 
 function BackendRouter() {
@@ -20,15 +22,20 @@ function BackendRouter() {
             <div className="container d-flex">
                 <BackendNav />
                 <Switch>
-
                     <Route path='/dashboard/:id?/order/detail/:orderid?'>
                         <BackendOrderDetail />
                     </Route>
                     <Route path='/dashboard/:id?/order/'>
                         <BackendOrder />
                     </Route>
+                    <Route path='/dashboard/:id?/product/add'>
+                        <BackendAddProduct />
+                    </Route>
                     <Route path='/dashboard/:id?/product/:productid?'>
                         <BackendProduct />
+                    </Route>
+                    <Route path='/dashboard/:id?/msg/add'>
+                        <BackendAddMsg />
                     </Route>
                     <Route path='/dashboard/:id?/msg/:msgid?'>
                         <BackendMsg />

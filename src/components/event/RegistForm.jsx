@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Row, Col, Form as BsForm } from 'react-bootstrap'
 import styled from 'styled-components'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import FormErr from 'utils/FormErr'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { postRegisterForm } from 'actions/events'
 
 const SubmitBtn = styled.button.attrs(props => ({
   className: 'link-btn',
@@ -15,42 +18,42 @@ const SubmitBtn = styled.button.attrs(props => ({
     display: block;
   }
 `
-const formikConfig = {
-  initialValues: {
-    name: '',
-    phone: '',
-    email: '',
-    date: '',
-    time: '',
-    num: '',
-    note: '',
-  },
-  validationSchema: Yup.object({
-    name: Yup.string().required('Required'),
-    phone: Yup.number()
-      .typeError('not a phone number')
-      .required('required'),
-    email: Yup.string()
-      .email('Invalid email address')
-      .required('Required'),
-    date: Yup.date()
-      .required('Required')
-      .min(Date(), 'before'),
-    num: Yup.number()
-      .typeError('NaN')
-      .required('required')
-      .min(1, 'too small'),
-    time: Yup.string().required('required'),
-  }),
-  onSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2))
-      // setSubmitting(false)
-    }, 400)
-  },
-}
 
-export default function RegistForm({ title, price, location, onSubmit }) {
+function RegistForm({ id, title, price, location, onSubmit }) {
+  const formikConfig = {
+    initialValues: {
+      name: '',
+      phone: '',
+      email: '',
+      date: '',
+      time: '',
+      num: '',
+      note: '',
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required('Required'),
+      phone: Yup.number()
+        .typeError('not a phone number')
+        .required('required'),
+      email: Yup.string()
+        .email('Invalid email address')
+        .required('Required'),
+      date: Yup.date()
+        .required('Required')
+        .min(Date(), 'before'),
+      num: Yup.number()
+        .typeError('NaN')
+        .required('required')
+        .min(1, 'too small'),
+      time: Yup.string().required('required'),
+    }),
+    onSubmit: (values, { setSubmitting }) => {
+      values.eId = id
+      onSubmit(values)
+      setSubmitting(false)
+    },
+  }
+  
   return (
     <>
       <div className="my-5 pl-lg-5 pt-7 border-lg-left border-secondary">
@@ -139,3 +142,9 @@ export default function RegistForm({ title, price, location, onSubmit }) {
     </>
   )
 }
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ onSubmit: postRegisterForm }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(RegistForm)

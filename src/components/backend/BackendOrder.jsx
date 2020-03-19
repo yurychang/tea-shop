@@ -39,7 +39,7 @@ function BackendOrder() {
           <div className="card mb-4">
             <div className="card-header d-flex justify-content-between">
               <div className="ls_order-account">消費者頭像+帳號
-            <button type="button" className="btn btn-main btn-sm ml-3"><Link to="/dashboard/order/detail/1234">訂單詳情</Link></button>
+              <Link type="button" className="btn btn-main btn-sm ml-3" to="/dashboard/order/detail/1234">訂單詳情</Link>
               </div>
               <div className="order-number">訂單編號:20200308001</div>
             </div>
