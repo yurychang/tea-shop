@@ -12,8 +12,8 @@ export default function Singup() {
   const [vendorPhone, setVendorPhone] = useState('')
 
   const [signmode, setSignmode] = useState(false)
-  // const [error, setError] = useState(false)
-  // const [errorMessages, setErrorMessages] = useState([])
+  const [error, setError] = useState(false)
+  const [errorMessages, setErrorMessages] = useState([])
 
   const nextpage = (<Redirect to='/login/vendor' />)
   const signupform = (<div className="container yz-header p-5">
@@ -32,13 +32,15 @@ export default function Singup() {
           type="password"
           className="form-control yz-form-control"
           placeholder="請輸入8位數英數混合密碼"
-          name="vendorPassword"
+          name="vendorPassword1"
           onChange={e => setVendorPassword1(sha1(e.target.value))}
         />
         <input
           type="password"
           className="form-control yz-form-control"
           placeholder="再次輸入密碼"
+          name="vendorPassword2"
+          onChange={e => setVendorPassword2(sha1(e.target.value))}
 
         />
         <input
@@ -67,18 +69,30 @@ export default function Singup() {
   </div>)
   const handleSubmit = (event) => {
     event.preventDefault()
-    // if (error) {
-    //   setError(error)
-    //   setErrorMessages(errorMessages)
-    //   return
-    // }
 
-    // let error = false
-    // let errorMessages = []
-    // if (vendorPassword1 !== vendorPassword2) {
-    //   error = true
-    //   errorMessages.push('兩次密碼寫的不同')
-    // }
+    let error = false
+    let errorMessages = []
+    if (vendorPassword1 !== vendorPassword2) {
+      error = true
+      errorMessages.push('兩次密碼輸入不同')
+    }
+
+    if (!vendorAccount) {
+      error = true
+      errorMessages.push('帳號沒填')
+    }
+
+    if (vendorAccount.length < 8) {
+      error = true
+      errorMessages.push('帳號至少要8個字')
+    }
+
+
+    if (error) {
+      setError(error)
+      setErrorMessages(errorMessages)
+      return
+    }
     const vendorPassword = vendorPassword1
     const userData = { vendorAccount, vendorPassword, vendorEmail, vendorPhone }
 
@@ -110,7 +124,17 @@ export default function Singup() {
 
   return (
     <>
-
+      {error ? (
+        <>
+          <div className="alert alert-danger" role="alert">
+            {errorMessages.map((v, i) => (
+              <p key={i}>{v}</p>
+            ))}
+          </div>
+        </>
+      ) : (
+          ''
+        )}
       {signmode ? nextpage : signupform}
     </>
   )
