@@ -6,7 +6,7 @@ import Menu from 'components/membercenter/Menu'
 export default function MemberRouter() {
   return (
     <>
-      <h2 className="text-center">會員中心</h2>
+      <h2 className="text-center mb-5 mt-3 _yz_membercenter">會員中心</h2>
       <div className="container d-flex">
         <Menu />
         <Switch>
