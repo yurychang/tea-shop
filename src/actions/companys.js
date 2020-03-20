@@ -4,10 +4,10 @@ export const fetchCompanys = () => {
   return async dispatch => {
     try {
       const res = await fetch('http://localhost:3333/companys/get')
-      const data = await res.json()
+      const json = await res.json()
       dispatch({
         type: FETCH_COMPANYS,
-        data
+        data: json.data
       })
     } catch (error) {
       console.log('err')

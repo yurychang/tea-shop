@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Switch, Route } from 'react-router-dom'
 import BackendNav from '../components/backend/BackendNav'
 import BackendOrder from '../components/backend/BackendOrder'
 import BackendProduct from '../components/backend/BackendProduct'
@@ -22,7 +22,6 @@ function BackendRouter() {
             <div className="container d-flex">
                 <BackendNav />
                 <Switch>
-
                     <Route path='/dashboard/:id?/order/detail/:orderid?'>
                         <BackendOrderDetail />
                     </Route>

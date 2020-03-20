@@ -1,5 +1,5 @@
-.container {
-  // max-width: 960px;
+.pj_container {
+  max-width: 960px;
 
   $cardImg: 450px;
   .pj_card-img {
@@ -46,19 +46,23 @@
     float: right;
   }
   //------------ 商品評論  -----------
-  .pj_card-comment {
+  .pj_cardList-comment {
     width: 960px;
     height: 100px;
     background-color: #fffbf8;
   }
-  .pj_card-comment-in {
+  .pj_cart-button {
+    width: 150px;
+    height: 40px;
+  }
+  .pj_cardList-comment-in {
     justify-content: center;
     align-items: center;
     padding-top: 30px;
 
-    .pj_card-comment-number {
+    .pj_cardList-comment-number {
       font-size: 24px;
-      .pj_card-comment-star {
+      .pj_cardList-comment-star {
         margin: 5px;
       }
     }

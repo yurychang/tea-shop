@@ -1,0 +1,45 @@
+.pj_cartList-bottom {
+  color: black;
+  text-align: left;
+  border-bottom: 2px solid orange;
+  padding-bottom: 10px;
+  width: 20%;
+  margin-left: 50px;
+}
+.pj_cartList-h2 {
+  text-align: center;
+}
+.pj_cartList-img {
+  width: 80px;
+  height: 100px;
+}
+.pj_Manufacturer-name {
+  float: right;
+  padding: 20px;
+}
+
+.pj_thead {
+  border-bottom: 3px solid orange;
+  padding-bottom: 20px;
+}
+.pj_white-space {
+  white-space: nowrap;
+  font-size: 14px;
+}
+.pj_cardList-button {
+  flex-direction: column;
+}
+
+.pj_cardList-price-amount {
+  display: flex;
+  float: right;
+  .pj_cart-button {
+    width: 150px;
+    height: 40px;
+  }
+  .pj_cardList-price {
+    font-size: 20px;
+    margin: 10px 20px 0 0;
+    text-align: center;
+  }
+}
