@@ -12,6 +12,15 @@ const dafault = {
 export default function events(state = dafault, action) {
   switch (action.type) {
     case TOGGLE_FILTER:
+      const { filterType, filterId } = state
+      if (filterType === action.filterType && filterId === action.filterId) {
+        return {
+          ...state,
+          filterType: null,
+          filterId: null,
+          filterName: null
+        }
+      }
       return {
         ...state,
         filterType: action.filterType,
