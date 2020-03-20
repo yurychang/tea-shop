@@ -72,7 +72,7 @@ function VendorLogintest() {
 
       if (data.success === true) {
         console.log(data.message.text)
-        localStorage.setItem('venderId', JSON.stringify(data.vendorid))
+        localStorage.setItem('vendorId', JSON.stringify(data.vendorid))
         setLoginmode(true)
 
       } else {

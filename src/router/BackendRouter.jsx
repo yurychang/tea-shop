@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import BackendNav from '../components/backend/BackendNav'
 import BackendOrder from '../components/backend/BackendOrder'
 import BackendProduct from '../components/backend/BackendProduct'
@@ -18,7 +18,7 @@ function BackendRouter() {
     return (
         <>
 
-            <h2 class="text-center mb-5 mt-3">賣家中心</h2>
+            <h2 className="text-center mb-5 mt-3">賣家中心</h2>
             <div className="container d-flex">
                 <BackendNav />
                 <Switch>
