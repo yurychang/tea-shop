@@ -5,7 +5,7 @@ import newmembernotice from '../../images/newmembernotice.svg'
 
 export default function MemberNotice() {
   return (
-    <div>
+    <div className="noticecontainer">
       <h3 className="text-center">通知總覽</h3>
       <hr />
       <div className="content col-10"></div>
@@ -18,6 +18,7 @@ export default function MemberNotice() {
             </div>
             <div className="cardnotic-name">
               <h5 className="text-nowrap">烏龍茶</h5>
+              <p>zzzzzzzzzzzzzzzzzzzzzz</p>
             </div>
             <div className="cardnotic-price">
               <h5 className="text-center text-nowrap">價格</h5>
@@ -36,6 +37,7 @@ export default function MemberNotice() {
             </div>
             <div className="cardnotic-name">
               <h5 className="text-nowrap">烏龍茶</h5>
+              <p>zzzzzzzzzzzzzzzzzzzzzz</p>
             </div>
             <div className="cardnotic-price">
               <h5 className="text-nowrap">價格</h5>
@@ -49,7 +51,7 @@ export default function MemberNotice() {
             </div>
           </div>
         </div>
-        <div className="mx-3"></div>
+        {/* <div className="mx-3"></div>
         <div className="card">
           <div className="card-body">
             <h3 className="card-title text-center text-nowrap">促銷活動</h3>
@@ -62,7 +64,7 @@ export default function MemberNotice() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
