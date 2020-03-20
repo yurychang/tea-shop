@@ -47,13 +47,14 @@ function RegistForm({ id, title, price, location, onSubmit }) {
         .min(1, 'too small'),
       time: Yup.string().required('required'),
     }),
-    onSubmit: (values, { setSubmitting }) => {
+    onSubmit: (values, { setSubmitting, resetForm }) => {
       values.eId = id
       onSubmit(values)
+      resetForm({})
       setSubmitting(false)
     },
   }
-  
+
   return (
     <>
       <div className="my-5 pl-lg-5 pt-7 border-lg-left border-secondary">
