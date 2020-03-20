@@ -30,6 +30,9 @@ function App() {
             <MainBar />
             <div className="sy_main-content">
               <Switch>
+                <Route path="/Index">
+                  <Index />
+                </Route>
                 <Route path="/events/:id">
                   <Event />
                 </Route>
@@ -37,8 +40,8 @@ function App() {
                   <Events />
                 </Route>
                 <Route path="/login/vendor">
-                <VendorLogin />
-              </Route>
+                  <VendorLogin />
+                </Route>
                 <Route path="/login">
                   <Login />
                 </Route>
@@ -55,9 +58,6 @@ function App() {
                   <MemberRouter />
                 </Route>
                 <VendorRouter />
-                <Route path="/">
-                  <Index />
-                </Route>
               </Switch>
             </div>
           </Route>
