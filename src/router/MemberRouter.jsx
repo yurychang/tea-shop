@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import MemberNotice from 'components/memberpage/MemberNotice'
 import Menu from 'components/membercenter/Menu'
 import MemberAccount from 'components/memberpage/MemberAccount'
+import MemberNotice from 'components/memberpage/MemberNotice'
+import MemberPassword from 'components/memberpage/MemberPassword'
 
 export default function MemberRouter() {
   return (
@@ -16,6 +17,9 @@ export default function MemberRouter() {
           </Route>
           <Route path="/membercenter/notice">
             <MemberNotice />
+          </Route>
+          <Route path="/membercenter/password">
+            <MemberPassword />
           </Route>
         </Switch>
       </div>
