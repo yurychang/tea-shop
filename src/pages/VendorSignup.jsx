@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, NavLink, Redirect } from 'react-router-dom'
 import * as sha1 from 'sha1'
 
-export default function Singup() {
+export default function VendorSingup() {
 
 
   const [vendorAccount, setVendorAccount] = useState('')
