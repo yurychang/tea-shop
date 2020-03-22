@@ -5,6 +5,7 @@ import logo from 'images/logo.svg'
 import logoH from 'images/logo-h.svg'
 
 export default function MainBarNav({ isOpen, onClick }) {
+  
   return (
     <>
       <div className="main-bar-nav">
@@ -65,6 +66,7 @@ export default function MainBarNav({ isOpen, onClick }) {
                 <Nav.Link as="p" className="mb-0">
                   <Link to="/cart" className="d-block">
                     <i className="fas fa-shopping-cart" />
+                    <span>0</span>
                     <span className="d-lg-none ml-2">會員中心</span>
                   </Link>
                 </Nav.Link>

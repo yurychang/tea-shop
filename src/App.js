@@ -41,14 +41,14 @@ function App() {
                   <Events />
                 </Route>
                 <Route path="/login/vendor">
-                <VendorLogin />
-              </Route>
+                  <VendorLogin />
+                </Route>
                 <Route path="/login">
                   <Login />
                 </Route>
                 <Route path="/signup/vendor">
-                <VendorSignup />
-              </Route>
+                  <VendorSignup />
+                </Route>
                 <Route path="/signup">
                   <Signup />
                 </Route>

@@ -6,7 +6,7 @@ import ProductReviews from '../components/pj_event/ProductReviews'
 function Commodity() {
   return (
     <>
-      <div className="container pj_container">
+      <div className="container pj_container py-4">
         <div className="mb-4">
           <div className="row">
             <div className="col-md-6">

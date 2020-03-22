@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import '../../styles/pj/_pj.css'
 
 function CommoditInformation({ ...attrs }) {
+  const [cartnum, setCarNum] = useState(0)
+  console.log('cartnum')
   return (
     <>
       <div className="card-body">
@@ -36,6 +38,7 @@ function CommoditInformation({ ...attrs }) {
           <button
             type="button"
             className="btn btn-outline-warning m-1 pj_cart-button"
+            onClick={() => setCarNum(cartnum + 1)}
           >
             加入購物車
             <img src="../../images/shopping_cart-24px.svg" alt="" />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Slider from '@material-ui/core/Slider'
 import img1 from '../../images/01.jpg'
 import img2 from '../../images/shopping_cart-24px.svg'
@@ -8,6 +8,36 @@ function valuetext(value) {
   return `NT.${value}`
 }
 function Product({ ...attrs }) {
+  const [total, setTotal] = useState([])
+  const [dataLoading, setDataLoading] = useState(false)
+
+  // 注意資料格式要設定，伺服器才知道是json格式
+  async function getDataFromServer() {
+     // 開啟載入指示
+     setDataLoading(true)
+     
+    const request = new Request('http://localhost:3333/product/try-get', {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'appliaction/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+    // 設定資料
+    setTotal(data)
+    // return data
+  }
+  // 一開始就會開始載入資料
+  useEffect(() => {
+    getDataFromServer()
+  }, [])
+
+  console.log('total', total)
+
+  // 價錢拉霸
   const [value, setValue] = React.useState([1000, 5000])
 
   const handleChange = (event, newValue) => {
@@ -16,9 +46,27 @@ function Product({ ...attrs }) {
   const handleAddToCart = (event, newValue) => {
     console.log('addtocart')
   }
+//dataList
+  const dataList = (
+    <>
+      {total.map((value, index) => {
+        return <div>{value.title}</div>
+      })}
+    </>
+  )
+  const idList = (
+    <>
+      {total.map((value, index) => {
+        return <div>{value.id}</div>
+      })}
+    </>
+  )
 
   return (
     <>
+      <div>{idList}</div>
+      <div>{dataList}</div>
+
       <div className="container">
         <h1 className="pj_border-bottom-product">產品列表</h1>
         <div className="mb-4">
@@ -182,7 +230,7 @@ function Product({ ...attrs }) {
                 古典日月英式紅茶 - 風華五十年 280g
               </p>
               <p className="card-text" style={{ fontSize: '14px' }}>
-                風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ......
+                風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ...... {dataList}
               </p>
             </div>
             <div className="pj_card-footer">
