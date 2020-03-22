@@ -6,7 +6,7 @@ const BorderBottom = styled.div`
 `
 
 const MinHeight = styled.img`
-  min-height: 160px;
+  height: 160px;
 `
 
 export default function EventInfo({ title, location, price, content, banner }) {
@@ -34,7 +34,7 @@ export default function EventInfo({ title, location, price, content, banner }) {
         </span>
       </div>
       <article
-        className="article"
+        className="article ck-content"
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </section>
