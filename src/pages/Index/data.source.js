@@ -23,7 +23,13 @@ export const Banner00DataSource = {
       </span>
     ),
   },
-  button: { className: 'banner0-button', children: 'Learn More' },
+  button: {
+    className: 'banner0-button',
+    children: '精選商品',
+    href: '/product',
+    target: '/product',
+    type: 'default',
+  },
 }
 export const Feature00DataSource = {
   wrapper: { className: 'home-page-wrapper content0-wrapper' },
@@ -74,10 +80,9 @@ export const Feature00DataSource = {
               name: 'content',
               children: (
                 <span>
-                  <p>仕女伯爵茶是為格雷家族的成員—格雷二世的夫人所調製出來的。其口感調的更柔和，帶入柑橘、檸檬酸香氣息，讓茶的風味更清新。仕女伯爵茶添加檸檬與香橙的果皮，能使茶葉呈現豐富的果香口感。
-
-
-</p>
+                  <p>
+                    仕女伯爵茶是為格雷家族的成員—格雷二世的夫人所調製出來的。其口感調的更柔和，帶入柑橘、檸檬酸香氣息，讓茶的風味更清新。仕女伯爵茶添加檸檬與香橙的果皮，能使茶葉呈現豐富的果香口感。
+                  </p>
                 </span>
               ),
             },
@@ -178,9 +183,9 @@ export const Banner01DataSource = {
   },
   button: {
     className: 'banner0-button',
-    children: 'Learn More',
-    href: '',
-    target: '_blank',
+    children: '嚴選廠商',
+    href: '/Allstore',
+    target: '/product',
     type: 'default',
   },
 }
@@ -463,7 +468,8 @@ export const Pricing00DataSource = {
   img: {
     className: 'pricing0-img',
     name: 'image',
-    children: 'https://www.hugosum.com.tw/upload/events/photo_b_24_147158341294.jpg',
+    children:
+      'https://www.hugosum.com.tw/upload/events/photo_b_24_147158341294.jpg',
   },
   childWrapper: {
     className: 'pricing0-text-wrapper',
@@ -525,7 +531,7 @@ export const Pricing00DataSource = {
         name: 'pricing',
         children: (
           <span>
-            <p>3000$</p>
+            <p>30人即成團</p>
           </span>
         ),
         className: 'pricing0-pricing k83auwiu0e-editor_css',
@@ -534,7 +540,7 @@ export const Pricing00DataSource = {
         name: 'button',
         children: {
           icon: '',
-          href: '#',
+          href: '/events',
           type: 'primary',
           children: (
             <span>
@@ -558,8 +564,7 @@ export const Content130DataSource = {
     children: [
       {
         name: 'image',
-        children:
-          '',
+        children: '',
         className: 'title-image',
       },
       {
