@@ -1,10 +1,14 @@
 import React from 'react'
+import logo from 'images/logo.svg'
+import logo_s from 'images/logo-h.svg'
+import logo_w from 'images/logo_w.svg'
+
 export const Banner00DataSource = {
   wrapper: { className: 'banner0 k83fye1ylu-editor_css' },
   textWrapper: { className: 'banner0-text-wrapper' },
   title: {
     className: 'banner0-title',
-    children: 'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+    children: <img src={logo} alt="" />,
   },
   content: {
     className: 'banner0-content k83hoswqa2m-editor_css',
@@ -53,7 +57,7 @@ export const Feature00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://zos.alipayobjects.com/rmsportal/WBnVOjtIlGWbzyQivuyq.png',
+                'https://www.twinings.com.tw/aimg/a/15/154/151541636492864660940f.jpg',
             },
             {
               name: 'title',
@@ -70,7 +74,10 @@ export const Feature00DataSource = {
               name: 'content',
               children: (
                 <span>
-                  <p>風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 .....</p>
+                  <p>仕女伯爵茶是為格雷家族的成員—格雷二世的夫人所調製出來的。其口感調的更柔和，帶入柑橘、檸檬酸香氣息，讓茶的風味更清新。仕女伯爵茶添加檸檬與香橙的果皮，能使茶葉呈現豐富的果香口感。
+
+
+</p>
                 </span>
               ),
             },
@@ -89,14 +96,14 @@ export const Feature00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png',
+                'https://www.twinings.com.tw/aimg/a/15/154/1515416454610308704a7e.jpg',
             },
             {
               name: 'title',
               className: 'content0-block-title',
               children: (
                 <span>
-                  <p>金萱茶</p>
+                  <p>梅果茶</p>
                 </span>
               ),
             },
@@ -104,7 +111,9 @@ export const Feature00DataSource = {
               name: 'content',
               children: (
                 <span>
-                  <p>風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 .....</p>
+                  <p>
+                    清新的口感，融入淡淡的佛手柑芬芳，最適合在午后時光用一顆閒適的心情細細品嚐。尤其佛手柑芬芳，更能讓繁複的心境隨之沉澱，時時刻刻注入重新的力量。飲用時若添加檸檬容易則減少佛手柑的芬芳，享用原味或添加少許牛奶都是不錯的選擇。
+                  </p>
                 </span>
               ),
             },
@@ -123,14 +132,14 @@ export const Feature00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png',
+                'https://www.twinings.com.tw/aimg/a/15/154/15154164242623083b9640.jpg',
             },
             {
               name: 'title',
               className: 'content0-block-title',
               children: (
                 <span>
-                  <p>凍頂烏龍茶</p>
+                  <p>大吉嶺紅茶</p>
                 </span>
               ),
             },
@@ -138,7 +147,9 @@ export const Feature00DataSource = {
               name: 'content',
               children: (
                 <span>
-                  <p>風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 .....</p>
+                  <p>
+                    名列世界三大茗茶之一的大吉嶺，被譽為“紅茶中的香檳”，金黃的茶色有著令人回味無限的清淡果香，是產量極少的頂級茶品。其細緻的口感適合單獨品用。
+                  </p>
                 </span>
               ),
             },
@@ -153,7 +164,7 @@ export const Banner01DataSource = {
   textWrapper: { className: 'banner0-text-wrapper' },
   title: {
     className: 'banner0-title',
-    children: 'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+    children: <img src={logo_w} alt="" />,
   },
   content: {
     className: 'banner0-content',
@@ -206,7 +217,7 @@ export const Teams10DataSource = {
               name: 'image',
               className: 'teams1-image',
               children:
-                'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ',
+                'http://cdn.rologo.com/wp-content/uploads/2014/03/lipton-new-logo.jpg?x-oss-process=image/format,webp,image/resize,m_fill,w_932,h_932#',
             },
             {
               name: 'title',
@@ -217,7 +228,7 @@ export const Teams10DataSource = {
                     <span>
                       <span>
                         <span>
-                          <p>歐可茶葉</p>
+                          <p>立頓茶葉</p>
                         </span>
                       </span>
                     </span>
@@ -265,7 +276,7 @@ export const Teams10DataSource = {
               name: 'image',
               className: 'teams1-image',
               children:
-                'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*njqxS5Ky7CQAAAAAAAAAAABjARQnAQ',
+                'http://cdn.rologo.com/wp-content/uploads/2014/03/lipton-new-logo.jpg?x-oss-process=image/format,webp,image/resize,m_fill,w_932,h_932#',
             },
             {
               name: 'title',
@@ -274,7 +285,7 @@ export const Teams10DataSource = {
                 <span>
                   <span>
                     <span>
-                      <p>歐可茶葉</p>
+                      <p>立頓茶葉</p>
                     </span>
                   </span>
                 </span>
@@ -320,7 +331,7 @@ export const Teams10DataSource = {
               name: 'image',
               className: 'teams1-image',
               children:
-                'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ',
+                'http://cdn.rologo.com/wp-content/uploads/2014/03/lipton-new-logo.jpg?x-oss-process=image/format,webp,image/resize,m_fill,w_932,h_932#',
             },
             {
               name: 'title',
@@ -329,7 +340,7 @@ export const Teams10DataSource = {
                 <span>
                   <span>
                     <span>
-                      <p>歐可茶葉</p>
+                      <p>立頓茶葉</p>
                     </span>
                   </span>
                 </span>
@@ -452,7 +463,7 @@ export const Pricing00DataSource = {
   img: {
     className: 'pricing0-img',
     name: 'image',
-    children: 'https://pic.pimg.tw/cindy6732/1570111018-4123191863.jpg',
+    children: 'https://www.hugosum.com.tw/upload/events/photo_b_24_147158341294.jpg',
   },
   childWrapper: {
     className: 'pricing0-text-wrapper',
@@ -548,7 +559,7 @@ export const Content130DataSource = {
       {
         name: 'image',
         children:
-          'https://gw.alipayobjects.com/zos/rmsportal/PiqyziYmvbgAudYfhuBr.svg',
+          '',
         className: 'title-image',
       },
       {
@@ -603,15 +614,14 @@ export const Footer10DataSource = {
         className: 'block',
         title: {
           className: 'logo',
-          children:
-            'https://zos.alipayobjects.com/rmsportal/qqaimmXZVSwAhpL.svg',
+          children: <img src={logo_s} alt="" />,
         },
         childWrapper: {
           className: 'slogan',
           children: [
             {
               name: 'content0',
-              children: 'Animation specification and components of Ant Design.',
+              children: '',
               className: 'k83gwzlwc3p-editor_css',
             },
           ],
