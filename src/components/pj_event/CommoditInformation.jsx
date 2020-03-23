@@ -1,10 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import '../../styles/pj/_pj.css'
 
 function CommoditInformation({ ...attrs }) {
   const [cartnum, setCarNum] = useState(0)
   console.log('cartnum')
+
+  const [product, setProduct] = useState([])
+
+  async function getDataFromServer() {
+    // 開啟載入指示
+
+    const request = new Request(
+      'http://localhost:3333/product/get-single-product',
+      {
+        method: 'GET',
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'appliaction/json',
+        }),
+      }
+    )
+
+    const response = await fetch(request)
+    const data = await response.json()
+    // 設定資料
+    setProduct(data)
+    // return data
+  }
+  // 一開始就會開始載入資料
+  useEffect(() => {
+    getDataFromServer()
+  }, [])
+
   return (
     <>
       <div className="card-body">

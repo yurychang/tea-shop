@@ -5,7 +5,6 @@ import logo from 'images/logo.svg'
 import logoH from 'images/logo-h.svg'
 
 export default function MainBarNav({ isOpen, onClick }) {
-  
   return (
     <>
       <div className="main-bar-nav">
@@ -43,7 +42,7 @@ export default function MainBarNav({ isOpen, onClick }) {
             <Nav className="h-100 flex-lg-column text-center">
               <Nav.Item className="d-lg-none border-bottom">
                 <Nav.Link as="p" className="mb-0">
-                  <Link to="Commodity" className="d-block">
+                  <Link to="Product" className="d-block">
                     尋茶
                   </Link>
                 </Nav.Link>

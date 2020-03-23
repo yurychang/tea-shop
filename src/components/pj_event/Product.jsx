@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react'
+import { withRouter } from 'react-router'
 import Slider from '@material-ui/core/Slider'
 import img1 from '../../images/01.jpg'
 import img2 from '../../images/shopping_cart-24px.svg'
 import img3 from '../../images/favorite-24px.svg'
+import { Link } from 'react-router-dom'
 
 function valuetext(value) {
   return `NT.${value}`
 }
 function Product({ ...attrs }) {
   const [total, setTotal] = useState([])
-  const [dataLoading, setDataLoading] = useState(false)
+  // const [totalDisplay, setTotalDisplay] = useState([])
+  // const [dataLoading, setDataLoading] = useState(false)
 
   // 注意資料格式要設定，伺服器才知道是json格式
   async function getDataFromServer() {
-     // 開啟載入指示
-     setDataLoading(true)
-     
+    // 開啟載入指示
+    // setDataLoading(true)
+
     const request = new Request('http://localhost:3333/product/try-get', {
       method: 'GET',
       headers: new Headers({
@@ -37,8 +40,20 @@ function Product({ ...attrs }) {
 
   console.log('total', total)
 
-  // 價錢拉霸
-  const [value, setValue] = React.useState([1000, 5000])
+  // ------map----
+
+  // const mapEat = total.map(function(item, index, array) {
+  //   if (item.i) {
+  //     return `${item.title} `
+  //   } else {
+  //     return `${item.title} `
+  //   }
+  // })
+
+  // console.log(mapEat)
+
+  // 價錢拉霸-----------------------------------------
+  const [value, setValue] = React.useState([0, 800])
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -46,27 +61,13 @@ function Product({ ...attrs }) {
   const handleAddToCart = (event, newValue) => {
     console.log('addtocart')
   }
-//dataList
-  const dataList = (
-    <>
-      {total.map((value, index) => {
-        return <div>{value.title}</div>
-      })}
-    </>
-  )
-  const idList = (
-    <>
-      {total.map((value, index) => {
-        return <div>{value.id}</div>
-      })}
-    </>
-  )
+  // on-----------------------------------------
+//   const [onimg, setOnimg] = useState([])
+//   console.log('onimg',onimg)
+// }
 
   return (
     <>
-      <div>{idList}</div>
-      <div>{dataList}</div>
-
       <div className="container">
         <h1 className="pj_border-bottom-product">產品列表</h1>
         <div className="mb-4">
@@ -74,11 +75,11 @@ function Product({ ...attrs }) {
             <div className="col-md-6">
               <div className="pj_box">
                 <div className="pj_container-1">
-                  <div class="form-group has-search">
-                    <span class="fa fa-search form-control-feedback"></span>
+                  <div className="form-group has-search">
+                    <span className="fa fa-search form-control-feedback"></span>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Search"
                     />
                   </div>
@@ -101,7 +102,7 @@ function Product({ ...attrs }) {
                 </div>
                 <div className="d-flex">
                   <Slider
-                    max={10000}
+                    max={9999}
                     min={0}
                     value={value}
                     valueLabelDisplay="auto"
@@ -188,60 +189,104 @@ function Product({ ...attrs }) {
         </div>
 
         <div className="card-deck row">
-          <div className=" col-4 ">
-            <img src={img1} className="card-img-top" alt="..." />
-            <div className="card-body">
-              <div className="pj_container-button pj_cart-Flavor">
-                <button
-                  type="button"
-                  className="btn btn-outline-primary pj_cart-Flavor"
-                >
-                  風味
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-outline-secondary pj_cart-Flavor"
-                >
-                  風味
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-outline-success pj_cart-Flavor"
-                >
-                  風味
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-outline-danger pj_cart-Flavor"
-                >
-                  風味
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-outline-warning pj_cart-Flavor"
-                >
-                  風味
-                </button>
+          {total
+            ? total.map((el, i) => {
+                return (
+                  <>
+                    <div className=" col-4 ">
+                      <Link to="Commodity/id" className="d-block">
+                        <img src={img1} className="card-img-top" alt="..." />
+                      </Link>
 
-                <i className="far fa-heart mt-2 pj_icon" aria-hidden="true"></i>
-                {/* <i className="fas fa-heart mt-2" aria-hidden="true"></i> */}
-              </div>
-              <p className="card-title" style={{ fontSize: '18px' }}>
-                古典日月英式紅茶 - 風華五十年 280g
-              </p>
-              <p className="card-text" style={{ fontSize: '14px' }}>
-                風華絕代五十年，山蔭長歌採茶人，香濃韻清照顏色 ...... {dataList}
-              </p>
-            </div>
-            <div className="pj_card-footer">
-              <div>NT $320</div>
-              <img src={img2} alt="" onClick={handleAddToCart} />
-            </div>
-          </div>
+                      <div className="card-body">
+                        <div className="pj_container-button pj_cart-Flavor">
+                          <button
+                            type="button"
+                            className="btn btn-outline-primary pj_cart-Flavor"
+                          >
+                            風味
+                          </button>
+                          <button
+                            type="button"
+                            className="btn btn-outline-secondary pj_cart-Flavor"
+                          >
+                            風味
+                          </button>
+                          <button
+                            type="button"
+                            className="btn btn-outline-success pj_cart-Flavor"
+                          >
+                            風味
+                          </button>
+                          <button
+                            type="button"
+                            className="btn btn-outline-danger pj_cart-Flavor"
+                          >
+                            風味
+                          </button>
+                          <button
+                            type="button"
+                            className="btn btn-outline-warning pj_cart-Flavor"
+                          >
+                            風味
+                          </button>
+
+                          <i
+                            className="far fa-heart mt-2 pj_icon"
+                            aria-hidden="true"
+                          ></i>
+                          {/* <i className="fas fa-heart mt-2" aria-hidden="true"></i> */}
+                        </div>
+                        <Link to="Commodity" className="d-block">
+                          <p
+                            className="card-title"
+                            style={{ fontSize: '18px' }}
+                          >
+                            {el.title}
+                          </p>
+                        </Link>
+                        <p className="card-text" style={{ fontSize: '14px' }}>
+                          {el.feaTure}
+                        </p>
+                      </div>
+                      <div className="pj_card-footer">
+                        <div>{el.price}</div>
+                        <img src={img2} alt="" onClick={handleAddToCart} />
+                      </div>
+                    </div>
+                  </>
+                )
+              })
+            : ''}
         </div>
       </div>
     </>
   )
 }
 
-export default Product
+// const mapStateToProps = ({ product }, { match }) => {
+//   const { params } = match
+//   let cId = ''
+//   let companyProduct = []
+//   let product = {}
+//   for (let i = 0; i < product.data?.length; i++) {
+//     const el = product.data[i]
+//     if (el.id.toString() === params.id.toString()) {
+//       product = el
+//       cId = product.cId
+//     }
+//   }
+//   product.data.forEach(el => {
+//     if (el.cId.toString() === cId.toString()) {
+//       product.push(el)
+//     }
+//   })
+//   return { product, companyProduct }
+// }
+
+// const mapDispatchToProps = dispatch => {
+//   return bindActionCreators({ fetchProduct, fetchCompanys }, dispatch)
+// }
+
+// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Product))
+export default withRouter(Product)
