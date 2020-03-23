@@ -6,7 +6,7 @@ export default function FormErr({ name, ...attrs }) {
     <ErrorMessage
       name={name}
       render={msg => (
-        <span className="sy_form-err" {...attrs}>
+        <span className="sy_form-err ml-2" {...attrs}>
           {msg}
         </span>
       )}
