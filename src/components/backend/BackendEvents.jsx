@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 
 
 function BackendEvents() {
-
-
     return (
         <>
             <div className="content col-10">

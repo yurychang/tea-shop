@@ -19,7 +19,7 @@ const SubmitBtn = styled.button.attrs(props => ({
   }
 `
 
-function RegistForm({ id, title, price, location, onSubmit }) {
+function RegistForm({ id, title, price, location, postRegisterForm }) {
   const formikConfig = {
     initialValues: {
       name: '',
@@ -49,7 +49,7 @@ function RegistForm({ id, title, price, location, onSubmit }) {
     }),
     onSubmit: (values, { setSubmitting, resetForm }) => {
       values.eId = id
-      onSubmit(values)
+      postRegisterForm(values)
       resetForm({})
       setSubmitting(false)
     },
@@ -145,7 +145,7 @@ function RegistForm({ id, title, price, location, onSubmit }) {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ onSubmit: postRegisterForm }, dispatch)
+  return bindActionCreators({ postRegisterForm }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(RegistForm)

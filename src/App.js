@@ -15,6 +15,7 @@ import Commodity from './pages/Commodity'
 import Product from './components/pj_event/Product'
 import CartBox from './pages/CartBox'
 import CartList from './pages/CartList'
+import Checkout from './pages/Checkout'
 
 import Loading from 'utils/Loading'
 //這是網址
@@ -44,6 +45,9 @@ function App() {
                 <Route path="/allstore">
                 <AllVendors />
               </Route>
+                <Route path="/checkout">
+                  <Checkout />
+                </Route>
                 <Route path="/login/vendor">
                   <VendorLogin />
                 </Route>
