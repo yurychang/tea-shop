@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Menu from 'components/membercenter/Menu'
 import MemberAccount from 'components/memberpage/MemberAccount'
 import MemberNotice from 'components/memberpage/MemberNotice'
-import MemberPassword from 'components/memberpage/MemberPassword'
+import MemberPassword from 'components/memberpage/Memberpassword'
 
 export default function MemberRouter() {
   return (

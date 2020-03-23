@@ -12,7 +12,7 @@ import BackendAddProduct from '../components/backend/BackendAddProduct'
 import BackendAddMsg from '../components/backend/BackendAddMsg'
 
 
-function BackendRouter() {
+function BackendRouter(props) {
 
 
     return (
@@ -46,7 +46,7 @@ function BackendRouter() {
                     <Route path='/dashboard/:id?/discount/:discountid?'>
                         <BackendDiscount />
                     </Route>
-                    <Route path='/dashboard/:id?/data'>
+                    <Route id path='/dashboard/:id?/data'>
                         <BackendData />
                     </Route>
                 </Switch>
