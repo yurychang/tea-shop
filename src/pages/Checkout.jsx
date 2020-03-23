@@ -16,11 +16,11 @@ function Checkout() {
       <Row>
         <Col sm={2}>
           <Timeline>
-            <Timeline.Item> Your orde</Timeline.Item>
-            <Timeline.Item>Your </Timeline.Item>
-            <Timeline.Item>Your </Timeline.Item>
-            <Timeline.Item> Send to </Timeline.Item>
-            <Timeline.Item> Sending</Timeline.Item>
+            <Timeline.Item>結帳</Timeline.Item>
+            <Timeline.Item>付款資訊</Timeline.Item>
+            <Timeline.Item>確認訂單</Timeline.Item>
+            <Timeline.Item>完成訂單</Timeline.Item>
+            <Timeline.Item>送出</Timeline.Item>
           </Timeline>
         </Col>
         <Col sm={10}>
@@ -145,16 +145,16 @@ function Checkout() {
             </span>
           </Col>
           <Col>
-            <Button block>
+            <Button className="checkbtn " block>
               <span>結帳</span>
             </Button>
           </Col>
         </Row>
-        <img src="" />
+        {/* <img src="" />
         <div class="">優惠券</div>
-        <Button>
+        <Button className="scoupon">
           <span>選擇優惠券</span>
-        </Button>
+        </Button> */}
       </div>
     </div>
   )
