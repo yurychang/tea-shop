@@ -7,13 +7,12 @@ import VendorDiscount from '../pages/VendorDiscount'
 
 function VendorRouter() {
 
-    const [heart, setHeart] = useState(true)
 
     return (
         <>
             <Switch>
                 <Route path='/vendor/:id?/index'>
-                    <VendorIndex heart={heart} trigger={() => { setHeart(!heart) }} />
+                    <VendorIndex/>
                 </Route>
                 <Route path='/vendor/:id?/about'>
                     <VendorAbout />

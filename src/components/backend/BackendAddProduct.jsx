@@ -9,7 +9,6 @@ function BackendProduct() {
     return (
         <>
 
-
             <div className="content col-10">
                 <h3>商品管理</h3>
                 <hr />

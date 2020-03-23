@@ -22,31 +22,31 @@ function BackendRouter(props) {
             <div className="container d-flex">
                 <BackendNav />
                 <Switch>
-                    <Route path='/dashboard/:id?/order/detail/:orderid?'>
+                    <Route path='/dashboard/order/detail/:orderid?'>
                         <BackendOrderDetail />
                     </Route>
-                    <Route path='/dashboard/:id?/order/'>
+                    <Route path='/dashboard/order/'>
                         <BackendOrder />
                     </Route>
-                    <Route path='/dashboard/:id?/product/add'>
+                    <Route path='/dashboard/product/add'>
                         <BackendAddProduct />
                     </Route>
-                    <Route path='/dashboard/:id?/product/:productid?'>
+                    <Route path='/dashboard/product/:productid?'>
                         <BackendProduct />
                     </Route>
-                    <Route path='/dashboard/:id?/msg/add'>
+                    <Route path='/dashboard/msg/add'>
                         <BackendAddMsg />
                     </Route>
-                    <Route path='/dashboard/:id?/msg/:msgid?'>
+                    <Route path='/dashboard/msg/:msgid?'>
                         <BackendMsg />
                     </Route>
-                    <Route path='/dashboard/:id?/events/:eventid?'>
+                    <Route path='/dashboard/events/:eventid?'>
                         <BackendEvents />
                     </Route>
-                    <Route path='/dashboard/:id?/discount/:discountid?'>
+                    <Route path='/dashboard/discount/:discountid?'>
                         <BackendDiscount />
                     </Route>
-                    <Route id path='/dashboard/:id?/data'>
+                    <Route id path='/dashboard/data'>
                         <BackendData />
                     </Route>
                 </Switch>
