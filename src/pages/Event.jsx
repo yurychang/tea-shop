@@ -8,9 +8,9 @@ import { fetchCompanys } from 'actions/companys'
 import EventInfo from 'components/event/EventInfo'
 import Menu from 'components/event/Menu'
 import RegistForm from 'components/event/RegistForm'
+import RegisterModal from 'components/event/RegisterModal'
 
 function Event({ event = {}, companyEvents, fetchEvents, fetchCompanys }) {
-  const { title, price, location } = event
   useEffect(() => {
     fetchEvents()
     fetchCompanys()
@@ -29,9 +29,10 @@ function Event({ event = {}, companyEvents, fetchEvents, fetchCompanys }) {
           </Col>
           <Col lg="7" xl="6">
             <EventInfo {...event} />
-            <RegistForm title={title} price={price} location={location} />
+            <RegistForm {...event} />
           </Col>
         </Row>
+        <RegisterModal />
       </Container>
     </>
   )
@@ -42,7 +43,7 @@ const mapStateToProps = ({ events }, { match }) => {
   let cId = ''
   let companyEvents = []
   let event = {}
-  for (let i = 0; i < events.data.length; i++) {
+  for (let i = 0; i < events.data?.length; i++) {
     const el = events.data[i]
     if (el.id.toString() === params.id.toString()) {
       event = el

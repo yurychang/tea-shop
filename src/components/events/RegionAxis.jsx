@@ -27,7 +27,13 @@ const ZoneTitle = styled.div`
   margin-left: 1px;
 `
 
-function RegionAxis({ data = [], toggleFilter, fetchZones }) {
+function RegionAxis({
+  data = [],
+  activeZone,
+  activeVendor,
+  toggleFilter,
+  fetchZones,
+}) {
   useEffect(() => {
     fetchZones()
   }, [fetchZones])
@@ -40,7 +46,7 @@ function RegionAxis({ data = [], toggleFilter, fetchZones }) {
             <ZoneTitle className="mr-1">
               <VerticalLinkBtn
                 onClick={() => toggleFilter('zone', el.zId, el.zone)}
-                className="m-0"
+                className={`m-0 ${activeZone == el.zId ? 'active' : ''}`}
               >
                 {el.zone}
               </VerticalLinkBtn>
@@ -51,7 +57,14 @@ function RegionAxis({ data = [], toggleFilter, fetchZones }) {
                   <>
                     <li key={item.id.toString()} className="list-item">
                       <VerticalLinkBtn
-                        onClick={() => toggleFilter('vendor', item.id, item.name)}
+                        className={
+                          activeZone == el.zId || activeVendor == item.id
+                            ? 'active'
+                            : ''
+                        }
+                        onClick={() =>
+                          toggleFilter('vendor', item.id, item.name)
+                        }
                       >
                         {item.name}
                       </VerticalLinkBtn>
@@ -76,8 +89,16 @@ function RegionAxis({ data = [], toggleFilter, fetchZones }) {
   )
 }
 
-const mapStateToProps = ({ zones: data }) => {
-  return { data }
+const mapStateToProps = ({ zones, events }) => {
+  const { filterType, filterId } = events
+  let activeZone = ''
+  let activeVendor = ''
+  if (filterType === 'zone') {
+    activeZone = filterId
+  } else if (filterType === 'vendor') {
+    activeVendor = filterId
+  }
+  return { data: zones, activeZone, activeVendor }
 }
 
 function mapDispatchToProps(dispatch) {

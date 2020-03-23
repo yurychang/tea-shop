@@ -4,9 +4,12 @@
   color: $link-color;
   cursor: pointer;
   &:hover {
-    color: $link-hover-color;
+    color: $gray-900;
   }
   &:focus {
     outline: none;
+  }
+  &.active {
+    color: $gray-900;
   }
 }

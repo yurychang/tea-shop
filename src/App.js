@@ -8,10 +8,15 @@ import VendorRouter from './router/VendorRouter'
 import Events from 'pages/Events'
 import Event from 'pages/Event'
 import Login from 'pages/Login'
-import Singup from 'pages/Singup'
+import Signup from 'pages/Signup'
+import VendorSignup from 'pages/VendorSignup'
 import MemberRouter from 'router/MemberRouter'
 import Commodity from './pages/Commodity'
 import Product from './components/pj_event/Product'
+import CartBox from './pages/CartBox'
+import CartList from './pages/CartList'
+import Checkout from './pages/Checkout'
+
 import Loading from 'utils/Loading'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
@@ -43,20 +48,33 @@ function App() {
                 <Route path="/events">
                   <Events />
                 </Route>
+                <Route path="/checkout">
+                  <Checkout />
+                </Route>
                 <Route path="/login/vendor">
                   <VendorLogin />
                 </Route>
                 <Route path="/login">
                   <Login />
                 </Route>
-                <Route path="/singup">
-                  <Singup />
+                <Route path="/signup/vendor">
+                  <VendorSignup />
+                </Route>
+                <Route path="/signup">
+                  <Signup />
                 </Route>
                 <Route path="/commodity">
                   <Commodity />
                 </Route>
                 <Route path="/product">
                   <Product />
+                </Route>
+                <Route path="/cartBox">
+                  <CartBox />
+                  CartList
+                </Route>
+                <Route path="/cartList">
+                  <CartList />
                 </Route>
                 <Route path="/membercenter">
                   <MemberRouter />

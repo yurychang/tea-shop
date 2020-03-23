@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@ant-design/icons": "^4.0.3",
     "@ant-design/icons-react": "^2.0.1",
+=======
+    "@ckeditor/ckeditor5-build-classic": "^18.0.0",
+    "@ckeditor/ckeditor5-react": "^2.1.0",
+>>>>>>> master
     "@material-ui/core": "^4.9.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -39,6 +44,8 @@
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "rsuite": "^4.3.2",
+    "sha1": "^1.1.1",
     "styled-components": "^5.0.1",
     "umi": "^3.0.12",
     "yup": "^0.28.3"
