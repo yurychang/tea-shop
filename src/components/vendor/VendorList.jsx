@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
+// const searchParams = new URLSearchParams(props.location.search)
+// const id = searchParams.get('id')
 
 
 
 function VendorList() {
 
     const [alldata, setAlldata] = useState([])
+
 
     async function getDataFromServer() {
 
@@ -38,7 +43,9 @@ function VendorList() {
                         <div className="ls_allstore-img">
                             <img className="" src={value.vendorImg} alt="" /></div>
                         <div className="card-body">
-                            <h6 className="">{value.vendorName}</h6>
+                            <Link to={`/vendor/${value.id}/index`} >
+                                <h6 className="">{value.vendorName}</h6>
+                            </Link>
                             <div className="product-pretext mb-2">{value.Zone}</div>
                         </div>
                     </div>
@@ -54,7 +61,7 @@ function VendorList() {
     return (
 
         <>
-            <div className="container d-flex">
+            <div className="container d-flex flex-wrap">
 
                 {singlevendor}
 

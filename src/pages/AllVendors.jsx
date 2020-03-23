@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux'
 import VendorList from 'components/vendor/VendorList'
 
 
+
 function AllVendors() {
   useEffect(() => {
 
@@ -29,6 +30,6 @@ function AllVendors() {
 
 // const mapDispatchToProps = dispatch => {
 //   return bindActionCreators({ fetchEvents }, dispatch)
-// } connect(null, mapDispatchToProps)
+// }
 
 export default (AllVendors)
