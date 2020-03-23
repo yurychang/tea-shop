@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Index from 'pages/Index'
-import MainBar from 'components/index/MainBar'
+import MainBar from 'components/Mainbar/MainBar'
 import './styles/index.scss'
 import VendorRouter from './router/VendorRouter'
 import Events from 'pages/Events'
@@ -28,6 +28,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          {/* <Route path="/Index">
+            <MainBar />
+            <Index />
+          </Route> */}
           <Route path="/dashboard">
             <BackendRouter />
           </Route>
@@ -36,6 +40,9 @@ function App() {
             <MainBar />
             <div className="sy_main-content">
               <Switch>
+                <Route path="/Index">
+                  <Index />
+                </Route>
                 <Route path="/events/:id">
                   <Event />
                 </Route>
@@ -76,12 +83,7 @@ function App() {
                 <Route path="/membercenter">
                   <MemberRouter />
                 </Route>
-                <Route path="/vendor">
-                  <VendorRouter />
-                </Route>
-                <Route path="/">
-                  <Index />
-                </Route>
+                <VendorRouter />
               </Switch>
             </div>
           </Route>
