@@ -9,8 +9,7 @@ function BackendProduct() {
     return (
         <>
 
-
-            <div className="content col-10">
+            <div className="content">
                 <h3>商品管理</h3>
                 <hr />
                 <h5 className="text-center">新增商品</h5>

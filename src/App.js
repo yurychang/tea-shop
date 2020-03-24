@@ -21,6 +21,7 @@ import Loading from 'utils/Loading'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
 import VendorLogin from 'pages/VendorLogin'
+import AllVendors from 'pages/AllVendors'
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
                 </Route>
                 <Route path="/events">
                   <Events />
+                </Route>
+                <Route path="/allstore">
+                  <AllVendors />
                 </Route>
                 <Route path="/checkout">
                   <Checkout />
@@ -75,7 +79,9 @@ function App() {
                 <Route path="/membercenter">
                   <MemberRouter />
                 </Route>
-                <VendorRouter />
+                <Route path="/vendor">
+                  <VendorRouter />
+                </Route>
               </Switch>
             </div>
           </Route>

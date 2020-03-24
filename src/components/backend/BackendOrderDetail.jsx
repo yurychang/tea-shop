@@ -10,7 +10,7 @@ function BackendOrder(props) {
 
   return (
     <>
-      <div className="content col-10">
+      <div className="content">
         <h3>訂單管理</h3>
         <hr />
         <div class="order-area">

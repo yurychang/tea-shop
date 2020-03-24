@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import VendorAboutArea from 'components/vendor/VendorAboutArea'
 import { keyframes } from 'styled-components'
+import VendorAbout from 'pages/VendorAbout'
 
-function BackendData(props) {
+function BackendData() {
 
-    const welcomeText = "您好，歡迎光臨，希望我們提供的商品您會喜歡!"
 
     const [imgUrl, setImgUrl] = useState('')
     const [imgUrl2, setImgUrl2] = useState('')
@@ -19,11 +19,11 @@ function BackendData(props) {
     const [vendorBanner, setVendorBanner] = useState('')
     const localId = localStorage.getItem('vendorId')
 
-    const [getVendorData, setGetVendorData] = useState([])
 
 
 
 
+//取得廠商原有資料
     async function getDataFromServer() {
 
         const request = new Request('http://localhost:3333/vendor/getvendordata/' + localId, {
@@ -42,38 +42,30 @@ function BackendData(props) {
         setVendorPhone(data[0].vendorPhone)
         setVendorZone(data[0].vendorZone)
         setVendorAddress(data[0].vendorAddress)
-        setImgUrl(require('../../images'+data[0].vendorImg))
+        setImgUrl(data[0].vendorImg)
+        setVendorAbout(data[0].vendorAbout)
+        setImgUrl2(data[0].vendorBanner)
 
-        setGetVendorData(data)
     }
 
     useEffect(() => {
         getDataFromServer()
     }, [])
 
-
-    const vendorname = (
-        <>
-            {getVendorData.map((value, index) => {
-                return (<>
-                    {value.vendorName}
-                </>)
-            })}
-        </>
-    )
+    //取得廠商原有資料end
 
 
 
+    //預覽圖片(大頭照)
     const handleUserImg = (e) => {
         const content = e.target.result;
-        const imgfile = e.target.files
         // console.log('file content', content)
         // You can set content in state and show it in render.
         setImgUrl(content)
     }
 
     const handleChangeUserImg = (file) => {
-        console.log (file)
+        console.log(file)
         const fileData = new FileReader();
         setVendorImg(file)
         fileData.onloadend = handleUserImg;
@@ -81,6 +73,7 @@ function BackendData(props) {
 
     }
 
+     //預覽圖片(Banner)
     const handleBannerImg = (e) => {
         const content = e.target.result;
         // console.log('file content', content)
@@ -97,6 +90,7 @@ function BackendData(props) {
         fileData.readAsDataURL(file);
     }
 
+    //送出資料(不含關於跟Banner)
     const handleSubmit = (event) => {
 
         event.preventDefault()
@@ -128,23 +122,23 @@ function BackendData(props) {
 
         }
     }
-
+    //送出資料(只有關於跟Banner)
     const handleSubmit2 = (event) => {
 
         event.preventDefault()
 
-        const vendorUpdate = [vendorAbout, vendorBanner, localId]
+        const vendorUpdate = {vendorAbout, vendorBanner, localId}
         console.log(vendorUpdate)
         let formData = new FormData();
-        vendorUpdate.map((value, index) => {
-            formData.append(`${index}`, value);
-        })
-        // formData.append('vendorImg', vendorImg);
+        for (let key in vendorUpdate) {
+            formData.append(`${key}`, vendorUpdate[key]);
+        }
+
         sendRegisterDataToServer(vendorUpdate, () => alert('更新成功'))
 
         async function sendRegisterDataToServer(vendorUpdate, callback) {
             // 注意資料格式要設定，伺服器才知道是json格式
-            const request = new Request('http://127.0.0.1:3333/vendor/updateaboutbanner', {
+            const request = new Request('http://127.0.0.1:3333/vendor/updateabout', {
                 method: 'POST',
                 body: formData
             })
@@ -176,7 +170,8 @@ function BackendData(props) {
 
                             <div className="form-group">
                                 <label>廠商名稱</label>
-                                <input type="text" className="form-control" placeholder="" name="vendorName" value={vendorName} onChange={e => setVendorName(e.target.value)} />
+                                <input type="text" className="form-control" placeholder="" name="vendorName" value={vendorName}
+                                onChange={e => setVendorName(e.target.value)} />
                             </div>
 
                             <div className="form-group">
@@ -195,8 +190,24 @@ function BackendData(props) {
                                 <select className="custom-select mb-2 col-5" name="vendorZone" value={vendorZone} onChange={e => setVendorZone(e.target.value)}>
                                     <option selected>選擇縣市</option>
                                     <option value="1">台北市</option>
-                                    <option value="2">新北市</option>
-                                    <option value="3">新竹市</option>
+                                    <option value="1">新北市</option>
+                                    <option value="1">新竹市</option>
+                                    <option value="1">基隆市</option>
+                                    <option value="1">新竹市</option>
+                                    <option value="1">桃園市</option>
+                                    <option value="1">宜蘭縣</option>
+                                    <option value="2">台中市</option>
+                                    <option value="2">苗栗縣</option>
+                                    <option value="2">彰化縣</option>
+                                    <option value="2">南投縣</option>
+                                    <option value="2">雲林縣</option>
+                                    <option value="3">嘉義縣</option>
+                                    <option value="3">台南市</option>
+                                    <option value="3">高雄市</option>
+                                    <option value="3">屏東縣</option>
+                                    <option value="3">澎湖縣</option>
+                                    <option value="4">花蓮縣</option>
+                                    <option value="4">台東縣</option>
                                 </select>
                                 <input type="text" className="form-control" name="vendorAddress" value={vendorAddress} onChange={e => setVendorAddress(e.target.value)} />
                             </div>
@@ -227,7 +238,7 @@ function BackendData(props) {
 
                     <div className="mb-5">
                         <label>關於商店</label>
-                        <textarea className="form-control" value={welcomeText} placeholder="" required name="vendorAbout" onChange={e => setVendorAbout(e.target.value)} />
+                        <textarea className="form-control" value={vendorAbout} placeholder="" name="vendorAbout" onChange={e => setVendorAbout(e.target.value)} />
 
                     </div>
 

@@ -175,10 +175,14 @@
 
 
 .ls_backend-nav{
+  width: 80px;
   padding: 4px 8px;
 
   ul{
     padding: 0;
+  }
+  a{
+    text-decoration: none;
   }
 
 
@@ -187,6 +191,16 @@
     border-width: 2px;
     color: $main;
   }
+
+}
+
+.ls_fron-nav{
+
+
+  &.active {
+    background-color: $main2;
+  }
+
 
 }
 
@@ -259,6 +273,30 @@
     width: 100%;
     height: 100%;
   }
+}
+
+.ls_singlevendor{
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+}
+
+.ls_allstore-img{
+  max-width: 200px;
+  // height: 100px;
+  overflow: hidden;
+  object-fit: contain;
+
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.ls-logoutandpreview{
+  margin: 0 auto;
+
 }
 
 
