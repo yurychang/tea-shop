@@ -13,7 +13,7 @@ export default function Singup() {
   const [error, setError] = useState(false)
   const [errorMessages, setErrorMessages] = useState([])
 
-  const nextpage = <Redirect to="/login/vendor" />
+  const nextpage = <Redirect to="/signup" />
   const signupform = (
     <div className="container yz-header">
       <div className="Singuparea">
@@ -110,6 +110,7 @@ export default function Singup() {
       accountPhone,
       accountPassword,
     }
+    console.log(userData)
 
     sendRegisterDataToServer(userData, () => alert('註冊成功，請重新登入'))
 
@@ -127,6 +128,7 @@ export default function Singup() {
       const response = await fetch(request)
       console.log('response', response)
       const data = await response.json()
+      console.log(data)
       callback()
       return data
     }

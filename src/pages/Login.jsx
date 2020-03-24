@@ -60,7 +60,12 @@ export default function Login() {
               </div>
             </div>
           </div>
-          <Link type="button" className="yz_btn-login text-center">
+          <Link
+            type="button"
+            className="yz_btn-login text-center"
+            // onChange={e => setAccountNumber(e.target.value)}
+          >
+            <i className="fas fa-sign-in-alt"></i>>
             <i className="fas fa-sign-in-alt"> </i>
             登入
           </Link>
