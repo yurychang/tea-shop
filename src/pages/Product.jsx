@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router'
 import Slider from '@material-ui/core/Slider'
-import img1 from '../../images/01.jpg'
-import img2 from '../../images/shopping_cart-24px.svg'
-import img3 from '../../images/favorite-24px.svg'
+import img1 from '../images/01.jpg'
+import img2 from '../images/shopping_cart-24px.svg'
+import img3 from '../images/favorite-24px.svg'
 import { Link } from 'react-router-dom'
+import { toggleFilter } from 'actions/events'
 
 function valuetext(value) {
   return `NT.${value}`
 }
-function Product({ ...attrs }) {
+function Product(props) {
   const [total, setTotal] = useState([])
   // const [totalDisplay, setTotalDisplay] = useState([])
   // const [dataLoading, setDataLoading] = useState(false)
@@ -61,10 +62,17 @@ function Product({ ...attrs }) {
   const handleAddToCart = (event, newValue) => {
     console.log('addtocart')
   }
-  // on-----------------------------------------
-  // const handleAddImg = (eventa, newValuea) => {
-  //   console.log('addImg')
-  // }
+  //onImg-----------------------------------------
+  const handleAddImg = (addImg, newAddImg) => {
+    console.log('addImg')
+    // function addImg(index) {
+    //   const action = fetchPosts
+    //   {
+    //     // type: REGISTER_SUCCESS,
+    //     index,
+    //   }
+    // }
+  }
 
   return (
     <>
@@ -195,7 +203,12 @@ function Product({ ...attrs }) {
                   <>
                     <div className=" col-4 ">
                       <Link to={`/Commodity/${el.id}`} className="d-block">
-                        <img src={img1} className="card-img-top" alt="" />
+                        <img
+                          src={img1}
+                          className="card-img-top"
+                          alt=""
+                          onClick={handleAddImg(el.id)}
+                        />
                       </Link>
 
                       <div className="card-body">

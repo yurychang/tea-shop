@@ -95,7 +95,9 @@ function CartList() {
                           <strong>$100</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>刪除</strong>
+                          <button type="button" class="btn btn-outline-danger">
+                            刪除
+                          </button>
                         </td>
                       </tr>
                     </tbody>
