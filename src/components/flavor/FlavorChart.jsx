@@ -37,7 +37,7 @@ function drawChart(data) {
 
   const innerRadius = [80, 170]
   const outerRadius = [170, 250]
-  // const innerWidth = [1, 1, 3, 2, 5, 8, 3, 13]
+  const innerWidth = [1, 1, 3, 2, 5, 8, 3, 13]
 
   const childrenTotal = full(36, 1)
   const svg = d3.select('#flavorChart')
