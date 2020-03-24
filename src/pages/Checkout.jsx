@@ -8,7 +8,7 @@ import { Timeline } from 'rsuite'
 
 // import{ BrowserRouter as Link} from "react-router-dom";
 import '../styles/jc/checkout.scss'
-import 'rsuite/dist/styles/rsuite-default.css'
+// import 'rsuite/dist/styles/rsuite-default.css'
 
 function Checkout() {
   return (

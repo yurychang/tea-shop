@@ -28,10 +28,6 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          {/* <Route path="/Index">
-            <MainBar />
-            <Index />
-          </Route> */}
           <Route path="/dashboard">
             <BackendRouter />
           </Route>
