@@ -62,9 +62,9 @@ function Product({ ...attrs }) {
     console.log('addtocart')
   }
   // on-----------------------------------------
-//   const [onimg, setOnimg] = useState([])
-//   console.log('onimg',onimg)
-// }
+  // const handleAddImg = (eventa, newValuea) => {
+  //   console.log('addImg')
+  // }
 
   return (
     <>
@@ -194,8 +194,8 @@ function Product({ ...attrs }) {
                 return (
                   <>
                     <div className=" col-4 ">
-                      <Link to="Commodity/id" className="d-block">
-                        <img src={img1} className="card-img-top" alt="..." />
+                      <Link to={`/Commodity/${el.id}`} className="d-block">
+                        <img src={img1} className="card-img-top" alt="" />
                       </Link>
 
                       <div className="card-body">
@@ -250,7 +250,7 @@ function Product({ ...attrs }) {
                         </p>
                       </div>
                       <div className="pj_card-footer">
-                        <div>{el.price}</div>
+                        <div>$NT{el.price}</div>
                         <img src={img2} alt="" onClick={handleAddToCart} />
                       </div>
                     </div>
