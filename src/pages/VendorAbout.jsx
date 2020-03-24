@@ -25,7 +25,7 @@ function VendorAbout({ event = {}, fetchvendordata }) {
   )
 }
 const mapStateToProps =()=>{
-  
+
 }
 
 const mapDispatchToProps = dispatch => {

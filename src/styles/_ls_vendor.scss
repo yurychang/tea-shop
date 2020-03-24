@@ -194,6 +194,16 @@
 
 }
 
+.ls_fron-nav{
+
+
+  &.active {
+    background-color: $main2;
+  }
+
+
+}
+
 .ls_backend-order{
 
 
@@ -267,13 +277,13 @@
 
 .ls_singlevendor{
   width: 200px;
-  height: 250px;
+  height: 200px;
   padding: 5px;
 }
 
 .ls_allstore-img{
   max-width: 200px;
-  height: 100px;
+  // height: 100px;
   overflow: hidden;
   object-fit: contain;
 

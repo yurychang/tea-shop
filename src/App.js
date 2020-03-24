@@ -46,8 +46,8 @@ function App() {
                   <Events />
                 </Route>
                 <Route path="/allstore">
-                <AllVendors />
-              </Route>
+                  <AllVendors />
+                </Route>
                 <Route path="/checkout">
                   <Checkout />
                 </Route>
@@ -79,7 +79,9 @@ function App() {
                 <Route path="/membercenter">
                   <MemberRouter />
                 </Route>
-                <VendorRouter />
+                <Route path="/vendor">
+                  <VendorRouter />
+                </Route>
               </Switch>
             </div>
           </Route>

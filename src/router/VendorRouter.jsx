@@ -10,7 +10,6 @@ function VendorRouter() {
 
     return (
         <>
-            <Switch>
                 <Route path='/vendor/:id?/index'>
                     <VendorIndex/>
                 </Route>
@@ -23,7 +22,6 @@ function VendorRouter() {
                 <Route path='/vendor/:id?/discount'>
                     <VendorDiscount />
                 </Route>
-            </Switch>
         </>
     )
 

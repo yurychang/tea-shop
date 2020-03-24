@@ -1,16 +1,22 @@
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+// import { connect } from 'react-redux'
+// import { bindActionCreators } from 'redux'
 import VendorList from 'components/vendor/VendorList'
-
+import { connect } from 'react-redux'
+import { fetchvendordata } from 'actions/vendordata'
+import { bindActionCreators } from 'redux'
 
 
 function AllVendors() {
-  useEffect(() => {
 
+  useEffect(() => {
+    fetchvendordata()
   }, [])
+
+
+  // console.log()
 
   return (
     <>
@@ -28,8 +34,24 @@ function AllVendors() {
   )
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return bindActionCreators({ fetchEvents }, dispatch)
+const mapDispatchToProps = dispatch => {
+  const x = bindActionCreators(fetchvendordata, dispatch)
+  console.log(x)
+  return x
+}
+// const props = {}
+// const dispatch = {x: 'sdfs', y: 'hjgj'}
+// const newP = {
+//   ...props,
+//   ...dispatch,
+//   ...state
 // }
-
-export default (AllVendors)
+// state = {
+//   ...prop,
+//   ...state
+// }
+// const newP = {
+//   ...dispatch,
+//   ...state
+// }
+export default connect(null, mapDispatchToProps)(AllVendors)

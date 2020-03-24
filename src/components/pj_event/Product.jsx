@@ -78,7 +78,7 @@ function Product({ ...attrs }) {
                   </button>
                   <button
                     type="button"
-                    className=" pj_btn btn 
+                    className=" pj_btn btn
                   btn-secondary "
                   >
                     烏龍茶

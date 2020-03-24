@@ -3,7 +3,7 @@ import events from './events'
 import zones from './zones'
 import companys from './companys'
 import isLoading from './isLoading'
-import vendordata from './vendordata'
+import vendordata from './allvendordata'
 
 const rootReducer = combineReducers({
   events,

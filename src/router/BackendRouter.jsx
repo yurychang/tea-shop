@@ -13,11 +13,14 @@ import BackendAddMsg from '../components/backend/BackendAddMsg'
 import EditEvent from '../components/backend/EditEvent'
 
 function BackendRouter() {
+
+  const localId = localStorage.getItem('vendorId')
+
   return (
     <>
       <h2 className="text-center mb-5 mt-3">賣家中心</h2>
       <div className="ls-logoutandpreview container d-flex justify-content-end">
-       <Link  className="btn btn-main mb-2 ml-2" to="/vendor/index/:id?">預覽頁面</Link>
+       <Link  className="btn btn-main mb-2 ml-2" to={`/vendor/${localId}/index/`}>觀看商店頁</Link>
        <Link  className="btn btn-danger mb-2 ml-2" to="">登出</Link>
       </div>
       <div className="container d-flex">

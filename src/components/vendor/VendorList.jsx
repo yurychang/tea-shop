@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 
 // const searchParams = new URLSearchParams(props.location.search)
 // const id = searchParams.get('id')
@@ -34,6 +36,7 @@ function VendorList() {
     }, [])
 
 
+
     const singlevendor = (
         <>
             {alldata.map((value, index) => {
@@ -59,17 +62,23 @@ function VendorList() {
 
 
     return (
-
         <>
             <div className="container d-flex flex-wrap">
-
                 {singlevendor}
-
             </div>
-
-
         </>
     )
+
 }
 
-export default VendorList
+const mapStateToProps = () => {
+
+
+    return {}
+}
+
+
+
+
+
+export default connect(mapStateToProps)(VendorList)

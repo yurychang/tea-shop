@@ -13,11 +13,11 @@ function VendorProduct() {
                     <div className="card-body">
                         <div className="producttop mb-2 d-flex justify-content-between">
                             <div className="ptag">
-                                <button type="button" class="btn btn-outline-primary btn-xs mr-1">高海拔</button>
-                                <button type="button" class="btn btn-outline-info btn-xs mr-1">無農藥</button>
-                                <button type="button" class="btn btn-outline-danger btn-xs">蜜香紅茶</button>
+                                <button type="button" className="btn btn-outline-primary btn-xs mr-1">高海拔</button>
+                                <button type="button" className="btn btn-outline-info btn-xs mr-1">無農藥</button>
+                                <button type="button" className="btn btn-outline-danger btn-xs">蜜香紅茶</button>
                             </div>
-                            <i class="far fa-heart mt-2"></i>
+                            <i className="far fa-heart mt-2"></i>
                         </div>
                         <h6 className="">凍頂烏龍茶</h6>
                         <div className="product-pretext mb-2">風華絕代50年，山蔭長歌採茶人......</div>
@@ -34,11 +34,11 @@ function VendorProduct() {
                     <div className="card-body">
                         <div className="producttop mb-2 d-flex justify-content-between">
                             <div className="ptag">
-                                <button type="button" class="btn btn-outline-primary btn-xs mr-1">高海拔</button>
-                                <button type="button" class="btn btn-outline-info btn-xs mr-1">無農藥</button>
-                                <button type="button" class="btn btn-outline-danger btn-xs">蜜香紅茶</button>
+                                <button type="button" className="btn btn-outline-primary btn-xs mr-1">高海拔</button>
+                                <button type="button" className="btn btn-outline-info btn-xs mr-1">無農藥</button>
+                                <button type="button" className="btn btn-outline-danger btn-xs">蜜香紅茶</button>
                             </div>
-                            <i class="far fa-heart mt-2"></i>
+                            <i className="far fa-heart mt-2"></i>
                         </div>
                         <h6 className="">凍頂烏龍茶</h6>
                         <div className="product-pretext mb-2">風華絕代50年，山蔭長歌採茶人......</div>
@@ -55,11 +55,11 @@ function VendorProduct() {
                     <div className="card-body">
                         <div className="producttop mb-2 d-flex justify-content-between">
                             <div className="ptag">
-                                <button type="button" class="btn btn-outline-primary btn-xs mr-1">高海拔</button>
-                                <button type="button" class="btn btn-outline-info btn-xs mr-1">無農藥</button>
-                                <button type="button" class="btn btn-outline-danger btn-xs">蜜香紅茶</button>
+                                <button type="button" className="btn btn-outline-primary btn-xs mr-1">高海拔</button>
+                                <button type="button" className="btn btn-outline-info btn-xs mr-1">無農藥</button>
+                                <button type="button" className="btn btn-outline-danger btn-xs">蜜香紅茶</button>
                             </div>
-                            <i class="far fa-heart mt-2"></i>
+                            <i className="far fa-heart mt-2"></i>
                         </div>
                         <h6 className="">凍頂烏龍茶</h6>
                         <div className="product-pretext mb-2">風華絕代50年，山蔭長歌採茶人......</div>
@@ -76,11 +76,11 @@ function VendorProduct() {
                     <div className="card-body">
                         <div className="producttop mb-2 d-flex justify-content-between">
                             <div className="ptag">
-                                <button type="button" class="btn btn-outline-primary btn-xs mr-1">高海拔</button>
-                                <button type="button" class="btn btn-outline-info btn-xs mr-1">無農藥</button>
-                                <button type="button" class="btn btn-outline-danger btn-xs">蜜香紅茶</button>
+                                <button type="button" className="btn btn-outline-primary btn-xs mr-1">高海拔</button>
+                                <button type="button" className="btn btn-outline-info btn-xs mr-1">無農藥</button>
+                                <button type="button" className="btn btn-outline-danger btn-xs">蜜香紅茶</button>
                             </div>
-                            <i class="far fa-heart mt-2"></i>
+                            <i className="far fa-heart mt-2"></i>
                         </div>
                         <h6 className="">凍頂烏龍茶</h6>
                         <div className="product-pretext mb-2">風華絕代50年，山蔭長歌採茶人......</div>
