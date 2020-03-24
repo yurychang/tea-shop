@@ -16,6 +16,7 @@ import Product from './components/pj_event/Product'
 import CartBox from './pages/CartBox'
 import CartList from './pages/CartList'
 import Checkout from './pages/Checkout'
+import Flavor from './pages/Flavor'
 
 import Loading from 'utils/Loading'
 //這是網址
@@ -81,6 +82,9 @@ function App() {
                 </Route>
                 <Route path="/vendor">
                   <VendorRouter />
+                </Route>
+                <Route path="/flavor">
+                  <Flavor />
                 </Route>
               </Switch>
             </div>
