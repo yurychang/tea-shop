@@ -63,7 +63,7 @@ export default function MainBarNav({ isOpen, onClick }) {
               </Nav.Item>
               <Nav.Item className="border-bottom border-bottom-lg-0">
                 <Nav.Link as="p" className="mb-0">
-                  <Link to="/cart" className="d-block">
+                  <Link to="/login" className="d-block">
                     <i className="fas fa-shopping-cart" />
                     <span className="d-lg-none ml-2">會員中心</span>
                   </Link>

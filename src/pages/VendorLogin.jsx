@@ -39,6 +39,7 @@ function VendorLogintest() {
             className="form-control ls-login-form-control"
             placeholder="請輸入帳號"
             onChange={e => setVendorAccount(e.target.value)}
+            required
           />
         </div>
         <div className="form-group">
@@ -46,7 +47,9 @@ function VendorLogintest() {
             type="password"
             className="form-control ls-login-form-control"
             placeholder="請輸入密碼"
+            required
             onChange={e => setVendorPassword(sha1(e.target.value))}
+            required
           />
         </div>
         <div className="form-group form-check d-flex">
@@ -108,7 +111,7 @@ function VendorLogintest() {
 
       if (data.success === true) {
         console.log(data.message.text)
-        localStorage.setItem('vendorId', JSON.stringify(data.vendorid))
+        localStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
         setLoginmode(true)
       } else {
         console.log(data.message.text)

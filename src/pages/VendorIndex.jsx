@@ -12,8 +12,11 @@ function VendorIndex(props) {
 
   const [preview, setPreviewdata] = useState([])
 
+
   const getvendorid = Number(props.match.params.id)
-  console.log(getvendorid)
+  localStorage.setItem('vendorId',getvendorid)
+
+  console.log('[ID]', getvendorid)
 
   async function getDataFromServer() {
 
@@ -34,17 +37,17 @@ function VendorIndex(props) {
     getDataFromServer()
   }, [])
 
-  console.log('preview',preview)
-  console.log('preview[0]',preview[0])
+  console.log('preview', preview)
+  console.log('preview[0]', preview[0])
 
 
 
   return (
     <>
       <VendorBanner {...preview[0]} />
-      <VendorNav />
+      <VendorNav {...preview[0]} />
       <div className="vendorWrapper d-flex justify-content-around">
-        <VendorInfo />
+        <VendorInfo {...preview[0]} />
         <VendorProduct />
       </div>
     </>
