@@ -19,7 +19,7 @@ const SubmitBtn = styled.button.attrs(props => ({
   }
 `
 
-function RegistForm({ id, title, price, location, onSubmit }) {
+function RegistForm({ id, title, price, location, postRegisterForm }) {
   const formikConfig = {
     initialValues: {
       name: '',
@@ -47,13 +47,14 @@ function RegistForm({ id, title, price, location, onSubmit }) {
         .min(1, 'too small'),
       time: Yup.string().required('required'),
     }),
-    onSubmit: (values, { setSubmitting }) => {
+    onSubmit: (values, { setSubmitting, resetForm }) => {
       values.eId = id
-      onSubmit(values)
+      postRegisterForm(values)
+      resetForm({})
       setSubmitting(false)
     },
   }
-  
+
   return (
     <>
       <div className="my-5 pl-lg-5 pt-7 border-lg-left border-secondary">
@@ -144,7 +145,7 @@ function RegistForm({ id, title, price, location, onSubmit }) {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ onSubmit: postRegisterForm }, dispatch)
+  return bindActionCreators({ postRegisterForm }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(RegistForm)

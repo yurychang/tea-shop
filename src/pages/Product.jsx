@@ -5,13 +5,14 @@ import img1 from '../images/01.jpg'
 import img2 from '../images/shopping_cart-24px.svg'
 import img3 from '../images/favorite-24px.svg'
 import { Link } from 'react-router-dom'
-import { toggleFilter } from 'actions/events'
 
 function valuetext(value) {
   return `NT.${value}`
 }
 function Product(props) {
   const [total, setTotal] = useState([])
+  const [addToCart, setAddToCart] = useState(0)
+  const [search, setSearch] = useState('')
   // const [totalDisplay, setTotalDisplay] = useState([])
   // const [dataLoading, setDataLoading] = useState(false)
 
@@ -59,20 +60,25 @@ function Product(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
-  const handleAddToCart = (event, newValue) => {
-    console.log('addtocart')
-  }
+
   //onImg-----------------------------------------
   const handleAddImg = (addImg, newAddImg) => {
     console.log('addImg')
-    // function addImg(index) {
-    //   const action = fetchPosts
-    //   {
-    //     // type: REGISTER_SUCCESS,
-    //     index,
-    //   }
-    // }
   }
+  //搜尋
+  // useEffect(() => {
+  //   const featchList = async (search = '') => {
+  //     try {
+  //       const data1 = await featchList(search)
+
+  //       total && setTotal(data1)
+  //     } catch (err) {
+  //       throw err
+  //     }
+  //   }
+
+  //   featchList(search)
+  // }, [])
 
   return (
     <>
@@ -264,7 +270,11 @@ function Product(props) {
                       </div>
                       <div className="pj_card-footer">
                         <div>$NT{el.price}</div>
-                        <img src={img2} alt="" onClick={handleAddToCart} />
+                        <img
+                          src={img2}
+                          alt=""
+                          onClick={() => setAddToCart(addToCart + 1)}
+                        />
                       </div>
                     </div>
                   </>
@@ -277,29 +287,4 @@ function Product(props) {
   )
 }
 
-// const mapStateToProps = ({ product }, { match }) => {
-//   const { params } = match
-//   let cId = ''
-//   let companyProduct = []
-//   let product = {}
-//   for (let i = 0; i < product.data?.length; i++) {
-//     const el = product.data[i]
-//     if (el.id.toString() === params.id.toString()) {
-//       product = el
-//       cId = product.cId
-//     }
-//   }
-//   product.data.forEach(el => {
-//     if (el.cId.toString() === cId.toString()) {
-//       product.push(el)
-//     }
-//   })
-//   return { product, companyProduct }
-// }
-
-// const mapDispatchToProps = dispatch => {
-//   return bindActionCreators({ fetchProduct, fetchCompanys }, dispatch)
-// }
-
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Product))
 export default withRouter(Product)

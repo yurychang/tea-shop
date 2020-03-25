@@ -1,5 +1,7 @@
-import React from 'react'
-import ReactFileReader from 'react-file-reader'
+import React, { useState, useEffect } from 'react'
+import VendorAboutArea from 'components/vendor/VendorAboutArea'
+import { keyframes } from 'styled-components'
+import VendorAbout from 'pages/VendorAbout'
 
 function BackendData() {
   const welcomeText = '您好，歡迎光臨，希望我們提供的商品您會喜歡!'

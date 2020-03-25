@@ -6,9 +6,10 @@ import '../../styles/pj/_pj.css'
 
 function CommoditInformation(props) {
   const [product, setProduct] = useState([])
-
-  const [cartnum, setCarNum] = useState(0)
-  console.log('cartnum')
+  const [amount, setAmount] = useState(1)
+  console.log('amount')
+  const [cartNum, setCarNum] = useState(0)
+  console.log('cartNum')
 
   async function getDataFromServer() {
     // 開啟載入指示
@@ -36,6 +37,9 @@ function CommoditInformation(props) {
   }, [])
   console.log('props', props.title)
   console.log('product', product)
+  console.log('amount', amount)
+
+  
   return (
     <>
       <div className="card-body">
@@ -55,7 +59,9 @@ function CommoditInformation(props) {
         <div className="pj_card-price-amount">
           <div className="amount d-flex">
             <p className="pj_card-price-p">數量</p>
-            <input className="pj_card-price-input" type="number" />
+            <button onClick={() => setAmount(amount - 1)}>-</button>
+            <input className="pj_card-price-input" type="text" value={amount} />
+            <button onClick={() => setAmount(amount + 1)}>+</button>
           </div>
           <div className="pj_price">
             <p className="pj_card-price">NT ${props.price}</p>
@@ -66,7 +72,7 @@ function CommoditInformation(props) {
           <button
             type="button"
             className="btn btn-outline-warning m-1 pj_cart-button"
-            onClick={() => setCarNum(cartnum + 1)}
+            onClick={() => setCarNum(cartNum + 1)}
           >
             加入購物車
             <img src="../../images/shopping_cart-24px.svg" alt="" />

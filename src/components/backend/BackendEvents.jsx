@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom'
 
 
 function BackendEvents() {
-
-
     return (
         <>
-            <div className="content col-10">
+            <div className="content">
                 <h3>活動管理</h3>
                 <hr />
                 <ul className="nav ">

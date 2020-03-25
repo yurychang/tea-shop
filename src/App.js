@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Index from 'pages/Index'
-import MainBar from 'components/index/MainBar'
+import MainBar from 'components/Mainbar/MainBar'
 import './styles/index.scss'
 import VendorRouter from './router/VendorRouter'
 import Events from 'pages/Events'
@@ -15,11 +15,13 @@ import Commodity from './pages/Commodity'
 import Product from './pages/Product'
 import CartBox from './pages/CartBox'
 import CartList from './pages/CartList'
+import Checkout from './pages/Checkout'
 
 import Loading from 'utils/Loading'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
 import VendorLogin from 'pages/VendorLogin'
+import AllVendors from 'pages/AllVendors'
 
 function App() {
   return (
@@ -34,11 +36,20 @@ function App() {
             <MainBar />
             <div className="sy_main-content">
               <Switch>
+                <Route path="/Index">
+                  <Index />
+                </Route>
                 <Route path="/events/:id">
                   <Event />
                 </Route>
                 <Route path="/events">
                   <Events />
+                </Route>
+                <Route path="/allstore">
+                  <AllVendors />
+                </Route>
+                <Route path="/checkout">
+                  <Checkout />
                 </Route>
                 <Route path="/login/vendor">
                   <VendorLogin />
@@ -68,9 +79,8 @@ function App() {
                 <Route path="/membercenter">
                   <MemberRouter />
                 </Route>
-                <VendorRouter />
-                <Route path="/">
-                  <Index />
+                <Route path="/vendor">
+                  <VendorRouter />
                 </Route>
               </Switch>
             </div>

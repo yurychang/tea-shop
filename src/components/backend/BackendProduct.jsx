@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function BackendProduct() {
   return (
     <>
-      <div className="content col-10">
+      <div className="content">
         <h3>商品管理</h3>
         <hr />
 

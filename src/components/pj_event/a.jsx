@@ -1,115 +1,372 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import '../../style/Shoping/Shopingcar.scss'
 
-function Cart() {
-  const [mycart, setMycart] = useState([])
-  const [mycartDisplay, setMycartDisplay] = useState([])
-  const [dataLoading, setDataLoading] = useState(false)
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  NavLink,
+  Switch,
+} from 'react-router-dom'
+// import Carousel from '../components/Navigation_Navber/Carousel'
 
-  async function getCartFromLocalStorage() {
-    // 開啟載入指示
-    setDataLoading(true)
-
-    const newCart = localStorage.getItem('cart') || []
-
-    console.log(JSON.parse(newCart))
-
-    // 設定資料
-    setMycart(JSON.parse(newCart))
-  }
-
-  //   async function updateTotalToLocalStorage(value) {
-  //     // 開啟載入指示
-  //     setDataLoading(true)
-
-  //     const newTotal = +total + value
-  //     localStorage.setItem('total', newTotal)
-
-  //     // 設定資料
-  //     setTotal(newTotal)
-  //   }
-
-  // 一開始就會開始載入資料
-  useEffect(() => {
-    getCartFromLocalStorage()
-  }, [])
-
-  // 每次mycart資料有變動就會3秒後關掉載入指示
-  useEffect(() => {
-    setTimeout(() => {
-      setDataLoading(false)
-    }, 500)
-
-    let newMycartDisplay = []
-
-    console.log('mycartDisplay', mycartDisplay)
-    console.log('mycart', mycart)
-
-    //尋找mycartDisplay
-    for (let i = 0; i < mycart.length; i++) {
-      //尋找mycartDisplay中有沒有此mycart[i].id
-      //有找到會返回陣列成員的索引值
-      //沒找到會返回-1
-      const index = newMycartDisplay.findIndex(
-        value => value.id === mycart[i].id
-      )
-      //有的話就數量+1
-      if (index !== -1) {
-        console.log('findindex', index)
-        //每次只有加1個數量
-        //newMycartDisplay[index].amount++
-        //假設是加數量的
-        newMycartDisplay[index].amount += mycart[i].amount
-      } else {
-        //沒有的話就把項目加入，數量為1
-        const newItem = { ...mycart[i] }
-        newMycartDisplay = [...newMycartDisplay, newItem]
-      }
-    }
-
-    console.log(newMycartDisplay)
-    setMycartDisplay(newMycartDisplay)
-  }, [mycart])
-
-  const sum = items => {
-    let total = 0
-    for (let i = 0; i < items.length; i++) {
-      total += items[i].amount * items[i].price
-    }
-    return total
-  }
-
-  const loading = (
-    <>
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-    </>
-  )
-
-  const display = (
-    <>
-      <ul className="list-group">
-        {mycartDisplay.map((value, index) => {
-          return (
-            <li className="list-group-item" key={value.id}>
-              產品：{value.name}/數量：{value.amount}/單價：{value.price}/
-              {'   '}
-              小計：{value.amount * value.price}
-            </li>
-          )
-        })}
-      </ul>
-      <h3>總價：{sum(mycartDisplay)}</h3>
-    </>
-  )
-
+const Shopingcar = () => {
   return (
     <>
-      <div className="container">{dataLoading ? loading : display}</div>
+      <section className="content_shoping">
+        <Container>
+          <Row>
+            <Col md={12} xs={12}>
+              <article className="">
+                <div className="entry-content">
+                  <div className="woocommerce">
+                    <div className="woocommerce-notices-wrapper"></div>
+                    <form
+                      className="woocommerce-cart-form text-align-center"
+                      action="#"
+                      method="post"
+                    >
+                      <table
+                        className="shop_table shop_table_responsive col-md-12 woocommerce-cart-form__contents"
+                        cellspacing="0"
+                      >
+                        <thead className="shop_table_thead">
+                          <tr>
+                            <th className="product-remove">&nbsp;</th>
+                            <th className="product-thumbnail">&nbsp;</th>
+                            <th className="product-name">Product</th>
+                            <th className="product-price">Price</th>
+                            <th className="product-quantity">Quantity</th>
+                            <th className="product-subtotal">Total</th>
+                          </tr>
+                        </thead>
+                        <tbody className="shop_table_body">
+                          <tr className="woocommerce-cart-form__cart-item cart_item">
+                            <td className="product-remove">
+                              <a
+                                href="#"
+                                className="remove"
+                                aria-label="Remove this item"
+                                data-product_id="682"
+                                data-product_sku=""
+                              >
+                                &times;
+                              </a>
+                            </td>
+                            <td className="product-thumbnail">
+                              <a href="#">
+                                <img
+                                  width="162"
+                                  height="300"
+                                  src="http://okthemes.com/villenoir/wp-content/uploads/2016/03/Red-Pinot-Noir-w-cup.png"
+                                  className="attachment-9999x300 size-9999x300"
+                                  alt=""
+                                />
+                              </a>
+                            </td>
+                            <td className="product-name" data-title="Product">
+                              <a href="#">VillenoirPinot Noir</a>{' '}
+                            </td>
+                            <td className="product-price" data-title="Price">
+                              <span className="woocommerce-Price-amount amount">
+                                189,00&nbsp;
+                                <span className="woocommerce-Price-currencySymbol">
+                                  &euro;
+                                </span>
+                              </span>
+                            </td>
+                            <td
+                              className="product-quantity"
+                              data-title="Quantity"
+                            >
+                              <div className="quantity buttons_added">
+                                <input
+                                  type="button"
+                                  value="-"
+                                  className="minus"
+                                ></input>
+                                <label
+                                  className="screen-reader-text"
+                                  for="quantity_5dcb88c341594"
+                                >
+                                  Villenoir Pinot Noir quantity
+                                </label>
+                                <input
+                                  type="number"
+                                  id="quantity_5dcb88c341594"
+                                  className="input-text qty text"
+                                  step="1"
+                                  min="0"
+                                  max
+                                  value="1"
+                                  title="Qty"
+                                  size="4"
+                                  inputmode="ntmeric"
+                                ></input>
+                                <input
+                                  type="button"
+                                  value="+"
+                                  className="plus"
+                                ></input>
+                              </div>
+                            </td>
+                            <td className="product-subtotal" data-title="Total">
+                              <span className="woocommerce-Price-amount amount">
+                                189,00&nbsp;
+                                <span className="woocommerce-Price-currencySymbol">
+                                  &euro;
+                                </span>
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="6" className="actions">
+                              <div className="coupon">
+                                <div className="input-group">
+                                  <span className="input-group-addon">
+                                    <label for="coupon_code">Coupon code</label>
+                                  </span>
+                                  <input
+                                    type="text"
+                                    name="coupon_code"
+                                    className="input-text form-control"
+                                    id="coupon_code"
+                                    value=""
+                                  />
+                                  <span className="input-group-btn">
+                                    <input
+                                      type="submit"
+                                      className="button btn btn-primary"
+                                      name="apply_coupon"
+                                      value="Apply"
+                                    />
+                                  </span>
+                                </div>
+                              </div>
+                              <input
+                                type="hidden"
+                                id="_wpnonce"
+                                name="_wpnonce"
+                                value="ccaefa2a03"
+                              />
+                              <input
+                                type="hidden"
+                                name="_wp_http_referer"
+                                value="/villenoir/cart/"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <Col md={12} className="cart-collaterals">
+                        <div className="cross-sells">
+                          <h2>You may be interested in&hellip;</h2>
+                          <Row>
+                            <ul className="products">
+                              <li className="col-xl-6 col-xs-12 col-sm-12 col-md-12 post-686 product type-product status-publish has-post-thumbnail product_cat-white-wines member-discount discount-restricted first instock shipping-taxable purchasable product-type-simple">
+                                <a
+                                  href="#"
+                                  className="woocommerce-LoopProduct-link woocommerce-loop-product__link"
+                                >
+                                  <h2 className="woocommerce-loop-product__title">
+                                    Villenoir Riesling
+                                  </h2>
+                                  <div className="gg-product-image-wrapper">
+                                    <img
+                                      width="1400"
+                                      height="2225"
+                                      src="http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Riesling-w-cup.png"
+                                      className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                      alt=""
+                                      srcset="http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Riesling-w-cup.png 1400w, http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Riesling-w-cup-189x300.png 189w, http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Riesling-w-cup-768x1221.png 768w, http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Riesling-w-cup-644x1024.png 644w"
+                                      sizes="(max-width: 1400px) 100vw, 1400px"
+                                    />
+                                  </div>
+                                </a>
+                                <div className="gg-product-meta-wrapper">
+                                  <dl>
+                                    <dt>Year</dt>
+                                    <dd>
+                                      <span className="year">2012</span>
+                                    </dd>
+                                    <dt>Price </dt>
+                                    <dd>
+                                      <span className="price">
+                                        <span className="woocommerce-Price-amount amount">
+                                          165,00&nbsp;
+                                          <span className="woocommerce-Price-currencySymbol">
+                                            &euro;
+                                          </span>
+                                        </span>
+                                      </span>
+                                    </dd>
+                                  </dl>
+                                  <a
+                                    href="#"
+                                    data-quantity="1"
+                                    className="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                    data-product_id="686"
+                                    data-product_sku=""
+                                    aria-label="Add &ldquo;Villenoir Riesling&rdquo; to your cart"
+                                    rel="nofollow"
+                                  >
+                                    Add to cart
+                                  </a>
+                                </div>
+                              </li>
+                              <li className="col-xl-6 col-xs-12 col-sm-12 col-md-12 post-684 product type-product status-publish has-post-thumbnail product_cat-white-wines member-discount discount-restricted last instock shipping-taxable purchasable product-type-simple">
+                                <a
+                                  href="#"
+                                  className="woocommerce-LoopProduct-link woocommerce-loop-product__link"
+                                >
+                                  <h2 className="woocommerce-loop-product__title">
+                                    Villenoir Chardonnay
+                                  </h2>
+                                  <div className="gg-product-image-wrapper">
+                                    <img
+                                      width="1400"
+                                      height="2225"
+                                      src="http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Chardonnay-w-cup.png"
+                                      className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                      alt=""
+                                      srcset="http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Chardonnay-w-cup.png 1400w, http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Chardonnay-w-cup-189x300.png 189w, http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Chardonnay-w-cup-768x1221.png 768w, http://okthemes.com/villenoir/wp-content/uploads/2016/03/White-Chardonnay-w-cup-644x1024.png 644w"
+                                      sizes="(max-width: 1400px) 100vw, 1400px"
+                                    />
+                                  </div>
+                                </a>
+                                <div className="gg-product-meta-wrapper">
+                                  <dl>
+                                    <dt>Year </dt>
+                                    <dd>
+                                      <span className="year">2014</span>
+                                    </dd>
+
+                                    <dt>Price </dt>
+                                    <dd>
+                                      <span className="price">
+                                        <span className="woocommerce-Price-amount amount">
+                                          236,00&nbsp;
+                                          <span className="woocommerce-Price-currencySymbol">
+                                            &euro;
+                                          </span>
+                                        </span>
+                                      </span>
+                                    </dd>
+                                  </dl>
+                                  <a
+                                    href="#"
+                                    data-quantity="1"
+                                    className="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                    data-product_id="684"
+                                    data-product_sku=""
+                                    aria-label="Add &ldquo;Villenoir Chardonnay&rdquo; to your cart"
+                                    rel="nofollow"
+                                  >
+                                    Add to cart
+                                  </a>
+                                </div>
+                              </li>
+                            </ul>
+                          </Row>
+                        </div>
+                        <div className="cart_totals ">
+                          <h2>Cart totals</h2>
+                          <table
+                            cellspacing="0"
+                            className="shop_table shop_table_responsive"
+                          >
+                            <tr className="cart-subtotal">
+                              <th>Subtotal</th>
+                              <td data-title="Subtotal">
+                                <span className="woocommerce-Price-amount amount">
+                                  189,00&nbsp;
+                                  <span className="woocommerce-Price-currencySymbol">
+                                    &euro;
+                                  </span>
+                                </span>
+                              </td>
+                            </tr>
+                            <tr className="woocommerce-shipping-totals shipping">
+                              <th>Shipping</th>
+                              <td data-title="Shipping">
+                                <ul
+                                  id="shipping_method"
+                                  className="woocommerce-shipping-methods"
+                                >
+                                  <li>
+                                    <input
+                                      type="hidden"
+                                      name="shipping_method[0]"
+                                      data-index="0"
+                                      id="shipping_method_0_flat_rate3"
+                                      value="flat_rate:3"
+                                      className="shipping_method"
+                                    />
+                                    <label for="shipping_method_0_flat_rate3">
+                                      Flat rate:{' '}
+                                      <span className="woocommerce-Price-amount amount">
+                                        10,00&nbsp;
+                                        <span className="woocommerce-Price-currencySymbol">
+                                          &euro;
+                                        </span>
+                                      </span>
+                                    </label>
+                                  </li>
+                                </ul>
+                                <p className="woocommerce-shipping-destination">
+                                  Shipping options will be updated during
+                                  checkout.{' '}
+                                </p>
+                              </td>
+                            </tr>
+                            <tr className="order-total">
+                              <th>Total</th>
+                              <td data-title="Total">
+                                <strong>
+                                  <span className="woocommerce-Price-amount amount">
+                                    199,00&nbsp;
+                                    <span className="woocommerce-Price-currencySymbol">
+                                      &euro;
+                                    </span>
+                                  </span>
+                                </strong>
+                              </td>
+                            </tr>
+                          </table>
+                          <div className="d-flex">
+                            <div className="wc-update-cart">
+                              <input
+                                type="submit"
+                                className="button"
+                                name="update_cart"
+                                value="Update cart"
+                              />
+                            </div>
+                            <div className="wc-proceed-to-checkout">
+                              <Link
+                                to="/ShopingCar/Billing_details"
+                                className="checkout-button button alt wc-forward"
+                              >
+                                {' '}
+                                Proceed to checkout
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    </form>
+                  </div>
+                </div>
+              </article>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   )
 }
 
-export default Cart
+export default Shopingcar

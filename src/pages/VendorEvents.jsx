@@ -13,7 +13,6 @@ function VendorEvent() {
       <div className="vendorWrapper d-flex justify-content-around">
         <VendorInfo />
         <VendorEventArea />
-
       </div>
     </>
   )
