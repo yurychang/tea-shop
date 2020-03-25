@@ -20,7 +20,6 @@ function Checkout() {
             <Timeline.Item>付款資訊</Timeline.Item>
             <Timeline.Item>確認訂單</Timeline.Item>
             <Timeline.Item>完成訂單</Timeline.Item>
-            <Timeline.Item>送出</Timeline.Item>
           </Timeline>
         </Col>
         <Col sm={10}>
