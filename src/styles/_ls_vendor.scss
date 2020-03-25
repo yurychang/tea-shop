@@ -188,7 +188,7 @@
 
 
 .ls_backend-nav{
-  width: 80px;
+  width: 90px;
   padding: 4px 8px;
 
   ul{
@@ -310,6 +310,23 @@
 .ls-logoutandpreview{
   margin: 0 auto;
 
+}
+
+.ls_alert-signup{
+  max-width: 500px;
+  margin: 0 auto;
+
+
+}
+
+.ls-header {
+  border: 1px solid #bdbdbd75;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  margin-top:80px ;
 }
 
 

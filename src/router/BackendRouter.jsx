@@ -31,7 +31,7 @@ function BackendRouter() {
     <>
       <h2 className="text-center mb-5 mt-3">賣家中心</h2>
       <div className="ls-logoutandpreview container d-flex justify-content-end">
-        <Link className="btn btn-main mb-2 ml-2" to={`/vendor/${localId}/index/`}>觀看商店頁</Link>
+        <Link className="btn btn-main mb-2 ml-2" to={`/vendortest/${localId}/index/`}>預覽商店頁</Link>
         <Link className="btn btn-danger mb-2 ml-2" onClick={event => logoumethod(event)} to="">登出</Link>
       </div>
       <div className="container d-flex">

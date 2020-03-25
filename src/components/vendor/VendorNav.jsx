@@ -7,7 +7,7 @@ import { NavLink, withRouter } from 'react-router-dom'
 
 
 function VendorNav(props) {
-    let vendorId= localStorage.getItem('vendorId')
+    let vendorId= localStorage.getItem('vendorOnlyId')
     return (
         <>
             <div className="navCenter">

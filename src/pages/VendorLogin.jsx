@@ -6,9 +6,13 @@ function VendorLogintest() {
   const [vendorAccount, setVendorAccount] = useState('')
   const [vendorPassword, setVendorPassword] = useState('')
   const [loginmode, setLoginmode] = useState(false)
+  const [error, setError] = useState(false)
+  const [errorMessages, setErrorMessages] = useState([])
+
+
   const loginSuccess = <Redirect to="/dashboard/data" />
   const vendorLoginArea = (
-    <div className="container  yz-header">
+    <div className="container  ls-header">
       <ul className="d-flex justify-content-between mb-2">
         <li className="list-item mt-3">
           <NavLink
