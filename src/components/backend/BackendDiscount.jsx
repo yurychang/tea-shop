@@ -8,7 +8,7 @@ function BackendDiscount() {
 
   return (
     <>
-      <div className="content col-10">
+      <div className="content">
           <h3>折扣管理</h3>
           <hr />
             <div className="d-flex justify-content-end">

@@ -10,7 +10,7 @@ function BackendProduct() {
         <>
 
 
-            <div className="content col-10">
+            <div className="content">
                 <h3>訊息管理</h3>
                 <hr />
                 <h5 className="text-center">新增訊息</h5>

@@ -11,7 +11,7 @@ export default function MemberNotice() {
       <div className="content col-10"></div>
       <div className="d-flex justify-content-around mb-4">
         <div className="card">
-          <h4 className="card-title text-center">訂單更新</h4>
+          <h4 className="card-title text-center yz-card-title">訂單更新</h4>
           <div className="card-body d-flex justify-content-around">
             <div className="_yz_noticimg">
               <img src={orderupdate} />

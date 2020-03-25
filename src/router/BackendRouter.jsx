@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import BackendNav from '../components/backend/BackendNav'
 import BackendOrder from '../components/backend/BackendOrder'
 import BackendProduct from '../components/backend/BackendProduct'
@@ -13,29 +13,36 @@ import BackendAddMsg from '../components/backend/BackendAddMsg'
 import EditEvent from '../components/backend/EditEvent'
 
 function BackendRouter() {
+
+  const localId = localStorage.getItem('vendorId')
+
   return (
     <>
       <h2 className="text-center mb-5 mt-3">賣家中心</h2>
+      <div className="ls-logoutandpreview container d-flex justify-content-end">
+       <Link  className="btn btn-main mb-2 ml-2" to={`/vendor/${localId}/index/`}>觀看商店頁</Link>
+       <Link  className="btn btn-danger mb-2 ml-2" to="">登出</Link>
+      </div>
       <div className="container d-flex">
         <BackendNav />
         <div className="flex-grow-1">
           <Switch>
-            <Route path="/dashboard/:id?/order/detail/:orderid?">
+            <Route path="/dashboard/order/detail/:orderid?">
               <BackendOrderDetail />
             </Route>
-            <Route path="/dashboard/:id?/order/">
+            <Route path="/dashboard/order/">
               <BackendOrder />
             </Route>
-            <Route path="/dashboard/:id?/product/add">
+            <Route path="/dashboard/product/add">
               <BackendAddProduct />
             </Route>
-            <Route path="/dashboard/:id?/product/:productid?">
+            <Route path="/dashboard/product/:productid?">
               <BackendProduct />
             </Route>
-            <Route path="/dashboard/:id?/msg/add">
+            <Route path="/dashboard/msg/add">
               <BackendAddMsg />
             </Route>
-            <Route path="/dashboard/:id?/msg/:msgid?">
+            <Route path="/dashboard/msg/:msgid?">
               <BackendMsg />
             </Route>
             <Route path="/dashboard/events/:id">
@@ -44,10 +51,10 @@ function BackendRouter() {
             <Route path="/dashboard/events">
               <BackendEvents />
             </Route>
-            <Route path="/dashboard/:id?/discount/:discountid?">
+            <Route path="/dashboard/discount/:discountid?">
               <BackendDiscount />
             </Route>
-            <Route path="/dashboard/:id?/data">
+            <Route path="/dashboard/data">
               <BackendData />
             </Route>
           </Switch>

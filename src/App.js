@@ -16,11 +16,13 @@ import Product from './components/pj_event/Product'
 import CartBox from './pages/CartBox'
 import CartList from './pages/CartList'
 import Checkout from './pages/Checkout'
+import Flavor from './pages/Flavor'
 
 import Loading from 'utils/Loading'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
 import VendorLogin from 'pages/VendorLogin'
+import AllVendors from 'pages/AllVendors'
 
 function App() {
   return (
@@ -43,6 +45,9 @@ function App() {
                 </Route>
                 <Route path="/events">
                   <Events />
+                </Route>
+                <Route path="/allstore">
+                  <AllVendors />
                 </Route>
                 <Route path="/checkout">
                   <Checkout />
@@ -75,7 +80,12 @@ function App() {
                 <Route path="/membercenter">
                   <MemberRouter />
                 </Route>
-                <VendorRouter />
+                <Route path="/vendor">
+                  <VendorRouter />
+                </Route>
+                <Route path="/flavor">
+                  <Flavor />
+                </Route>
               </Switch>
             </div>
           </Route>
