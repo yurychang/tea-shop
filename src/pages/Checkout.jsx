@@ -4,23 +4,23 @@ import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import { Timeline } from 'rsuite'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 // import{ BrowserRouter as Link} from "react-router-dom";
 import '../styles/jc/checkout.scss'
-// import 'rsuite/dist/styles/rsuite-default.css'
 
 function Checkout() {
   return (
     <div className="container">
       <Row>
         <Col sm={2}>
-          <Timeline>
+          {/* <Timeline>
             <Timeline.Item>結帳</Timeline.Item>
             <Timeline.Item>付款資訊</Timeline.Item>
             <Timeline.Item>確認訂單</Timeline.Item>
             <Timeline.Item>完成訂單</Timeline.Item>
-          </Timeline>
+          </Timeline> */}
         </Col>
         <Col sm={10}>
           <h1 className="h123">結帳</h1>
@@ -109,39 +109,47 @@ function Checkout() {
           </Table>
         </Col>
       </Row>
-
       <div></div>
 
       <div>
-        <Row>
+        {/* <Row>
           <Col>1 of 2</Col>
           <Col>2 of 2</Col>
           <Col>3 of 3</Col>
           <Col>4 of 4</Col>
           <Col>5 of 5</Col>
-        </Row>
-        <Row>
+        </Row> */}
+        {/* <Row>
           <Col>1 of 2</Col>
           <Col>2 of 2</Col>
           <Col>3 of 3</Col>
           <Col>4 of 4</Col>
           <Col>5 of 5</Col>
-        </Row>
-        <Row>
+        </Row> */}
+        {/* <Row>
           <Col>1 of 2</Col>
           <Col>2 of 2</Col>
           <Col>3 of 3</Col>
           <Col>4 of 4</Col>
           <Col>5 of 5</Col>
-        </Row>
-        <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
+        </Row> */}
+        <Row className="">
+          <Col></Col>
+          <Col></Col>
           <Col>優惠券</Col>
           <Col xs={4}>
-            <span>
-              <input type="text" placeholder="請輸入代碼"></input>
-            </span>
+            <DropdownButton
+              className=" scoupon "
+              alignRight
+              title="Dropdown right"
+              id="dropdown-menu-align-right"
+            >
+              <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+              <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
+            </DropdownButton>
           </Col>
           <Col>
             <Button className="checkbtn " block>
