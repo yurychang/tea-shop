@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-import VendorBanner from '../components/vendor/VendorBanner'
-import VendorNav from '../components/vendor/VendorNav'
-import VendorInfo from '../components/vendor/VendorInfo'
-import VendorEventArea from '../components/vendor/VendorEventArea'
+import VendorBanner from '../../components/vendor/VendorBanner'
+import PreVendorNav from '../../components/vendor/PreVendorNav'
+import VendorInfo from '../../components/vendor/VendorInfo'
+import VendorDiscountArea from '../../components/vendor/VendorDiscountArea'
+
 import { withRouter } from 'react-router-dom'
 
-function VendorEvent(props) {
+function VendorDiscount(props) {
 
   const [preview, setPreviewdata] = useState([])
 
@@ -35,17 +36,18 @@ function VendorEvent(props) {
     getDataFromServer()
   }, [])
 
-  console.log('preview[0]', preview[0])
+
   return (
     <>
-      <VendorBanner  {...preview[0]} />
-      <VendorNav  {...preview[0]} />
+      <VendorBanner {...preview[0]} />
+      <PreVendorNav {...preview[0]} />
       <div className="vendorWrapper d-flex justify-content-around">
-        <VendorInfo  {...preview[0]} />
-        <VendorEventArea  {...preview[0]} />
+        <VendorInfo {...preview[0]} />
+        <VendorDiscountArea {...preview[0]} />
+
       </div>
     </>
   )
 }
 
-export default withRouter(VendorEvent)
+export default withRouter(VendorDiscount)

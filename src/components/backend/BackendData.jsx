@@ -17,7 +17,7 @@ function BackendData() {
     const [vendorImg, setVendorImg] = useState('')
     const [vendorAbout, setVendorAbout] = useState('')
     const [vendorBanner, setVendorBanner] = useState('')
-    const localId = localStorage.getItem('vendorId')
+    const localId = localStorage.getItem('vendorOnlyId')
 
 
 
@@ -189,25 +189,24 @@ function BackendData() {
                                 <br />
                                 <select className="custom-select mb-2 col-5" name="vendorZone" value={vendorZone} onChange={e => setVendorZone(e.target.value)}>
                                     <option selected>選擇縣市</option>
-                                    <option value="1">台北市</option>
-                                    <option value="1">新北市</option>
-                                    <option value="1">新竹市</option>
-                                    <option value="1">基隆市</option>
-                                    <option value="1">新竹市</option>
-                                    <option value="1">桃園市</option>
-                                    <option value="1">宜蘭縣</option>
-                                    <option value="2">台中市</option>
-                                    <option value="2">苗栗縣</option>
-                                    <option value="2">彰化縣</option>
-                                    <option value="2">南投縣</option>
-                                    <option value="2">雲林縣</option>
-                                    <option value="3">嘉義縣</option>
-                                    <option value="3">台南市</option>
-                                    <option value="3">高雄市</option>
-                                    <option value="3">屏東縣</option>
-                                    <option value="3">澎湖縣</option>
-                                    <option value="4">花蓮縣</option>
-                                    <option value="4">台東縣</option>
+                                    <option value="11">台北市</option>
+                                    <option value="12">新北市</option>
+                                    <option value="13">桃園市</option>
+                                    <option value="14">基隆市</option>
+                                    <option value="15">新竹市</option>
+                                    <option value="16">宜蘭縣</option>
+                                    <option value="21">台中市</option>
+                                    <option value="22">苗栗縣</option>
+                                    <option value="23">彰化縣</option>
+                                    <option value="24">南投縣</option>
+                                    <option value="25">雲林縣</option>
+                                    <option value="31">嘉義縣</option>
+                                    <option value="32">台南市</option>
+                                    <option value="33">高雄市</option>
+                                    <option value="34">屏東縣</option>
+                                    <option value="35">澎湖縣</option>
+                                    <option value="41">花蓮縣</option>
+                                    <option value="42">台東縣</option>
                                 </select>
                                 <input type="text" className="form-control" name="vendorAddress" value={vendorAddress} onChange={e => setVendorAddress(e.target.value)} />
                             </div>

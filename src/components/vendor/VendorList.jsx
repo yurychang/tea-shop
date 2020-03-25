@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { Link, withRouter } from 'react-router-dom'
 
 
 // const searchParams = new URLSearchParams(props.location.search)
@@ -25,10 +24,8 @@ function VendorList() {
         })
         const response = await fetch(request)
         const data = await response.json()
-        console.log(data);
         setAlldata(data)
-
-
+        localStorage.setItem("vendorId",data[0].id)
     }
 
     useEffect(() => {
@@ -71,14 +68,8 @@ function VendorList() {
 
 }
 
-const mapStateToProps = () => {
-
-
-    return {}
-}
 
 
 
 
-
-export default connect(mapStateToProps)(VendorList)
+export default withRouter(VendorList)

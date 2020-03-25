@@ -25,6 +25,7 @@ export default function VendorSingup() {
             placeholder="請輸入6~8位數英數混合帳號"
             name="vendorAccount"
             onChange={e => setVendorAccount(e.target.value)}
+            required
           />
           <input
             type="password"
@@ -32,6 +33,7 @@ export default function VendorSingup() {
             placeholder="請輸入8位數英數混合密碼"
             name="vendorPassword1"
             onChange={e => setVendorPassword1(sha1(e.target.value))}
+            required
           />
           <input
             type="password"
@@ -39,6 +41,7 @@ export default function VendorSingup() {
             placeholder="再次輸入密碼"
             name="vendorPassword2"
             onChange={e => setVendorPassword2(sha1(e.target.value))}
+            required
           />
           <input
             type="email"
@@ -46,6 +49,7 @@ export default function VendorSingup() {
             placeholder="請輸入E-mail"
             name="vendorEmail"
             onChange={e => setVendorEmail(e.target.value)}
+            required
           />
           <input
             type="text"
@@ -53,6 +57,7 @@ export default function VendorSingup() {
             placeholder="請輸入電話"
             name="vendorPhone"
             onChange={e => setVendorPhone(e.target.value)}
+            required
           />
 
           <button
@@ -123,7 +128,7 @@ export default function VendorSingup() {
     <>
       {error ? (
         <>
-          <div className="alert alert-danger" role="alert">
+          <div className="alert alert-danger ls_alert-signup" role="alert">
             {errorMessages.map((v, i) => (
               <p key={i}>{v}</p>
             ))}
