@@ -1,15 +1,18 @@
 import React from 'react'
 import ls_banner from '../../images/vendor/ls_banner.jpg'
+import { withRouter } from 'react-router-dom'
 
 
-function VendorBanner() {
+function VendorBanner(props) {
+  console.log('props',props)
+
   return (
     <>
     <div className="ls_banner">
-        <img src={ls_banner} alt="" />
+        <img src={props.vendorBanner} alt="" />
       </div>
     </>
   )
 }
 
-export default VendorBanner
+export default  withRouter(VendorBanner)

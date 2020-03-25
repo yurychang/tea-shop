@@ -11,7 +11,7 @@ function BackendOrder() {
 
   return (
     <>
-      <div className="content col-10">
+      <div className="content">
         <h3>訊息管理</h3>
         <hr />
         <div className="order-area">
