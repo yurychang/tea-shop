@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import BackendNav from '../components/backend/BackendNav'
 import BackendOrder from '../components/backend/BackendOrder'
 import BackendProduct from '../components/backend/BackendProduct'
@@ -11,17 +11,40 @@ import BackendOrderDetail from '../components/backend/BackendOrderDetail'
 import BackendAddProduct from '../components/backend/BackendAddProduct'
 import BackendAddMsg from '../components/backend/BackendAddMsg'
 import EditEvent from '../components/backend/EditEvent'
+import { useState } from 'react'
 
 function BackendRouter() {
 
-  const localId = localStorage.getItem('vendorId')
+
+  const localId = localStorage.getItem('vendorOnlyId')
+  const [logout, setLogout] = useState(false)
+
+
+
+
+  const logoumethod = event => {
+    event.preventDefault()
+    localStorage.removeItem('vendorOnlyId')
+    setLogout(true)
+  }
+  if (logout) {
+    alert('您已登出，感謝您的使用')
+    return <Redirect to="/index" />
+  }
+
+
+  if (!localId) {
+    alert('您沒有權限，請先登入')
+    return <Redirect to="/index" />
+
+  }
 
   return (
     <>
       <h2 className="text-center mb-5 mt-3">賣家中心</h2>
       <div className="ls-logoutandpreview container d-flex justify-content-end">
-       <Link  className="btn btn-main mb-2 ml-2" to={`/vendor/${localId}/index/`}>觀看商店頁</Link>
-       <Link  className="btn btn-danger mb-2 ml-2" to="">登出</Link>
+        <Link className="btn btn-main mb-2 ml-2" to={`/vendortest/${localId}/index/`}>預覽商店頁</Link>
+        <Link className="btn btn-danger mb-2 ml-2" onClick={event => logoumethod(event)} to="">登出</Link>
       </div>
       <div className="container d-flex">
         <BackendNav />

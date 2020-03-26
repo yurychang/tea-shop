@@ -1,20 +1,20 @@
 import React, { useState,useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import VendorBanner from '../components/vendor/VendorBanner'
-import VendorNav from '../components/vendor/VendorNav'
-import VendorInfo from '../components/vendor/VendorInfo'
-import VendorAboutArea from '../components/vendor/VendorAboutArea'
+import VendorBanner from '../../components/vendor/VendorBanner'
+import PreVendorNav from '../../components/vendor/PreVendorNav'
+import VendorInfo from '../../components/vendor/VendorInfo'
+import VendorAboutArea from '../../components/vendor/VendorAboutArea'
 
 
 function VendorAbout(props) {
   const [preview, setPreviewdata] = useState([])
 
-  const getvendorid = Number(props.match.params.id)
-  console.log(getvendorid)
+  const getvendoronlyid = Number(props.match.params.id)
+  console.log(getvendoronlyid)
 
   async function getDataFromServer() {
 
-    const request = new Request('http://localhost:3333/vendor/previewvendor/' + getvendorid, {
+    const request = new Request('http://localhost:3333/vendor/previewvendor/' + getvendoronlyid, {
       method: 'GET',
       headers: new Headers({
         Accept: 'application/json',
@@ -37,7 +37,7 @@ function VendorAbout(props) {
   return (
     <>
       <VendorBanner {...preview[0]}/>
-      <VendorNav {...preview[0]}/>
+      <PreVendorNav {...preview[0]}/>
       <div className="vendorWrapper d-flex justify-content-around">
         <VendorInfo  {...preview[0]}/>
         <VendorAboutArea {...preview[0]}/>
