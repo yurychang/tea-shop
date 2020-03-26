@@ -5,6 +5,7 @@ import * as sha1 from 'sha1'
 function VendorLogintest() {
   const [vendorAccount, setVendorAccount] = useState('')
   const [vendorPassword, setVendorPassword] = useState('')
+
   const [loginmode, setLoginmode] = useState(false)
   const loginSuccess = <Redirect to="/dashboard/data" />
   const vendorLoginArea = (
