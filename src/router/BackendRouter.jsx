@@ -15,16 +15,28 @@ import { useState } from 'react'
 
 function BackendRouter() {
 
+
   const localId = localStorage.getItem('vendorOnlyId')
-  const [logout , setLogout]=useState(false)
+  const [logout, setLogout] = useState(false)
+
+
+
 
   const logoumethod = event => {
     event.preventDefault()
     localStorage.removeItem('vendorOnlyId')
     setLogout(true)
   }
-  if(logout){
+  if (logout) {
+    alert('您已登出，感謝您的使用')
     return <Redirect to="/index" />
+  }
+
+
+  if (!localId) {
+    alert('您沒有權限，請先登入')
+    return <Redirect to="/index" />
+
   }
 
   return (

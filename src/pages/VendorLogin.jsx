@@ -83,7 +83,7 @@ function VendorLogintest() {
             className="btn btn-main2 col-5 ls_login-btn"
             to="/signup/vendor"
           >
-            <i class="fas fa-clipboard-list"></i> 註冊
+            <i className="fas fa-clipboard-list"></i> 註冊
           </Link>
         </div>
       </form>

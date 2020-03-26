@@ -1,7 +1,7 @@
 
 .ls_banner{
     width: 100%;
-    max-height: 350px;
+    max-height: 400px;
     overflow: hidden;
 
     img{
@@ -36,6 +36,32 @@
 
 
     }
+  }
+
+  .ls_test-vendorNav {
+    width: 100%;
+    box-shadow: 1px 0px 2px grey;
+
+    ul {
+      max-width: 1000px;
+      margin: 0 auto;
+
+
+      li a {
+        display: inline-block;
+        height: 60px;
+        padding: 0 62px;
+        line-height: 60px;
+        text-align: center;
+      }
+
+
+    }
+  }
+
+  .ls_test-vendorNav ul li a:hover {
+    background-color: $whiteyellow;
+    color: $gray-600;
   }
 
 
