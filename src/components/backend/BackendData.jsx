@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import VendorAboutArea from 'components/vendor/VendorAboutArea'
-import { keyframes } from 'styled-components'
-import VendorAbout from 'pages/VendorAbout'
 
 function BackendData() {
 
@@ -32,8 +29,8 @@ function BackendData() {
                 Accept: 'application/json',
                 'Content-Type': 'appliaction/json',
             }),
-
         })
+        
         const response = await fetch(request)
         const data = await response.json()
         console.log(data[0]);
@@ -193,7 +190,7 @@ function BackendData() {
                                     <option value="12">新北市</option>
                                     <option value="13">桃園市</option>
                                     <option value="14">基隆市</option>
-                                    <option value="15">新竹市</option>
+                                    <option value="15">新竹縣</option>
                                     <option value="16">宜蘭縣</option>
                                     <option value="21">台中市</option>
                                     <option value="22">苗栗縣</option>
