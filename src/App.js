@@ -16,6 +16,8 @@ import Product from './components/pj_event/Product'
 import CartBox from './pages/CartBox'
 import CartList from './pages/CartList'
 import Checkout from './pages/Checkout'
+import PayInfo from './pages/PayInfo'
+import OrderComplete from './pages/OrderComplete'
 import Flavor from './pages/Flavor'
 
 import Loading from 'utils/Loading'
@@ -52,6 +54,12 @@ function App() {
                 </Route>
                 <Route path="/checkout">
                   <Checkout />
+                </Route>
+                <Route path="/payinfo">
+                  <PayInfo />
+                </Route>
+                <Route path="/ordercomplete">
+                  <OrderComplete />
                 </Route>
                 <Route path="/login/vendor">
                   <VendorLogin />

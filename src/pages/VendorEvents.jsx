@@ -12,7 +12,7 @@ function VendorEvent(props) {
 
 
   const getvendorid = Number(props.match.params.id)
-  localStorage.setItem('vendorId', getvendorid)
+  sessionStorage.setItem('vendorId', getvendorid)
 
   console.log('[ID]', getvendorid)
 

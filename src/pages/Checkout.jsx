@@ -4,7 +4,9 @@ import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import DropdownButton from 'react-bootstrap/DropdownButton'
+// import { Timeline, Icon } from 'rsuite'
+// import 'rsuite/lib/styles/index.less'
+// import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 // import{ BrowserRouter as Link} from "react-router-dom";
@@ -14,7 +16,45 @@ function Checkout() {
   return (
     <div className="container">
       <Row>
-        <Col sm={2}>
+        <Col sm={4}>
+          <div class="timeline-small">
+            <div class="timeline-small-body">
+              <ul>
+                <li>
+                  <div class="bullet pink"></div>
+                  {/* <div class="date">XXXX年XX月XX日</div> */}
+                  <div class="desc">
+                    <h3>結帳</h3>
+                    {/* <h4>内容段落2内容段落2内容段落2内容段落2</h4> */}
+                  </div>
+                </li>
+                <li>
+                  <div class="bullet orange"></div>
+                  {/* <div class="date">XXXX年XX月XX日</div> */}
+                  <div class="desc">
+                    <h3>付款資訊</h3>
+                    {/* <h4>内容段落2内容段落2内容段落2内容段落2</h4> */}
+                  </div>
+                </li>
+                <li>
+                  <div class="bullet blue"></div>
+                  {/* <div class="date">XXXX年XX月XX日</div> */}
+                  <div class="desc">
+                    <h3>完成訂單</h3>
+                    {/* <h4>内容段落2内容段落2内容段落2内容段落2</h4> */}
+                  </div>
+                </li>
+                {/* <li>
+                  <div class="bullet green"></div>
+                  <div class="date">XXXX年XX月XX日</div>
+                  <div class="desc">
+                    <h3>内容段落1</h3>
+                    <h4>内容段落2内容段落2内容段落2内容段落2</h4>
+                  </div>
+                </li> */}
+              </ul>
+            </div>
+          </div>
           {/* <Timeline>
             <Timeline.Item>結帳</Timeline.Item>
             <Timeline.Item>付款資訊</Timeline.Item>
@@ -22,7 +62,7 @@ function Checkout() {
             <Timeline.Item>完成訂單</Timeline.Item>
           </Timeline> */}
         </Col>
-        <Col sm={10}>
+        <Col sm={8}>
           <h1 className="h123">結帳</h1>
           <Table bordered hover variant="">
             <thead class="thbc">
@@ -137,21 +177,20 @@ function Checkout() {
           <Col></Col>
           <Col></Col>
           <Col>優惠券</Col>
-          <Col xs={4}>
-            <DropdownButton
-              className=" scoupon "
-              alignRight
-              title="Dropdown right"
-              id="dropdown-menu-align-right"
-            >
-              <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-              <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
-            </DropdownButton>
+          <Col sm={3}>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                請選擇優惠券代碼
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">1</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">2 </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">3</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Col>
-          <Col>
+          <Col sm={2}>
             <Button className="checkbtn " block>
               <span>結帳</span>
             </Button>
