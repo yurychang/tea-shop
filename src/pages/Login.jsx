@@ -7,7 +7,7 @@ function MemberLogintest() {
   const [accountPassword, setAccountPassword] = useState('')
 
   const [loginmode, setLoginmode] = useState(false)
-  const loginSuccess = <Redirect to="/membercenter" />
+  const loginSuccess = <Redirect to="/membercenter/account" />
   const MemberLoginArea = (
     <div className="container yz-header mb-2">
       <ul className="d-flex justify-content-between">
@@ -98,9 +98,10 @@ function MemberLogintest() {
 
     async function sendRegisterDataToServer(userData, callback) {
       // 注意資料格式要設定，伺服器才知道是json格式
-      const request = new Request('http://127.0.0.1:3333/member/login', {
+      const request = new Request('http://localhost:3333/member/login', {
         method: 'POST',
         body: JSON.stringify(userData),
+        credentials: 'include',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
@@ -113,7 +114,8 @@ function MemberLogintest() {
 
       if (data.success === true) {
         console.log(data.message.text)
-        localStorage.setItem('m_id', JSON.stringify(data.m_id))
+        localStorage.setItem('m_onlyid', JSON.stringify(data.m_id))
+        console.log('loginmode', loginmode)
         setLoginmode(true)
       } else {
         console.log(data.message.text)
