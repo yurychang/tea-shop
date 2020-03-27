@@ -116,7 +116,7 @@ function VendorLogintest() {
 
       if (data.success === true) {
         console.log(data.message.text)
-        localStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
+        sessionStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
         setLoginmode(true)
       } else {
         console.log(data.message.text)

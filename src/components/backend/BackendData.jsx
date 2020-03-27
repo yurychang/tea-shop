@@ -14,7 +14,7 @@ function BackendData() {
     const [vendorImg, setVendorImg] = useState('')
     const [vendorAbout, setVendorAbout] = useState('')
     const [vendorBanner, setVendorBanner] = useState('')
-    const localId = localStorage.getItem('vendorOnlyId')
+    const localId = sessionStorage.getItem('vendorOnlyId')
 
 
 
@@ -30,7 +30,7 @@ function BackendData() {
                 'Content-Type': 'appliaction/json',
             }),
         })
-        
+
         const response = await fetch(request)
         const data = await response.json()
         console.log(data[0]);
