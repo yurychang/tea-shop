@@ -6,7 +6,7 @@ const BorderBottom = styled.div`
 `
 
 const MinHeight = styled.img`
-  height: 160px;
+  height: 170px;
 `
 
 export default function EventInfo({ title, location, price, content, banner }) {
@@ -18,7 +18,7 @@ export default function EventInfo({ title, location, price, content, banner }) {
         alt="banner"
       />
       <BorderBottom className="d-flex mt-3 mb-3 border-mainlight">
-        <h1 className="h4 my-0">{title}</h1>
+        <h1 className="h3 mb-1">{title}</h1>
         <a
           href="#registForm"
           className="align-self-end ml-auto bg-mainlight text-white fs-xs m-0 px-2 py-1"
