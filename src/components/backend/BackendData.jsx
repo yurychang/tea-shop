@@ -12,14 +12,15 @@ function BackendData() {
   const [vendorImg, setVendorImg] = useState('')
   const [vendorAbout, setVendorAbout] = useState('')
   const [vendorBanner, setVendorBanner] = useState('')
-  const localId = sessionStorage.getItem('vendorOnlyId')
+
 
   //取得廠商原有資料
   async function getDataFromServer() {
     const request = new Request(
-      'http://localhost:3333/vendor/getvendordata/' + localId,
+      'http://localhost:3333/vendor/getvendordata',
       {
         method: 'GET',
+        credentials: 'include',
         headers: new Headers({
           Accept: 'application/json',
           'Content-Type': 'appliaction/json',
@@ -88,7 +89,6 @@ function BackendData() {
       vendorZone,
       vendorAddress,
       vendorImg,
-      localId,
     }
     let formData = new FormData()
     for (let key in vendorUpdate) {
@@ -102,8 +102,9 @@ function BackendData() {
 
     async function sendRegisterDataToServer(vendorUpdate, callback) {
       // 注意資料格式要設定，伺服器才知道是json格式
-      const request = new Request('http://127.0.0.1:3333/vendor/updatedata', {
+      const request = new Request('http://localhost:3333/vendor/updatedata', {
         method: 'POST',
+        credentials: 'include',
         body: formData,
       })
 
@@ -118,7 +119,7 @@ function BackendData() {
   const handleSubmit2 = event => {
     event.preventDefault()
 
-    const vendorUpdate = { vendorAbout, vendorBanner, localId }
+    const vendorUpdate = { vendorAbout, vendorBanner }
     console.log(vendorUpdate)
     let formData = new FormData()
     for (let key in vendorUpdate) {
@@ -129,8 +130,9 @@ function BackendData() {
 
     async function sendRegisterDataToServer(vendorUpdate, callback) {
       // 注意資料格式要設定，伺服器才知道是json格式
-      const request = new Request('http://127.0.0.1:3333/vendor/updateabout', {
+      const request = new Request('http://localhost:3333/vendor/updateabout', {
         method: 'POST',
+        credentials: 'include',
         body: formData,
       })
 

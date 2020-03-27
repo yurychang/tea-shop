@@ -78,7 +78,7 @@ export default function MainBarNav({ isOpen, onClick }) {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="flex-grow-1" />
-              <Nav.Item className="mb-lg-2 border-bottom border-bottom-lg-0">
+              <Nav.Item className="mb-lg-3 border-bottom border-bottom-lg-0">
                 <Nav.Link as="p" className="mb-0">
                   <Link to="/cart" className="d-block">
                     <i className="fas fa-phone" />

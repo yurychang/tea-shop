@@ -1,8 +1,12 @@
+import { loadingStart, loadingEnd } from 'actions/loading'
+
 export const FETCH_FLAVOR = 'FETCH_FLAVOR'
-export const TARGET_FLAVOR = 'TARGET_FLAVOR'
+export const SELECT_BY_FLAVOR = 'SELECT_BY_FLAVOR'
+export const SELECT_BY_TEA = 'SELECT_BY_TEA'
 
 export const fetchFlavor = () => {
   return async dispatch => {
+    dispatch(loadingStart())
     try {
       const res = await fetch('http://localhost:3333/flavor/get')
       const json = await res.json()
@@ -14,14 +18,21 @@ export const fetchFlavor = () => {
       }
     } catch (error) {
       console.log(error)
-      console.log('err')
     }
+    dispatch(loadingEnd())
   }
 }
 
-export const targetFlavor = id => {
+export const selectByFlavor = id => {
   return {
-    type: TARGET_FLAVOR,
+    type: SELECT_BY_FLAVOR,
+    id
+  }
+}
+
+export const selectByTea = id => {
+  return {
+    type: SELECT_BY_TEA,
     id
   }
 }
