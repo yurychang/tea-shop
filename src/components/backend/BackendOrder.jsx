@@ -15,8 +15,9 @@ function BackendOrder(props) {
 
   //取得訂單列表
   async function getOrderFromServer() {
-    const request = new Request('http://localhost:3333/vendor/getvendorderlist/' + localId, {
+    const request = new Request('http://localhost:3333/vendor/getvendorderlist', {
       method: 'GET',
+      credentials: 'include',
       headers: new Headers({
         Accept: 'application/json',
         'Content-Type': 'appliaction/json',
@@ -27,7 +28,7 @@ function BackendOrder(props) {
     const data = await response.json()
     console.log('data', data);
     setOrderData(data)
-    // console.log(orderData)
+    console.log('orderData', orderData)
 
   }
 
@@ -53,7 +54,7 @@ function BackendOrder(props) {
                 <img className="" src="https://via.placeholder.com/200x150" alt="" />
               </Figure>
               <div className="order-price mr-7">
-                NTD {value.totalPrice}
+                NTD {value.totalPrice + 60}
               </div>
               <div className="order-status">待出貨</div>
 

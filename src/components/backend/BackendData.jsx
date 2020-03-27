@@ -20,11 +20,12 @@ function BackendData() {
 
 
 
-//取得廠商原有資料
+    //取得廠商原有資料
     async function getDataFromServer() {
 
-        const request = new Request('http://localhost:3333/vendor/getvendordata/' + localId, {
+        const request = new Request('http://localhost:3333/vendor/getvendordata', {
             method: 'GET',
+            credentials: 'include',
             headers: new Headers({
                 Accept: 'application/json',
                 'Content-Type': 'appliaction/json',
@@ -33,6 +34,7 @@ function BackendData() {
 
         const response = await fetch(request)
         const data = await response.json()
+
         console.log(data[0]);
         setVendorName(data[0].vendorName)
         setVendorEmail(data[0].vendorEmail)
@@ -70,7 +72,7 @@ function BackendData() {
 
     }
 
-     //預覽圖片(Banner)
+    //預覽圖片(Banner)
     const handleBannerImg = (e) => {
         const content = e.target.result;
         // console.log('file content', content)
@@ -105,7 +107,7 @@ function BackendData() {
 
         async function sendRegisterDataToServer(vendorUpdate, callback) {
             // 注意資料格式要設定，伺服器才知道是json格式
-            const request = new Request('http://127.0.0.1:3333/vendor/updatedata', {
+            const request = new Request('http://localhost:3333/vendor/updatedata', {
                 method: 'POST',
                 body: formData
             })
@@ -124,7 +126,7 @@ function BackendData() {
 
         event.preventDefault()
 
-        const vendorUpdate = {vendorAbout, vendorBanner, localId}
+        const vendorUpdate = { vendorAbout, vendorBanner, localId }
         console.log(vendorUpdate)
         let formData = new FormData();
         for (let key in vendorUpdate) {
@@ -135,7 +137,7 @@ function BackendData() {
 
         async function sendRegisterDataToServer(vendorUpdate, callback) {
             // 注意資料格式要設定，伺服器才知道是json格式
-            const request = new Request('http://127.0.0.1:3333/vendor/updateabout', {
+            const request = new Request('http://localhost:3333/vendor/updateabout', {
                 method: 'POST',
                 body: formData
             })
@@ -168,7 +170,7 @@ function BackendData() {
                             <div className="form-group">
                                 <label>廠商名稱</label>
                                 <input type="text" className="form-control" placeholder="" name="vendorName" value={vendorName}
-                                onChange={e => setVendorName(e.target.value)} />
+                                    onChange={e => setVendorName(e.target.value)} />
                             </div>
 
                             <div className="form-group">
