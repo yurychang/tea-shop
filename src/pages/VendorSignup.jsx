@@ -22,16 +22,18 @@ export default function VendorSingup() {
           <input
             type="text"
             className="form-control yz-form-control"
-            placeholder="請輸入6~8位數英數混合帳號"
+            placeholder="請輸入6位數以上英數混合帳號"
             name="vendorAccount"
             onChange={e => setVendorAccount(e.target.value)}
+            required="required"
           />
           <input
             type="password"
             className="form-control yz-form-control"
-            placeholder="請輸入8位數英數混合密碼"
+            placeholder="請輸入自訂密碼"
             name="vendorPassword1"
             onChange={e => setVendorPassword1(sha1(e.target.value))}
+            required="required"
           />
           <input
             type="password"
@@ -39,6 +41,7 @@ export default function VendorSingup() {
             placeholder="再次輸入密碼"
             name="vendorPassword2"
             onChange={e => setVendorPassword2(sha1(e.target.value))}
+            required="required"
           />
           <input
             type="email"
@@ -46,6 +49,7 @@ export default function VendorSingup() {
             placeholder="請輸入E-mail"
             name="vendorEmail"
             onChange={e => setVendorEmail(e.target.value)}
+            required="required"
           />
           <input
             type="text"
@@ -53,6 +57,7 @@ export default function VendorSingup() {
             placeholder="請輸入電話"
             name="vendorPhone"
             onChange={e => setVendorPhone(e.target.value)}
+            required="required"
           />
 
           <button
@@ -84,10 +89,18 @@ export default function VendorSingup() {
       errorMessages.push('帳號沒填')
     }
 
-    if (vendorAccount.length < 8) {
+    const regex =  new RegExp(/^([a-zA-Z]+\d+|\d+[a-zA-Z]+)*$/)
+    console.log('regex.test(vendorAccount)',regex.test(vendorAccount))
+    if (!regex.test(vendorAccount)) {
       error = true
-      errorMessages.push('帳號至少要8個字')
+      errorMessages.push('帳號至少要英文+數字')
     }
+
+    if (vendorAccount.length < 6) {
+      error = true
+      errorMessages.push('帳號至少要6個字元')
+    }
+
 
     if (error) {
       setError(error)
@@ -123,15 +136,15 @@ export default function VendorSingup() {
     <>
       {error ? (
         <>
-          <div className="alert alert-danger" role="alert">
+          <div className="alert alert-danger ls_alert-signup" role="alert">
             {errorMessages.map((v, i) => (
               <p key={i}>{v}</p>
             ))}
           </div>
         </>
       ) : (
-        ''
-      )}
+          ''
+        )}
       {signmode ? nextpage : signupform}
     </>
   )

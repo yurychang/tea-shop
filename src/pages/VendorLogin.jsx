@@ -5,10 +5,15 @@ import * as sha1 from 'sha1'
 function VendorLogintest() {
   const [vendorAccount, setVendorAccount] = useState('')
   const [vendorPassword, setVendorPassword] = useState('')
+
   const [loginmode, setLoginmode] = useState(false)
+  const [error, setError] = useState(false)
+  const [errorMessages, setErrorMessages] = useState([])
+
+
   const loginSuccess = <Redirect to="/dashboard/data" />
   const vendorLoginArea = (
-    <div className="container  yz-header">
+    <div className="container  ls-header">
       <ul className="d-flex justify-content-between mb-2">
         <li className="list-item mt-3">
           <NavLink
@@ -39,6 +44,7 @@ function VendorLogintest() {
             className="form-control ls-login-form-control"
             placeholder="請輸入帳號"
             onChange={e => setVendorAccount(e.target.value)}
+            required
           />
         </div>
         <div className="form-group">
@@ -46,7 +52,9 @@ function VendorLogintest() {
             type="password"
             className="form-control ls-login-form-control"
             placeholder="請輸入密碼"
+            required
             onChange={e => setVendorPassword(sha1(e.target.value))}
+            required
           />
         </div>
         <div className="form-group form-check d-flex">
@@ -75,7 +83,7 @@ function VendorLogintest() {
             className="btn btn-main2 col-5 ls_login-btn"
             to="/signup/vendor"
           >
-            <i class="fas fa-clipboard-list"></i> 註冊
+            <i className="fas fa-clipboard-list"></i> 註冊
           </Link>
         </div>
       </form>
@@ -108,7 +116,7 @@ function VendorLogintest() {
 
       if (data.success === true) {
         console.log(data.message.text)
-        localStorage.setItem('vendorId', JSON.stringify(data.vendorid))
+        localStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
         setLoginmode(true)
       } else {
         console.log(data.message.text)

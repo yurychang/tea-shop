@@ -23,6 +23,7 @@ import Flavor from './pages/Flavor'
 import Loading from 'utils/Loading'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
+import PreVendorRouter from 'router/PreVendorRouter'
 import VendorLogin from 'pages/VendorLogin'
 import AllVendors from 'pages/AllVendors'
 
@@ -34,6 +35,9 @@ function App() {
           <Route path="/dashboard">
             <BackendRouter />
           </Route>
+          <Route path="/vendortest">
+          <PreVendorRouter />
+        </Route>
           <Route path="/">
             <Loading color="#4c4c4c" type="spin" />
             <MainBar />

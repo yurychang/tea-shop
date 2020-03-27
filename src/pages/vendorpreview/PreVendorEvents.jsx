@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import VendorBanner from '../components/vendor/VendorBanner'
-import VendorNav from '../components/vendor/VendorNav'
-import VendorInfo from '../components/vendor/VendorInfo'
-import VendorEventArea from '../components/vendor/VendorEventArea'
+import VendorBanner from '../../components/vendor/VendorBanner'
+import PreVendorNav from '../../components/vendor/PreVendorNav'
+import VendorInfo from '../../components/vendor/VendorInfo'
+import VendorEventArea from '../../components/vendor/VendorEventArea'
 import { withRouter } from 'react-router-dom'
 
 function VendorEvent(props) {
@@ -39,7 +39,7 @@ function VendorEvent(props) {
   return (
     <>
       <VendorBanner  {...preview[0]} />
-      <VendorNav  {...preview[0]} />
+      <PreVendorNav  {...preview[0]} />
       <div className="vendorWrapper d-flex justify-content-around">
         <VendorInfo  {...preview[0]} />
         <VendorEventArea  {...preview[0]} />

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import VendorBanner from '../components/vendor/VendorBanner'
-import VendorNav from '../components/vendor/VendorNav'
-import VendorInfo from '../components/vendor/VendorInfo'
-import VendorProduct from '../components/vendor/VendorProduct'
+import VendorBanner from '../../components/vendor/VendorBanner'
+import PreVendorNav from '../../components/vendor/PreVendorNav'
+import VendorInfo from '../../components/vendor/VendorInfo'
+import VendorProduct from '../../components/vendor/VendorProduct'
 import { withRouter } from 'react-router-dom'
 
 // import { connect } from 'react-redux'
@@ -45,7 +45,7 @@ function VendorIndex(props) {
   return (
     <>
       <VendorBanner {...preview[0]} />
-      <VendorNav {...preview[0]} />
+      <PreVendorNav {...preview[0]} />
       <div className="vendorWrapper d-flex justify-content-around">
         <VendorInfo {...preview[0]} />
         <VendorProduct />
