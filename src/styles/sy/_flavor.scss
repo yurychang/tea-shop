@@ -1,0 +1,12 @@
+.flavor {
+  &-link:hover,
+  .active {
+    * {
+      opacity: 0.5;
+    }
+    cursor: pointer;
+    .text {
+      opacity: 1;
+    }
+  }
+}
