@@ -17,7 +17,7 @@ const Zone = styled.div`
   padding-top: 0;
 `
 
-const ZoneContent = styled.div`
+const ZoneItem = styled.div`
   display: flex;
   height: 180px;
   margin-top: -39px;
@@ -29,9 +29,9 @@ const ZoneTitle = styled.div`
   margin-right: 5px;
 `
 
-const ZoneItem = styled.ul`
+const ZoneContent = styled.ul`
   height: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 0;
 `
 
@@ -50,7 +50,7 @@ function RegionAxis({
       return (
         <Zone key={el.zId}>
           <div className="dot" />
-          <ZoneContent>
+          <ZoneItem>
             <ZoneTitle>
               <VerticalLinkBtn
                 onClick={() => toggleFilter('zone', el.zId, el.zone)}
@@ -59,7 +59,7 @@ function RegionAxis({
                 {el.zone}
               </VerticalLinkBtn>
             </ZoneTitle>
-            <ZoneItem className="sy_list sy_list-vertical">
+            <ZoneContent className="sy_list sy_list-vertical">
               {el.companys.map(item => {
                 return (
                   <li key={item.id} className="list-item">
@@ -76,8 +76,8 @@ function RegionAxis({
                   </li>
                 )
               })}
-            </ZoneItem>
-          </ZoneContent>
+            </ZoneContent>
+          </ZoneItem>
         </Zone>
       )
     })
