@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import VendorAboutArea from 'components/vendor/VendorAboutArea'
-import { keyframes } from 'styled-components'
-import VendorAbout from 'pages/VendorAbout'
 
 function BackendData() {
   const [imgUrl, setImgUrl] = useState('')
@@ -15,7 +12,7 @@ function BackendData() {
   const [vendorImg, setVendorImg] = useState('')
   const [vendorAbout, setVendorAbout] = useState('')
   const [vendorBanner, setVendorBanner] = useState('')
-  const localId = localStorage.getItem('vendorOnlyId')
+  const localId = sessionStorage.getItem('vendorOnlyId')
 
   //取得廠商原有資料
   async function getDataFromServer() {
@@ -29,6 +26,7 @@ function BackendData() {
         }),
       }
     )
+
     const response = await fetch(request)
     const data = await response.json()
     console.log(data[0])
@@ -204,7 +202,7 @@ function BackendData() {
                   <option value="12">新北市</option>
                   <option value="13">桃園市</option>
                   <option value="14">基隆市</option>
-                  <option value="15">新竹市</option>
+                  <option value="15">新竹縣</option>
                   <option value="16">宜蘭縣</option>
                   <option value="21">台中市</option>
                   <option value="22">苗栗縣</option>
@@ -297,5 +295,4 @@ function BackendData() {
     </>
   )
 }
-
 export default BackendData

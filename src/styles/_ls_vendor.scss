@@ -1,7 +1,7 @@
 
 .ls_banner{
     width: 100%;
-    max-height: 350px;
+    max-height: 400px;
     overflow: hidden;
 
     img{
@@ -36,6 +36,32 @@
 
 
     }
+  }
+
+  .ls_test-vendorNav {
+    width: 100%;
+    box-shadow: 1px 0px 2px grey;
+
+    ul {
+      max-width: 1000px;
+      margin: 0 auto;
+
+
+      li a {
+        display: inline-block;
+        height: 60px;
+        padding: 0 62px;
+        line-height: 60px;
+        text-align: center;
+      }
+
+
+    }
+  }
+
+  .ls_test-vendorNav ul li a:hover {
+    background-color: $whiteyellow;
+    color: $gray-600;
   }
 
 
@@ -178,12 +204,20 @@
   width: 180px;
 }
 
+.ls_p12-0{
+ padding: 12px 0px;
+
+}
+
 .timeOut{
   color: gray;
 }
 
 .ls_bk-color{
   background-color: $main2;
+  text-align: center;
+  padding: 12px 0px;
+
 }
 
 
@@ -327,6 +361,14 @@
   width: 500px;
   height: 500px;
   margin-top:80px ;
+}
+
+
+.ls_productli{
+  padding: 20px 20px;
+  text-align: center;
+
+
 }
 
 

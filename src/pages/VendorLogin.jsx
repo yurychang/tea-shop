@@ -83,7 +83,7 @@ function VendorLogintest() {
             className="btn btn-main2 col-5 ls_login-btn"
             to="/signup/vendor"
           >
-            <i class="fas fa-clipboard-list"></i> 註冊
+            <i className="fas fa-clipboard-list"></i> 註冊
           </Link>
         </div>
       </form>
@@ -116,7 +116,7 @@ function VendorLogintest() {
 
       if (data.success === true) {
         console.log(data.message.text)
-        localStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
+        sessionStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
         setLoginmode(true)
       } else {
         console.log(data.message.text)

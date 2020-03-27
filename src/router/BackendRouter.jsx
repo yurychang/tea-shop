@@ -12,19 +12,52 @@ import BackendAddProduct from '../components/backend/BackendAddProduct'
 import BackendAddMsg from '../components/backend/BackendAddMsg'
 import EditEvent from '../components/backend/EditEvent'
 import { useState } from 'react'
+import { Modal, Button } from 'react-bootstrap'
 
 function BackendRouter() {
 
-  const localId = localStorage.getItem('vendorOnlyId')
-  const [logout , setLogout]=useState(false)
+
+  const localId = sessionStorage.getItem('vendorOnlyId')
+  const [logout, setLogout] = useState(false)
+
+  const [logoutDialog, setLogoutDialog] = useState(false)
+
+  const logoutJump = (<Redirect to="/index" />)
+  const Dialog = (<><Modal.Dialog
+    size="md"
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+  >
+    <Modal.Header closeButton>
+      <Modal.Title id="contained-modal-title-vcenter">
+        您已登出，感謝您的使用
+    </Modal.Title>
+    </Modal.Header>
+    <Modal.Footer>
+      <Button onClick={() => { setLogoutDialog(true) }}>Close</Button>
+    </Modal.Footer>
+  </Modal.Dialog></>)
+
+
 
   const logoumethod = event => {
     event.preventDefault()
-    localStorage.removeItem('vendorOnlyId')
+    sessionStorage.removeItem('vendorOnlyId')
     setLogout(true)
   }
-  if(logout){
+  if (logout) {
+
+    // alert('您已登出，感謝您的使用')
+    return (<>
+      {logoutDialog ? logoutJump : Dialog}
+    </>)
+  }
+
+
+  if (!localId) {
+    alert('您沒有權限，請先登入')
     return <Redirect to="/index" />
+
   }
 
   return (
