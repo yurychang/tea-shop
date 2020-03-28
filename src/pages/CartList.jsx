@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import img1 from '../images/01.jpg'
+import { withRouter } from 'react-router-dom'
 
-function CartList() {
+function CartList(props) {
+  const [product, setProduct] = useState([])
+  const getproductid = Number(props.match.params.id)
+  console.log(getproductid)
+
+  async function getDataFromServer(props) {
+    const request = new Request(
+      'http://localhost:3333/product/get-single-product/' + getproductid,
+      {
+        method: 'GET',
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'appliaction/json',
+        }),
+      }
+    )
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log(data)
+    setProduct(data)
+  }
+
+  useEffect(() => {
+    getDataFromServer()
+  }, [])
+
+  console.log('product', product)
+  console.log('product[0]', product[0])
+
   return (
     <>
       <div className="container py-4">
@@ -76,11 +105,10 @@ function CartList() {
                           className=" align-middle"
                           style={{ fontSize: '14px' }}
                         >
-                          【 冷泡茶精選 】 台灣茶 ‧ 綜合茶包組 - 外出單人瓶(
-                          600ml ) 茶包3gx4枚
+                          {props.tag}
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>紅茶</strong>
+                          <strong>{props.tag}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
                           <strong>包</strong>
@@ -127,4 +155,4 @@ function CartList() {
     </>
   )
 }
-export default CartList
+export default withRouter(CartList)

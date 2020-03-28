@@ -35,22 +35,13 @@ function Product(props) {
     setTotal(data)
     // return data
   }
+
   // 一開始就會開始載入資料
   useEffect(() => {
     getDataFromServer()
   }, [])
 
   console.log('total', total)
-
-  // ------map----
-
-  // const mapEat = total.map(function(item, index, array) {
-  //   if (item.i) {
-  //     return `${item.title} `
-  //   } else {
-  //     return `${item.title} `
-  //   }
-  // })
 
   // console.log(mapEat)
 

@@ -33,6 +33,7 @@
     float: right;
     .pj_card-price-p {
       margin: 10px;
+      padding-top: 10px;
     }
     .pj_card-price-input {
       margin: 10px;
@@ -41,6 +42,19 @@
     .pj_card-price {
       margin: 10px;
       font-size: 24px;
+    }
+    .pj_card-price-amount-add {
+      margin: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50px;
+      background-color: orange;
+      padding: 10px;
+      border: 1px solid rgb(216, 140, 0);
+
+      .pj_card-span {
+        text-align: center;
+      }
     }
   }
   .pj_cart-btn {

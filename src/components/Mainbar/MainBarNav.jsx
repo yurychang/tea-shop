@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Nav, Navbar } from 'react-bootstrap'
 import logo from 'images/logo.svg'
 import logoH from 'images/logo-h.svg'
 
+
 export default function MainBarNav({ isOpen, onClick }) {
+  const [cartNum, setCartNum] = useState([0])
   return (
     <>
       <div className="main-bar-nav">
@@ -63,9 +65,9 @@ export default function MainBarNav({ isOpen, onClick }) {
               </Nav.Item>
               <Nav.Item className="border-bottom border-bottom-lg-0">
                 <Nav.Link as="p" className="mb-0">
-                  <Link to="/cart" className="d-block">
+                  <Link to="/CartList" className="d-block">
                     <i className="fas fa-shopping-cart" />
-                    <span>0</span>
+                    <div>{cartNum}</div>
                     <span className="d-lg-none ml-2">會員中心</span>
                   </Link>
                 </Nav.Link>

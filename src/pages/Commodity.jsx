@@ -9,7 +9,7 @@ function Commodity(props) {
   const getproductid = Number(props.match.params.id)
   console.log(getproductid)
 
-  async function getDataFromServer() {
+  async function getDataFromServer(props) {
     const request = new Request(
       'http://localhost:3333/product/get-single-product/' + getproductid,
       {
