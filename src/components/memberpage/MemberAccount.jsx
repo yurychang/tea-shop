@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function BackendData() {
+function MemberAccount() {
   const [imgUrl, setImgUrl] = useState('')
 
   const [memberName, setmemberName] = useState('')
@@ -70,16 +70,17 @@ function BackendData() {
     for (let key in memberUpdate) {
       formData.append(`${key}`, memberUpdate[key])
     }
-    // vendorUpdate.map((value, index) => {
-    //     formData.append(`${index}`, value);
+    // memberUpdate.map((value, index) => {
+    //   formData.append(`${index}`, value)
     // })
-    // formData.append('vendorImg', vendorImg);
+    // formData.append('memberImg', memberImg)
     sendRegisterDataToServer(memberUpdate, () => alert('更新成功'))
 
     async function sendRegisterDataToServer(memberUpdate, callback) {
       // 注意資料格式要設定，伺服器才知道是json格式
-      const request = new Request('http://127.0.0.1:3333/vendor/updatedata', {
+      const request = new Request('http://localhost:3333/member/updatedata', {
         method: 'POST',
+        credentials: 'include',
         body: formData,
       })
 
@@ -107,6 +108,7 @@ function BackendData() {
                   placeholder=""
                   name="memberName"
                   value={memberName}
+                  onChange={e => setmemberName(e.target.value)}
                 />
               </div>
 
@@ -117,6 +119,7 @@ function BackendData() {
                   className="form-control"
                   name="memberEmail"
                   value={memberEmail}
+                  onChange={e => setmemberEmail(e.target.value)}
                 />
               </div>
 
@@ -128,6 +131,7 @@ function BackendData() {
                   className="form-control"
                   name="memberAddress"
                   value={memberAddress}
+                  onChange={e => setmemberAddress(e.target.value)}
                 />
               </div>
 
@@ -138,6 +142,7 @@ function BackendData() {
                   className="form-control"
                   name="memberPhone"
                   value={memberPhone}
+                  onChange={e => setmemberPhone(e.target.value)}
                 />
               </div>
             </div>
@@ -146,10 +151,18 @@ function BackendData() {
               <div className="figure ls_W300">
                 <img className="figure-img img-fluid rounded" alt="" />
               </div>
-              <input type="file" name="memberImg" />
+              <input
+                type="file"
+                name="memberImg"
+                onChange={e => setImgUrl(e.target.files[0])}
+              />
             </div>
           </div>
-          <button type="submit" className="btn btn-main col-3">
+          <button
+            type="submit"
+            className="btn btn-main col-3"
+            onClick={event => handleSubmit(event)}
+          >
             更新
           </button>
         </form>
@@ -158,4 +171,4 @@ function BackendData() {
   )
 }
 
-export default BackendData
+export default MemberAccount

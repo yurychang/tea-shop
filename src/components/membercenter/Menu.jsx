@@ -17,10 +17,10 @@ export default function Menu() {
             {memberAccount ? (
               <ul>
                 <li>
-                  <Link to="#">個人檔案</Link>
+                  <Link to="">個人檔案</Link>
                 </li>
                 <li>
-                  <Link to="#">修改密碼</Link>
+                  <Link to="">修改密碼</Link>
                 </li>
               </ul>
             ) : (
