@@ -25,7 +25,7 @@ export default function VendorSingup() {
             placeholder="請輸入6位數以上英數混合帳號"
             name="vendorAccount"
             onChange={e => setVendorAccount(e.target.value)}
-            required="required"
+            required
           />
           <input
             type="password"
@@ -33,7 +33,7 @@ export default function VendorSingup() {
             placeholder="請輸入自訂密碼"
             name="vendorPassword1"
             onChange={e => setVendorPassword1(sha1(e.target.value))}
-            required="required"
+            required
           />
           <input
             type="password"
