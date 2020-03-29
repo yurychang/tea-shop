@@ -36,16 +36,13 @@ function App() {
             <BackendRouter />
           </Route>
           <Route path="/vendortest">
-          <PreVendorRouter />
-        </Route>
+            <PreVendorRouter />
+          </Route>
           <Route path="/">
             <Loading color="#4c4c4c" type="spin" />
             <MainBar />
             <div className="sy_main-content">
               <Switch>
-                <Route path="/Index">
-                  <Index />
-                </Route>
                 <Route path="/events/:id">
                   <Event />
                 </Route>
@@ -97,6 +94,9 @@ function App() {
                 </Route>
                 <Route path="/flavor">
                   <Flavor />
+                </Route>
+                <Route path="/">
+                  <Index />
                 </Route>
               </Switch>
             </div>
