@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import img1 from '../images/01.jpg'
 import { withRouter } from 'react-router-dom'
+import addCart from 'hook/addCart'
+import updateCartNum from 'hook/updateCartNum'
 
 function CartList(props) {
   const [product, setProduct] = useState([])
@@ -27,9 +29,10 @@ function CartList(props) {
   useEffect(() => {
     getDataFromServer()
   }, [])
-
-  console.log('product', product)
-  console.log('product[0]', product[0])
+  console.log(localStorage.getItem('list'))
+  const cartData = localStorage.getItem('list')
+  const newcart = JSON.parse(cartData)
+  console.log('newcart', newcart)
 
   return (
     <>
@@ -105,22 +108,22 @@ function CartList(props) {
                           className=" align-middle"
                           style={{ fontSize: '14px' }}
                         >
-                          {props.tag}
+                          {newcart.title}
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>{props.tag}</strong>
+                          <strong>{newcart.tag}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>包</strong>
+                          <strong>{newcart.unit}包</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>$100</strong>
+                          <strong>${newcart.price}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>3</strong>
+                          <strong>{newcart.amount}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>$100</strong>
+                          <strong>${newcart.price * newcart.amount}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
                           <button type="button" class="btn btn-outline-danger">
@@ -133,7 +136,9 @@ function CartList(props) {
 
                   <div className="pj_cardList-price-amount">
                     <div className="pj_price">
-                      <p className="pj_cardList-price">NT $320</p>
+                      <p className="pj_cardList-price">
+                        NT ${newcart.price * newcart.amount}
+                      </p>
                     </div>
                     <button
                       type="button"

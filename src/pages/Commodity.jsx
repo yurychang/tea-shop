@@ -3,6 +3,7 @@ import CommodityImg from '../components/pj_event/CommodityImg'
 import CommoditInformation from '../components/pj_event/CommoditInformation'
 import ProductReviews from '../components/pj_event/ProductReviews'
 import { withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Commodity(props) {
   const [product, setProduct] = useState([])
@@ -42,7 +43,9 @@ function Commodity(props) {
               <CommodityImg />
             </div>
             <div className="col-md-6">
-              <CommoditInformation {...product[0]} />
+              <CommoditInformation
+                product={{ ...product[0], id: getproductid }}
+              />
             </div>
           </div>
         </div>

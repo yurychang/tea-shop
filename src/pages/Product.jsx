@@ -13,6 +13,7 @@ function Product(props) {
   const [total, setTotal] = useState([])
   const [addToCart, setAddToCart] = useState(0)
   const [search, setSearch] = useState('')
+  const [data, setData] = useState([])
   // const [totalDisplay, setTotalDisplay] = useState([])
   // const [dataLoading, setDataLoading] = useState(false)
 
@@ -56,13 +57,13 @@ function Product(props) {
   const handleAddImg = (addImg, newAddImg) => {
     console.log('addImg')
   }
-  //搜尋
+  // 搜尋
   // useEffect(() => {
-  //   const featchList = async (search = '') => {
+  //   const featchList = async (query = 'total') => {
   //     try {
-  //       const data1 = await featchList(search)
+  //       const data = await featchList(search)
 
-  //       total && setTotal(data1)
+  //       data && setData(data)
   //     } catch (err) {
   //       throw err
   //     }
@@ -86,6 +87,7 @@ function Product(props) {
                       type="text"
                       className="form-control"
                       placeholder="Search"
+                      // onChange={(ev => setSearch(ev.target.title), 300)}
                     />
                   </div>
                 </div>
