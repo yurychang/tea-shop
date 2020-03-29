@@ -1,6 +1,8 @@
 import { Link, NavLink, Redirect } from 'react-router-dom'
 import React, { useState } from 'react'
 import * as sha1 from 'sha1'
+import { flash } from 'react-animations'
+import Swal from 'sweetalert2'
 
 function VendorLogintest() {
   const [vendorAccount, setVendorAccount] = useState('')
@@ -107,7 +109,8 @@ function VendorLogintest() {
         sessionStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
         setLoginmode(true)
       } else {
-        console.log(data.message.text)
+        Swal.fire('帳號或密碼錯誤')
+        console.log(data.success)
       }
     }
   }
