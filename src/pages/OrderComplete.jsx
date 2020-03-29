@@ -23,7 +23,7 @@ function OrderComplete() {
             <div class="timeline-small-body">
               <ul>
                 <li>
-                  <div class="bullet pink"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>結帳</h3>
@@ -31,7 +31,7 @@ function OrderComplete() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet orange"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>付款資訊</h3>
@@ -39,7 +39,7 @@ function OrderComplete() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet blue"></div>
+                  <div class="bullet orange1"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>完成訂單</h3>
@@ -87,15 +87,6 @@ function OrderComplete() {
                 name="formHorizontalRadios"
                 id="formHorizontalRadios2"
               />
-            </Form.Group>
-
-            <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label column sm={2}>
-                身分證
-              </Form.Label>
-              <Col sm={6}>
-                <Form.Control type="password" placeholder="請輸入身分證字號" />
-              </Col>
             </Form.Group>
 
             <Form.Group as={Row} controlId="formHorizontalPhone">

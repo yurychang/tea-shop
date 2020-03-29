@@ -23,7 +23,7 @@ function payinfo() {
             <div class="timeline-small-body">
               <ul>
                 <li>
-                  <div class="bullet pink"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>結帳</h3>
@@ -31,7 +31,7 @@ function payinfo() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet orange"></div>
+                  <div class="bullet orange1"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>付款資訊</h3>
@@ -39,7 +39,7 @@ function payinfo() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet blue"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>完成訂單</h3>
@@ -89,21 +89,18 @@ function payinfo() {
               />
             </Form.Group>
 
-            <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label column sm={2}>
-                身分證
-              </Form.Label>
-              <Col sm={6}>
-                <Form.Control type="password" placeholder="請輸入身分證字號" />
-              </Col>
-            </Form.Group>
-
             <Form.Group as={Row} controlId="formHorizontalPhone">
               <Form.Label column sm={2}>
                 手機
               </Form.Label>
               <Col sm={6}>
-                <Form.Control type="phone" placeholder="請輸入手機" />
+                <Form.Control
+                  input
+                  type="text"
+                  placeholder="請輸入手機"
+                  oninput="value=value.replace(/[^\d]/g,'')"
+                  maxLength="10"
+                />
               </Col>
             </Form.Group>
             <Form.Group as={Row} controlId="formHorizontalTel">
@@ -111,10 +108,16 @@ function payinfo() {
                 市話
               </Form.Label>
               <Col sm={6}>
-                <Form.Control type="tel" placeholder="請輸入市話" />
+                <Form.Control
+                  input
+                  type="text"
+                  placeholder="請輸入市話"
+                  oninput="value=value.replace(/[^\d]/g,'')"
+                  maxLength="10"
+                />
               </Col>
             </Form.Group>
-            <Form.Group as={Row} controlId="formHorizontalEmail">
+            <Form.Group as={Row} controlId="formHorizontalTel">
               <Form.Label column sm={2}>
                 信箱
               </Form.Label>
@@ -150,35 +153,21 @@ function payinfo() {
               />
             </Form.Group>
             <Form.Group as={Row} controlId="exampleForm.SelectCustom">
-              <Form.Label>收件地址</Form.Label>
-              <br />
-
+              <Form.Label column sm={2}>
+                地址
+              </Form.Label>
               <Form>
-                <Form.Group as="Row" controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Label></Form.Label>
-                  <Form.Control as="select" size="sm" custom>
+                <Form.Group
+                  as="Row"
+                  controlId="exampleForm.SelectCustomSizeSm"
+                  className="dist"
+                >
+                  <Form.Control as="select" size="sm">
                     <option>台北市</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                  <Form.Control as="select" size="sm" custom>
-                    <option>大安區</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group as="Row" controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Label></Form.Label>
-                  <Form.Control as="select" size="sm" custom>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>新北市</option>
+                    <option>基隆市</option>
+                    <option>桃園市</option>
+                    <option>新竹市</option>
                   </Form.Control>
                 </Form.Group>
               </Form>
@@ -189,16 +178,16 @@ function payinfo() {
                 卡號
               </Form.Label>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="****" />
+                <Form.Control type="email" placeholder="****" maxLength="4" />
               </Col>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="****" />
+                <Form.Control type="email" placeholder="****" maxLength="4" />
               </Col>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="****" />
+                <Form.Control type="email" placeholder="****" maxLength="4" />
               </Col>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="****" />
+                <Form.Control type="email" placeholder="****" maxLength="4" />
               </Col>
             </Form.Group>
 
@@ -207,11 +196,11 @@ function payinfo() {
                 有限期限
               </Form.Label>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="**" />
+                <Form.Control type="email" placeholder="**" maxLength="2" />
               </Col>
               <p>月</p>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="**" />
+                <Form.Control type="email" placeholder="**" maxLength="2" />
               </Col>
               <p>年</p>
             </Form.Group>
@@ -220,12 +209,15 @@ function payinfo() {
                 後三碼
               </Form.Label>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="***" />
+                <Form.Control type="email" placeholder="***" maxLength="3" />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
               <Col sm={{ span: 10, offset: 2 }}>
-                <Button type="submit"> 確認送出 </Button>
+                <Button className="confirm" type="submit">
+                  {' '}
+                  確認送出{' '}
+                </Button>
               </Col>
             </Form.Group>
           </Form>

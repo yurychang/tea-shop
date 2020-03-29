@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 // import{ BrowserRouter as Link} from "react-router-dom";
+// import '../styles/jc/checkout.scss'
 import '../styles/jc/checkout.scss'
 
 function Checkout() {
@@ -21,7 +22,7 @@ function Checkout() {
             <div class="timeline-small-body">
               <ul>
                 <li>
-                  <div class="bullet pink"></div>
+                  <div class="bullet orange1"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>結帳</h3>
@@ -29,7 +30,7 @@ function Checkout() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet orange"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>付款資訊</h3>
@@ -37,7 +38,7 @@ function Checkout() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet blue"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>完成訂單</h3>
@@ -178,7 +179,7 @@ function Checkout() {
           <Col></Col>
           <Col>優惠券</Col>
           <Col sm={3}>
-            <Dropdown>
+            <Dropdown className="dpdn">
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 請選擇優惠券代碼
               </Dropdown.Toggle>
@@ -187,6 +188,8 @@ function Checkout() {
                 <Dropdown.Item href="#/action-1">1</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">2 </Dropdown.Item>
                 <Dropdown.Item href="#/action-3">3</Dropdown.Item>
+                <Dropdown.Item href="#/action-4">4</Dropdown.Item>
+                <Dropdown.Item href="#/action-5">5</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Col>
