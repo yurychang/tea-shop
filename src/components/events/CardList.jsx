@@ -23,7 +23,7 @@ function CardList({ events = [], title = '' }) {
   const mapEvents = data => {
     return data.map(event => {
       return (
-        <Col key={event.id} xs="6" md="4">
+        <Col key={event.id} md="4">
           <EventCard {...event} />
         </Col>
       )
