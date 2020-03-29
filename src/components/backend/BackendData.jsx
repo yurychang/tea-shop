@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {Redirect } from 'react-router-dom'
 
 function BackendData() {
   const [imgUrl, setImgUrl] = useState('')
@@ -30,7 +31,9 @@ function BackendData() {
 
     const response = await fetch(request)
     const data = await response.json()
-    console.log(data[0])
+    // if (data.status ===400) {
+    //   return <><Redirect to="/index" /></>
+    // }
     setVendorName(data[0].vendorName)
     setVendorEmail(data[0].vendorEmail)
     setVendorPhone(data[0].vendorPhone)

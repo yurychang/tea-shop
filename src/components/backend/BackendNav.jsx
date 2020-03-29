@@ -10,7 +10,7 @@ function BackendNav() {
             <NavLink
               className="nav-link pb-2 ls_backend-nav"
               activeClassName="active"
-              to="/dashboard/order/:orderid?"
+              to="/dashboard/order"
             >
               訂單管理
             </NavLink>
@@ -19,7 +19,7 @@ function BackendNav() {
             <NavLink
               className="nav-link pb-2 ls_backend-nav"
               activeClassName="active"
-              to="/dashboard/product/:productid?"
+              to="/dashboard/product"
             >
               商品管理
             </NavLink>
@@ -28,7 +28,7 @@ function BackendNav() {
             <NavLink
               className="nav-link pb-2 ls_backend-nav"
               activeClassName="active"
-              to="/dashboard/msg/:msgid?"
+              to="/dashboard/msg"
             >
               訊息管理
             </NavLink>
@@ -37,7 +37,7 @@ function BackendNav() {
             <NavLink
               className="nav-link pb-2 ls_backend-nav"
               activeClassName="active"
-              to="/dashboard/events/:eventid?"
+              to="/dashboard/events"
             >
               活動管理
             </NavLink>
