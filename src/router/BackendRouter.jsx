@@ -43,8 +43,25 @@ function BackendRouter() {
   const logoumethod = event => {
     event.preventDefault()
     sessionStorage.removeItem('vendorOnlyId')
+    setVendorLogout()
     setLogout(true)
   }
+
+  async function setVendorLogout() {
+    const request = new Request('http://localhost:3333/vendor/logout', {
+      method: 'GET',
+      credentials: 'include',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'appliaction/json',
+      }),
+
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+  }
+
   if (logout) {
 
     // alert('您已登出，感謝您的使用')

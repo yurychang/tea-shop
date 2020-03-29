@@ -57,19 +57,6 @@ function VendorLogintest() {
             required
           />
         </div>
-        <div className="form-group form-check d-flex">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-
-          <label className="form-check-label">記住帳號密碼</label>
-        </div>
-
-        <div className="">
-          <Link to="#">忘記密碼？</Link>
-        </div>
 
         <div className="d-flex justify-content-around mb-3 mt-5">
           <button
@@ -77,7 +64,7 @@ function VendorLogintest() {
             className="btn btn-main col-5 ls_login-btn"
             onClick={event => handleSubmit(event)}
           >
-            <i className="fas fa-sign-in-alt"> </i>登入{' '}
+            <i className="fas fa-sign-in-alt"></i>登入{' '}
           </button>
           <Link
             className="btn btn-main2 col-5 ls_login-btn"
