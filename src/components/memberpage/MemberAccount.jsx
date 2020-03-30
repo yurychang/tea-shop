@@ -33,7 +33,7 @@ function MemberAccount() {
     setmemberEmail(data[0].m_email)
     setmemberPhone(data[0].m_phone)
     setmemberAddress(data[0].m_address)
-    // setImgUrl(data[0].memberImg)
+    setImgUrl(data[0].m_img)
   }
 
   //取得廠商原有資料end
@@ -101,7 +101,7 @@ function MemberAccount() {
           <div className="data-area d-flex justify-content-between">
             <div className="form-area col-6">
               <div className="form-group">
-                <label>名稱</label>
+                <label>帳號</label>
                 <input
                   type="text"
                   className="form-control"
@@ -149,12 +149,18 @@ function MemberAccount() {
 
             <div className="img-area col-5">
               <div className="figure ls_W300">
-                <img className="figure-img img-fluid rounded" alt="" />
+                <img
+                  className="figure-img img-fluid rounded"
+                  src={imgUrl}
+                  alt=""
+                />
               </div>
               <input
                 type="file"
                 name="memberImg"
-                onChange={e => setImgUrl(e.target.files[0])}
+                onChange={e => {
+                  handleChangeUserImg(e.target.files[0])
+                }}
               />
             </div>
           </div>
