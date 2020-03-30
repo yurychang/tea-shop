@@ -11,6 +11,7 @@ import BackendOrderDetail from '../components/backend/BackendOrderDetail'
 import BackendAddProduct from '../components/backend/BackendAddProduct'
 import BackendAddMsg from '../components/backend/BackendAddMsg'
 import EditEvent from '../components/backend/EditEvent'
+import BackendEditMsg from '../components/backend/BackendEditMsg'
 import { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 
@@ -43,8 +44,25 @@ function BackendRouter() {
   const logoumethod = event => {
     event.preventDefault()
     sessionStorage.removeItem('vendorOnlyId')
+    setVendorLogout()
     setLogout(true)
   }
+
+  async function setVendorLogout() {
+    const request = new Request('http://localhost:3333/vendor/logout', {
+      method: 'GET',
+      credentials: 'include',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'appliaction/json',
+      }),
+
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+  }
+
   if (logout) {
 
     // alert('您已登出，感謝您的使用')
@@ -83,10 +101,13 @@ function BackendRouter() {
             <Route path="/dashboard/product/:productid?">
               <BackendProduct />
             </Route>
+            <Route path="/dashboard/msg/edit/:msgid?">
+              <BackendEditMsg />
+            </Route>
             <Route path="/dashboard/msg/add">
               <BackendAddMsg />
             </Route>
-            <Route path="/dashboard/msg/:msgid?">
+            <Route path="/dashboard/msg/">
               <BackendMsg />
             </Route>
             <Route path="/dashboard/events/:id">

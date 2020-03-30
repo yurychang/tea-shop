@@ -1,6 +1,8 @@
 import { Link, NavLink, Redirect } from 'react-router-dom'
 import React, { useState } from 'react'
 import * as sha1 from 'sha1'
+import { flash } from 'react-animations'
+import Swal from 'sweetalert2'
 
 function VendorLogintest() {
   const [vendorAccount, setVendorAccount] = useState('')
@@ -57,19 +59,6 @@ function VendorLogintest() {
             required
           />
         </div>
-        <div className="form-group form-check d-flex">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-
-          <label className="form-check-label">記住帳號密碼</label>
-        </div>
-
-        <div className="">
-          <Link to="#">忘記密碼？</Link>
-        </div>
 
         <div className="d-flex justify-content-around mb-3 mt-5">
           <button
@@ -77,7 +66,7 @@ function VendorLogintest() {
             className="btn btn-main col-5 ls_login-btn"
             onClick={event => handleSubmit(event)}
           >
-            <i className="fas fa-sign-in-alt"> </i>登入{' '}
+            <i className="fas fa-sign-in-alt"></i>登入{' '}
           </button>
           <Link
             className="btn btn-main2 col-5 ls_login-btn"
@@ -120,7 +109,8 @@ function VendorLogintest() {
         sessionStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
         setLoginmode(true)
       } else {
-        console.log(data.message.text)
+        Swal.fire('帳號或密碼錯誤')
+        console.log(data.success)
       }
     }
   }
