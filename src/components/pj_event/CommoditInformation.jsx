@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
-import addCart from 'hook/addCart'
-import updateCartNum from 'hook/updateCartNum'
-import deleteCart from 'hook/deleteCart'
-
+// import addCart from 'hooks/addCart'
+// import updateCartNum from 'hooks/updateCartNum'
+// import deleteCart from 'hooks/deleteCart'
+import { withCart } from 'hooks/useCartContext'
 import '../../styles/pj/_pj.css'
 
-function CommoditInformation({ product = {}, ...props }) {
+function CommoditInformation({ product = {}, cart, ...props }) {
+  const { addCart } = cart
   const [amount, setAmount] = useState(1)
   // const handleAddCart = (addCart, newAddCart) => {
   //   console.log('addCart')
   // }
-  const newList = { ...product, amount }
-  const addList = e => {
-    localStorage.setItem('list', JSON.stringify(newList))
+  // const newList = { ...product, amount }
+  // const addList = e => {
+  //   localStorage.setItem('list', JSON.stringify(newList))
 
-    // console.log(addList)
-  }
+  //   console.log(addList)
+  // }
   // const addList = e => {
   //   localStorage.setItem('list', JSON.stringify(product))
 
@@ -48,12 +49,9 @@ function CommoditInformation({ product = {}, ...props }) {
           <div className="amount d-flex">
             <p className="pj_card-price-p">數量</p>
             <button
-              className="pj_card-price-amount-add"
+              className="pj_card-price-amount-add pj_button1"
               style={{ visibility: amount < 1 && `hidden` }}
-              onClick={() => {
-                const newNum = updateCartNum(product.id, amount - 1)
-                setAmount(newNum)
-              }}
+              onClick={() => setAmount(amount - 1)}
             >
               <span className="pj_card-span">-</span>
             </button>
@@ -64,11 +62,8 @@ function CommoditInformation({ product = {}, ...props }) {
               value={amount}
             />
             <button
-              className="pj_card-price-amount-add"
-              onClick={() => {
-                const newNum = updateCartNum(product.id, amount + 1)
-                setAmount(newNum)
-              }}
+              className="pj_card-price-amount-add pj_button1"
+              onClick={() => setAmount(amount + 1)}
             >
               <span className="pj_card-span">+</span>
             </button>
@@ -81,18 +76,24 @@ function CommoditInformation({ product = {}, ...props }) {
         <div className="pj_cart-btn">
           <button
             type="button"
-            className="btn btn-outline-warning m-1 pj_cart-button"
-            onClick={() => addCart(product, amount)}
+            className="m-1 pj_cart-button pj_button"
+            onClick={() => {
+              addCart(product, amount)
+              // cartCount.setCartCount(num)
+            }}
           >
-            加入購物車
-            <img src="../../images/shopping_cart-24px.svg" alt="" />
+            加入
+            <i class="fas fa-shopping-cart" style={{ marginLeft: '15px' }}></i>
           </button>
 
           <Link to="/CartList" className="d-block">
             <button
               type="button"
-              className="btn btn-warning m-1 pj_cart-button"
-              onClick={addList}
+              className="m-1 pj_cart-button pj_button"
+              onClick={() => {
+                addCart(CommoditInformation)
+              }}
+              // onClick={addList}
             >
               購買
               <i class="fas fa-credit-card" style={{ marginLeft: '15px' }}></i>
@@ -104,4 +105,4 @@ function CommoditInformation({ product = {}, ...props }) {
   )
 }
 
-export default withRouter(CommoditInformation)
+export default withRouter(withCart(CommoditInformation))
