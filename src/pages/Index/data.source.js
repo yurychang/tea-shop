@@ -222,7 +222,7 @@ export const Teams10DataSource = {
               name: 'image',
               className: 'teams1-image',
               children:
-                'http://cdn.rologo.com/wp-content/uploads/2014/03/lipton-new-logo.jpg?x-oss-process=image/format,webp,image/resize,m_fill,w_932,h_932#',
+                'https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/28279817_1727156610655837_6472842013472785328_n.jpg?_nc_cat=102&_nc_sid=85a577&_nc_ohc=2VSWWuZpyTsAX93y5wV&_nc_ht=scontent.ftpe8-4.fna&oh=a65c1812d7cade37981fbdb805f6f163&oe=5EA88893',
             },
             {
               name: 'title',
@@ -232,7 +232,7 @@ export const Teams10DataSource = {
                 <span>
                   <span>
                     <span>
-                      <p>立頓茶葉</p>
+                      <p>舞鶴茶園- 公主咖啡</p>
                     </span>
                   </span>
                 </span>
@@ -244,7 +244,9 @@ export const Teams10DataSource = {
               children: (
                 <span>
                   <span>
-                    <p>百大茶葉排行第一</p>
+                    <p>
+                      <b>花蓮好評第一</b>
+                    </p>
                   </span>
                 </span>
               ),
@@ -255,11 +257,16 @@ export const Teams10DataSource = {
               children: (
                 <span>
                   <p>
-                    這是歐可茶葉，以健康為號召，主打不添加奶精粉，只用純奶粉且還能自行調整奶茶甜度，在網路闖出知名度。
-                    不鋪實體通路，僅靠網路銷售，每包售價達3
+                    跟著日光移動的腳步， 隨著山嵐滿布又散去，
+                    我們天天看顧著茶樹與咖啡樹的生長。
+                    當陽光垂直地灑落在北回歸線上， 別擔心，還有老欉文旦為蔭，
+                    呵護著10年有成的咖啡果實慢慢長大。
                   </p>
                   <p>
-                    2元，比起主要競爭對手三點一刻貴上2倍，每年仍可銷出3百50萬包奶茶包，成為網購奶茶包銷量第一的品牌。
+                    的確，是他們一生風吹日曬、 爬滿皺紋的手， 摘下果實與葉心，
+                    但就在這些飽經風霜的栽種者，
+                    像面對孩子般的溫柔照護與耐性等待裡， 我們喝到，
+                    公主咖啡最溫潤的香氣。
                   </p>
                 </span>
               ),
@@ -277,8 +284,7 @@ export const Teams10DataSource = {
             {
               name: 'image',
               className: 'teams1-image',
-              children:
-                'http://cdn.rologo.com/wp-content/uploads/2014/03/lipton-new-logo.jpg?x-oss-process=image/format,webp,image/resize,m_fill,w_932,h_932#',
+              children: 'https://www.yoshantea.com/img/pc/logo.png',
             },
             {
               name: 'title',
@@ -288,7 +294,7 @@ export const Teams10DataSource = {
                 <span>
                   <span>
                     <span>
-                      <p>立頓茶葉</p>
+                      <p>遊山茶訪</p>
                     </span>
                   </span>
                 </span>
@@ -300,7 +306,9 @@ export const Teams10DataSource = {
               children: (
                 <span>
                   <span>
-                    <p>百大茶葉排行第一</p>
+                    <p>
+                      <b>獨特的凍頂烏龍茶</b>
+                    </p>
                   </span>
                 </span>
               ),
@@ -311,11 +319,13 @@ export const Teams10DataSource = {
               children: (
                 <span>
                   <p>
-                    這是歐可茶葉，以健康為號召，主打不添加奶精粉，只用純奶粉且還能自行調整奶茶甜度，在網路闖出知名度。
-                    不鋪實體通路，僅靠網路銷售，每包售價達32元
+                    烏龍茶作法源於福建，在臺灣臻於完美，其中又以凍頂烏龍茶為最，
+                    直到近期高山茶的興起，市場相繼追求烏龍茶的“高山氣”，加上勞動力不足，製茶人於是不再依靠氣候與經驗看茶製茶，
+                    而以一套“標準製茶流程與方法”帶過，於是“菁味”被當成“高山氣”。
                   </p>
                   <p>
-                    ，比起主要競爭對手三點一刻貴上2倍，每年仍可銷出3百50萬包奶茶包，成為網購奶茶包銷量第一的品牌。
+                    遊山茶訪追求當年凍頂烏龍茶“涼喉、釘甘”的獨特風味，採較成熟的茶菁予以充足的發酵，再適度的烘焙，
+                    最終成就烏龍茶“茶那芳入骨，刀削也未揉”令人懷念的風味。這是遊山茶訪所追求製茶工藝的極致。
                   </p>
                 </span>
               ),
@@ -333,8 +343,7 @@ export const Teams10DataSource = {
             {
               name: 'image',
               className: 'teams1-image',
-              children:
-                'http://cdn.rologo.com/wp-content/uploads/2014/03/lipton-new-logo.jpg?x-oss-process=image/format,webp,image/resize,m_fill,w_932,h_932#',
+              children: 'https://www.hugosum.com.tw/images/logo.png',
             },
             {
               name: 'title',
@@ -344,7 +353,7 @@ export const Teams10DataSource = {
                 <span>
                   <span>
                     <span>
-                      <p>立頓茶葉</p>
+                      <p>和菓森林紅茶莊園</p>
                     </span>
                   </span>
                 </span>
@@ -355,7 +364,9 @@ export const Teams10DataSource = {
               className: 'teams1-job',
               children: (
                 <span>
-                  <p>百大茶葉排行第一</p>
+                  <p>
+                    <b>正宗日月潭紅茶</b>
+                  </p>
                 </span>
               ),
             },
@@ -365,11 +376,10 @@ export const Teams10DataSource = {
               children: (
                 <span>
                   <p>
-                    這是歐可茶葉，以健康為號召，主打不添加奶精粉，只用純奶粉且還能自行調整奶茶甜度，在網路闖出知名度。
-                    不鋪實體通路，僅靠網路銷售，每包售價達3
+                    茶樹的種植方式採用自然友善栽種方式，施用有機肥料、人工除草，每片一芯二葉皆由採茶婆婆們手工採摘。
                   </p>
                   <p>
-                    2元，比起主要競爭對手三點一刻貴上2倍，每年仍可銷出3百50萬包奶茶包，成為網購奶茶包銷量第一的品牌。
+                    和菓森林主動將每批紅茶送檢，提供SGS檢驗報告給消費者，最新一期檢驗報告請點選最新消息，請您安心品茗。
                   </p>
                 </span>
               ),
@@ -435,7 +445,7 @@ export const Feature20DataSource = {
   OverPack: { className: 'home-page content2', playScale: 0.3 },
   imgWrapper: { className: 'content2-img', md: 8, xs: 24 },
   img: {
-    children: 'https://pic.pimg.tw/cindy6732/1570111018-4123191863.jpg',
+    children: 'https://farm2.staticflickr.com/1936/45341389641_9cf5932583_c.jpg',
   },
   textWrapper: { className: 'content2-text', md: 14, xs: 24 },
   title: {
@@ -444,7 +454,7 @@ export const Feature20DataSource = {
       <span>
         <span>
           <p>
-            <b>日月潭老茶廠</b>
+            <b>和菓森林紅茶莊園</b>
           </p>
         </span>
       </span>
@@ -455,7 +465,10 @@ export const Feature20DataSource = {
     children: (
       <span>
         <p>
-          日月老茶廠位在南投魚池鄉，靠近日月潭風景區，擁有得天獨厚的地理環境，所栽植出的阿薩姆紅茶品質極佳，老茶廠前身為台灣農林公司的魚池茶廠，在歷經九二一大地震後，開始重建轉型，從單純的製茶廠轉型成為兼具生產紅茶、有機農業及推廣健康飲食與環境的觀光茶廠。
+          目前由二代承襲了父親的職人精神與製茶技術，除了用心作好茶更下定決心一定要讓好茶被看見，再創日月潭紅茶新風貌。
+        </p>
+        <p>
+          2005年成立觀光茶廠，提供一個見證日月潭紅茶產業發展歷史文化的地方，除了讓更多人了解紅茶產業知識，也能對在地文化傳承盡一份心力，更進一步推廣日月潭紅茶文化，讓全世界看到日月潭紅茶的茶藝復興
         </p>
       </span>
     ),
@@ -484,7 +497,7 @@ export const Pricing00DataSource = {
               <span>
                 <span>
                   <p>
-                    <i>和菓森林</i>
+                    <i>半日茶師小旅行</i>
                   </p>
                 </span>
               </span>
@@ -545,7 +558,7 @@ export const Pricing00DataSource = {
           children: (
             <span>
               <span>
-                <p>立即預約</p>
+                <p>立即查看</p>
               </span>
             </span>
           ),

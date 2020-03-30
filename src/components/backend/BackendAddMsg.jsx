@@ -5,7 +5,7 @@ export default function BackendProductMsg() {
   //   const [vendorId, setVendorId] = useState('')
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
-  const [status, setStatus] = useState('02')
+  const [status, setStatus] = useState('00')
   const vendorId = sessionStorage.getItem('vendorOnlyId')
 
   //   return ()
