@@ -103,8 +103,8 @@
   }
 
   .singleProduct{
-    width: 250px;
-    height: 380px;
+    max-width: 250px;
+    min-height: 380px;
 
     .card-body{
       padding: 8px;
