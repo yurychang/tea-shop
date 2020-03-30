@@ -9,7 +9,7 @@ const listNames = [
   { name: '文化走訪', path: '/events' },
   { name: '茗家精選', path: '/allstore' },
   { name: '茶風味輪', path: '/flavor' },
-  { name: '台灣茶分布圖', path: '/' },
+  // { name: '台灣茶分布圖', path: '/' },
 ]
 
 export default function MainBarContent({ onClick }) {
