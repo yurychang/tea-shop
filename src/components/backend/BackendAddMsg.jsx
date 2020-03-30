@@ -47,7 +47,7 @@ export default function BackendProductMsg() {
         <hr />
         <h5 className="text-center">新增訊息</h5>
         <div className="d-flex justify-content-end">
-          <Link className="btn btn-primary mb-2" to="/dashboard/BackendMsg">
+          <Link className="btn btn-primary mb-2" to="/dashboard/msg">
             回上頁
           </Link>
         </div>
@@ -66,7 +66,7 @@ export default function BackendProductMsg() {
           </div>
 
           <div className="mb-3">
-            <label for="validationTextarea">商品介紹</label>
+            <label for="validationTextarea">廣告介紹</label>
             <textarea
               className="form-control"
               id="content"
