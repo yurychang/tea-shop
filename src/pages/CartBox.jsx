@@ -1,7 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import img1 from '../images/01.jpg'
 
-function CartBox() {
+function CartBox(props) {
+  const [shoppingBox, setShoppingBox] = useState([])
+
+  // // 注意資料格式要設定，伺服器才知道是json格式
+  // async function postDataToServer() {
+  //   // 開啟載入指示
+
+  //   const request = new Request(
+  //     'http://localhost:3333/product/post-shoppingCart',
+  //     {
+  //       method: 'POST',
+  //       body: 'shoppingCart.memberId, shoppingCart.teaId, shoppingCart.status',
+  //       headers: new Headers({
+  //         Accept: 'application/json',
+  //         'Content-Type': 'appliaction/json',
+  //       }),
+  //     }
+  //   )
+
+  //   const response = await fetch(request)
+  //   const data = await response.json()
+  //   // 設定資料
+  //   setShoppingBox(data)
+  //   // return data
+  // }
+  // // 一開始就會開始載入資料
+  // useEffect(() => {
+  //   postDataToServer()
+  // }, [])
+
+  // console.log('shoppingBox', shoppingBox)
   return (
     <>
       <div className="pj_card-body1">
