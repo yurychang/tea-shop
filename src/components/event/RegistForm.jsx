@@ -7,12 +7,20 @@ import FormErr from 'utils/FormErr'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { postRegisterForm } from 'actions/events'
+import KeyBtn from 'utils/KeyBtn'
 
-const SubmitBtn = styled.button.attrs(props => ({
-  className: 'link-btn',
-}))`
-  display: inline;
-  align-self: flex-end;
+// const SubmitBtn = styled.button.attrs(props => ({
+//   className: 'link-btn',
+// }))`
+//   display: inline;
+//   align-self: flex-end;
+//   @media (max-width: 767.98px) {
+//     width: 100%;
+//     display: block;
+//   }
+// `
+
+const SubmitBtn = styled(KeyBtn)`
   @media (max-width: 767.98px) {
     width: 100%;
     display: block;
@@ -132,7 +140,7 @@ function RegistForm({ id, title, price, location, postRegisterForm }) {
               />
               <SubmitBtn
                 type="submit"
-                className="ml-md-4 mt-2 py-1 px-3 bg-mainlight text-white fs-sm"
+                className="align-self-end ml-md-4 mt-2 fs-sm"
               >
                 Submit
               </SubmitBtn>

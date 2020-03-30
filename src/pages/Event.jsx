@@ -21,7 +21,7 @@ function Event({ event = {}, companyEvents, fetchEvents, fetchCompanys }) {
       <Container fluid className="pt-4 pt-lg-6 pb-4 pb-lg-7">
         <Row>
           <Col lg="1" className="offset-xl-1">
-            <PageTitle>{event.company?.username}</PageTitle>
+            <PageTitle>{event.companys?.username}</PageTitle>
           </Col>
           <Col lg="3" xl="2" className="mb-3 text-center-lg">
             <Menu data={companyEvents} />

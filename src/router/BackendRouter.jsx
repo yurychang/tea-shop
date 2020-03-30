@@ -64,8 +64,6 @@ function BackendRouter() {
   }
 
   if (logout) {
-
-    // alert('您已登出，感謝您的使用')
     return (<>
       {logoutDialog ? logoutJump : Dialog}
     </>)

@@ -7,7 +7,7 @@ const FadeInRightDiv = styled.div`
   animation: 1s ${fadeRightAnimate};
 `
 
-export default function DelayFInR({ delay = 0, children }) {
+export default function DelayFInR({ delay = 0, children, ...attr }) {
   return (
     <FadeInRightDiv
       className="opacity"
@@ -17,6 +17,7 @@ export default function DelayFInR({ delay = 0, children }) {
       style={{
         animationDelay: `${delay}s`,
       }}
+      {...attr}
     >
       {children}
     </FadeInRightDiv>
