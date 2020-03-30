@@ -18,7 +18,7 @@ const VerticleLine = styled.div`
   left: 4px;
   z-index: -1;
   width: 2px;
-  background-color: #eee;
+  background-color: #ddd;
 `
 
 const LineLink = styled.p`

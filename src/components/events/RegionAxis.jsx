@@ -29,9 +29,9 @@ const ZoneTitle = styled.div`
   margin-right: 5px;
 `
 
-const ZoneContent = styled.ul`
+const ZoneContent = styled.div`
   height: 100%;
-  margin-top: 20px;
+  padding-top: 55px;
   margin-left: 0;
 `
 
@@ -45,7 +45,8 @@ function RegionAxis({
   useEffect(() => {
     fetchZones()
   }, [fetchZones])
-  const mapZone = data => {
+
+  const mapZone = () => {
     return data.map(el => {
       return (
         <Zone key={el.zId}>
@@ -62,7 +63,7 @@ function RegionAxis({
             <ZoneContent className="sy_list sy_list-vertical">
               {el.companys.map(item => {
                 return (
-                  <li key={item.id} className="list-item">
+                  <div key={item.id} className="list-item">
                     <VerticalLinkBtn
                       className={
                         activeZone == el.zId || activeVendor == item.id
@@ -73,7 +74,7 @@ function RegionAxis({
                     >
                       {item.name}
                     </VerticalLinkBtn>
-                  </li>
+                  </div>
                 )
               })}
             </ZoneContent>
@@ -87,7 +88,7 @@ function RegionAxis({
     <>
       <div className="sy_dotline">
         <Line />
-        <div className="d-flex">{mapZone(data)}</div>
+        <div className="d-flex">{mapZone()}</div>
       </div>
     </>
   )

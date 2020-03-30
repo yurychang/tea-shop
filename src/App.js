@@ -36,8 +36,8 @@ function App() {
             <BackendRouter />
           </Route>
           <Route path="/vendortest">
-          <PreVendorRouter />
-        </Route>
+            <PreVendorRouter />
+          </Route>
           <Route path="/">
             <Loading color="#4c4c4c" type="spin" />
             <MainBar />
