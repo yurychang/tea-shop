@@ -4,16 +4,20 @@ import { Link, Router } from 'react-router-dom'
 
 
 function BackendMsg() {
+<<<<<<< HEAD
 
 
 
  master
+=======
+>>>>>>> 3d458551cf13593465ea8616c6630e62c591288a
   return (
     <>
       <div className="content">
         <h3>訊息管理</h3>
         <hr />
         <div className="d-flex justify-content-end">
+<<<<<<< HEAD
           <Link className="btn btn-primary mb-2" to="/dashboard/msg/add">
             新增推播訊息
           </Link>
@@ -30,6 +34,8 @@ function BackendMsg() {
             </div>
           </div>
 
+=======
+>>>>>>> 3d458551cf13593465ea8616c6630e62c591288a
           <Link className="btn btn-primary mb-2" to="/dashboard/msg/add">新增推播訊息</Link>
         </div>
 
@@ -59,6 +65,7 @@ function BackendMsg() {
 
         <div className="card mb-4">
           <div className="card-header d-flex justify-content-between">
+<<<<<<< HEAD
             <div className="account">訊息標題：</div>
           </div>
           <div className="card-body d-flex justify-content-between align-items-center">
@@ -67,6 +74,8 @@ function BackendMsg() {
           </div>
         </div>
       </div>
+=======
+>>>>>>> 3d458551cf13593465ea8616c6630e62c591288a
             <div className="account">訊息標題：
           </div>
 
@@ -82,6 +91,16 @@ function BackendMsg() {
 
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+>>>>>>> 3d458551cf13593465ea8616c6630e62c591288a
     </>
   )
 }

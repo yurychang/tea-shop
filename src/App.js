@@ -12,7 +12,7 @@ import Signup from 'pages/Signup'
 import VendorSignup from 'pages/VendorSignup'
 import MemberRouter from 'router/MemberRouter'
 import Commodity from './pages/Commodity'
-import Product from './components/pj_event/Product'
+import Product from './pages/Product'
 import CartBox from './pages/CartBox'
 import CartList from './pages/CartList'
 import Checkout from './pages/Checkout'
@@ -73,7 +73,7 @@ function App() {
                 <Route path="/signup">
                   <Signup />
                 </Route>
-                <Route path="/commodity">
+                <Route path="/commodity/:id?">
                   <Commodity />
                 </Route>
                 <Route path="/product">

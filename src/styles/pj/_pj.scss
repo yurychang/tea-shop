@@ -10,13 +10,15 @@
     width: 80px;
     height: 120px;
   }
-  .pj_border-top {
-    border-top-style: solid;
-    border-top-width: medium;
+  .pj_card-title {
+    border-bottom-style: solid;
+    border-bottom-width: medium;
     border-color: #ec8a53;
-    .pj_border-top-name {
-      float: right;
-    }
+    padding-bottom: 5px;
+  }
+
+  .pj_border-name {
+    float: right;
   }
 
   .pj_card-text {
@@ -31,6 +33,7 @@
     float: right;
     .pj_card-price-p {
       margin: 10px;
+      padding-top: 10px;
     }
     .pj_card-price-input {
       margin: 10px;
@@ -39,6 +42,19 @@
     .pj_card-price {
       margin: 10px;
       font-size: 24px;
+    }
+    .pj_card-price-amount-add {
+      margin: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50px;
+      background-color: orange;
+      padding: 10px;
+      border: 1px solid rgb(216, 140, 0);
+
+      .pj_card-span {
+        text-align: center;
+      }
     }
   }
   .pj_cart-btn {
