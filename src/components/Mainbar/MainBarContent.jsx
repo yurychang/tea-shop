@@ -12,16 +12,11 @@ const FadeInDiv = styled.div`
 `
 
 const listNames = [
-<<<<<<< HEAD
   { name: '尋茶', path: '/Product' },
   { name: '文化走訪', path: '/events' },
-=======
-  { name: '尋茶', path: '/Commodity' },
->>>>>>> 5135b0fc3f6ee98a58f3ecb75d6260d65ad569a5
   { name: '茗家精選', path: '/allstore' },
   { name: '文化走訪', path: '/events' },
   { name: '茶風味輪', path: '/flavor' },
-  // { name: '台灣茶分布圖', path: '/' },
 ]
 
 export default function MainBarContent({ onClick }) {
