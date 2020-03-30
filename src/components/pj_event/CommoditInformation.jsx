@@ -51,8 +51,8 @@ function CommoditInformation({ product = {}, ...props }) {
               className="pj_card-price-amount-add"
               style={{ visibility: amount < 1 && `hidden` }}
               onClick={() => {
-                updateCartNum(product.id, amount - 1)
-                setAmount(amount - 1)
+                const newNum = updateCartNum(product.id, amount - 1)
+                setAmount(newNum)
               }}
             >
               <span className="pj_card-span">-</span>
@@ -66,8 +66,8 @@ function CommoditInformation({ product = {}, ...props }) {
             <button
               className="pj_card-price-amount-add"
               onClick={() => {
-                updateCartNum(product.id, amount + 1)
-                setAmount(amount + 1)
+                const newNum = updateCartNum(product.id, amount + 1)
+                setAmount(newNum)
               }}
             >
               <span className="pj_card-span">+</span>

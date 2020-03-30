@@ -8,4 +8,5 @@ export default function updateCartNum(id, num) {
   target.amount = num
   const newCart = [...filterCart, target]
   localStorage.setItem('cart', JSON.stringify(newCart))
+  return target.amount
 }
