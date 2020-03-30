@@ -6,10 +6,13 @@ function MainBarCart() {
   const { shareCartNum } = useCartNum()
   return (
     <>
-      <Link to="/CartList" className="d-block">
-        <i className="fas fa-shopping-cart" />
-        <span className="mainbarcart">{shareCartNum}</span>
-        <span className="d-lg-none ml-2">購物車</span>
+      <Link to="/CartList" className="d-block pj_mainbarcart">
+        <div className="pj_mainbarcart">
+          <i className="fas fa-shopping-cart " />
+          <div className="pj_mainbarcart-num">{shareCartNum}</div>
+
+          <span className="d-lg-none ml-2">購物車</span>
+        </div>
       </Link>
     </>
   )

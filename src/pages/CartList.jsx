@@ -2,37 +2,53 @@ import React, { useState, useEffect } from 'react'
 import img1 from '../images/01.jpg'
 import { withRouter } from 'react-router-dom'
 import addCart from 'hook/addCart'
+import deleteCart from 'hook/deleteCart'
 import updateCartNum from 'hook/updateCartNum'
 
 function CartList(props) {
-  const [product, setProduct] = useState([])
   const getproductid = Number(props.match.params.id)
   console.log(getproductid)
 
-  async function getDataFromServer(props) {
-    const request = new Request(
-      'http://localhost:3333/product/get-single-product/' + getproductid,
-      {
-        method: 'GET',
-        headers: new Headers({
-          Accept: 'application/json',
-          'Content-Type': 'appliaction/json',
-        }),
-      }
-    )
-    const response = await fetch(request)
-    const data = await response.json()
-    console.log(data)
-    setProduct(data)
-  }
+  // const newList = { ...product, amount }
+  // const addList = e => {
+  //   localStorage.setItem('list', JSON.stringify(newList))
+  // }
 
-  useEffect(() => {
-    getDataFromServer()
-  }, [])
+  // async function getDataFromServer(props) {
+  //   const request = new Request(
+  //     'http://localhost:3333/product/get-single-product/' + getproductid,
+  //     {
+  //       method: 'GET',
+  //       headers: new Headers({
+  //         Accept: 'application/json',
+  //         'Content-Type': 'appliaction/json',
+  //       }),
+  //     }
+  //   )
+  //   const response = await fetch(request)
+  //   const data = await response.json()
+  //   console.log(data)
+  //   setProduct(data)
+  // }
+
+  // useEffect(() => {
+  //   getDataFromServer()
+  // }, [])
   console.log(localStorage.getItem('list'))
   const cartData = localStorage.getItem('list')
   const newcart = JSON.parse(cartData)
   console.log('newcart', newcart)
+
+  // useEffect(() => {
+  //   const featchList = async (query = '')=>{
+  //       try{
+  //           const data = await deleteCart.featchList(query);
+
+  //           data && setData(data);
+  //       }catch(err){
+  //           throw err;
+  //       }
+  //   }
 
   return (
     <>
@@ -126,7 +142,11 @@ function CartList(props) {
                           <strong>${newcart.price * newcart.amount}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <button type="button" class="btn btn-outline-danger">
+                          <button
+                            type="button"
+                            class="btn btn-outline-danger"
+                            onClick={() => deleteCart()}
+                          >
                             刪除
                           </button>
                         </td>
@@ -144,7 +164,7 @@ function CartList(props) {
                       type="button"
                       className="btn btn-warning m-1 pj_cart-button"
                     >
-                      購買
+                      結帳
                       <i
                         class="fas fa-credit-card"
                         style={{ marginLeft: '15px' }}

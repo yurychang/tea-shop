@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import addCart from 'hook/addCart'
 import updateCartNum from 'hook/updateCartNum'
+import deleteCart from 'hook/deleteCart'
 
 import '../../styles/pj/_pj.css'
 
 function CommoditInformation({ product = {}, ...props }) {
   const [amount, setAmount] = useState(1)
-  const handleAddCart = (addCart, newAddCart) => {
-    console.log('addCart')
-  }
+  // const handleAddCart = (addCart, newAddCart) => {
+  //   console.log('addCart')
+  // }
   const newList = { ...product, amount }
   const addList = e => {
     localStorage.setItem('list', JSON.stringify(newList))
@@ -22,11 +23,13 @@ function CommoditInformation({ product = {}, ...props }) {
 
   //   console.log(addList)
   // }
+  // console.log(deleteCart)
 
   return (
     <>
-      {/* <div onClick={addList}>123</div> */}
-      {/* <div onClick={handleItemClick}>購物車({carts.length})</div> */}
+      {/* <button  onClick={() => {
+    props.deleteCart(product.id)></button> */}
+
       <div className="card-body">
         <h2 className="pj_card-title">{product.title}</h2>
         <div className="section5-text6">
