@@ -34,7 +34,7 @@ export default function Menu() {
             <NavLink
               className="nav-link pb-2 "
               activeClassName="active"
-              to="＃"
+              to="/membercenter/notice"
             >
               <i className="far fa-bell"> 通知總覽</i>
             </NavLink>
