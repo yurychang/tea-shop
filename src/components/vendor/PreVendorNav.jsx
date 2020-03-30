@@ -7,7 +7,7 @@ import { NavLink, withRouter } from 'react-router-dom'
 
 
 function VendorNav(props) {
-    let vendorId= sessionStorage.getItem('vendorOnlyId')
+    let vendorId= sessionStorage.getItem('vendorId')
     return (
         <>
             <div className="navCenter">
@@ -17,7 +17,7 @@ function VendorNav(props) {
                         <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/vendortest/${vendorId}/about`}>關於我們</NavLink></li>
                         <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/vendortest/${vendorId}/events`}>活動列表</NavLink></li>
                         <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/vendortest/${vendorId}/discount`}>折扣專區</NavLink></li>
-                        <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/dashboard/data/${vendorId}`}>回廠商頁</NavLink></li>
+                        <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/dashboard/data/`}>回廠商頁</NavLink></li>
                     </ul>
                 </nav>
             </div>

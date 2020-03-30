@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom'
 import Figure from 'react-bootstrap/Figure'
 import { NavLink, withRouter } from 'react-router-dom'
 
-const localId = sessionStorage.getItem('vendorOnlyId')
 
 
 
-
-
-function BackendOrder(props) {
+function BackendOrder() {
 
   const [orderData, setOrderData] = useState([])
 
