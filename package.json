@@ -43,6 +43,7 @@
     "rsuite": "^4.3.3",
     "sha1": "^1.1.1",
     "styled-components": "^5.0.1",
+    "sweetalert2": "^9.10.7",
     "umi": "^3.0.12",
     "yup": "^0.28.3"
   },
