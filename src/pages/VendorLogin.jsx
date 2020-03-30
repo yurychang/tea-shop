@@ -99,9 +99,10 @@ function VendorLogintest() {
     async function sendRegisterDataToServer(userData, callback) {
       // 注意資料格式要設定，伺服器才知道是json格式
       const request = new Request(
-        'http://127.0.0.1:3333/vendor/try-logindata',
+        'http://localhost:3333/vendor/try-logindata',
         {
           method: 'POST',
+          credentials: 'include',
           body: JSON.stringify(userData),
           headers: {
             Accept: 'application/json',
@@ -116,7 +117,7 @@ function VendorLogintest() {
 
       if (data.success === true) {
         console.log(data.message.text)
-        localStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
+        sessionStorage.setItem('vendorOnlyId', JSON.stringify(data.vendorid))
         setLoginmode(true)
       } else {
         console.log(data.message.text)

@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Form from 'react-bootstrap/Form'
+import { Link } from 'react-router-dom'
 // import { Timeline, Icon } from 'rsuite'
 // import 'rsuite/lib/styles/index.less'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -67,13 +68,18 @@ function payinfo() {
         <Col sm={8}>
           <h1 className="h123">付款資訊</h1>
           <Form>
-            <h4>訂購人資料</h4>
+            <h4 className="h4form">訂購人資料</h4>
             <Form.Group as={Row} controlId="formHorizontalName">
               <Form.Label column sm={2}>
                 姓名
               </Form.Label>
               <Col sm={4}>
-                <Form.Control type="name" placeholder="請輸入姓名" />
+                <Form.Control
+                  input
+                  type="text"
+                  placeholder="請輸入姓名"
+                  required="required"
+                />
               </Col>
               <Form.Check
                 type="radio"
@@ -131,7 +137,7 @@ function payinfo() {
                 <Form.Check label=" 記住我 " />
               </Col>
             </Form.Group>
-            <h4>收件人資料</h4>
+            <h4 className="h4form">收件人資料</h4>
             <Form.Group as={Row} controlId="formHorizontalName">
               <Form.Label column sm={2}>
                 姓名
@@ -162,17 +168,60 @@ function payinfo() {
                   controlId="exampleForm.SelectCustomSizeSm"
                   className="dist"
                 >
-                  <Form.Control as="select" size="sm">
+                  <select>
+                    <option value>請選擇縣市</option>
+                    <option value="0">基隆市</option>
+                    <option value="1">臺北市</option>
+                    <option value="2">新北市</option>
+                    <option value="3">桃園市</option>
+                    <option value="4">新竹市</option>
+                    <option value="5">新竹縣</option>
+                    <option value="6">苗栗縣</option>
+                    <option value="7">臺中市</option>
+                    <option value="8">彰化縣</option>
+                    <option value="9">南投縣</option>
+                    <option value="10">雲林縣</option>
+                    <option value="11">嘉義市</option>
+                    <option value="12">嘉義縣</option>
+                    <option value="13">臺南市</option>
+                    <option value="14">高雄市</option>
+                    <option value="15">屏東縣</option>
+                    <option value="16">臺東縣</option>
+                    <option value="17">嘉義縣</option>
+                    <option value="18">花蓮縣</option>
+                    <option value="19">宜蘭縣</option>
+                    <option value="20">金門縣</option>
+                    <option value="21">連江縣</option>
+                  </select>
+
+                  {/* <select>
+                    <option value>請選擇縣鎮市區</option>
+                    <option value="100">中正區</option>
+                    <option value="103">大同區</option>
+                    <option value="104">中山區</option>
+                    <option value="105">松山區</option>
+                    <option value="106">大安區</option>
+                    <option value="108">萬華區</option>
+                    <option value="110">信義區</option>
+                    <option value="111">士林區</option>
+                    <option value="112">北投區</option>
+                    <option value="114">內湖區</option>
+                    <option value="115">南港區</option>
+                    <option value="116">文山區</option>
+                  </select> */}
+
+                  {/* <Form.Control as="select" size="sm">
                     <option>台北市</option>
                     <option>新北市</option>
                     <option>基隆市</option>
                     <option>桃園市</option>
                     <option>新竹市</option>
-                  </Form.Control>
+                  </Form.Control> */}
+                  <input type="text" size="30"></input>
                 </Form.Group>
               </Form>
             </Form.Group>
-            <h4>信用卡付款</h4>
+            <h4 className="h4form">信用卡付款</h4>
             <Form.Group as={Row} controlId="formHorizontalEmail">
               <Form.Label column sm={2}>
                 卡號
@@ -213,11 +262,13 @@ function payinfo() {
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
-              <Col sm={{ span: 10, offset: 2 }}>
-                <Button className="confirm" type="submit">
-                  {' '}
-                  確認送出{' '}
-                </Button>
+              <Col lg={{ span: 10, offset: 2 }}>
+                <Link to="/ordercomplete">
+                  <Button className="confirm" type="submit" size="">
+                    {' '}
+                    確認送出{' '}
+                  </Button>
+                </Link>
               </Col>
             </Form.Group>
           </Form>

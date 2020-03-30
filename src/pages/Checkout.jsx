@@ -1,9 +1,9 @@
-import React from 'react'
 // import Navbar from "react-bootstrap/Navbar";
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import { Link } from 'react-router-dom'
 // import { Timeline, Icon } from 'rsuite'
 // import 'rsuite/lib/styles/index.less'
 // import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -12,6 +12,49 @@ import Dropdown from 'react-bootstrap/Dropdown'
 // import{ BrowserRouter as Link} from "react-router-dom";
 // import '../styles/jc/checkout.scss'
 import '../styles/jc/checkout.scss'
+import React, {useEffect} from 'react'
+import {initCoupon, getCoupon, getCouponList}
+
+const data = [
+  {
+    id: 2,
+    coupon_code: 'pRW2',
+    discount: 2222,
+    status: 'valid',
+  },
+  { id: 3, coupon_code: 'pRW3', discount: 333, status: 'valid' },
+  { id: 4, coupon_code: 'pRW4', discount: 444, status: 'valid' },
+  { id: 5, coupon_code: 'pRW4', discount: 555, status: 'valid' },
+]
+export const getCoupon = (id) => {
+  const couponList=
+  JSON.parse(localStorage.getItem('myCoupon'))
+  const couponFoundList=couponList.filter((v,i)
+  => {
+    if(v.id === id) return v
+  })
+  return couponFoundList[0]
+}
+
+export const getCouponList=()=>{
+  return JSON.parse(localStorage.getItem('myCoupon'))
+}
+
+export const initCoupon=()=>{
+  localStorage.setItem('myCoupon', JSON.stringify(data))
+}
+
+function App(){
+  useEffect(() => {
+    initCoupon()
+  }, []);
+
+  return (
+    <>
+    <button onClick={()=>console.log(getCoupon(3))}取得 coupon></button>
+    </>
+  );
+}
 
 function Checkout() {
   return (
@@ -25,7 +68,7 @@ function Checkout() {
                   <div class="bullet orange1"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
-                    <h3>結帳</h3>
+                    <h3 className="">結帳</h3>
                     {/* <h4>内容段落2内容段落2内容段落2内容段落2</h4> */}
                   </div>
                 </li>
@@ -146,34 +189,16 @@ function Checkout() {
                 </td>
               </tr>
             </tbody>
-            <tfoot></tfoot>
           </Table>
+          <Row>
+            <Col></Col>
+            <Col></Col>
+            <Col>總金額</Col>
+            <Col></Col>
+          </Row>
         </Col>
       </Row>
-      <div></div>
-
-      <div>
-        {/* <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
-          <Col>3 of 3</Col>
-          <Col>4 of 4</Col>
-          <Col>5 of 5</Col>
-        </Row> */}
-        {/* <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
-          <Col>3 of 3</Col>
-          <Col>4 of 4</Col>
-          <Col>5 of 5</Col>
-        </Row> */}
-        {/* <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
-          <Col>3 of 3</Col>
-          <Col>4 of 4</Col>
-          <Col>5 of 5</Col>
-        </Row> */}
+      <div className="footrow">
         <Row className="">
           <Col></Col>
           <Col></Col>
@@ -194,9 +219,15 @@ function Checkout() {
             </Dropdown>
           </Col>
           <Col sm={2}>
-            <Button className="checkbtn " block>
-              <span>結帳</span>
-            </Button>
+            <Link to="/payinfo">
+              <Button
+                className=" checkbtn "
+                onClick=" self.location.href='/PayInfo.jsx "
+                block
+              >
+                <span>下一步</span>
+              </Button>
+            </Link>
           </Col>
         </Row>
         {/* <img src="" />

@@ -25,7 +25,7 @@ function VendorList() {
         const response = await fetch(request)
         const data = await response.json()
         setAlldata(data)
-        localStorage.setItem("vendorId",data[0].id)
+        sessionStorage.setItem("vendorId",data[0].id)
     }
 
     useEffect(() => {
