@@ -17,14 +17,22 @@ const Zone = styled.div`
   padding-top: 0;
 `
 
-const ZoneContent = styled.div`
+const ZoneItem = styled.div`
+  display: flex;
   height: 180px;
   margin-top: -39px;
   margin-left: -6px;
 `
 
 const ZoneTitle = styled.div`
-  margin-left: 1px;
+  margin-left: 2.5px;
+  margin-right: 5px;
+`
+
+const ZoneContent = styled.ul`
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 0;
 `
 
 function RegionAxis({
@@ -40,10 +48,10 @@ function RegionAxis({
   const mapZone = data => {
     return data.map(el => {
       return (
-        <Zone key={el.zId.toString()}>
+        <Zone key={el.zId}>
           <div className="dot" />
-          <ZoneContent className="d-flex">
-            <ZoneTitle className="mr-1">
+          <ZoneItem>
+            <ZoneTitle>
               <VerticalLinkBtn
                 onClick={() => toggleFilter('zone', el.zId, el.zone)}
                 className={`m-0 ${activeZone == el.zId ? 'active' : ''}`}
@@ -51,29 +59,25 @@ function RegionAxis({
                 {el.zone}
               </VerticalLinkBtn>
             </ZoneTitle>
-            <ul className="sy_list sy_list-vertical h-100 mt-3 ml-0">
+            <ZoneContent className="sy_list sy_list-vertical">
               {el.companys.map(item => {
                 return (
-                  <>
-                    <li key={item.id.toString()} className="list-item">
-                      <VerticalLinkBtn
-                        className={
-                          activeZone == el.zId || activeVendor == item.id
-                            ? 'active'
-                            : ''
-                        }
-                        onClick={() =>
-                          toggleFilter('vendor', item.id, item.name)
-                        }
-                      >
-                        {item.name}
-                      </VerticalLinkBtn>
-                    </li>
-                  </>
+                  <li key={item.id} className="list-item">
+                    <VerticalLinkBtn
+                      className={
+                        activeZone == el.zId || activeVendor == item.id
+                          ? 'active'
+                          : ''
+                      }
+                      onClick={() => toggleFilter('vendor', item.id, item.name)}
+                    >
+                      {item.name}
+                    </VerticalLinkBtn>
+                  </li>
                 )
               })}
-            </ul>
-          </ZoneContent>
+            </ZoneContent>
+          </ZoneItem>
         </Zone>
       )
     })

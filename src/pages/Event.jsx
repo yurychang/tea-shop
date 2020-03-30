@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { Container, Row, Col } from 'react-bootstrap'
 import { fetchEvents } from 'actions/events'
 import { fetchCompanys } from 'actions/companys'
+import PageTitle from 'utils/PageTitle'
 import EventInfo from 'components/event/EventInfo'
 import Menu from 'components/event/Menu'
 import RegistForm from 'components/event/RegistForm'
@@ -20,9 +21,7 @@ function Event({ event = {}, companyEvents, fetchEvents, fetchCompanys }) {
       <Container fluid className="pt-4 pt-lg-6 pb-4 pb-lg-7">
         <Row>
           <Col lg="1" className="offset-xl-1">
-            <h1 className="mb-3 vertical-lg-rl h2 text-ff">
-              {event.company?.username}
-            </h1>
+            <PageTitle>{event.company?.username}</PageTitle>
           </Col>
           <Col lg="3" xl="2" className="mb-3 text-center-lg">
             <Menu data={companyEvents} />

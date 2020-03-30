@@ -16,10 +16,14 @@ import Product from './pages/Product'
 import CartBox from './pages/CartBox'
 import CartList from './pages/CartList'
 import Checkout from './pages/Checkout'
+import PayInfo from './pages/PayInfo'
+import OrderComplete from './pages/OrderComplete'
+import Flavor from './pages/Flavor'
 
 import Loading from 'utils/Loading'
 //這是網址
 import BackendRouter from 'router/BackendRouter'
+import PreVendorRouter from 'router/PreVendorRouter'
 import VendorLogin from 'pages/VendorLogin'
 import AllVendors from 'pages/AllVendors'
 
@@ -31,14 +35,14 @@ function App() {
           <Route path="/dashboard">
             <BackendRouter />
           </Route>
+          <Route path="/vendortest">
+          <PreVendorRouter />
+        </Route>
           <Route path="/">
             <Loading color="#4c4c4c" type="spin" />
             <MainBar />
             <div className="sy_main-content">
               <Switch>
-                <Route path="/Index">
-                  <Index />
-                </Route>
                 <Route path="/events/:id">
                   <Event />
                 </Route>
@@ -50,6 +54,12 @@ function App() {
                 </Route>
                 <Route path="/checkout">
                   <Checkout />
+                </Route>
+                <Route path="/payinfo">
+                  <PayInfo />
+                </Route>
+                <Route path="/ordercomplete">
+                  <OrderComplete />
                 </Route>
                 <Route path="/login/vendor">
                   <VendorLogin />
@@ -81,6 +91,12 @@ function App() {
                 </Route>
                 <Route path="/vendor">
                   <VendorRouter />
+                </Route>
+                <Route path="/flavor">
+                  <Flavor />
+                </Route>
+                <Route path="/">
+                  <Index />
                 </Route>
               </Switch>
             </div>

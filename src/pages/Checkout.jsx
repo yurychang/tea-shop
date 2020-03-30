@@ -1,32 +1,116 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import Navbar from "react-bootstrap/Navbar";
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import { Timeline } from 'rsuite'
+// import { Timeline, Icon } from 'rsuite'
+// import 'rsuite/lib/styles/index.less'
+// import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 // import{ BrowserRouter as Link} from "react-router-dom";
 import '../styles/jc/checkout.scss'
-// import 'rsuite/dist/styles/rsuite-default.css'
+import { number } from 'yup'
 
 function Checkout() {
+
+  const teststr = JSON.stringify([{
+    title: "有機蜜韻紅茶補充包80g(手採)",
+    tag: "紅茶",
+    classIfy: "",
+    price: "490",
+    unit: "",
+    sTime: "2",
+    idVendor: "tunlo",
+    feaTure: "",
+    img: "150327607526.jpg",
+    id: 2,
+    amount: 5
+  },{
+    title: "有機蜜韻紅茶補充包80g(手採)",
+    tag: "紅茶",
+    classIfy: "",
+    price: "490",
+    unit: "",
+    sTime: "2",
+    idVendor: "tunlo",
+    feaTure: "",
+    img: "150327607526.jpg",
+    id: 2,
+    amount: 5
+  }])
+
+  localStorage.setItem('cart', teststr)
+  const localCart = JSON.parse(localStorage.getItem('cart'))
+  console.log(localCart)
+
+  const sumfunc = items => {
+    let totalPrice = 0
+    for (let i = 0; i < items.length; i++) {
+      totalPrice += items[i].productAmount * items[i].productPrice
+    }
+    return totalPrice
+  }
+
+
+  const productli = (
+    <>
+      {localCart.map((value, index) => {
+        return (
+          <tr>
+            <td>
+              <input type="checkbox"></input>
+            </td>
+            <td>{value.title}</td>
+            <td>{value.unit}</td>
+            <td>{value.price}</td>
+            <td>{value.amount}</td>
+            <td>{value.price * value.amount}</td>
+            <td>
+              <i className="fas fa-trash"></i>
+            </td>
+          </tr>
+        )
+      })}
+    </>)
+
+
   return (
     <div className="container">
       <Row>
-        <Col sm={2}>
-          <Timeline>
-            <Timeline.Item>結帳</Timeline.Item>
-            <Timeline.Item>付款資訊</Timeline.Item>
-            <Timeline.Item>確認訂單</Timeline.Item>
-            <Timeline.Item>完成訂單</Timeline.Item>
-            <Timeline.Item>送出</Timeline.Item>
-          </Timeline>
+        <Col sm={4}>
+          <div className="timeline-small">
+            <div className="timeline-small-body">
+              <ul>
+                <li>
+                  <div className="bullet pink orange"></div>
+                  <div className="desc">
+                    <h3>結帳</h3>
+                  </div>
+                </li>
+                <li>
+                  <div className="bullet orange"></div>
+                  <div className="desc">
+                    <h3>付款資訊</h3>
+                  </div>
+                </li>
+                <li>
+                  <div className="bullet blue"></div>
+                  <div className="desc">
+                    <h3>完成訂單</h3>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
         </Col>
-        <Col sm={10}>
+        <Col sm={8}>
           <h1 className="h123">結帳</h1>
           <Table bordered hover variant="">
-            <thead class="thbc">
+            <thead className="thbc">
               <tr>
                 <th>
                   <input type="checkbox"></input>
@@ -40,121 +124,38 @@ function Checkout() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <input type="checkbox"></input>
-                </td>
-                <td>阿里山紅玉</td>
-                <td>公斤</td>
-                <td>70</td>
-                <td>3</td>
-                <td>210</td>
-                <td>
-                  <i class="fas fa-trash"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox"></input>
-                </td>
-                <td>阿里山紅玉</td>
-                <td>公斤</td>
-                <td>70</td>
-                <td>3</td>
-                <td>210</td>
-                <td>
-                  <i class="fas fa-trash"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox"></input>
-                </td>
-                <td>阿里山紅玉</td>
-                <td>公斤</td>
-                <td>70</td>
-                <td>3</td>
-                <td>210</td>
-                <td>
-                  <i class="fas fa-trash"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox"></input>
-                </td>
-                <td>阿里山紅玉</td>
-                <td>公斤</td>
-                <td>70</td>
-                <td>3</td>
-                <td>210</td>
-                <td>
-                  <i class="fas fa-trash"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox"></input>
-                </td>
-                <td>阿里山紅玉</td>
-                <td>公斤</td>
-                <td>70</td>
-                <td>3</td>
-                <td>210</td>
-                <td>
-                  <i class="fas fa-trash"></i>
-                </td>
-              </tr>
+              {productli}
             </tbody>
             <tfoot></tfoot>
           </Table>
         </Col>
       </Row>
-
       <div></div>
 
       <div>
-        <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
-          <Col>3 of 3</Col>
-          <Col>4 of 4</Col>
-          <Col>5 of 5</Col>
-        </Row>
-        <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
-          <Col>3 of 3</Col>
-          <Col>4 of 4</Col>
-          <Col>5 of 5</Col>
-        </Row>
-        <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
-          <Col>3 of 3</Col>
-          <Col>4 of 4</Col>
-          <Col>5 of 5</Col>
-        </Row>
-        <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
+        <Row className="">
+          <Col></Col>
+          <Col></Col>
           <Col>優惠券</Col>
-          <Col xs={4}>
-            <span>
-              <input type="text" placeholder="請輸入代碼"></input>
-            </span>
+          <Col sm={3}>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                請選擇優惠券代碼
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">1</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">2 </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">3</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Col>
-          <Col>
+          <Col sm={2}>
             <Button className="checkbtn " block>
               <span>結帳</span>
             </Button>
           </Col>
         </Row>
-        {/* <img src="" />
-        <div class="">優惠券</div>
-        <Button className="scoupon">
-          <span>選擇優惠券</span>
-        </Button> */}
       </div>
     </div>
   )

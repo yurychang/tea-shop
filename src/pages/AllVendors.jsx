@@ -4,16 +4,16 @@ import { Container, Row, Col } from 'react-bootstrap'
 // import { connect } from 'react-redux'
 // import { bindActionCreators } from 'redux'
 import VendorList from 'components/vendor/VendorList'
-import { connect } from 'react-redux'
-import { fetchvendordata } from 'actions/vendordata'
-import { bindActionCreators } from 'redux'
+// import { connect } from 'react-redux'
+// import { fetchvendordata } from 'actions/vendordata'
+// import { bindActionCreators } from 'redux'
 
 
 function AllVendors() {
 
-  useEffect(() => {
-    fetchvendordata()
-  }, [])
+  // useEffect(() => {
+  //   fetchvendordata()
+  // }, [])
 
 
   // console.log()
@@ -34,11 +34,11 @@ function AllVendors() {
   )
 }
 
-const mapDispatchToProps = dispatch => {
-  const x = bindActionCreators(fetchvendordata, dispatch)
-  console.log(x)
-  return x
-}
+// const mapDispatchToProps = dispatch => {
+//   const x = bindActionCreators(fetchvendordata, dispatch)
+//   console.log(x)
+//   return x
+//}
 // const props = {}
 // const dispatch = {x: 'sdfs', y: 'hjgj'}
 // const newP = {
@@ -54,4 +54,4 @@ const mapDispatchToProps = dispatch => {
 //   ...dispatch,
 //   ...state
 // }
-export default connect(null, mapDispatchToProps)(AllVendors)
+export default (AllVendors)

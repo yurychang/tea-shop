@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import PageTitle from 'utils/PageTitle'
 import CardList from '../components/events/CardList'
 import EventsFilter from '../components/events/EventsFilter'
 import { connect } from 'react-redux'
@@ -16,10 +17,10 @@ function EventsList({ fetchEvents, events, vendor }) {
       <Container fluid className="pt-4 pt-lg-6">
         <Row>
           <Col lg="1" className="offset-lg-1">
-            <h1 className="mb-3 vertical-lg-rl h2 text-ff">活動列表</h1>
+            <PageTitle>活動列表</PageTitle>
           </Col>
           <Col lg="9">
-            <EventsFilter className="d-none d-lg-block mb-5" />
+            <EventsFilter className="d-none d-md-block mb-5" />
             <CardList />
           </Col>
         </Row>

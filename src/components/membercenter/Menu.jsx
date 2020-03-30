@@ -17,10 +17,10 @@ export default function Menu() {
             {memberAccount ? (
               <ul>
                 <li>
-                  <Link to="#">個人檔案</Link>
+                  <Link to="">個人檔案</Link>
                 </li>
                 <li>
-                  <Link to="#">修改密碼</Link>
+                  <Link to="">修改密碼</Link>
                 </li>
               </ul>
             ) : (
@@ -34,7 +34,7 @@ export default function Menu() {
             <NavLink
               className="nav-link pb-2 "
               activeClassName="active"
-              to="＃"
+              to="/membercenter/notice"
             >
               <i className="far fa-bell"> 通知總覽</i>
             </NavLink>

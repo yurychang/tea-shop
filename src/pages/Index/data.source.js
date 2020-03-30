@@ -25,7 +25,7 @@ export const Banner00DataSource = {
   },
   button: {
     className: 'banner0-button',
-    children: '精選商品',
+    children: '尋茶',
     href: '/product',
     target: '/product',
     type: 'default',
@@ -183,7 +183,7 @@ export const Banner01DataSource = {
   },
   button: {
     className: 'banner0-button',
-    children: '嚴選廠商',
+    children: '茗家精選',
     href: '/Allstore',
     target: '/product',
     type: 'default',
@@ -227,15 +227,12 @@ export const Teams10DataSource = {
             {
               name: 'title',
               className: 'teams1-title',
+              href: 'Product',
               children: (
                 <span>
                   <span>
                     <span>
-                      <span>
-                        <span>
-                          <p>立頓茶葉</p>
-                        </span>
-                      </span>
+                      <p>立頓茶葉</p>
                     </span>
                   </span>
                 </span>
@@ -286,6 +283,7 @@ export const Teams10DataSource = {
             {
               name: 'title',
               className: 'teams1-title',
+              href: 'Product',
               children: (
                 <span>
                   <span>
@@ -314,10 +312,10 @@ export const Teams10DataSource = {
                 <span>
                   <p>
                     這是歐可茶葉，以健康為號召，主打不添加奶精粉，只用純奶粉且還能自行調整奶茶甜度，在網路闖出知名度。
-                    不鋪實體通路，僅靠網路銷售，每包售價達3
+                    不鋪實體通路，僅靠網路銷售，每包售價達32元
                   </p>
                   <p>
-                    2元，比起主要競爭對手三點一刻貴上2倍，每年仍可銷出3百50萬包奶茶包，成為網購奶茶包銷量第一的品牌。
+                    ，比起主要競爭對手三點一刻貴上2倍，每年仍可銷出3百50萬包奶茶包，成為網購奶茶包銷量第一的品牌。
                   </p>
                 </span>
               ),
@@ -341,6 +339,7 @@ export const Teams10DataSource = {
             {
               name: 'title',
               className: 'teams1-title',
+              href: 'Product',
               children: (
                 <span>
                   <span>
@@ -423,8 +422,9 @@ export const Banner21DataSource = {
           ),
         },
         button: {
-          className: 'banner2-button k83hwrh21if-editor_css',
-          children: 'Learn More',
+          className: 'banner2-button',
+          children: '文化走訪',
+          href: 'events',
         },
       },
     ],
@@ -732,7 +732,8 @@ export const Footer10DataSource = {
               name: 'link1',
               children: (
                 <span>
-                  <p>聯絡信箱:example@gmail.com</p>
+                  <p>聯絡信箱:</p>
+                  <p>example@gmail.com</p>
                 </span>
               ),
               className: 'k83gx64fdp-editor_css',
@@ -742,6 +743,7 @@ export const Footer10DataSource = {
               name: 'link2',
               children: (
                 <span>
+                  <p>聯絡地址:</p>
                   <p>106台北市大安區復興南路一段390號2樓</p>
                 </span>
               ),
