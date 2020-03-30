@@ -104,9 +104,15 @@
 
   .singleProduct{
     max-width: 250px;
-    min-height: 380px;
+    height: 400px;
+    // z-index: 50;
+
+    img{
+      width: 100%;
+    }
 
     .card-body{
+      height: 200px;
       padding: 8px;
     }
 
@@ -382,6 +388,18 @@
 margin: 0 auto;
 
   }
+}
+
+
+.ls_locationInfo{
+  // width: 800px;
+  height: 150px;
+  padding: 0;
+
+  h5{
+    color: $main;
+  }
+
 }
 
 

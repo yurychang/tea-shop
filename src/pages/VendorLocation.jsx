@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import VendorBanner from '../components/vendor/VendorBanner'
 import VendorNav from '../components/vendor/VendorNav'
 import VendorInfo from '../components/vendor/VendorInfo'
-import VendorDiscountArea from '../components/vendor/VendorDiscountArea'
+import VendorLocationArea from '../components/vendor/VendorLocationArea'
 
 import { withRouter } from 'react-router-dom'
 
@@ -43,7 +43,7 @@ function VendorDiscount(props) {
       <VendorNav {...preview[0]} />
       <div className="vendorWrapper d-flex justify-content-around">
         <VendorInfo {...preview[0]} />
-        <VendorDiscountArea {...preview[0]} />
+        <VendorLocationArea {...preview[0]} />
 
       </div>
     </>

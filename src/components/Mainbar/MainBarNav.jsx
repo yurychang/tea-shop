@@ -65,27 +65,17 @@ export default function MainBarNav({ isOpen, onClick }) {
               <Nav.Item className="border-bottom border-bottom-lg-0">
                 <Nav.Link as="p" className="mb-0">
                   <Link to="/cart" className="d-block">
-<<<<<<< HEAD
-                    <i className="fas fa-user" />
-                    <span className="d-lg-none ml-2">會員中心</span>
-=======
                     <i className="fas fa-shopping-cart" />
                     <span className="d-lg-none ml-2">購物車</span>
->>>>>>> 5135b0fc3f6ee98a58f3ecb75d6260d65ad569a5
                   </Link>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="border-bottom border-bottom-lg-0">
-<<<<<<< HEAD
-                <Nav.Link as="div" className="mb-0">
-                  <MainBarCart />
-=======
                 <Nav.Link as="p" className="mb-0">
                   <Link to="/login" className="d-block">
                     <i className="fas fa-user" />
                     <span className="d-lg-none ml-2">會員中心</span>
                   </Link>
->>>>>>> 5135b0fc3f6ee98a58f3ecb75d6260d65ad569a5
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="flex-grow-1" />
