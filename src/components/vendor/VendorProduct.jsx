@@ -37,8 +37,10 @@ function VendorProduct() {
         {productData.map((value, index) => {
             return (
 
-                <div className="card singleProduct mr-3">
+                <div className="card singleProduct mr-3 d-flex align-items-center">
+                    <div className="ls_p250 ">
                     <img className="" src={`http://localhost:3333/images/${value.img}`} alt="" />
+                    </div>
                     <div className="card-body">
                         <div className="producttop mb-2 d-flex justify-content-between">
                             <div className="ptag">

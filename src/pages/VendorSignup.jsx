@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, NavLink, Redirect } from 'react-router-dom'
 import * as sha1 from 'sha1'
+import Swal from 'sweetalert2'
 
 export default function VendorSingup() {
   const [vendorAccount, setVendorAccount] = useState('')
@@ -89,8 +90,8 @@ export default function VendorSingup() {
       errorMessages.push('帳號沒填')
     }
 
-    const regex =  new RegExp(/^([a-zA-Z]+\d+|\d+[a-zA-Z]+)*$/)
-    console.log('regex.test(vendorAccount)',regex.test(vendorAccount))
+    const regex = new RegExp(/^([a-zA-Z]+\d+|\d+[a-zA-Z]+)*$/)
+    console.log('regex.test(vendorAccount)', regex.test(vendorAccount))
     if (!regex.test(vendorAccount)) {
       error = true
       errorMessages.push('帳號至少要英文+數字')
@@ -110,7 +111,7 @@ export default function VendorSingup() {
     const vendorPassword = vendorPassword1
     const userData = { vendorAccount, vendorPassword, vendorEmail, vendorPhone }
 
-    sendRegisterDataToServer(userData, () => alert('註冊成功，請重新登入'))
+    sendRegisterDataToServer(userData, () => Swal.fire('註冊成功，請重新登入'))
 
     async function sendRegisterDataToServer(userData, callback) {
       // 注意資料格式要設定，伺服器才知道是json格式
