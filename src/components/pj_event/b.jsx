@@ -187,7 +187,11 @@ function Product({ ...attrs }) {
             </div>
             <div className="pj_card-footer">
               <div>NT $320</div>
-              <img src={img2} alt="" onClick={handleAddToCart} />
+              <img src={img2} alt="" 
+              onClick=={()=>{handleAddToCart({
+                title,
+              })}}
+               />
             </div>
           </div>
         </div>
