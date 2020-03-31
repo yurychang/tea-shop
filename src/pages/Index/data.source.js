@@ -63,15 +63,18 @@ export const Feature00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://www.twinings.com.tw/aimg/a/15/154/151541636492864660940f.jpg',
+                'https://www.tongluotea.com/tw/uploads/cart/1000/2/157300988622.jpg',
             },
             {
               name: 'title',
               className: 'content0-block-title',
+              href: 'Commodity/17',
               children: (
                 <span>
                   <span>
-                    <p>錫蘭紅茶</p>
+                    <p>
+                      <b>醇翠綠茶</b>
+                    </p>
                   </span>
                 </span>
               ),
@@ -81,7 +84,7 @@ export const Feature00DataSource = {
               children: (
                 <span>
                   <p>
-                    仕女伯爵茶是為格雷家族的成員—格雷二世的夫人所調製出來的。其口感調的更柔和，帶入柑橘、檸檬酸香氣息，讓茶的風味更清新。仕女伯爵茶添加檸檬與香橙的果皮，能使茶葉呈現豐富的果香口感。
+                    採摘自農林自擁茶園，採以新牙嫩葉製成。條索紮實分明，茶湯清澈碧綠，蓄含鮮活海苔香氣。※本立體茶包網袋、棉線及掛標皆玉米澱粉製成。天然、無毒、環保可分解。
                   </p>
                 </span>
               ),
@@ -101,14 +104,17 @@ export const Feature00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://www.twinings.com.tw/aimg/a/15/154/1515416454610308704a7e.jpg',
+                'https://d.ecimg.tw/items/DBALBFA9009D549/000001_1535569934.jpg',
             },
             {
               name: 'title',
               className: 'content0-block-title',
+              href: 'Commodity/12',
               children: (
                 <span>
-                  <p>梅果茶</p>
+                  <p>
+                    <b>嚴選阿薩姆紅茶</b>
+                  </p>
                 </span>
               ),
             },
@@ -117,7 +123,7 @@ export const Feature00DataSource = {
               children: (
                 <span>
                   <p>
-                    清新的口感，融入淡淡的佛手柑芬芳，最適合在午后時光用一顆閒適的心情細細品嚐。尤其佛手柑芬芳，更能讓繁複的心境隨之沉澱，時時刻刻注入重新的力量。飲用時若添加檸檬容易則減少佛手柑的芬芳，享用原味或添加少許牛奶都是不錯的選擇。
+                    以印度阿薩姆Jaipuri品系單株選拔育成，承襲原阿薩姆紅茶的特殊香氣，茶湯較台茶十八號濃厚，採自然栽培法，將古典的紅茶香氣培育出甜香餘韻，滋味濃郁甘醇。
                   </p>
                 </span>
               ),
@@ -137,14 +143,17 @@ export const Feature00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children:
-                'https://www.twinings.com.tw/aimg/a/15/154/15154164242623083b9640.jpg',
+                'http://www.ttch.com.tw/uploadFile/upload/product/ff80808168daede10168db9cbf9d003d.jpg',
             },
             {
               name: 'title',
               className: 'content0-block-title',
+              href: 'Commodity/3',
               children: (
                 <span>
-                  <p>大吉嶺紅茶</p>
+                  <p>
+                    <b>銅鑼-蜜韻紅茶</b>
+                  </p>
                 </span>
               ),
             },
@@ -153,7 +162,7 @@ export const Feature00DataSource = {
               children: (
                 <span>
                   <p>
-                    名列世界三大茗茶之一的大吉嶺，被譽為“紅茶中的香檳”，金黃的茶色有著令人回味無限的清淡果香，是產量極少的頂級茶品。其細緻的口感適合單獨品用。
+                    來自產自農林銅鑼茶園，無使用人工添加物、色素、香料，茶菁經小綠葉蟬著涎後，茶質具果蜜香氣。茶湯澄紅明亮，入喉溫潤滑順，餘韻甘甜，耐久泡不苦澀。
                   </p>
                 </span>
               ),
@@ -227,12 +236,14 @@ export const Teams10DataSource = {
             {
               name: 'title',
               className: 'teams1-title',
-              href: 'Product',
+              href: 'vendor/1/index',
               children: (
                 <span>
                   <span>
                     <span>
-                      <p>舞鶴茶園- 公主咖啡</p>
+                      <p>
+                        <b>舞鶴茶園- 公主咖啡</b>
+                      </p>
                     </span>
                   </span>
                 </span>
@@ -289,12 +300,14 @@ export const Teams10DataSource = {
             {
               name: 'title',
               className: 'teams1-title',
-              href: 'Product',
+              href: 'vendor/9/index',
               children: (
                 <span>
                   <span>
                     <span>
-                      <p>遊山茶訪</p>
+                      <p>
+                        <b>遊山茶訪</b>
+                      </p>
                     </span>
                   </span>
                 </span>
@@ -348,12 +361,14 @@ export const Teams10DataSource = {
             {
               name: 'title',
               className: 'teams1-title',
-              href: 'Product',
+              href: 'vendor/4/index',
               children: (
                 <span>
                   <span>
                     <span>
-                      <p>和菓森林紅茶莊園</p>
+                      <p>
+                        <b>和菓森林紅茶莊園</b>
+                      </p>
                     </span>
                   </span>
                 </span>
@@ -445,7 +460,8 @@ export const Feature20DataSource = {
   OverPack: { className: 'home-page content2', playScale: 0.3 },
   imgWrapper: { className: 'content2-img', md: 8, xs: 24 },
   img: {
-    children: 'https://farm2.staticflickr.com/1936/45341389641_9cf5932583_c.jpg',
+    children:
+      'https://farm2.staticflickr.com/1936/45341389641_9cf5932583_c.jpg',
   },
   textWrapper: { className: 'content2-text', md: 14, xs: 24 },
   title: {
