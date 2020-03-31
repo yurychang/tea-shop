@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Form from 'react-bootstrap/Form'
+import { Link } from 'react-router-dom'
 // import { Timeline, Icon } from 'rsuite'
 // import 'rsuite/lib/styles/index.less'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -23,7 +24,7 @@ function OrderComplete() {
             <div class="timeline-small-body">
               <ul>
                 <li>
-                  <div class="bullet pink"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>結帳</h3>
@@ -31,7 +32,7 @@ function OrderComplete() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet orange"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>付款資訊</h3>
@@ -39,7 +40,7 @@ function OrderComplete() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet blue"></div>
+                  <div class="bullet orange1"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>完成訂單</h3>
@@ -67,7 +68,8 @@ function OrderComplete() {
         <Col sm={8}>
           <h1 className="h123">完成訂單</h1>
           <Form>
-            <h4>已經完成訂購，可以前往訂單查詢</h4>
+            <h5>已經完成訂購，可以前往訂單查詢</h5>
+            <h4 className="h4form">訂購人資料</h4>
             <Form.Group as={Row} controlId="formHorizontalName">
               <Form.Label column sm={2}>
                 姓名
@@ -87,15 +89,6 @@ function OrderComplete() {
                 name="formHorizontalRadios"
                 id="formHorizontalRadios2"
               />
-            </Form.Group>
-
-            <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label column sm={2}>
-                身分證
-              </Form.Label>
-              <Col sm={6}>
-                <Form.Control type="password" placeholder="請輸入身分證字號" />
-              </Col>
             </Form.Group>
 
             <Form.Group as={Row} controlId="formHorizontalPhone">
@@ -128,7 +121,7 @@ function OrderComplete() {
                 <Form.Check label=" 記住我 " />
               </Col>
             </Form.Group>
-            <h4>收件人資料</h4>
+            <h4 className="h4form">收件人資料</h4>
             <Form.Group as={Row} controlId="formHorizontalName">
               <Form.Label column sm={2}>
                 姓名
@@ -150,38 +143,12 @@ function OrderComplete() {
               />
             </Form.Group>
             <Form.Group as={Row} controlId="exampleForm.SelectCustom">
-              <Form.Label>收件地址</Form.Label>
-              <br />
-
-              <Form>
-                <Form.Group as="Row" controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Label></Form.Label>
-                  <Form.Control as="select" size="sm" custom>
-                    <option>台北市</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                  <Form.Control as="select" size="sm" custom>
-                    <option>大安區</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group as="Row" controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Label></Form.Label>
-                  <Form.Control as="select" size="sm" custom>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                </Form.Group>
-              </Form>
+              <Link to="/">
+                <Button className="confirm" type="submit" size="10">
+                  {' '}
+                  返回首頁{' '}
+                </Button>
+              </Link>
             </Form.Group>
           </Form>
         </Col>
