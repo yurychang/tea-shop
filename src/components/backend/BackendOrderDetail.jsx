@@ -8,7 +8,8 @@ import { Link, withRouter } from 'react-router-dom'
 
 function BackendOrder(props) {
   const [orderDataDetail, setOrderDataDetail] = useState([])
-  const [orderstatus, setOrderstatus] = useState(false)
+  const [orderStatus, setOrderStatus] = useState(false)
+  const [ordeTrackCode, setOrdeTrackCode] = useState('')
   const getorderid = Number(props.match.params.orderid)
   console.log('getorderid', getorderid)
 
@@ -44,20 +45,40 @@ function BackendOrder(props) {
     return totalPrice
   }
 
-  const changeProductStatus = event => {
-    setOrderstatus(true)
+  const changeProductStatus = (trackCode, orderId) => {
+    setOrderStatus(true)
+    setOrdeTrackCode(trackCode)
+    updateOrderStatus(orderId)
+
   }
 
-  // function test() {
-  //   switch ()
-
-
-
-  // }
+  const updateOrderStatus = async (orderId) => {
+    let updateData = {
+      id: orderId,
+      data: {
+        productState: '02',
+        trackingCode: ordeTrackCode
+      }
+    }
+    const request = new Request(
+      'http://localhost:3333/order/updateOrder',
+      {
+        method: 'PUT',
+        body: JSON.stringify(updateData),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      }
+    )
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log(data)
+  }
 
   const backNumber = (<> <form className="col-6 mb-3" action="">
-    <input className="form-control mb-2" type="text" />
-    <button type="button" className="btn btn-primary" onClick={event => changeProductStatus(event)}>回報追蹤碼</button>
+    <input className="form-control mb-2" type="text" onChange={e => setOrdeTrackCode(e.target.value)} />
+    <button type="button" className="btn btn-primary" onClick={event => { changeProductStatus(ordeTrackCode, getorderid) }}>回報追蹤碼</button>
   </form></>)
 
   const backover = (<div className="card-header d-flex justify-content-between mb-4">
@@ -113,8 +134,7 @@ function BackendOrder(props) {
           <div className="d-flex justify-content-end">
             <Link className="btn btn-primary mb-2" to="/dashboard/order/">回上頁</Link>
           </div>
-          {orderstatus ? backover : backNumber}
-
+          {orderStatus ? backover : backNumber}
 
           <div className="">
             <ul className="col-6 mb-4">
