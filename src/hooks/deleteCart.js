@@ -14,5 +14,7 @@ export default function deleteCart(id) {
     const filterCart = cart.filter(el => el.id !== id)
     const newCart = [...filterCart]
     localStorage.setItem('cart', JSON.stringify(newCart))
+    return newCart.length
   }
+  return cart.length
 }

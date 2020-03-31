@@ -46,9 +46,9 @@ function BackendNav() {
             <NavLink
               className="nav-link pb-2 ls_backend-nav"
               activeClassName="active"
-              to="/dashboard/discount/:discountid?"
+              to="/dashboard/location"
             >
-              折扣管理
+              據點管理
             </NavLink>
           </li>
           <li className="nav-item mt-3">

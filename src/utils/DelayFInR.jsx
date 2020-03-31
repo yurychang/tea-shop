@@ -10,12 +10,12 @@ const FadeInRightDiv = styled.div`
 export default function DelayFInR({ delay = 0, children, ...attr }) {
   return (
     <FadeInRightDiv
-      className="opacity"
       onAnimationEnd={function(e) {
         e.target.style.opacity = '100'
       }}
       style={{
         animationDelay: `${delay}s`,
+        opacity: '0',
       }}
       {...attr}
     >

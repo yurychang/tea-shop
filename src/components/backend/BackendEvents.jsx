@@ -1,9 +1,60 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
 
 function BackendEvents() {
+
+    const [eventData, setEventData] = useState([])
+
+    async function getDataFromServer() {
+
+        const request = new Request('http://localhost:3333/vendor/getvendorbackevents', {
+            method: 'GET',
+            credentials: 'include',
+            headers: new Headers({
+                Accept: 'application/json',
+                'Content-Type': 'appliaction/json',
+            }),
+        })
+        const response = await fetch(request)
+        const data = await response.json()
+        console.log(data);
+        setEventData(data)
+    }
+
+    useEffect(() => {
+        getDataFromServer()
+    }, [])
+
+    const eventlist = (<>
+        {eventData.map((value, index) => {
+            return (
+                <div className="card mb-4">
+                    <div className="card-header d-flex justify-content-between">
+                        <div className="account"></div>
+                        <div className="order-number">活動編號:20200331{value.id}</div>
+                    </div>
+                    <div className="card-body d-flex justify-content-between align-items-center">
+                        <div className="eventPreview">{value.title}</div>
+                        <div>
+                            <button className="btn btn-primary mb-2 ">編輯活動</button>
+                        </div>
+                    </div>
+                </div>
+
+            )
+
+        })}
+
+    </>)
+
+
+
+
+
+
+
     return (
         <>
             <div className="content">
@@ -21,75 +72,15 @@ function BackendEvents() {
                     </li>
                 </ul>
                 <div className="d-flex justify-content-end  mb-2">
-                                <button  className="btn btn-primary ">新增活動</button>
-                            </div>
-
-                <div className="card mb-4">
-                    <div className="card-header d-flex justify-content-between">
-                        <div className="account">半日體驗~小小製茶師</div>
-                        <div className="order-number">活動編號:20200308001</div>
-                    </div>
-                    <div className="card-body d-flex justify-content-between align-items-center">
-                        <div className="eventPreview">
-                            <div className="figure">
-                                <img className="" src="https://via.placeholder.com/200x150" alt="" />
-                            </div>
-                    讓12歲以下小朋友體驗製茶的過程...
-                    </div>
-                        <div>
-                            <button className="btn btn-main mb-2 ">編輯活動</button>
-                        </div>
-
-                    </div>
+                    <button className="btn btn-primary ">新增活動</button>
                 </div>
 
-
-                <div className="card mb-4">
-                    <div className="card-header d-flex justify-content-between">
-                        <div className="account">半日體驗~小小製茶師</div>
-                        <div className="order-number">活動編號:20200308001</div>
-                    </div>
-                    <div className="card-body d-flex justify-content-between align-items-center">
-                        <div className="eventPreview">
-                            <div className="figure">
-                                <img className="" src="https://via.placeholder.com/200x150" alt="" />
-                            </div>
-                    讓12歲以下小朋友體驗製茶的過程...
-                    </div>
-                        <div>
-                            <button className="btn btn-primary mb-2 ">編輯活動</button>
-                        </div>
-
-                    </div>
+                {eventlist}
 
 
-                    <div className="card mb-4">
-                        <div className="card-header d-flex justify-content-between">
-                            <div className="account">半日體驗~小小製茶師</div>
-                            <div className="order-number">活動編號:20200308001</div>
-                        </div>
-                        <div className="card-body d-flex justify-content-between align-items-center">
-                            <div className="eventPreview">
-                                <div className="figure">
-                                    <img className="" src="https://via.placeholder.com/200x150" alt="" />
-                                </div>
-                    讓12歲以下小朋友體驗製茶的過程...
-                    </div>
-                            <div className="timeOut">
-                                已過期
-                        </div>
-
-                        </div>
 
 
-                    </div>
-
-
-                </div>
-
-                </div>
-
-
+            </div>
 
 
 

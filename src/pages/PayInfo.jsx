@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import Navbar from "react-bootstrap/Navbar";
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Form from 'react-bootstrap/Form'
+import { Link, Redirect } from 'react-router-dom'
 // import { Timeline, Icon } from 'rsuite'
 // import 'rsuite/lib/styles/index.less'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -14,8 +15,57 @@ import Dropdown from 'react-bootstrap/Dropdown'
 // import '../styles/jc/checkout.scss'
 import '../styles/jc/payinfo.scss'
 
-function payinfo() {
-  return (
+function Payinfo() {
+
+  const [orderer, setOrderer] = useState('')
+  const [ordererPhone, setOrdererPhone] = useState('')
+  const [ordererAddress, setOrdererAddress] = useState('')
+  const [addressee, setAddressee] = useState('')
+  const [addresseePhone, setAddresseePhone] = useState('')
+  const [address, setAddress] = useState('')
+
+  const beforeDetail = JSON.parse(localStorage.getItem('cart'))
+  const typeeee = typeof (beforeDetail)
+  console.log(typeeee)
+  let detail = beforeDetail.map((item)=> {return{pId:Object.values(item)[0],amount:Object.values(item)[12]}})
+
+  console.log('beforeDetail', beforeDetail)
+
+  const vendorId = beforeDetail[0].idVendor
+  const couponId = '12354'
+
+  const orderData = { vendorId, couponId, detail, orderer, ordererPhone, ordererAddress, addressee, addresseePhone, address }
+  console.log('orderData', orderData)
+
+
+
+  const handleSubmit = (event) => {
+    sendRegisterDataToServer(orderData, () => alert('訂單送出'))
+    async function sendRegisterDataToServer(userData, callback) {
+      // 注意資料格式要設定，伺服器才知道是json格式
+      const request = new Request('http://localhost:3333/order/neworderdata', {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(userData),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+
+      const response = await fetch(request)
+      console.log('response', response);
+      const data = await response.json()
+      callback()
+
+    }
+
+    event.preventDefault()
+
+  }
+
+
+  return (<>
     <div className="container">
       <Row>
         <Col sm={4}>
@@ -23,7 +73,7 @@ function payinfo() {
             <div class="timeline-small-body">
               <ul>
                 <li>
-                  <div class="bullet pink"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>結帳</h3>
@@ -31,7 +81,7 @@ function payinfo() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet orange"></div>
+                  <div class="bullet orange1"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>付款資訊</h3>
@@ -39,7 +89,7 @@ function payinfo() {
                   </div>
                 </li>
                 <li>
-                  <div class="bullet blue"></div>
+                  <div class="bullet grey"></div>
                   {/* <div class="date">XXXX年XX月XX日</div> */}
                   <div class="desc">
                     <h3>完成訂單</h3>
@@ -67,13 +117,20 @@ function payinfo() {
         <Col sm={8}>
           <h1 className="h123">付款資訊</h1>
           <Form>
-            <h4>訂購人資料</h4>
+            <h4 className="h4form">訂購人資料</h4>
             <Form.Group as={Row} controlId="formHorizontalName">
               <Form.Label column sm={2}>
                 姓名
               </Form.Label>
               <Col sm={4}>
-                <Form.Control type="name" placeholder="請輸入姓名" />
+                <Form.Control
+                  input
+                  type="text"
+                  placeholder="請輸入姓名"
+                  required="required"
+                  name="orderer"
+                  onChange={e => setOrderer(e.target.value)}
+                />
               </Col>
               <Form.Check
                 type="radio"
@@ -89,37 +146,32 @@ function payinfo() {
               />
             </Form.Group>
 
-            <Form.Group as={Row} controlId="formHorizontalPassword">
-              <Form.Label column sm={2}>
-                身分證
-              </Form.Label>
-              <Col sm={6}>
-                <Form.Control type="password" placeholder="請輸入身分證字號" />
-              </Col>
-            </Form.Group>
-
             <Form.Group as={Row} controlId="formHorizontalPhone">
               <Form.Label column sm={2}>
                 手機
               </Form.Label>
               <Col sm={6}>
-                <Form.Control type="phone" placeholder="請輸入手機" />
+                <Form.Control
+                  input
+                  type="text"
+                  placeholder="請輸入手機"
+                  oninput="value=value.replace(/[^\d]/g,'')"
+                  maxLength="10"
+                  name="ordererPhone"
+                  onChange={e => setOrdererPhone(e.target.value)}
+                />
               </Col>
             </Form.Group>
+
             <Form.Group as={Row} controlId="formHorizontalTel">
               <Form.Label column sm={2}>
-                市話
+                地址
               </Form.Label>
               <Col sm={6}>
-                <Form.Control type="tel" placeholder="請輸入市話" />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} controlId="formHorizontalEmail">
-              <Form.Label column sm={2}>
-                信箱
-              </Form.Label>
-              <Col sm={6}>
-                <Form.Control type="email" placeholder="請輸入信箱" />
+                <Form.Control type="text" placeholder="請輸入地址"
+                  name="ordererAddress"
+                  onChange={e => setOrdererAddress(e.target.value)}
+                />
               </Col>
             </Form.Group>
 
@@ -128,13 +180,16 @@ function payinfo() {
                 <Form.Check label=" 記住我 " />
               </Col>
             </Form.Group>
-            <h4>收件人資料</h4>
+            <h4 className="h4form">收件人資料</h4>
             <Form.Group as={Row} controlId="formHorizontalName">
               <Form.Label column sm={2}>
                 姓名
               </Form.Label>
               <Col sm={4}>
-                <Form.Control type="name" placeholder="請輸入姓名" />
+                <Form.Control type="name" placeholder="請輸入姓名"
+                  name="Addressee"
+                  onChange={e => setAddressee(e.target.value)}
+                />
               </Col>
               <Form.Check
                 type="radio"
@@ -149,56 +204,49 @@ function payinfo() {
                 id="formHorizontalRadios2"
               />
             </Form.Group>
-            <Form.Group as={Row} controlId="exampleForm.SelectCustom">
-              <Form.Label>收件地址</Form.Label>
-              <br />
-
-              <Form>
-                <Form.Group as="Row" controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Label></Form.Label>
-                  <Form.Control as="select" size="sm" custom>
-                    <option>台北市</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                  <Form.Control as="select" size="sm" custom>
-                    <option>大安區</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group as="Row" controlId="exampleForm.SelectCustomSizeSm">
-                  <Form.Label></Form.Label>
-                  <Form.Control as="select" size="sm" custom>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                </Form.Group>
-              </Form>
+            <Form.Group as={Row} controlId="formHorizontalPhone">
+              <Form.Label column sm={2}>
+                手機
+              </Form.Label>
+              <Col sm={6}>
+                <Form.Control
+                  input
+                  type="text"
+                  placeholder="請輸入手機"
+                  oninput="value=value.replace(/[^\d]/g,'')"
+                  maxLength="10"
+                  name="ordererPhone"
+                  onChange={e => setAddresseePhone(e.target.value)}
+                />
+              </Col>
             </Form.Group>
-            <h4>信用卡付款</h4>
+            <Form.Group as={Row} controlId="formHorizontalTel">
+              <Form.Label column sm={2}>
+                地址
+              </Form.Label>
+              <Col sm={6}>
+                <Form.Control type="text" placeholder="請輸入地址"
+                  name="ordererAddress"
+                  onChange={e => setAddress(e.target.value)}
+                />
+              </Col>
+            </Form.Group>
+            <h4 className="h4form">信用卡付款</h4>
             <Form.Group as={Row} controlId="formHorizontalEmail">
               <Form.Label column sm={2}>
                 卡號
               </Form.Label>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="****" />
+                <Form.Control type="email" placeholder="****" maxLength="4" />
               </Col>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="****" />
+                <Form.Control type="email" placeholder="****" maxLength="4" />
               </Col>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="****" />
+                <Form.Control type="email" placeholder="****" maxLength="4" />
               </Col>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="****" />
+                <Form.Control type="email" placeholder="****" maxLength="4" />
               </Col>
             </Form.Group>
 
@@ -207,11 +255,11 @@ function payinfo() {
                 有限期限
               </Form.Label>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="**" />
+                <Form.Control type="email" placeholder="**" maxLength="2" />
               </Col>
               <p>月</p>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="**" />
+                <Form.Control type="email" placeholder="**" maxLength="2" />
               </Col>
               <p>年</p>
             </Form.Group>
@@ -220,18 +268,22 @@ function payinfo() {
                 後三碼
               </Form.Label>
               <Col sm={2}>
-                <Form.Control type="email" placeholder="***" />
+                <Form.Control type="email" placeholder="***" maxLength="3" />
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
-              <Col sm={{ span: 10, offset: 2 }}>
-                <Button type="submit"> 確認送出 </Button>
+              <Col lg={{ span: 10, offset: 2 }}>
+                <Link to="/ordercomplete">
+                  <Button className="confirm" type="submit" size="" onClick={event => handleSubmit(event)}>
+                    確認送出
+                  </Button>
+                </Link>
               </Col>
             </Form.Group>
           </Form>
         </Col>
       </Row>
     </div>
-  )
+  </>)
 }
-export default payinfo
+export default Payinfo

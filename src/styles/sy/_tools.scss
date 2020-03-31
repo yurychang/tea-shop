@@ -16,23 +16,23 @@
 }
 
 .outline-0 {
-  outline: none;
+  outline: none !important;
 
   &:focus {
-    outline: none;
+    outline: none !important;
   }
 }
 
 .opacity {
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .object-cover {
-  object-fit: cover;
+  object-fit: cover !important;
 }
 
 .hover-shadow:hover {
-  box-shadow: $box-shadow;
+  box-shadow: $box-shadow !important;
 }
 
 .border-crude {
@@ -57,7 +57,7 @@
   @each $direction in $directions {
     @media (min-width: $val) {
       .border-#{$key}-0 {
-        border: none;
+        border: none !important;
       }
       .border-#{$direction}-#{$key}-0 {
         border-#{$direction}: none !important;
@@ -70,11 +70,11 @@
 
   @each $name, $color in $text-grays {
     .text-#{$name} {
-      color: #{$color};
+      color: #{$color} !important;
     }
     @media (min-width: $val) {
       .text-#{key}-$name {
-        color: #{$color};
+        color: #{$color} !important;
       }
     }
   }
