@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import PreVendorAbout from '../pages/vendorpreview/PreVendorAbout'
 import PreVendorIndex from '../pages/vendorpreview/PreVendorIndex'
 import PreVendorEvent from '../pages/vendorpreview/PreVendorEvents'
-import PreVendorDiscount from '../pages/vendorpreview/PreVendorDiscount'
+import PreVendorLocation from 'pages/vendorpreview/PreVendorLocation'
 
 function VendorRouter() {
 
@@ -19,8 +19,8 @@ function VendorRouter() {
                 <Route path='/vendortest/:id?/events'>
                     <PreVendorEvent />
                 </Route>
-                <Route path='/vendortest/:id?/discount'>
-                    <PreVendorDiscount />
+                <Route path='/vendortest/:id?/location'>
+                    <PreVendorLocation />
                 </Route>
         </>
     )

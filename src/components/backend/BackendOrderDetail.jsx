@@ -8,6 +8,7 @@ import { Link, withRouter } from 'react-router-dom'
 
 function BackendOrder(props) {
   const [orderDataDetail, setOrderDataDetail] = useState([])
+  const [orderstatus, setOrderstatus] = useState(false)
   const getorderid = Number(props.match.params.orderid)
   console.log('getorderid', getorderid)
 
@@ -26,6 +27,7 @@ function BackendOrder(props) {
     const data = await response.json()
     console.log('data', data);
     setOrderDataDetail(data)
+
     // console.log(orderData)
 
   }
@@ -42,6 +44,18 @@ function BackendOrder(props) {
     return totalPrice
   }
 
+  const changeProductStatus = event => {
+    setOrderstatus(true)
+  }
+
+  const backNumber = (<> <form className="col-6 mb-3" action="">
+    <input className="form-control mb-2" type="text" />
+    <button type="button" className="btn btn-primary" onClick={event => changeProductStatus(event)}>回報追蹤碼</button>
+  </form></>)
+
+  const backover = (<div className="card-header d-flex justify-content-between mb-4">
+    <div className="order-status">已寄出</div>
+  </div>)
 
 
   const productli = (<>
@@ -72,11 +86,13 @@ function BackendOrder(props) {
 
     <div className="card-header d-flex justify-content-end ls_bk-color text-center">
       <div className="w180px col-2">買家應付總額</div>
-      <div className="font-weight-bold col-2">{sumfunc(orderDataDetail)+60}</div>
+      <div className="font-weight-bold col-2">{sumfunc(orderDataDetail) + 60}</div>
     </div>
 
 
   </>)
+
+
 
 
 
@@ -90,16 +106,8 @@ function BackendOrder(props) {
           <div className="d-flex justify-content-end">
             <Link className="btn btn-primary mb-2" to="/dashboard/order/">回上頁</Link>
           </div>
+          {orderstatus ? backover : backNumber}
 
-          <form className="col-6 mb-3" action="">
-            <input className="form-control mb-2" type="text" />
-            <button type="button" className="btn btn-primary">回報追蹤碼</button>
-          </form>
-
-
-          <div className="card-header d-flex justify-content-between mb-4">
-            <div className="order-status">已送達</div>
-          </div>
 
           <div className="">
             <ul className="col-6 mb-4">
