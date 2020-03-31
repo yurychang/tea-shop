@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import orderupdate from '../../images/orderupdate.svg'
-import newmembernotice from '../../images/newmembernotice.svg'
 
-export default function MemberNotice() {
+export default function MemberInfor() {
+  const [open, setOpen] = useState(false)
   return (
     <>
       <div className="noticecontainer yz_table">
-        <h4>通知總覽</h4>
+        <h4>訂單資訊</h4>
         <hr />
         <table className="table table-borderless">
           <thead>
             <tr>
-              <th scope="col"></th>
+              <th scope="col">日期：</th>
               <th scope="col">商品名稱</th>
               <th scope="col">價格</th>
               <th scope="col">數量</th>
@@ -24,10 +24,16 @@ export default function MemberNotice() {
               <th className="yz_img" scope="row">
                 <img src={orderupdate} />
               </th>
-              <td>蜜韻紅茶立體茶包</td>
+              <td>蜜韻紅茶包</td>
               <td>＄＄＄</td>
               <td>100個</td>
-              <td>已取消</td>
+              <button
+                type="button"
+                style={{ padding: 5, marginLeft: 10 }}
+                className="btn btn-outline-danger"
+              >
+                刪除
+              </button>
             </tr>
             <tr>
               <th className="yz_img" scope="row">
@@ -36,7 +42,13 @@ export default function MemberNotice() {
               <td>蜜韻紅茶</td>
               <td>＄＄＄</td>
               <td>100個</td>
-              <td>已完成</td>
+              <button
+                type="button"
+                style={{ padding: 5, marginLeft: 10 }}
+                className="btn btn-outline-danger"
+              >
+                刪除
+              </button>
             </tr>
             <tr>
               <th className="yz_img" scope="row">
@@ -45,7 +57,13 @@ export default function MemberNotice() {
               <td>苗栗貓裏紅茶</td>
               <td>＄＄＄</td>
               <td>100個</td>
-              <td>已完成</td>
+              <button
+                type="button"
+                style={{ padding: 5, marginLeft: 10 }}
+                class="btn btn-outline-danger"
+              >
+                刪除
+              </button>
             </tr>
           </tbody>
         </table>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, Router, Route, Switch } from 'react-router-dom'
 import Memberpage from '../memberpage/MemberNotice'
+import Memberpage from '../memberpage/MemberInfor'
 import Menu from '../membercenter/Menu'
 
 export default function MemberBar() {
@@ -13,6 +14,9 @@ export default function MemberBar() {
         <div className="col-sm-9">
           <Switch>
             <Route path="/MemberNotice">
+              <Memberpage />
+            </Route>
+            <Route path="/MemberInfor">
               <Memberpage />
             </Route>
           </Switch>
