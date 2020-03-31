@@ -2,13 +2,67 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router'
 import Slider from '@material-ui/core/Slider'
 import ProductCard from 'components/pj_event/productCard'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import {
+  setTeaFilter,
+  setPriceFilter,
+  fetchProducts,
+  setInputFilter,
+} from 'actions/products'
+import InputRange from 'react-input-range'
+import 'react-input-range/lib/css/index.css'
 
-function valuetext(value) {
-  return `NT.${value}`
-}
-function Product(props) {
+const teaType = [
+  {
+    id: 1,
+    name: '果韻蜜香紅',
+  },
+  {
+    id: 2,
+    name: '正欉鐵觀音',
+  },
+  {
+    id: 3,
+    name: '奶香金萱',
+  },
+  {
+    id: 4,
+    name: '清香四季春',
+  },
+  {
+    id: 5,
+    name: '日月潭紅玉',
+  },
+  {
+    id: 6,
+    name: '蘭香翠玉',
+  },
+  {
+    id: 7,
+    name: '阿薩姆紅茶',
+  },
+  {
+    id: 8,
+    name: '東方美人茶',
+  },
+  {
+    id: 7,
+    name: '烏龍茶',
+  },
+]
+
+function Product({
+  filterTea,
+  setTeaFilter,
+  setPriceFilter,
+  setInputFilter,
+  fetchProducts,
+  data,
+}) {
   const [total, setTotal] = useState([])
-
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 })
+  const [input, setInput] = useState('')
   // 注意資料格式要設定，伺服器才知道是json格式
   async function getDataFromServer() {
     // 開啟載入指示
@@ -31,17 +85,16 @@ function Product(props) {
 
   // 一開始就會開始載入資料
   useEffect(() => {
-    getDataFromServer()
+    fetchProducts()
   }, [])
 
-  // 價錢拉霸-----------------------------------------
-  const [value, setValue] = React.useState([0, 800])
+  useEffect(() => {
+    setPriceFilter(priceRange)
+  }, [priceRange])
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
-
-  // 搜尋
+  useEffect(() => {
+    setInputFilter(input)
+  }, [input])
 
   return (
     <>
@@ -58,11 +111,18 @@ function Product(props) {
                       type="text"
                       className="form-control"
                       placeholder="Search"
-                      // onChange={(ev => setSearch(ev.target.title), 300)}
+                      value={input}
+                      onChange={e => setInput(e.target.value)}
                     />
                   </div>
                 </div>
-                <div className="d-flex">
+                <InputRange
+                  maxValue={1000}
+                  minValue={0}
+                  value={priceRange}
+                  onChange={value => setPriceRange(value)}
+                />
+                {/* <div className="d-flex">
                   <p style={{ paddingRight: '10px' }}>price</p>
                   <input
                     className="pj_input-color"
@@ -79,8 +139,8 @@ function Product(props) {
                     style={{ height: '25px', width: '80px' }}
                     disabled
                   />
-                </div>
-                <div className="d-flex">
+                </div> */}
+                {/* <div className="d-flex">
                   <Slider
                     max={9999}
                     min={0}
@@ -91,35 +151,27 @@ function Product(props) {
                     getAriaValueText={valuetext}
                     valueLabelFormat={valuetext}
                   />
-                </div>
+                </div> */}
               </div>
             </div>
 
             <div className="col-md-6 ">
               <div className="pj_cart-tea">
-                <h4>茶種</h4>
+                <p className="fs-ff">茶種</p>
                 <div className="pj_container-button">
-                  <button type="button" className="pj_btn pj_button-green">
-                    綠茶
-                  </button>
-                  <button type="button" className="pj_button-rad  pj_btn">
-                    紅茶
-                  </button>
-                  <button type="button" className=" pj_btn pj_button ">
-                    烏龍茶
-                  </button>
-                  <button type="button" className="pj_button-purple  pj_btn">
-                    東方美人茶
-                  </button>
-                  <button type="button" className="pj_button-blue pj_btn">
-                    鐵觀音茶
-                  </button>
-                  <button type="button" className="pj_button-yellow pj_btn">
-                    普洱茶
-                  </button>
-                  <button type="button" className="pj_button-orange pj_btn">
-                    金萱茶
-                  </button>
+                  {teaType.map(el => {
+                    return (
+                      <button
+                        type="button"
+                        onClick={() => setTeaFilter(el.id)}
+                        className={`mb-1 mr-1 link-btn ${
+                          filterTea == el.id ? 'active' : ''
+                        }`}
+                      >
+                        {el.name}
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
             </div>
@@ -127,8 +179,8 @@ function Product(props) {
         </div>
 
         <div className="card-deck row">
-          {total
-            ? total.map(el => {
+          {data
+            ? data.map(el => {
                 return (
                   <div key={el.id} className="col-4 mb-4">
                     <ProductCard product={el} />
@@ -142,4 +194,30 @@ function Product(props) {
   )
 }
 
-export default withRouter(Product)
+const mapStateToProps = ({ products }) => {
+  const { filterTea, data, priceRange, inputFilter } = products
+  let filterData = data
+  // 茶種篩選
+  if (filterTea) {
+    filterData = data.filter(el => el.tag == filterTea)
+  }
+  // 字串搜尋
+  if (inputFilter) {
+    filterData = data.filter(el => el.title.includes(inputFilter))
+  }
+  // 價格區間
+  filterData = filterData.filter(el => {
+    return el.price > priceRange.min && el.price < priceRange.max
+  })
+
+  return { filterTea, data: filterData }
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    { setTeaFilter, fetchProducts, setPriceFilter, setInputFilter },
+    dispatch
+  )
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Product))

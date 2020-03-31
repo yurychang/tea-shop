@@ -6,6 +6,7 @@ import flavor from './flavor'
 import isLoading from './isLoading'
 import vendordata from './allvendordata'
 import favorites from './favorites'
+import products from './products'
 
 const rootReducer = combineReducers({
   events,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   vendordata,
   flavor,
   isLoading,
-  favorites
+  favorites,
+  products
 })
 
 export default rootReducer
