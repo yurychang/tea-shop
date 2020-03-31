@@ -38,8 +38,12 @@ export default function Menu() {
             </NavLink>
           </li>
           <li className="nav-item mt-3">
-            <NavLink className="nav-link pb-2" activeClassName="active" to="">
-              <i className="fas fa-list-ol">訂單資訊</i>
+            <NavLink
+              className="nav-link pb-2"
+              activeClassName="active"
+              to="/membercenter/Infor"
+            >
+              <i className="fas fa-list-ol"> 訂單資訊</i>
             </NavLink>
           </li>
           <li className="nav-item mt-3">

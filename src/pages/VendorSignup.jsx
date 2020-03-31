@@ -49,6 +49,7 @@ export default function VendorSingup() {
             className="form-control yz-form-control"
             placeholder="請輸入E-mail"
             name="vendorEmail"
+            pattern=".+@.+.com"
             onChange={e => setVendorEmail(e.target.value)}
             required="required"
           />
