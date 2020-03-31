@@ -30,9 +30,6 @@ function CartList({ cart, ...props }) {
                     <thead className="pj_thead">
                       <tr>
                         <th scope="col">
-                          <input type="checkbox" name="" />
-                        </th>
-                        <th scope="col">
                           <div className="p-2 text-uppercase"></div>
                         </th>
                         <th scope="col">
@@ -85,7 +82,7 @@ function CartList({ cart, ...props }) {
                     </div>
                     <Link
                       type="button"
-                      className="btn btn-warning m-1 pj_cart-button"
+                      className="btn btn-warning m-1 pj_cart-button pj_button"
                       to="/checkout"
                     >
                       結帳

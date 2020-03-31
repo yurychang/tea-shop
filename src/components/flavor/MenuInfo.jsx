@@ -38,14 +38,50 @@ function MenuInfo({ flavors, targetTeaFlavors, selectByTea }) {
     return (
       <div className="ml-5">
         <ul className="pl-0 mb-4">
-          <li className="mb-3">
-            前香：<span className="ml-2">{target.front}</span>
+          <li className="mb-2">
+            <span
+              className="fs-sm"
+              style={{
+                padding: '0px 3px',
+                color: 'white',
+                borderRadius: '3px',
+                backgroundColor: 'rgb(160, 201, 153)',
+              }}
+            >
+              前香
+            </span>
+            <span className="ml-2 text-ff">{target.front}</span>
+            <p className="mt-1 mb-0 ml-3">{target.frontText}</p>
           </li>
-          <li className="mb-3">
-            中味：<span className="ml-2">{target.mid}</span>
+          <li className="mb-2">
+            <span
+              className="fs-sm"
+              style={{
+                padding: '0px 3px',
+                color: 'white',
+                borderRadius: '3px',
+                backgroundColor: 'rgb(220, 183, 148)',
+              }}
+            >
+              中味
+            </span>
+            <span className="ml-2 text-ff">{target.mid}</span>
+            <p className="mt-1 mb-0 ml-3">{target.midText}</p>
           </li>
-          <li className="mb-3">
-            後韻：<span className="ml-2">{target.end}</span>
+          <li className="mb-2">
+            <span
+              className="fs-sm"
+              style={{
+                padding: '0px 3px',
+                color: 'white',
+                borderRadius: '3px',
+                backgroundColor: 'rgb(172, 159, 150)',
+              }}
+            >
+              後韻
+            </span>
+            <span className="ml-2 text-ff">{target.end}</span>
+            <p className="mt-1 mb-0 ml-3">{target.endText}</p>
           </li>
         </ul>
         <p>{target.intro}</p>
