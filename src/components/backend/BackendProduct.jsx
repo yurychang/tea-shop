@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Figure from 'react-bootstrap/Figure'
+import productCard from '../pj_event/productCard'
 
 function BackendProduct() {
 
@@ -29,25 +30,25 @@ function BackendProduct() {
     getOrderFromServer()
   }, [])
 
-  const productli = (
-    <>
-      {productdata.map((value, index) => {
-        return (
-          <div className="card singleProduct mb-3 mr-2">
-            <div className="ls_p250">
-              <img className="" src={`http://localhost:3333/images/${value.img}`} alt="" />
-            </div>
-            <div className="card-body">
-            <h5 className="card-title">{value.title}</h5>
-            <p className="card-text">NTD {value.price}</p>
-            <Link to="#" className="btn btn-main">
-              編輯商品
-            </Link>
-          </div>
-          </div>
-  )
-})}
-    </>)
+//   const productli = (
+//     <>
+//       {productdata.map((value, index) => {
+//         return (
+//           <div className="card singleProduct mb-3 mr-2">
+//             <div className="ls_p250">
+//               <img className="" src={`http://localhost:3333/images/${value.img}`} alt="" />
+//             </div>
+//             <div className="card-body">
+//             <h5 className="card-title">{value.title}</h5>
+//             <p className="card-text">NTD {value.price}</p>
+//             <Link to="#" className="btn btn-main">
+//               編輯商品
+//             </Link>
+//           </div>
+//           </div>
+//   )
+// })}
+//     </>)
 
 
 
@@ -82,7 +83,7 @@ return (
 
         <div className="d-flex justify-content mb-4 flex-wrap">
 
-          {productli}
+        <productCard />
 
 
         </div>
