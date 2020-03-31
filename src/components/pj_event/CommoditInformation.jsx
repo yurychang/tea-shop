@@ -6,14 +6,50 @@ import { withRouter } from 'react-router-dom'
 // import deleteCart from 'hooks/deleteCart'
 import '../../styles/pj/_pj.css'
 import { withCart } from 'hooks/useCartContext'
-import {
-  addCart,
-  deleteCart,
-  increaseCart,
-  decreaseCart,
-  cart,
-  cartCount,
-} from 'hooks/useCart'
+
+const teaType = [
+  {
+    id: 1,
+    name: '果韻蜜香紅',
+  },
+  {
+    id: 2,
+    name: '正欉鐵觀音',
+  },
+  {
+    id: 3,
+    name: '奶香金萱',
+  },
+  {
+    id: 4,
+    name: '清香四季春',
+  },
+  {
+    id: 5,
+    name: '日月潭紅玉',
+  },
+  {
+    id: 6,
+    name: '蘭香翠玉',
+  },
+  {
+    id: 7,
+    name: '阿薩姆紅茶',
+  },
+  {
+    id: 8,
+    name: '東方美人茶',
+  },
+  {
+    id: 7,
+    name: '烏龍茶',
+  },
+]
+
+function findName(id) {
+  const target = teaType.find(el => +el.id === +id)
+  return target?.name
+}
 
 function CommoditInformation({ product = {}, cart, ...props }) {
   const { addCart } = cart
@@ -39,16 +75,12 @@ function CommoditInformation({ product = {}, cart, ...props }) {
       {/* <button  onClick={() => {
     props.deleteCart(product.id)></button> */}
 
-      <div className="card-body">
+      <div className="card-body" style={{ padding: '0' }}>
         <h2 className="pj_card-title">{product.title}</h2>
-        <div className="section5-text6">
-          <div className="pj_border-top">
-            <h5 className="pj_border-name">日月潭老茶廠</h5>
-          </div>
-        </div>
+        <div className="section5-text6"></div>
         <p className="pj_card-text">{product.feaTure}</p>
         <ul>
-          <li>茶種:{product.tag}</li>
+          <li>茶種:{findName(product.tag)}</li>
           <li>容量:{product.unit}</li>
           <li>保存期限：{product.sTime}年</li>
         </ul>
@@ -57,11 +89,16 @@ function CommoditInformation({ product = {}, cart, ...props }) {
           <div className="amount d-flex">
             <p className="pj_card-price-p">數量</p>
             <button
-              className="pj_card-price-amount-add pj_button1"
-              style={{ visibility: amount < 1 && `hidden` }}
+              className="pj_card-price-amount-add pj_button"
               onClick={() => setAmount(amount - 1)}
+              style={{
+                width: '30px',
+                height: '30px',
+                padding: 0,
+                visibility: amount < 1 && `hidden`,
+              }}
             >
-              <span className="pj_card-span">-</span>
+              -
             </button>
             <input
               className="pj_card-price-input"
@@ -70,10 +107,15 @@ function CommoditInformation({ product = {}, cart, ...props }) {
               value={amount}
             />
             <button
-              className="pj_card-price-amount-add pj_button1"
+              className="pj_card-price-amount-add pj_button"
               onClick={() => setAmount(amount + 1)}
+              style={{
+                width: '30px',
+                height: '30px',
+                padding: 0,
+              }}
             >
-              <span className="pj_card-span">+</span>
+              +
             </button>
           </div>
           <div className="pj_price">
@@ -84,7 +126,7 @@ function CommoditInformation({ product = {}, cart, ...props }) {
         <div className="pj_cart-btn">
           <button
             type="button"
-            className="m-1 pj_cart-button pj_button"
+            className="m-1 pj_cart-button pj_button2"
             onClick={() => {
               addCart(product, amount)
               // cartCount.setCartCount(num)
@@ -99,9 +141,8 @@ function CommoditInformation({ product = {}, cart, ...props }) {
               type="button"
               className="m-1 pj_cart-button pj_button"
               onClick={() => {
-                addCart(CommoditInformation)
+                addCart(product, amount)
               }}
-              // onClick={addList}
             >
               購買
               <i class="fas fa-credit-card" style={{ marginLeft: '15px' }}></i>
