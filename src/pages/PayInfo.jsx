@@ -24,14 +24,17 @@ function Payinfo() {
   const [addresseePhone, setAddresseePhone] = useState('')
   const [address, setAddress] = useState('')
 
-  const detail = JSON.parse(localStorage.getItem('cart'))
- 
-  console.log('getcart', detail)
+  const beforeDetail = JSON.parse(localStorage.getItem('cart'))
+  const typeeee = typeof (beforeDetail)
+  console.log(typeeee)
+  let detail = beforeDetail.map((item)=> {return{pId:Object.values(item)[0],amount:Object.values(item)[12]}})
 
-  const vendorId = detail[0].idVendor
-  const qp = '12354'
+  console.log('beforeDetail', beforeDetail)
 
-  const orderData = { vendorId, qp, detail, orderer, ordererPhone, ordererAddress, addressee, addresseePhone, address }
+  const vendorId = beforeDetail[0].idVendor
+  const couponId = '12354'
+
+  const orderData = { vendorId, couponId, detail, orderer, ordererPhone, ordererAddress, addressee, addresseePhone, address }
   console.log('orderData', orderData)
 
 
