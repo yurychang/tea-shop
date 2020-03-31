@@ -33,8 +33,8 @@ function BackendProduct() {
     <>
       {productdata.map((value, index) => {
         return (
-          <div className="card ls_w250px mb-3 mr-2">
-            <div className="">
+          <div className="card singleProduct mb-3 mr-2">
+            <div className="ls_p250">
               <img className="" src={`http://localhost:3333/images/${value.img}`} alt="" />
             </div>
             <div className="card-body">
@@ -85,18 +85,6 @@ return (
           {productli}
 
 
-          <div className="card positon-relative">
-            <img className="" src="https://via.placeholder.com/250" alt="" />
-            <div className="card-body">
-              <h5 className="card-title">凍頂烏龍茶</h5>
-              <p className="card-text">NTD 200</p>
-              <Link to="#" className="btn btn-main">
-                編輯商品
-                </Link>
-            </div>
-            <div className="noShelves"></div>
-            <div className="noShelvesText">未上架</div>
-          </div>
         </div>
       </div>
     </div>

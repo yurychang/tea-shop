@@ -10,7 +10,7 @@ function VendorEventArea() {
 
 
     const [eventData, setEventData] = useState([])
-    const vendorid = sessionStorage.getItem('vendorId')
+    const vendorid = sessionStorage.getItem('vendorOnlyId')
 
     async function getDataFromServer() {
 
