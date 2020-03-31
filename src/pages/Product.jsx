@@ -157,7 +157,7 @@ function Product({
 
             <div className="col-md-6 ">
               <div className="pj_cart-tea">
-                <p className="fs-ff">茶種</p>
+                <p className="mb-2 pl-1 fs-lg text-ff">茶種</p>
                 <div className="pj_container-button">
                   {teaType.map(el => {
                     return (
