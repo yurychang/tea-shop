@@ -3,8 +3,7 @@ import { Link, Router, withRouter } from 'react-router-dom'
 
 function MsgList() {
   const [alldata, setAlldata] = useState([])
-  // const [status, setStatus] = useState('01')
-  // const vendorId = sessionStorage.getItem('vendorOnlyId')
+  const [status, setStatus] = useState('1')
 
   async function getMsgFromServer() {
     const request = new Request('http://localhost:3333/vendor/getMsg', {
@@ -25,29 +24,31 @@ function MsgList() {
     getMsgFromServer()
   }, [])
 
-  // const updateStatus = event => {
-  //   event.preventDefault()
+  const updateStatus = event => {
+    const id = event.target.getAttribute('data-id')
+    event.preventDefault()
+    const fd = new FormData()
+    fd.append('status', status)
+    fd.append('id', id)
+    // const statusUpdate = {
+    //   status,
+    // }
+    sendStatusToServer(fd, () => alert('更新成功'))
 
-  //   const statusUpdate = {
-  //     status,
-  //   }
-  //   sendstatusToServer(statusUpdate, () => alert('更新成功'))
+    async function sendStatusToServer(fd, callback) {
+      const request = new Request('http://localhost:3333/vendor/updateMsg', {
+        method: 'PUT',
+        credentials: 'include',
+        body: fd,
+      })
 
-  //   async function sendstatusToServer(statusUpdate, callback) {
-  //     // 注意資料格式要設定，伺服器才知道是json格式
-  //     const request = new Request('http://localhost:3333/vendor/updateMsg', {
-  //       method: 'POST',
-  //       credentials: 'include',
-  //       body:  JSON.stringify(statusUpdate),
-  //     })
-
-  //     const response = await fetch(request)
-  //     const data = await response.json()
-  //     console.log('response', data)
-  //     callback()
-  //     return data
-  //   }
-  // }
+      const response = await fetch(request)
+      const data = await response.json()
+      console.log('response', data)
+      callback()
+      return data
+    }
+  }
 
   const singleMsg = (
     <>
@@ -62,7 +63,8 @@ function MsgList() {
               <div>
                 <button
                   className="btn updateMsg btn-primary"
-                  // onClick={event => updateStatus(event)}
+                  onClick={event => updateStatus(event)}
+                  data-id={value.id}
                 >
                   推播訊息
                 </button>
