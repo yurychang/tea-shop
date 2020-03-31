@@ -1,4 +1,4 @@
-$white:    #fff;
+$white: #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -8,41 +8,42 @@ $gray-600: #6c757d;
 $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
-$black:    #000;
+$black: #000;
 
 $grays: ();
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
   (
-    "100": $gray-100,
-    "200": $gray-200,
-    "300": $gray-300,
-    "400": $gray-400,
-    "500": $gray-500,
-    "600": $gray-600,
-    "700": $gray-700,
-    "800": $gray-800,
-    "900": $gray-900
+    '100': $gray-100,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900,
   ),
   $grays
 );
 
 $text-grays: (
-  "ff": $gray-900,
-  "f": $gray-700,
-  "m": $gray-600,
-  "p": $gray-500,
-  "pp": $gray-300
+  'ff': $gray-900,
+  'f': $gray-700,
+  'm': $gray-600,
+  'p': $gray-500,
+  'pp': $gray-300,
 );
 
 $orange: #df641c;
 $main: $orange;
-$whiteyellow: #ECDDB8;
+$mainlight: lighten($main, 15%);
+$whiteyellow: #ecddb8;
 $main2: $whiteyellow;
 
 $theme-colors: (
   'main': $main,
-  'mainlight': lighten($main, 15%),
+  'mainlight': $mainlight,
   'main2': $whiteyellow,
 );
 
@@ -80,13 +81,12 @@ $font-sizes: (
   'xs': $font-size-xs,
 );
 
-$body-color:            $gray-700;
+$body-color: $gray-700;
 
-$link-color:            $gray-600;
-$link-decoration:       none;
-$link-hover-color:      darken($link-color, 15%);
+$link-color: $gray-600;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: none;
 
-$box-shadow: 0 .125rem .25rem rgba($black, .25);
-$btn-font-size-xs: $font-size-xs
-
+$box-shadow: 0 0.125rem 0.25rem rgba($black, 0.25);
+$btn-font-size-xs: $font-size-xs;

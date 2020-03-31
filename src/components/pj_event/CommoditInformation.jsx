@@ -49,11 +49,16 @@ function CommoditInformation({ product = {}, cart, ...props }) {
           <div className="amount d-flex">
             <p className="pj_card-price-p">數量</p>
             <button
-              className="pj_card-price-amount-add pj_button1"
-              style={{ visibility: amount < 1 && `hidden` }}
+              className="pj_card-price-amount-add pj_button"
               onClick={() => setAmount(amount - 1)}
+              style={{
+                width: '30px',
+                height: '30px',
+                padding: 0,
+                visibility: amount < 1 && `hidden`,
+              }}
             >
-              <span className="pj_card-span">-</span>
+              -
             </button>
             <input
               className="pj_card-price-input"
@@ -62,10 +67,15 @@ function CommoditInformation({ product = {}, cart, ...props }) {
               value={amount}
             />
             <button
-              className="pj_card-price-amount-add pj_button1"
+              className="pj_card-price-amount-add pj_button"
               onClick={() => setAmount(amount + 1)}
+              style={{
+                width: '30px',
+                height: '30px',
+                padding: 0,
+              }}
             >
-              <span className="pj_card-span">+</span>
+              +
             </button>
           </div>
           <div className="pj_price">
@@ -91,9 +101,8 @@ function CommoditInformation({ product = {}, cart, ...props }) {
               type="button"
               className="m-1 pj_cart-button pj_button"
               onClick={() => {
-                addCart(CommoditInformation)
+                addCart(product, amount)
               }}
-              // onClick={addList}
             >
               購買
               <i class="fas fa-credit-card" style={{ marginLeft: '15px' }}></i>
