@@ -32,7 +32,7 @@ export default function Menu() {
             <NavLink
               className="nav-link pb-2"
               activeClassName="active"
-              to="member"
+              to="/member"
             >
               <i className="far fa-heart"> 我的收藏</i>
             </NavLink>
@@ -43,7 +43,7 @@ export default function Menu() {
             </NavLink>
           </li>
           <li className="nav-item mt-3">
-            <NavLink className="nav-link pb-2" activeClassName="active">
+            <NavLink className="nav-link pb-2" activeClassName="active" to="">
               <i className="fas fa-tags"> 優惠卷</i>
             </NavLink>
           </li>
