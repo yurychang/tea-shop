@@ -2,7 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 
-export default function EventCard({ title, location, companys, id, banner, intro }) {
+export default function EventCard({
+  title,
+  location,
+  companys = {},
+  id,
+  banner,
+  intro,
+}) {
   return (
     <>
       <Card className={`h-100 border-0 hover-shadow`}>
