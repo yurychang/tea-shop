@@ -15,6 +15,7 @@ export default function useCart() {
     const newProduct = { ...product, amount }
     const target = cart.find(el => el.id === newProduct.id)
     let newCart = []
+    console.log(newProduct)
     if (target) {
       const filterCart = cart.filter(el => el.id !== newProduct.id)
       newCart = [...filterCart, newProduct]
