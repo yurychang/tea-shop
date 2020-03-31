@@ -24,6 +24,7 @@ export default function useCart() {
     }
     setCart(newCart)
   }
+
   const deleteCart = id => {
     const target = cart.find(el => el.id === id)
     if (target) {
@@ -32,6 +33,7 @@ export default function useCart() {
       setCart(newCart)
     }
   }
+
   const increaseCart = id => {
     const filterCart = cart.filter(el => el.id !== id)
     const target = cart.find(el => el.id === id)
@@ -42,6 +44,7 @@ export default function useCart() {
     const newCart = [...filterCart, target]
     setCart(newCart)
   }
+
   const decreaseCart = id => {
     const filterCart = cart.filter(el => el.id !== id)
     const target = cart.find(el => el.id === id)

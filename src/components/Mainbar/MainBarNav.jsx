@@ -39,7 +39,10 @@ export default function MainBarNav({ isOpen, onClick }) {
             </button>
           </div>
 
-          <Navbar.Toggle className="ml-auto pt-0 border-0 outline-0" aria-controls="responsive-navbar-nav"/>
+          <Navbar.Toggle
+            className="ml-auto pt-0 border-0 outline-0"
+            aria-controls="responsive-navbar-nav"
+          />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="h-100 flex-lg-column text-center">
               <Nav.Item className="d-lg-none border-bottom">
@@ -59,7 +62,7 @@ export default function MainBarNav({ isOpen, onClick }) {
               </Nav.Item>
               <Nav.Item className="border-bottom border-bottom-lg-0">
                 <Nav.Link
-                  as="p"
+                  as={Link}
                   to="/login"
                   className="mb-0"
                   onClick={() => (isOpen ? onClick(!isOpen) : '')}

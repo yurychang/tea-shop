@@ -17,6 +17,7 @@ function productCard({ product, cart }) {
             src={`http://localhost:3333/images/product/${el.img}`}
             className="card-img-top"
             alt=""
+            style={{height: '200px'}}
           />
         </Link>
         <div className="card-body">
