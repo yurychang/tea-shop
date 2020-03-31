@@ -134,11 +134,64 @@ function CartList({ cart, ...props }) {
                       </tr>
                     </thead>
 
-                    <tbody>{newcart2}</tbody>
+                    <tbody>
+                      <tr>
+                        <th>
+                          <input type="checkbox" />
+                        </th>
+                        <th scope="row">
+                          <div className="p-2 ">
+                            <img
+                              className="pj_cartList-img"
+                              src={img1}
+                              alt=""
+                            />
+                          </div>
+                        </th>
+                        <td
+                          className=" align-middle"
+                          style={{ fontSize: '14px' }}
+                        >
+                          {newcart?.title}
+                        </td>
+                        <td className=" align-middle pj_white-space">
+                          <strong>{newcart?.tag}</strong>
+                        </td>
+                        <td className=" align-middle pj_white-space">
+                          <strong>{newcart?.unit}包</strong>
+                        </td>
+                        <td className=" align-middle pj_white-space">
+                          <strong>${newcart?.price}</strong>
+                        </td>
+                        <td className=" align-middle pj_white-space">
+                          <strong>{newcart?.amount}</strong>
+                        </td>
+                        <td className=" align-middle pj_white-space">
+                          <strong>${newcart?.price * newcart?.amount}</strong>
+                        </td>
+                        <td className=" align-middle pj_white-space">
+                          <button
+                            type="button"
+                            class="btn btn-outline-danger"
+                            onClick={() => deleteCart()}
+                          >
+                            刪除
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
 
                   <div className="pj_cardList-price-amount">
-                    <button type="button" className="pj_cart-button pj_button">
+                    <div className="pj_price">
+                      <p className="pj_cardList-price">
+                        NT ${newcart?.price * newcart?.amount}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      className="btn btn-warning m-1 pj_cart-button"
+                    >
                       結帳
                       <i
                         class="fas fa-credit-card"
