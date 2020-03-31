@@ -1,21 +1,48 @@
+// h4 {
+//   background-color: #ec8a53;
+//   color: #ffffff;
+// }
+.h3down{
+  padding-top: 10px;
+  margin-top: 300px;
+}
 .h123 {
   border-bottom: 2px solid #ec8a53;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  margin-top: 30px;
 }
 
 .thbc {
   border-bottom: 2px solid #ec8a53;
 }
 
-.scoupon {
-  // background-color: #ec8a53;
-}
-
 .checkbtn {
   background-color: #ec8a53;
   border-color: #ec8a53;
 }
+
+.footrow {
+  padding-top: 10px;
+  margin-top: 30px;
+}
+
+#dropdown-basic {
+  background-color: #ec8a53;
+  border-color: #ec8a53;
+}
+
+.confirm {
+  background-color: #ec8a53;
+  border-color: #ec8a53;
+}
+
+// .dpdn {
+//   list-style: none;
+//   background: blue;
+//   padding: 10px;
+//   display: inline-block;
+// }
+
 
 .timeline-small {
   max-width: 350px;
@@ -61,11 +88,11 @@
   margin-top: 7%;
 }
 
-.timeline-small-body .bullet.pink {
+.timeline-small-body .bullet.orange1 {
   // background-color: hotpink;
   // border: 3px solid #F93B69;
-  background-color: #d9d9d9;
-  border: 3px solid #a9a9a9;
+  background-color: #ec8a53;
+  border: 3px solid #ec8a53;
 
 }
 
@@ -77,7 +104,7 @@
 
 }
 
-.timeline-small-body .bullet.blue {
+.timeline-small-body .bullet.grey {
   // background-color: aquamarine;
   // border: 3px solid cadetblue;
   background-color: #d9d9d9;
@@ -87,8 +114,8 @@
 .timeline-small-body .bullet.orange {
   // background-color: salmon;
   // border: 3px solid #EB8B6E;
-  background-color: #ec8a53;
-  border: 3px solid #ec8a53;
+  background-color: #d9d9d9;
+  border: 3px solid #a9a9a9;
 
 }
 
