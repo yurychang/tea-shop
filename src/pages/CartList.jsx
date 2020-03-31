@@ -124,22 +124,22 @@ function CartList(props) {
                           className=" align-middle"
                           style={{ fontSize: '14px' }}
                         >
-                          {newcart.title}
+                          {newcart?.title}
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>{newcart.tag}</strong>
+                          <strong>{newcart?.tag}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>{newcart.unit}包</strong>
+                          <strong>{newcart?.unit}包</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>${newcart.price}</strong>
+                          <strong>${newcart?.price}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>{newcart.amount}</strong>
+                          <strong>{newcart?.amount}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
-                          <strong>${newcart.price * newcart.amount}</strong>
+                          <strong>${newcart?.price * newcart?.amount}</strong>
                         </td>
                         <td className=" align-middle pj_white-space">
                           <button
@@ -157,7 +157,7 @@ function CartList(props) {
                   <div className="pj_cardList-price-amount">
                     <div className="pj_price">
                       <p className="pj_cardList-price">
-                        NT ${newcart.price * newcart.amount}
+                        NT ${newcart?.price * newcart?.amount}
                       </p>
                     </div>
                     <button
