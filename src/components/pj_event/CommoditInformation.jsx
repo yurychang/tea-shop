@@ -7,6 +7,50 @@ import { withRouter } from 'react-router-dom'
 import '../../styles/pj/_pj.css'
 import { withCart } from 'hooks/useCartContext'
 
+const teaType = [
+  {
+    id: 1,
+    name: '果韻蜜香紅',
+  },
+  {
+    id: 2,
+    name: '正欉鐵觀音',
+  },
+  {
+    id: 3,
+    name: '奶香金萱',
+  },
+  {
+    id: 4,
+    name: '清香四季春',
+  },
+  {
+    id: 5,
+    name: '日月潭紅玉',
+  },
+  {
+    id: 6,
+    name: '蘭香翠玉',
+  },
+  {
+    id: 7,
+    name: '阿薩姆紅茶',
+  },
+  {
+    id: 8,
+    name: '東方美人茶',
+  },
+  {
+    id: 7,
+    name: '烏龍茶',
+  },
+]
+
+function findName(id) {
+  const target = teaType.find(el => +el.id === +id)
+  return target?.name
+}
+
 function CommoditInformation({ product = {}, cart, ...props }) {
   const { addCart } = cart
   const [amount, setAmount] = useState(1)
@@ -36,7 +80,7 @@ function CommoditInformation({ product = {}, cart, ...props }) {
         <div className="section5-text6"></div>
         <p className="pj_card-text">{product.feaTure}</p>
         <ul>
-          <li>茶種:{product.tag}</li>
+          <li>茶種:{findName(product.tag)}</li>
           <li>容量:{product.unit}</li>
           <li>保存期限：{product.sTime}年</li>
         </ul>
