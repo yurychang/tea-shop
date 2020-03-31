@@ -166,10 +166,16 @@ function MemberAccount() {
           </div>
           <button
             type="submit"
-            className="btn btn-main col-3"
+            className="btn btn-main col-2 m-3"
             onClick={event => handleSubmit(event)}
           >
             更新
+          </button>
+          <button
+            type="submit"
+            className="btn btn-main col-2 m-3"
+          >
+            登出
           </button>
         </form>
       </div>
