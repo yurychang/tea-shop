@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 function Commodity(props) {
   const [product, setProduct] = useState([])
   const getproductid = Number(props.match.params.id)
-  console.log(getproductid)
 
   async function getDataFromServer(props) {
     const request = new Request(
@@ -30,9 +29,6 @@ function Commodity(props) {
   useEffect(() => {
     getDataFromServer()
   }, [])
-
-  console.log('product', product)
-  console.log('product[0]', product[0])
 
   return (
     <>

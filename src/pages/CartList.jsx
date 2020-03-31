@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import img1 from '../images/01.jpg'
 import { withRouter } from 'react-router-dom'
-import addCart from 'hooks/addCart'
-import deleteCart from 'hooks/deleteCart'
-import updateCartNum from 'hooks/updateCartNum'
 import { withCart } from 'hooks/useCartContext'
 
 function CartList({ cart, ...props }) {
   const { deleteCart } = cart
-  const getproductid = Number(props.match.params.id)
-  console.log(getproductid)
-
-  // console.log(localStorage.getItem('list'))
-  // const cartData = localStorage.getItem('list')
-  // const newcart = JSON.parse(cartData)
-  // console.log('newcart', newcart)
-  console.log(localStorage.getItem('cart'))
   const cartData = localStorage.getItem('cart')
   const newcart = JSON.parse(cartData)
-  console.log('newcart', newcart)
 
   const sum = items => {
     let total = 0
