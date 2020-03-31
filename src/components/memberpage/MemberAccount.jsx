@@ -171,10 +171,7 @@ function MemberAccount() {
           >
             更新
           </button>
-          <button
-            type="submit"
-            className="btn btn-main col-2 m-3"
-          >
+          <button type="submit" className="btn btn-main col-2 m-3">
             登出
           </button>
         </form>

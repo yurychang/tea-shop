@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Menu from 'components/membercenter/Menu'
 import MemberAccount from 'components/memberpage/MemberAccount'
 import MemberNotice from 'components/memberpage/MemberNotice'
+import MemberInfor from 'components/memberpage/MemberInfor'
 
 export default function MemberRouter() {
   return (
@@ -16,6 +17,9 @@ export default function MemberRouter() {
           </Route>
           <Route path="/membercenter/notice">
             <MemberNotice />
+          </Route>
+          <Route path="/membercenter/infor">
+            <MemberInfor />
           </Route>
         </Switch>
       </div>
