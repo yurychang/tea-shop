@@ -199,11 +199,11 @@ const mapStateToProps = ({ products }) => {
   let filterData = data
   // 茶種篩選
   if (filterTea) {
-    filterData = data.filter(el => el.tag == filterTea)
+    filterData = filterData.filter(el => el.tag == filterTea)
   }
   // 字串搜尋
   if (inputFilter) {
-    filterData = data.filter(el => el.title.includes(inputFilter))
+    filterData = filterData.filter(el => el.title.includes(inputFilter))
   }
   // 價格區間
   filterData = filterData.filter(el => {
