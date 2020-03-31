@@ -49,12 +49,6 @@ function BackendEvents() {
 
     </>)
 
-
-
-
-
-
-
     return (
         <>
             <div className="content">
@@ -72,7 +66,7 @@ function BackendEvents() {
                     </li>
                 </ul>
                 <div className="d-flex justify-content-end  mb-2">
-                    <button className="btn btn-primary ">新增活動</button>
+                    <Link to="/dashboard/events/add" className="btn btn-primary ">新增活動</Link>
                 </div>
 
                 {eventlist}
