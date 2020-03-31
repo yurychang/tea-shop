@@ -3,12 +3,11 @@
   .pj_mainbarcart-num {
     position: absolute;
     top: -1px;
-    left: 15px;
+    left: 19px;
     float: right;
     background-color: $mainlight;
     // border: 2px solid orange;
-    width: 25px;
-    height: 15px;
+    padding: 1px 6px;
     border-radius: 50%;
     text-align: center;
     // font-style: italic;
@@ -403,56 +402,6 @@
   background: linear-gradient(#fa7500);
 }
 
-.pj_button-gray {
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  padding: 15px 35px;
-  border: 0px solid #747474;
-  border-radius: 5px;
-  background: #bfbfbf;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#bfbfbf),
-    to(#747474)
-  );
-  background: -moz-linear-gradient(#bfbfbf, #747474);
-  background: linear-gradient(#bfbfbf, #747474);
-  // text-shadow: #535353 1px 0px 1px;
-  // font: normal normal bold 7px arial;
-  color: #ffffff;
-  text-decoration: none;
-}
-.pj_button-gray:hover,
-.pj_button-gray:focus {
-  border: 0px solid #a6a6a6;
-  background: #e5e5e5;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#e5e5e5),
-    to(#8b8b8b)
-  );
-  background: -moz-linear-gradient(#e5e5e5, #8b8b8b);
-  background: linear-gradient(#e5e5e5, #8b8b8b);
-  color: #ffffff;
-  text-decoration: none;
-}
-.pj_button-gray:active {
-  background: #747474;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#747474),
-    to(#747474)
-  );
-  background: -moz-linear-gradient(#747474, #747474);
-  background: linear-gradient(#747474, #747474);
-}
 .pj_input-color {
   background-color: $mainlight;
   border-radius: 5px;
@@ -460,4 +409,43 @@
   text-align: center;
   font-style: italic;
   color: #fff;
+}
+
+.pj_button2 {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  // padding: 10px 28px;
+  border: 0px solid $mainlight;
+  border-radius: 5px;
+  border: 2px solid $mainlight;
+  background: -webkit-gradient(linear, left top, left bottom, from($mainlight));
+  background: -moz-linear-gradient ($mainlight);
+  background: linear-gradient ($mainlight);
+  background-color: #fff;
+  font: normal normal bold 20px arial;
+  color: $mainlight;
+  text-decoration: none;
+}
+.pj_button2:hover,
+.pj_button2:focus {
+  border: 0px solid #f17d3a;
+  background: #f17d3a;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f17d3a));
+  background: -moz-linear-gradient(#f17d3a);
+  background: linear-gradient(#f17d3a);
+  color: #ffffff;
+  text-decoration: none;
+}
+.pj_button2:active {
+  background: #f17d3a;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f17d3a),
+    to(#f17d3a)
+  );
+  background: -moz-linear-gradient(#f17d3a, #f17d3a);
+  background: linear-gradient(#f17d3a, #f17d3a);
 }

@@ -31,13 +31,9 @@ function CommoditInformation({ product = {}, cart, ...props }) {
       {/* <button  onClick={() => {
     props.deleteCart(product.id)></button> */}
 
-      <div className="card-body">
+      <div className="card-body" style={{ padding: '0' }}>
         <h2 className="pj_card-title">{product.title}</h2>
-        <div className="section5-text6">
-          <div className="pj_border-top">
-            <h5 className="pj_border-name">日月潭老茶廠</h5>
-          </div>
-        </div>
+        <div className="section5-text6"></div>
         <p className="pj_card-text">{product.feaTure}</p>
         <ul>
           <li>茶種:{product.tag}</li>
@@ -86,7 +82,7 @@ function CommoditInformation({ product = {}, cart, ...props }) {
         <div className="pj_cart-btn">
           <button
             type="button"
-            className="m-1 pj_cart-button pj_button"
+            className="m-1 pj_cart-button pj_button2"
             onClick={() => {
               addCart(product, amount)
               // cartCount.setCartCount(num)

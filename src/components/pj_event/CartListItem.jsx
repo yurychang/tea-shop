@@ -36,6 +36,12 @@ export default function CartListItem({ product, deleteCart }) {
             type="button"
             class="btn btn-outline-danger"
             onClick={() => deleteCart(product.id)}
+            style={{
+              fontSize: '12px',
+              width: '40px',
+              height: '30px',
+              padding: 0,
+            }}
           >
             刪除
           </button>
