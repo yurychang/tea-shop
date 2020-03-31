@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import img1 from '../images/01.jpg'
+import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { withCart } from 'hooks/useCartContext'
+import CartListItem from 'components/pj_event/CartListItem'
+import { Link } from 'react-router-dom'
 
 function CartList({ cart, ...props }) {
-  const { deleteCart } = cart
-  const cartData = localStorage.getItem('cart')
-  const newcart = JSON.parse(cartData)
-
+  const deleteCart = cart.deleteCart
+  const cartData = cart.cart
   const sum = items => {
     let total = 0
     for (let i = 0; i < items.length; i++) {
@@ -16,56 +15,6 @@ function CartList({ cart, ...props }) {
     return total
   }
 
-  const newcart2 = (
-    <>
-      {newcart.map((value, index) => {
-        return (
-          <tr>
-            <th>
-              <input type="checkbox" />
-            </th>
-            <th scope="row">
-              <div className="p-2 ">
-                <img
-                  className="pj_cartList-img"
-                  src={`http://localhost:3333/images/product/${value.img}`}
-                  alt=""
-                />
-              </div>
-            </th>
-            <td className=" align-middle" style={{ fontSize: '14px' }}>
-              {value.title}
-            </td>
-            <td className=" align-middle pj_white-space">
-              <strong>{value.tag}</strong>
-            </td>
-            <td className=" align-middle pj_white-space">
-              <strong>{value.unit}包</strong>
-            </td>
-            <td className=" align-middle pj_white-space">
-              <strong>${value.price}</strong>
-            </td>
-            <td className=" align-middle pj_white-space">
-              <strong>{value.amount}</strong>
-            </td>
-            <td className=" align-middle pj_white-space">
-              <strong>${value.price * value.amount}</strong>
-            </td>
-            <td className=" align-middle pj_white-space">
-              <button type="button" className="pj_button-rad">
-                刪除{deleteCart}
-              </button>
-            </td>
-          </tr>
-        )
-      })}
-      <tfoot className="">
-        <div className="pj_price">
-          <p className="pj_cardList-price">NT ${sum(newcart)}</p>
-        </div>
-      </tfoot>
-    </>
-  )
   return (
     <>
       <div className="container py-4">
@@ -121,71 +70,30 @@ function CartList({ cart, ...props }) {
                         </th>
                       </tr>
                     </thead>
-
                     <tbody>
-                      <tr>
-                        <th>
-                          <input type="checkbox" />
-                        </th>
-                        <th scope="row">
-                          <div className="p-2 ">
-                            <img
-                              className="pj_cartList-img"
-                              src={img1}
-                              alt=""
-                            />
-                          </div>
-                        </th>
-                        <td
-                          className=" align-middle"
-                          style={{ fontSize: '14px' }}
-                        >
-                          {newcart?.title}
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>{newcart?.tag}</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>{newcart?.unit}包</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>${newcart?.price}</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>{newcart?.amount}</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>${newcart?.price * newcart?.amount}</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <button
-                            type="button"
-                            class="btn btn-outline-danger"
-                            onClick={() => deleteCart()}
-                          >
-                            刪除
-                          </button>
-                        </td>
-                      </tr>
+                      {cartData.map(el => (
+                        <CartListItem product={el} deleteCart={deleteCart} />
+                      ))}
                     </tbody>
                   </table>
 
                   <div className="pj_cardList-price-amount">
                     <div className="pj_price">
                       <p className="pj_cardList-price">
-                        NT ${newcart?.price * newcart?.amount}
+                        {/* NT ${newcart?.price * newcart?.amount} */}
                       </p>
                     </div>
-                    <button
+                    <Link
                       type="button"
                       className="btn btn-warning m-1 pj_cart-button"
+                      to="/checkout"
                     >
                       結帳
                       <i
                         class="fas fa-credit-card"
                         style={{ marginLeft: '15px' }}
                       ></i>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -196,4 +104,5 @@ function CartList({ cart, ...props }) {
     </>
   )
 }
+
 export default withRouter(withCart(CartList))

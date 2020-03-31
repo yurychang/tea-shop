@@ -28,7 +28,7 @@ function productCard({ product, cart }) {
               {el.title}
             </p>
           </Link>
-          <p className="card-text" style={{ fontSize: '14px' }}>
+          <p className="card-text" style={{ fontSize: '14px', maxHeight: '80px', overflow: 'hidden' }}>
             {el.feaTure}
           </p>
         </div>

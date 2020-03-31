@@ -122,44 +122,6 @@ function Product(props) {
                   </button>
                 </div>
               </div>
-
-              <div>
-                <h4>風味</h4>
-                <ul className="d-flex">
-                  <div className="pj_container-button pj_cart-Flavor">
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary pj_cart-Flavor"
-                    >
-                      風味
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-outline-secondary pj_cart-Flavor"
-                    >
-                      風味
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-outline-success pj_cart-Flavor"
-                    >
-                      風味
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-outline-danger pj_cart-Flavor"
-                    >
-                      風味
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-outline-warning pj_cart-Flavor"
-                    >
-                      風味
-                    </button>
-                  </div>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
