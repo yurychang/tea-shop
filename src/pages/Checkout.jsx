@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 // import 'rsuite/lib/styles/index.less'
 // import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { withCart } from 'hooks/useCartContext'
 
 // import{ BrowserRouter as Link} from "react-router-dom";
 // import '../styles/jc/checkout.scss'
@@ -61,51 +62,54 @@ function App() {
 
 
 
-function Checkout() {
-  const teststr = JSON.stringify([
-    {
-      title: '有機蜜韻紅茶補充包80g(手採)',
-      tag: '紅茶',
-      classIfy: '',
-      price: '490',
-      unit: '',
-      sTime: '2',
-      idVendor: 'tunlo',
-      feaTure: '',
-      img: '150327607526.jpg',
-      id: 2,
-      amount: 5,
-    },
-    {
-      title: '有機蜜韻紅茶補充包80g(手採)',
-      tag: '紅茶',
-      classIfy: '',
-      price: '490',
-      unit: '',
-      sTime: '2',
-      idVendor: 'tunlo',
-      feaTure: '',
-      img: '150327607526.jpg',
-      id: 2,
-      amount: 5,
-    },
-  ])
+function Checkout({ cart }) {
+  const cartData = cart.cart
+  const { deleteCart, addCart } = cart
+  // const teststr = JSON.stringify([
+  //   {
+  //     title: '有機蜜韻紅茶補充包80g(手採)',
+  //     tag: '紅茶',
+  //     classIfy: '',
+  //     price: '490',
+  //     unit: '',
+  //     sTime: '2',
+  //     idVendor: '5',
+  //     feaTure: '',
+  //     img: '150327607526.jpg',
+  //     id: 2,
+  //     amount: 5,
+  //   },
+  //   {
+  //     title: '有機蜜韻紅茶補充包80g(手採)',
+  //     tag: '紅茶',
+  //     classIfy: '',
+  //     price: '490',
+  //     unit: '',
+  //     sTime: '2',
+  //     idVendor: '5',
+  //     feaTure: '',
+  //     img: '150327607526.jpg',
+  //     id: 2,
+  //     amount: 5,
+  //   },
+  // ])
 
-  localStorage.setItem('cart', teststr)
-  const localCart = JSON.parse(localStorage.getItem('cart'))
-  console.log(localCart)
+  // localStorage.setItem('cart', teststr)
 
-  const sumfunc = items => {
-    let totalPrice = 0
-    for (let i = 0; i < items.length; i++) {
-      totalPrice += items[i].productAmount * items[i].productPrice
-    }
-    return totalPrice
-  }
+  // const localCart = JSON.parse(localStorage.getItem('cart'))
+  // console.log(localCart)
+
+  // const sumfunc = items => {
+  //   let totalPrice = 0
+  //   for (let i = 0; i < items.length; i++) {
+  //     totalPrice += items[i].productAmount * items[i].productPrice
+  //   }
+  //   return totalPrice
+  // }
 
   const productli = (
     <>
-      {localCart.map((value, index) => {
+      {cartData.map((value) => {
         return (
           <tr>
             <td>
@@ -236,4 +240,5 @@ function Checkout() {
     </div>
   )
 }
-export default Checkout
+
+export default withCart(Checkout)

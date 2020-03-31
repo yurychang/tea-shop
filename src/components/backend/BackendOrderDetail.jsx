@@ -48,13 +48,20 @@ function BackendOrder(props) {
     setOrderstatus(true)
   }
 
+  // function test() {
+  //   switch ()
+
+
+
+  // }
+
   const backNumber = (<> <form className="col-6 mb-3" action="">
     <input className="form-control mb-2" type="text" />
     <button type="button" className="btn btn-primary" onClick={event => changeProductStatus(event)}>回報追蹤碼</button>
   </form></>)
 
   const backover = (<div className="card-header d-flex justify-content-between mb-4">
-    <div className="order-status">已寄出</div>
+    <div className="order-status">運送中</div>
   </div>)
 
 
