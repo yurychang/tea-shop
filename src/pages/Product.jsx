@@ -58,19 +58,6 @@ function Product(props) {
     console.log('addImg')
   }
   // 搜尋
-  // useEffect(() => {
-  //   const featchList = async (query = 'total') => {
-  //     try {
-  //       const data = await featchList(search)
-
-  //       data && setData(data)
-  //     } catch (err) {
-  //       throw err
-  //     }
-  //   }
-
-  //   featchList(search)
-  // }, [])
 
   return (
     <>
@@ -94,6 +81,7 @@ function Product(props) {
                 <div className="d-flex">
                   <p style={{ paddingRight: '10px' }}>price</p>
                   <input
+                    className="pj_input-color"
                     type="number"
                     value={value[0]}
                     style={{ height: '25px', width: '80px' }}
@@ -101,6 +89,7 @@ function Product(props) {
                   />
 
                   <input
+                    className="pj_input-color"
                     type="number"
                     value={value[1]}
                     style={{ height: '25px', width: '80px' }}
@@ -126,29 +115,25 @@ function Product(props) {
               <div className="pj_cart-tea">
                 <h4>茶種</h4>
                 <div className="pj_container-button">
-                  <button type="button" className="btn btn btn-success  pj_btn">
+                  <button type="button" className="pj_btn pj_button-green">
                     綠茶
                   </button>
-                  <button type="button" className="btn btn-danger  pj_btn">
+                  <button type="button" className="pj_button-rad  pj_btn">
                     紅茶
                   </button>
-                  <button
-                    type="button"
-                    className=" pj_btn btn 
-                  btn-secondary "
-                  >
+                  <button type="button" className=" pj_btn pj_button ">
                     烏龍茶
                   </button>
-                  <button type="button" className="btn btn-primary  pj_btn">
+                  <button type="button" className="pj_button-purple  pj_btn">
                     東方美人茶
                   </button>
-                  <button type="button" className="btn btn-warning pj_btn">
+                  <button type="button" className="pj_button-blue pj_btn">
                     鐵觀音茶
                   </button>
-                  <button type="button" className="btn btn-info pj_btn">
+                  <button type="button" className="pj_button-yellow pj_btn">
                     普洱茶
                   </button>
-                  <button type="button" className="btn btn-dark pj_btn">
+                  <button type="button" className="pj_button-orange pj_btn">
                     金萱茶
                   </button>
                 </div>
@@ -203,7 +188,7 @@ function Product(props) {
                     <div className=" col-4 ">
                       <Link to={`/Commodity/${el.id}`} className="d-block">
                         <img
-                          src={img1}
+                          src={`http://localhost:3333/images/product/${el.img}`}
                           className="card-img-top"
                           alt=""
                           onClick={handleAddImg(el.id)}
@@ -249,7 +234,7 @@ function Product(props) {
                           ></i>
                           {/* <i className="fas fa-heart mt-2" aria-hidden="true"></i> */}
                         </div>
-                        <Link to="Commodity" className="d-block">
+                        <Link to={`/Commodity/${el.id}`} className="d-block">
                           <p
                             className="card-title"
                             style={{ fontSize: '18px' }}

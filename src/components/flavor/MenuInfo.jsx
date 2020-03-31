@@ -5,6 +5,7 @@ import { selectByTea } from 'actions/flavor'
 
 function MenuInfo({ flavors, targetTeaFlavors, selectByTea }) {
   const isOnly = targetTeaFlavors.length === 1 ? true : false
+
   const renderList = () => {
     return (
       <ul>
@@ -37,9 +38,15 @@ function MenuInfo({ flavors, targetTeaFlavors, selectByTea }) {
     return (
       <div className="ml-5">
         <ul className="pl-0 mb-4">
-          <li className="mb-2">前香：{target.front}</li>
-          <li className="mb-2">中韻：{target.mid}</li>
-          <li className="mb-2">後味：{target.end}</li>
+          <li className="mb-3">
+            前香：<span className="ml-2">{target.front}</span>
+          </li>
+          <li className="mb-3">
+            中味：<span className="ml-2">{target.mid}</span>
+          </li>
+          <li className="mb-3">
+            後韻：<span className="ml-2">{target.end}</span>
+          </li>
         </ul>
         <p>{target.intro}</p>
       </div>

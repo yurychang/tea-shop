@@ -8,7 +8,7 @@ export default function MainBar() {
   return (
     <>
       <div className={`sy_main-bar ${isOpen ? 'active' : ''}`}>
-        <MainBarNav isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+        <MainBarNav isOpen={isOpen} onClick={setIsOpen} />
         {isOpen ? (
           <MainBarContent
             onClick={() => {

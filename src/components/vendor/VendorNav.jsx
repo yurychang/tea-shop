@@ -16,7 +16,7 @@ function VendorNav(props) {
                         <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/vendor/${vendorId}/index`}>商品列表</NavLink></li>
                         <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/vendor/${vendorId}/about`}>關於我們</NavLink></li>
                         <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/vendor/${vendorId}/events`}>活動列表</NavLink></li>
-                        <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/vendor/${vendorId}/discount`}>折扣專區</NavLink></li>
+                        <li className="nav-item"><NavLink className="ls_fron-nav" activeClassName="active" to={`/vendor/${vendorId}/location`}>營業據點</NavLink></li>
                     </ul>
                 </nav>
             </div>

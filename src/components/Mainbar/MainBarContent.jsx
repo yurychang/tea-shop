@@ -1,21 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled, { keyframes } from 'styled-components'
-import { fadeIn } from 'react-animations'
 import DelayFInR from 'utils/DelayFInR'
+import FadeInDiv from 'utils/FadeInDiv'
 import logoH from 'images/logo-h.svg'
-
-const fadeInAnimate = keyframes`${fadeIn}`
-
-const FadeInDiv = styled.div`
-  animation: 1.5s ${fadeInAnimate};
-`
 
 const listNames = [
   { name: '尋茶', path: '/Product' },
   { name: '文化走訪', path: '/events' },
   { name: '茗家精選', path: '/allstore' },
-  { name: '文化走訪', path: '/events' },
   { name: '茶風味輪', path: '/flavor' },
 ]
 

@@ -1,55 +1,83 @@
 import React, { useState, useEffect } from 'react'
 import img1 from '../images/01.jpg'
 import { withRouter } from 'react-router-dom'
-import addCart from 'hook/addCart'
-import deleteCart from 'hook/deleteCart'
-import updateCartNum from 'hook/updateCartNum'
+import addCart from 'hooks/addCart'
+import deleteCart from 'hooks/deleteCart'
+import updateCartNum from 'hooks/updateCartNum'
+import { withCart } from 'hooks/useCartContext'
 
-function CartList(props) {
+function CartList({ cart, ...props }) {
+  const { deleteCart } = cart
   const getproductid = Number(props.match.params.id)
   console.log(getproductid)
 
-  // const newList = { ...product, amount }
-  // const addList = e => {
-  //   localStorage.setItem('list', JSON.stringify(newList))
-  // }
-
-  // async function getDataFromServer(props) {
-  //   const request = new Request(
-  //     'http://localhost:3333/product/get-single-product/' + getproductid,
-  //     {
-  //       method: 'GET',
-  //       headers: new Headers({
-  //         Accept: 'application/json',
-  //         'Content-Type': 'appliaction/json',
-  //       }),
-  //     }
-  //   )
-  //   const response = await fetch(request)
-  //   const data = await response.json()
-  //   console.log(data)
-  //   setProduct(data)
-  // }
-
-  // useEffect(() => {
-  //   getDataFromServer()
-  // }, [])
-  console.log(localStorage.getItem('list'))
-  const cartData = localStorage.getItem('list')
+  // console.log(localStorage.getItem('list'))
+  // const cartData = localStorage.getItem('list')
+  // const newcart = JSON.parse(cartData)
+  // console.log('newcart', newcart)
+  console.log(localStorage.getItem('cart'))
+  const cartData = localStorage.getItem('cart')
   const newcart = JSON.parse(cartData)
   console.log('newcart', newcart)
 
-  // useEffect(() => {
-  //   const featchList = async (query = '')=>{
-  //       try{
-  //           const data = await deleteCart.featchList(query);
+  const sum = items => {
+    let total = 0
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].amount * items[i].price
+    }
+    return total
+  }
 
-  //           data && setData(data);
-  //       }catch(err){
-  //           throw err;
-  //       }
-  //   }
-
+  const newcart2 = (
+    <>
+      {newcart.map((value, index) => {
+        return (
+          <tr>
+            <th>
+              <input type="checkbox" />
+            </th>
+            <th scope="row">
+              <div className="p-2 ">
+                <img
+                  className="pj_cartList-img"
+                  src={`http://localhost:3333/images/product/${value.img}`}
+                  alt=""
+                />
+              </div>
+            </th>
+            <td className=" align-middle" style={{ fontSize: '14px' }}>
+              {value.title}
+            </td>
+            <td className=" align-middle pj_white-space">
+              <strong>{value.tag}</strong>
+            </td>
+            <td className=" align-middle pj_white-space">
+              <strong>{value.unit}包</strong>
+            </td>
+            <td className=" align-middle pj_white-space">
+              <strong>${value.price}</strong>
+            </td>
+            <td className=" align-middle pj_white-space">
+              <strong>{value.amount}</strong>
+            </td>
+            <td className=" align-middle pj_white-space">
+              <strong>${value.price * value.amount}</strong>
+            </td>
+            <td className=" align-middle pj_white-space">
+              <button type="button" className="pj_button-rad">
+                刪除{deleteCart}
+              </button>
+            </td>
+          </tr>
+        )
+      })}
+      <tfoot className="">
+        <div className="pj_price">
+          <p className="pj_cardList-price">NT ${sum(newcart)}</p>
+        </div>
+      </tfoot>
+    </>
+  )
   return (
     <>
       <div className="container py-4">
@@ -106,64 +134,11 @@ function CartList(props) {
                       </tr>
                     </thead>
 
-                    <tbody>
-                      <tr>
-                        <th>
-                          <input type="checkbox" />
-                        </th>
-                        <th scope="row">
-                          <div className="p-2 ">
-                            <img
-                              className="pj_cartList-img"
-                              src={img1}
-                              alt=""
-                            />
-                          </div>
-                        </th>
-                        <td
-                          className=" align-middle"
-                          style={{ fontSize: '14px' }}
-                        >
-                          {newcart.title}
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>{newcart.tag}</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>{newcart.unit}包</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>${newcart.price}</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>{newcart.amount}</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <strong>${newcart.price * newcart.amount}</strong>
-                        </td>
-                        <td className=" align-middle pj_white-space">
-                          <button
-                            type="button"
-                            class="btn btn-outline-danger"
-                            onClick={() => deleteCart()}
-                          >
-                            刪除
-                          </button>
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tbody>{newcart2}</tbody>
                   </table>
 
                   <div className="pj_cardList-price-amount">
-                    <div className="pj_price">
-                      <p className="pj_cardList-price">
-                        NT ${newcart.price * newcart.amount}
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn btn-warning m-1 pj_cart-button"
-                    >
+                    <button type="button" className="pj_cart-button pj_button">
                       結帳
                       <i
                         class="fas fa-credit-card"
@@ -180,4 +155,4 @@ function CartList(props) {
     </>
   )
 }
-export default withRouter(CartList)
+export default withRouter(withCart(CartList))
