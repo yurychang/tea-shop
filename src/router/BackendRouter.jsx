@@ -6,7 +6,7 @@ import BackendProduct from '../components/backend/BackendProduct'
 import BackendMsg from '../components/backend/BackendMsg'
 import BackendEvents from '../components/backend/BackendEvents'
 import BackendData from '../components/backend/BackendData'
-import BackendDiscount from 'components/backend/BackendDiscount'
+import BackendDiscount from 'components/backend/BackendLocation'
 import BackendOrderDetail from '../components/backend/BackendOrderDetail'
 import BackendAddProduct from '../components/backend/BackendAddProduct'
 import BackendAddMsg from '../components/backend/BackendAddMsg'
@@ -64,8 +64,6 @@ function BackendRouter() {
   }
 
   if (logout) {
-
-    // alert('您已登出，感謝您的使用')
     return (<>
       {logoutDialog ? logoutJump : Dialog}
     </>)
@@ -116,7 +114,7 @@ function BackendRouter() {
             <Route path="/dashboard/events">
               <BackendEvents />
             </Route>
-            <Route path="/dashboard/discount/:discountid?">
+            <Route path="/dashboard/location">
               <BackendDiscount />
             </Route>
             <Route path="/dashboard/data">

@@ -65,7 +65,7 @@ function CartList({ cart, ...props }) {
             </td>
             <td className=" align-middle pj_white-space">
               <button type="button" className="pj_button-rad">
-                刪除
+                刪除{deleteCart}
               </button>
             </td>
           </tr>

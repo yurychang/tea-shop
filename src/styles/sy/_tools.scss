@@ -7,8 +7,12 @@
   letter-spacing: $vertical-letter-spacing;
 }
 
-.page-title {
-  
+.animate-start {
+  animation-play-state: running !important;
+}
+
+.animate-pause {
+  animation-play-state: paused !important;
 }
 
 .outline-0 {

@@ -17,7 +17,7 @@ export default function MainBarNav({ isOpen, onClick }) {
             className={`main-bar-brand mb-0 border-0 bg-white outline-0 ${
               isOpen ? 'pt-lg-4' : ''
               }`}
-            onClick={onClick}
+            onClick={() => onClick(!isOpen)}
           >
             <img
               src={logo}
@@ -64,14 +64,14 @@ export default function MainBarNav({ isOpen, onClick }) {
               </Nav.Item>
               <Nav.Item className="border-bottom border-bottom-lg-0">
                 <Nav.Link as="p" className="mb-0">
-                  <Link to="/cart" className="d-block">
+                  <Link to="/cart" onClick={() => isOpen ? onClick(!isOpen) : ''} className="d-block">
                     <i className="fas fa-user" />
                     <span className="d-lg-none ml-2">會員中心</span>
                   </Link>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="border-bottom border-bottom-lg-0">
-                <Nav.Link as="div" className="mb-0">
+                <Nav.Link as="div" onClick={() => isOpen ? onClick(!isOpen) : ''} className="mb-0">
                   <MainBarCart />
                 </Nav.Link>
               </Nav.Item>

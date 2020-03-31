@@ -58,19 +58,6 @@ function Product(props) {
     console.log('addImg')
   }
   // 搜尋
-  // useEffect(() => {
-  //   const featchList = async (query = 'total') => {
-  //     try {
-  //       const data = await featchList(search)
-
-  //       data && setData(data)
-  //     } catch (err) {
-  //       throw err
-  //     }
-  //   }
-
-  //   featchList(search)
-  // }, [])
 
   return (
     <>

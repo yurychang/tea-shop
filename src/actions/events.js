@@ -23,7 +23,6 @@ export const fetchEvents = () => {
     try {
       const res = await fetch('http://localhost:3333/events/get')
       const json = await res.json()
-      console.log(json)
       if (json.status === 'success') {
         dispatch({
           type: FETCH_EVENTS,

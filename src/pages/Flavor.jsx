@@ -22,7 +22,7 @@ function Flavor({ fetchFlavor }) {
             </PageTitle>
           </Col>
           <Col>
-            <div className="ml-7 mb-6" style={{width: '700px'}}>
+            <div className="ml-7 mb-6" style={{ width: '700px' }}>
               <h2 className="h3 mb-4">如何挑選喜歡喝的茶？</h2>
               <p>
                 茶的種類琳瑯滿目，常常爬了很多文後，還是不知道從哪挑起嗎？

@@ -4,8 +4,16 @@ import { withRouter } from 'react-router-dom'
 // import addCart from 'hooks/addCart'
 // import updateCartNum from 'hooks/updateCartNum'
 // import deleteCart from 'hooks/deleteCart'
-import { withCart } from 'hooks/useCartContext'
 import '../../styles/pj/_pj.css'
+import { withCart } from 'hooks/useCartContext'
+import {
+  addCart,
+  deleteCart,
+  increaseCart,
+  decreaseCart,
+  cart,
+  cartCount,
+} from 'hooks/useCart'
 
 function CommoditInformation({ product = {}, cart, ...props }) {
   const { addCart } = cart
