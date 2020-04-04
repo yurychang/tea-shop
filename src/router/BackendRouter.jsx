@@ -12,6 +12,7 @@ import BackendAddProduct from '../components/backend/BackendAddProduct'
 import BackendAddMsg from '../components/backend/BackendAddMsg'
 import EditEvent from '../components/backend/EditEvent'
 import BackendEditMsg from '../components/backend/BackendEditMsg'
+import BackendAddLocation from '../components/backend/BackendAddLocation'
 import { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 
@@ -113,6 +114,9 @@ function BackendRouter() {
             </Route>
             <Route path="/dashboard/events">
               <BackendEvents />
+            </Route>
+            <Route path="/dashboard/location/add">
+              <BackendAddLocation />
             </Route>
             <Route path="/dashboard/location">
               <BackendDiscount />

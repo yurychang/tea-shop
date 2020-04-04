@@ -62,11 +62,16 @@ function MsgList() {
               <div className="Msg">{value.content}</div>
               <div>
                 <button
-                  className="btn updateMsg btn-primary"
+                  className="btn updateMsg btn-primary mr-1"
                   onClick={event => updateStatus(event)}
                   data-id={value.id}
                 >
                   推播訊息
+                </button>
+                <button
+                  className="btn updateMsg btn-danger"
+                >
+                  刪除訊息
                 </button>
               </div>
             </div>
