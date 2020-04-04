@@ -61,7 +61,7 @@ function BackendDiscount() {
         <h3>據點管理</h3>
         <hr />
         <div className="d-flex justify-content-end">
-          <button className="btn btn-primary mb-4 ">新增據點</button>
+          <Link to="/dashboard/location/add" type="button" className="btn btn-primary mb-4 ">新增據點</Link>
         </div>
 
 

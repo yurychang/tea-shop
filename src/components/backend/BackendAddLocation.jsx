@@ -3,23 +3,23 @@ import { Link, Redirect } from 'react-router-dom'
 
 export default function BackendProductMsg() {
   //   const [vendorId, setVendorId] = useState('')
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
-  const [status, setStatus] = useState('00')
+  const [locationName, setLocationName] = useState('')
+  const [locationAddress, setLocationAddress] = useState('')
+  const [locationPhone, setLocationPhone] = useState('')
   const vendorId = sessionStorage.getItem('vendorOnlyId')
 
   //   return ()
 
   const handleSubmit = event => {
     event.preventDefault()
-    const MsgData = { vendorId, title, content, status, vendorId }
-    sendMsgDataToServer(MsgData, () => alert('通知新增成功'))
-    async function sendMsgDataToServer(userData, callback) {
+    const locationData = { locationName, locationAddress,locationPhone}
+    sendLocationDataToServer(locationData, () => alert('據點新增成功'))
+    async function sendLocationDataToServer(locationData, callback) {
       const request = new Request(
-        'http://127.0.0.1:3333/vendor/backendAddMsg',
+        'http://localhost:3333/vendor/addvendorlocation',
         {
           method: 'POST',
-          body: JSON.stringify(MsgData),
+          body: JSON.stringify(locationData),
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
@@ -43,35 +43,46 @@ export default function BackendProductMsg() {
   return (
     <>
       <div className="content">
-        <h3>訊息管理</h3>
+        <h3>據點管理</h3>
         <hr />
-        <h5 className="text-center">新增訊息</h5>
+        <h5 className="text-center">新增據點</h5>
         <div className="d-flex justify-content-end">
-          <Link className="btn btn-primary mb-2" to="/dashboard/msg">
+          <Link className="btn btn-primary mb-2" to="/dashboard/location">
             回上頁
           </Link>
         </div>
 
         <form>
           <div className="form-group">
-            <label>商品名稱</label>
+            <label>據點名稱</label>
             <input
               type="text"
               className="form-control"
-              id="exampleInputEmail1"
-              name="title"
-              onChange={e => setTitle(e.target.value)}
+              name="locationName"
+              onChange={e => setLocationName(e.target.value)}
               required="required"
             />
           </div>
 
           <div className="mb-3">
-            <label for="validationTextarea">廣告介紹</label>
-            <textarea
+            <label for="validationTextarea">據點地址</label>
+            <input
+              type="text"
               className="form-control"
-              id="content"
-              onChange={e => setContent(e.target.value)}
-              placeholder="請輸入內容"
+              name="locationAddress"
+              onChange={e => setLocationAddress(e.target.value)}
+              required="required"
+            />
+          </div>
+
+
+          <div className="mb-3">
+            <label for="validationTextarea">據點電話</label>
+            <input
+              type="text"
+              className="form-control"
+              name="locationPhone"
+              onChange={e => setLocationPhone(e.target.value)}
               required="required"
             />
           </div>
