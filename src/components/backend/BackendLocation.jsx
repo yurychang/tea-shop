@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 
-function BackendDiscount() {
+function BackendLocation() {
 
 
   const [locationData, setLocationData] = useState([])
@@ -28,13 +28,21 @@ function BackendDiscount() {
     getDataFromServer()
   }, [])
 
+
+
+
+
+
+
   const locationlist = (<>
     {locationData.map((value, index) => {
+
       return (
         <div className="card mb-4">
           <div className="card-header d-flex justify-content-between">
             <div className="account">{value.locationName}
             </div>
+            <div className="location-id">{value.id}</div>
 
           </div>
           <div className="card-body d-flex justify-content-between align-items-center">
@@ -42,7 +50,10 @@ function BackendDiscount() {
             <div className="Msg">
               {value.locationAddress}
             </div>
-            <button className="btn btn-main" >編輯據點</button>
+            <div>
+              <Link to={`/dashboard/location/edit/${value.id}`} type="button" className="btn btn-main" >編輯據點</Link>
+            </div>
+
 
           </div>
         </div>
@@ -77,4 +88,4 @@ function BackendDiscount() {
   )
 }
 
-export default BackendDiscount
+export default BackendLocation

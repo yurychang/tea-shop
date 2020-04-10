@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 
-export default function BackendProductMsg() {
+export default function BackendAddLocation() {
   //   const [vendorId, setVendorId] = useState('')
   const [locationName, setLocationName] = useState('')
   const [locationAddress, setLocationAddress] = useState('')
   const [locationPhone, setLocationPhone] = useState('')
   const vendorId = sessionStorage.getItem('vendorOnlyId')
+  const locationData = { locationName, locationAddress,locationPhone}
+  console.log(locationData)
+
 
   //   return ()
 
   const handleSubmit = event => {
     event.preventDefault()
-    const locationData = { locationName, locationAddress,locationPhone}
+
+
+
     sendLocationDataToServer(locationData, () => alert('據點新增成功'))
+
     async function sendLocationDataToServer(locationData, callback) {
       const request = new Request(
         'http://localhost:3333/vendor/addvendorlocation',
         {
           method: 'POST',
+          credentials: 'include',
           body: JSON.stringify(locationData),
           headers: {
             Accept: 'application/json',
