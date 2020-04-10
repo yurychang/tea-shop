@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 
-export default function BackendAddLocation() {
+export default function BackendEditLocation() {
   //   const [vendorId, setVendorId] = useState('')
   const [locationName, setLocationName] = useState('')
   const [locationAddress, setLocationAddress] = useState('')
   const [locationPhone, setLocationPhone] = useState('')
   const vendorId = sessionStorage.getItem('vendorOnlyId')
-  const locationData = { locationName, locationAddress,locationPhone}
+  const locationData = { locationName, locationAddress, locationPhone }
   console.log(locationData)
 
 
@@ -96,10 +96,17 @@ export default function BackendAddLocation() {
 
           <button
             type="submit"
-            className="btn btn-main col-3 mb-3"
+            className="btn btn-main col-3 mb-3 mr-2"
             onClick={event => handleSubmit(event)}
           >
-            新增據點
+            編輯據點
+          </button>
+
+          <button
+            type="submit"
+            className="btn btn-danger col-3 mb-3"
+          >
+            刪除據點
           </button>
         </form>
       </div>

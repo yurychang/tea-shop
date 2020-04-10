@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 
-function BackendDiscount() {
+function BackendLocation() {
 
 
   const [locationData, setLocationData] = useState([])
@@ -28,13 +28,39 @@ function BackendDiscount() {
     getDataFromServer()
   }, [])
 
+  const [locationid, setLocationid] = ('')
+
+
+  async function delLocation() {
+
+
+    const request = new Request('http://localhost:3333/vendor/delvendorlocation' + locationid, {
+      method: 'GET',
+      credentials: 'include',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'appliaction/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    alert('已刪除據點')
+  }
+
+  useEffect(() => {
+    delLocation()
+  }, [])
+
+
   const locationlist = (<>
     {locationData.map((value, index) => {
+
       return (
         <div className="card mb-4">
           <div className="card-header d-flex justify-content-between">
             <div className="account">{value.locationName}
             </div>
+            <div className="location-id">{value.id}</div>
 
           </div>
           <div className="card-body d-flex justify-content-between align-items-center">
@@ -42,7 +68,10 @@ function BackendDiscount() {
             <div className="Msg">
               {value.locationAddress}
             </div>
-            <button className="btn btn-main" >編輯據點</button>
+            <div>
+              <Link to={`/dashboard/location/edit/${value.id}`} type="button" className="btn btn-main" >編輯據點</Link>
+            </div>
+
 
           </div>
         </div>
@@ -77,4 +106,4 @@ function BackendDiscount() {
   )
 }
 
-export default BackendDiscount
+export default BackendLocation

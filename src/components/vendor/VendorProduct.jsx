@@ -68,7 +68,7 @@ function VendorProduct() {
     return (
         <>
 
-            <div className="product d-flex flex-wrap ml-6">
+            <div className="product d-flex flex-wrap ml-6 col-8">
 
                 {singleProduct}
 
