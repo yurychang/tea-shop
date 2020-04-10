@@ -28,28 +28,10 @@ function BackendLocation() {
     getDataFromServer()
   }, [])
 
-  const [locationid, setLocationid] = ('')
 
 
-  async function delLocation() {
 
 
-    const request = new Request('http://localhost:3333/vendor/delvendorlocation' + locationid, {
-      method: 'GET',
-      credentials: 'include',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'appliaction/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    alert('已刪除據點')
-  }
-
-  useEffect(() => {
-    delLocation()
-  }, [])
 
 
   const locationlist = (<>
